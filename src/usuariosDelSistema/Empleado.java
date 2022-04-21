@@ -1,4 +1,4 @@
-package Clases;
+package usuariosDelSistema;
 
 public class Empleado extends Usuario{
 	private String nya; //Nombre y Apellido

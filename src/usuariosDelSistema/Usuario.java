@@ -1,4 +1,4 @@
-package Clases;
+package usuariosDelSistema;
 
 public abstract class Usuario {
     protected String usuario;

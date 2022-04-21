@@ -1,4 +1,4 @@
-package Clases;
+package usuariosDelSistema;
 
 public class EmpleadorDecorator extends Empleador{
 

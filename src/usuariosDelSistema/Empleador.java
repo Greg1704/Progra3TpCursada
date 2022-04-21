@@ -1,4 +1,4 @@
-package Clases;
+package usuariosDelSistema;
 
 public abstract class Empleador {
     protected String nombre;

@@ -1,4 +1,4 @@
-package Clases;
+package armaTickets;
 
 public class FormularioDeBusqueda {
 	private String locacion;
