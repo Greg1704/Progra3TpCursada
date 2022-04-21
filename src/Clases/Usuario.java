@@ -5,7 +5,13 @@ public abstract class Usuario {
     protected String contrasenia;
     protected int puntaje;
 
-    public void Login(String usuario,String contrasenia){
+    public Usuario(String usuario, String contrasenia) {
+        this.usuario = usuario;
+        this.contrasenia = contrasenia;
+        this.puntaje = 0;
+    }
+
+    public void Login(String usuario, String contrasenia){
         LoginUsuario(usuario);
     }
 
