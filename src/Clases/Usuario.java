@@ -3,6 +3,7 @@ package Clases;
 public abstract class Usuario {
     protected String usuario;
     protected String contrasenia;
+    protected int puntaje;
 
     public void Login(String usuario,String contrasenia){
         LoginUsuario(usuario);
