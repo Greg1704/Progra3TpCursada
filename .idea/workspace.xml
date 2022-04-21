@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bae00f15-2261-459a-b802-e8a456c13c3a" name="Changes" comment="Agregando cosas basicas">
-      <change afterPath="$PROJECT_DIR$/src/Clases/Empleado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Clases/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +44,14 @@
       <option name="presentableId" value="Default" />
       <updated>1650408284797</updated>
     </task>
+    <task id="LOCAL-00001" summary="Agregando cosas basicas">
+      <created>1650430272851</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650430272851</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
