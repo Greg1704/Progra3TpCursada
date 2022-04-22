@@ -1,28 +1,29 @@
 package armaTickets;
 
+import atributosFormularios.*;
+
+
 public class FormularioDeBusqueda {
-	private String locacion;
-	private double remuneracion;
-	private String cargaHoraria;
-	private String tipoPuestoLaboral;
-	private int edad;
-	private String experienciaPrevia;
-	private String estudiosCursados;
+	private Locacion locacion;
+	private Remuneracion remuneracion;
+	private CargaHoraria cargaHoraria;
+	private TipoPuestoLaboral tipoPuestoLaboral;
+	private Edad edad;
+	private ExperienciaPrevia experienciaPrevia;
+	private EstudiosCursados estudiosCursados;
 	
 	
-	public FormularioDeBusqueda(String locacion, double remuneracion, String cargaHoraria, String tipoPuestoLaboral,
-			int edad, String experienciaPrevia, String estudiosCursados) {
-		super();
-		this.locacion = locacion;
-		this.remuneracion = remuneracion;
-		this.cargaHoraria = cargaHoraria;
-		this.tipoPuestoLaboral = tipoPuestoLaboral;
-		this.edad = edad;
-		this.experienciaPrevia = experienciaPrevia;
-		this.estudiosCursados = estudiosCursados;
+	public FormularioDeBusqueda(String locacion,int pesoLocacion, double remuneracion, int pesoRemuneracion,String cargaHoraria,int pesoCargaHoraria, 
+			String tipoPuestoLaboral,int pesoTipoPuestoLaboral, int edad,int pesoEdad, String experienciaPrevia,int pesoExperienciaPrevia,
+			String estudiosCursados,int pesoEstudiosCursados) {
+		
+		this.locacion = new Locacion(locacion,pesoLocacion);
+		this.remuneracion = new Remuneracion(remuneracion,pesoRemuneracion);
+		this.cargaHoraria = new CargaHoraria(cargaHoraria,pesoCargaHoraria);
+		this.tipoPuestoLaboral = new TipoPuestoLaboral(tipoPuestoLaboral,pesoTipoPuestoLaboral);
+		this.edad = new Edad(edad,pesoEdad);
+		this.experienciaPrevia = new ExperienciaPrevia(experienciaPrevia,pesoExperienciaPrevia);
+		this.estudiosCursados = new EstudiosCursados(estudiosCursados,pesoEstudiosCursados);
 	}
-	
-	
-	
 
 }

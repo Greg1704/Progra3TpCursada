@@ -1,8 +1,12 @@
 package atributosFormularios;
 
 public class EstudiosCursados {
-	private String nombre = "Estudios Cursados";
+	private String estudiosCursados;
+	private int peso;
 	
-	
-	
+	public EstudiosCursados(String estudiosCursados,int peso) {
+		this.estudiosCursados = estudiosCursados;
+		this.peso = peso;
+	}
+
 }
