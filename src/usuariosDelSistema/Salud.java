@@ -2,7 +2,8 @@ package usuariosDelSistema;
 
 public class Salud extends EmpleadorDecorator{
 
-    public Salud(String nombre) { //Lo puse pa que no me tire error el prog
-        super(nombre);
-    }
+	public Salud(String usuario, String contrasenia, String nombre) {
+		super(usuario, contrasenia, nombre);
+	}
+
 }

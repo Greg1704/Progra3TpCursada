@@ -1,9 +1,20 @@
 package usuariosDelSistema;
 
-public abstract class Empleador {
+public abstract class Empleador extends Usuario{
     protected String nombre;
 
-    public Empleador(String nombre) {//Lo puse pa que no me tire error el prog
-        this.nombre = nombre;
-    }
+	public Empleador(String usuario, String contrasenia,String nombre) {
+		super(usuario, contrasenia);
+		this.nombre = nombre;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+    
 }

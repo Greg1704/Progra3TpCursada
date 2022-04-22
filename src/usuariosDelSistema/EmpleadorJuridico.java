@@ -2,7 +2,9 @@ package usuariosDelSistema;
 
 public class EmpleadorJuridico extends Empleador{
 
-    public EmpleadorJuridico(String nombre) {//Lo puse pa que no me tire error el prog
-        super(nombre);
-    }
+	public EmpleadorJuridico(String usuario, String contrasenia, String nombre) {
+		super(usuario, contrasenia, nombre);
+		// TODO Auto-generated constructor stub
+	}
+	
 }

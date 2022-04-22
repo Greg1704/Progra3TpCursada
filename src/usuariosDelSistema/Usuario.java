@@ -1,17 +1,32 @@
 package usuariosDelSistema;
 
 public abstract class Usuario {
-    protected String usuario;
-    protected String contrasenia;
-    protected int puntaje;
+    private String usuario;
+    private String contrasenia;
+    private int puntaje = 0;
 
     public Usuario(String usuario, String contrasenia) {
         this.usuario = usuario;
         this.contrasenia = contrasenia;
-        this.puntaje = 0;
-    }
+    }  
 
-    public void Login(String usuario, String contrasenia){
+    public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public int getPuntaje() {
+		return puntaje;
+	}
+
+	public void setPuntaje(int puntaje) {
+		this.puntaje = puntaje;
+	}
+
+	public void Login(String usuario, String contrasenia){
         LoginUsuario(usuario);
     }
 
