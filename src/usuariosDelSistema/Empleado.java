@@ -5,6 +5,7 @@ public class Empleado extends Usuario{
 	private int dni;
 	private int telefono;
 	private int edad;
+	private int puntos;
 	private String ciudad;
 
 
@@ -15,6 +16,9 @@ public class Empleado extends Usuario{
 		this.telefono = telefono;
 		this.edad = edad;
 		this.ciudad = ciudad;
+		this.puntos=0;
 	}
+	
+	
 
 }
