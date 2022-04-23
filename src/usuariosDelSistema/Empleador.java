@@ -7,6 +7,8 @@ public abstract class Empleador extends Usuario{
 		super(usuario, contrasenia);
 		this.nombre = nombre;
 	}
+	
+	public void mandaInfoTicket ()
 
 	public String getNombre() {
 		return nombre;

@@ -16,5 +16,7 @@ public class Empleado extends Usuario{
 		this.edad = edad;
 		this.ciudad = ciudad;
 	}
+	
+	
 
 }
