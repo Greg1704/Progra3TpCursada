@@ -16,5 +16,5 @@ public abstract class Empleador extends Usuario{
 		this.nombre = nombre;
 	}
 
-    
+	public abstract double comisionAgencia(Empleador empleador);
 }
