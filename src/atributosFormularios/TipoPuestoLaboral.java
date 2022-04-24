@@ -9,4 +9,20 @@ public class TipoPuestoLaboral {
 		this.peso = peso;
 	}
 
+	public String getTipoPuestoLaboral() {
+		return tipoPuestoLaboral;
+	}
+
+	public void setTipoPuestoLaboral(String tipoPuestoLaboral) {
+		this.tipoPuestoLaboral = tipoPuestoLaboral;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+	
 }

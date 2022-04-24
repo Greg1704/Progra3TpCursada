@@ -9,4 +9,21 @@ public class Remuneracion {
 		this.peso = peso;
 	}
 
+	public double getRemuneracion() {
+		return remuneracion;
+	}
+
+	public void setRemuneracion(double remuneracion) {
+		this.remuneracion = remuneracion;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+
+	
 }

@@ -9,4 +9,20 @@ public class ExperienciaPrevia {
 		this.peso = peso;
 	}
 
+	public String getExperienciaPrevia() {
+		return experienciaPrevia;
+	}
+
+	public void setExperienciaPrevia(String experienciaPrevia) {
+		this.experienciaPrevia = experienciaPrevia;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+	
 }

@@ -9,4 +9,21 @@ public class EstudiosCursados {
 		this.peso = peso;
 	}
 
+	public String getEstudiosCursados() {
+		return estudiosCursados;
+	}
+
+	public void setEstudiosCursados(String estudiosCursados) {
+		this.estudiosCursados = estudiosCursados;
+	}
+
+	public int getPeso() {
+		return peso;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+
+	
 }
