@@ -1,9 +1,9 @@
 package excepcionesEmpleado;
 
-public class ErrorLogin extends exception{
+public class ErrorLogin extends Exception{
 
-    public ErrorLogin(){
-        super();
+    public ErrorLogin(String msj){
+        super(msj);
     }
 
 

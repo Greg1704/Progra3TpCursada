@@ -1,5 +1,7 @@
 package usuariosDelSistema;
 
+import java.util.ArrayList;
+
 public class Sistema {
     private static Sistema instancia=null;
     private ArrayList<Usuario> usuarios=new ArrayList<Usuario>();
@@ -19,11 +21,16 @@ public class Sistema {
        this.usuarios.add(user);
    }
    
-  public void eliminarUsuario(Usuario user){
+   public void eliminarUsuario(Usuario user){
       this.usuarios.remove(user);
-  } 
-  public ArrayList<Usuario> getUsuarios(){
+  }
+
+   public ArrayList<Usuario> getUsuarios(){
       return usuarios;
   }
 
 }
+
+/*
+
+ */

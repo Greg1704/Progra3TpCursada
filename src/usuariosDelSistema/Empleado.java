@@ -1,4 +1,7 @@
 package usuariosDelSistema;
+import armaTickets.TicketEmpleado;
+
+import java.util.ArrayList;
 
 public class Empleado extends Usuario{
 	private String nya; //Nombre y Apellido
@@ -6,6 +9,7 @@ public class Empleado extends Usuario{
 	private int telefono;
 	private int edad;
 	private String ciudad;
+	TicketEmpleado ticket;
 
 
 	public Empleado(String usuario, String contrasenia, String nya, int dni, int telefono, int edad, String ciudad) {
@@ -16,7 +20,8 @@ public class Empleado extends Usuario{
 		this.edad = edad;
 		this.ciudad = ciudad;
 	}
-	
-	
 
+	public void setTicket(TicketEmpleado ticket) {
+		this.ticket = ticket;
+	}
 }

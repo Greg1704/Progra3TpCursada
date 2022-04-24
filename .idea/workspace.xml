@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="bae00f15-2261-459a-b802-e8a456c13c3a" name="Changes" comment="Esto no se commiteo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Comercio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Comercio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/ComercioExterior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/ComercioExterior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/ComercioInterior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/ComercioInterior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/excepcionesEmpleado/ErrorContrasenia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excepcionesEmpleado/ErrorContrasenia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/excepcionesEmpleado/ErrorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excepcionesEmpleado/ErrorLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/excepcionesEmpleado/ErrorUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excepcionesEmpleado/ErrorUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Empleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Empleador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Empleador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/EmpleadorDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/EmpleadorDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/EmpleadorFisico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/EmpleadorFisico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/EmpleadorJuridico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/EmpleadorJuridico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Salud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Salud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
