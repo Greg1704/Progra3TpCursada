@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Sistema {
     private static Sistema instancia=null;
-    private ArrayList<Usuario> usuarios=new ArrayList<Usuario>();
+    private ArrayList<Empleado> EmpleadosPretensos=new ArrayList<Empleado>();
+    private ArrayList<Empleador> Empleadores = new ArrayList<Empleador>();
 
 
     private Sistema(){
@@ -17,17 +18,19 @@ public class Sistema {
         return instancia;
     }
     
-   public void agregarUsuario(Usuario user){
-       this.usuarios.add(user);
-   }
-   
-   public void eliminarUsuario(Usuario user){
-      this.usuarios.remove(user);
-  }
+    public void agregarEmpleado(Empleado empleado){this.EmpleadosPretensos.add(empleado);}
 
-   public ArrayList<Usuario> getUsuarios(){
-      return usuarios;
-  }
+    public void eliminarEmpleado(Empleado empleado){this.EmpleadosPretensos.remove(empleado);}
+
+    public ArrayList<Empleado> getEmpleadosPretensos(){return this.EmpleadosPretensos;}
+
+    public void agregarEmpleador(Empleador empleador){this.Empleadores.add(empleador);}
+
+    public void eliminarEmpleador(Empleador empleador){this.Empleadores.remove(empleador);}
+
+    public ArrayList<Empleador> getEmpleadores(){return this.Empleadores;}
+
+
 
 }
 
