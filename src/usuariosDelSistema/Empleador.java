@@ -1,6 +1,6 @@
 package usuariosDelSistema;
 
-public abstract class Empleador extends Usuario{
+public abstract class Empleador extends Usuario implements EmpleadorComision{
     protected String nombre;
 
 	public Empleador(String usuario, String contrasenia,String nombre) {
@@ -16,5 +16,4 @@ public abstract class Empleador extends Usuario{
 		this.nombre = nombre;
 	}
 
-	public abstract double comisionAgencia(Empleador empleador);
 }

@@ -1,14 +1,13 @@
 package usuariosDelSistema;
 
-public class EmpleadorJuridico extends EmpleadorDecorator{
+public class EmpleadorJuridico extends Empleador{
 
-
-	public EmpleadorJuridico(String usuario, String contrasenia, String nombre, Empleador empleador) {
-		super(usuario, contrasenia, nombre, empleador);
+	public EmpleadorJuridico(String usuario, String contrasenia, String nombre) {
+		super(usuario, contrasenia, nombre);
 	}
 
 	@Override
-	public double comisionAgencia(Empleador empleador) {
-		return empleador.comisionAgencia(this); //Faltaria multiplicarlo por sueldo ofrecido
+	public double getComision() {
+		return 0.5;
 	}
 }
