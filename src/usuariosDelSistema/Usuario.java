@@ -42,7 +42,7 @@ public abstract class Usuario {
 		this.lista = lista;
 	}
 
-	public void Login(String usuario, String contrasenia) throws ErrorContrasenia, ErrorUsuario {
+	/*public void Login(String usuario, String contrasenia) throws ErrorContrasenia, ErrorUsuario {
 		Usuario user;
 		int i;
 		ArrayList<Usuario> users = this.Sis.getInstancia().getUsuarios();// A chequear esta linea xd//
@@ -56,6 +56,6 @@ public abstract class Usuario {
 		} else
 			throw new ErrorUsuario();
 	}
-
+	*/
 
 }
