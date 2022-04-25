@@ -2,15 +2,21 @@ package encuentro;
 
 import java.util.*;
 
+import java.time.*;
+
 public class ListaAsignaciones {
 	ArrayList <UsuarioyPuntaje>ordenados = new ArrayList<UsuarioyPuntaje>();
-	private String fecha;
+	private LocalDateTime fecha;
+
+	public ListaAsignaciones() {
+		this.fecha = LocalDateTime.now(); //PUEDE FALLAR
+	}
 	
 	
-	public String getFecha() {
+	public LocalDateTime  getFecha() {
 		return fecha;
 	}
-	public void setFecha(String fecha) {
+	public void setFecha(LocalDateTime fecha) {
 		this.fecha = fecha;
 	}
 	

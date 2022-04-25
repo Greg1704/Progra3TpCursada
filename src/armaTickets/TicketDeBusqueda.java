@@ -1,18 +1,20 @@
 package armaTickets;
 
+import java.time.LocalDateTime;
+
 public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
-	private String fechaAlta;
+	private LocalDateTime fechaAlta;
 	private String estadoTicket;
 	private FormularioDeBusqueda formulario;
 	
-	public TicketDeBusqueda(String fechaAlta, FormularioDeBusqueda formulario) {
+	public TicketDeBusqueda(LocalDateTime fechaAlta, FormularioDeBusqueda formulario) {
 		super();
 		this.fechaAlta = fechaAlta;
 		this.estadoTicket = "Activo";
 		this.formulario = formulario;
 	}
 
-	public String getFechaAlta() {
+	public LocalDateTime getFechaAlta() {
 		return fechaAlta;
 	}
 

@@ -6,7 +6,11 @@ public class UsuarioyPuntaje implements Comparable<UsuarioyPuntaje>{
 	private Usuario usuario;
 	private double puntaje;
 	
-	
+	public UsuarioyPuntaje(Usuario usuario) {
+		this.usuario = usuario;
+		this.puntaje = 0;
+	}
+
 	public Usuario getUsuario() {
 		return usuario;
 	}

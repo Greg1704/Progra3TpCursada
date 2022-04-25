@@ -1,7 +1,7 @@
 package usuariosDelSistema;
 
 import java.util.ArrayList;
-
+import encuentro.ListaAsignaciones;
 import excepcionesEmpleado.ErrorContrasenia;
 import excepcionesEmpleado.ErrorUsuario;
 
@@ -33,6 +33,15 @@ public abstract class Usuario {
 		this.puntaje = puntaje;
 	}
 
+	
+	public ListaAsignaciones getLista() {
+		return lista;
+	}
+
+	public void setLista(ListaAsignaciones lista) {
+		this.lista = lista;
+	}
+
 	public void Login(String usuario, String contrasenia) throws ErrorContrasenia, ErrorUsuario {
 		Usuario user;
 		int i;
@@ -47,5 +56,6 @@ public abstract class Usuario {
 		} else
 			throw new ErrorUsuario();
 	}
+
 
 }

@@ -1,9 +1,11 @@
 package armaTickets;
 
+import java.time.LocalDateTime;
+
 public class TicketEmpleado extends TicketDeBusqueda {
 	private boolean resultado;
 
-	public TicketEmpleado(String fechaAlta, FormularioDeBusqueda formulario) {
+	public TicketEmpleado(LocalDateTime fechaAlta, FormularioDeBusqueda formulario) {
 		super(fechaAlta, formulario);
 		this.resultado = false;
 	}

@@ -1,14 +1,13 @@
 package usuariosDelSistema;
 
 import java.util.ArrayList;
-import armaTickets.*;
+import encuentro.RondaEncuentros;
 
 public class Sistema {
 	private static Sistema instancia = null;
 	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
 	private ArrayList<Empleador> empleadores = new ArrayList<Empleador>();
-	//faltan 2 metodos
-	
+	private RondaEncuentros encuentros;
 	
 	private Sistema() {
 		System.out.println("Faltan cosas");
@@ -35,6 +34,15 @@ public class Sistema {
 	public void sacaEmpleador(Empleado e) {
 		this.empleadores.remove(e);
 	}
+	
+	public ArrayList<Empleado> getEmpleadosPretensos(){
+		return this.empleadosPretensos;
+	}
+	
+	public ArrayList<Empleador> getEmpleadores(){
+		return this.empleadores;
+	}
+	
 
 	public double comisionEmpleadoPretenso(Empleado empleado) { // determino el porcentaje que le cobro de comision y
 																// calculo el monto a cobrar
@@ -50,9 +58,14 @@ public class Sistema {
 			porc = 1;
 		porc -= 0.01 * empleado.getPuntaje();
 		return empleado.getTicket().getFormularioDeBusqueda().getRemuneracion().getMonto() * porc;
-
 	}
 
+	private void llamaRondaEncuentros() {
+		encuentros = new RondaEncuentros(empleadosPretensos,empleadores);
+		
+	}
+	
+	
 }
 
 /*
