@@ -39,5 +39,10 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 	public void finaliza() {
 		this.estadoTicket = "Finalizado";
 	}
+
+	public FormularioDeBusqueda getFormularioDeBusqueda(){
+		return this.FormularioDeBusqueda;
+	}
+
 	
 }

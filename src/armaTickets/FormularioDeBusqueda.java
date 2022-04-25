@@ -25,5 +25,11 @@ public class FormularioDeBusqueda {
 		this.experienciaPrevia = new ExperienciaPrevia(experienciaPrevia,pesoExperienciaPrevia);
 		this.estudiosCursados = new EstudiosCursados(estudiosCursados,pesoEstudiosCursados);
 	}
-
+	
+	public TipoPuestoLaboral getPuestoLaboral(){ //Esto se cambia para evitar confusiones 
+		return this.formulario.tipoPuestoLaboral;
+	}
+	public Remuneracion getRemuneracion(){
+		return this.remuneracion;
+	}
 }

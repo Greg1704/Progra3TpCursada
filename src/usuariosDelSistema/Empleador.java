@@ -26,4 +26,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision{
 	public void setTicketEmpleador(TicketEmpleador ticketEmpleador) {
 		this.ticketEmpleador = ticketEmpleador;
 	}
+    
+	 
+
 }

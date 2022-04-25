@@ -12,5 +12,4 @@ public class TicketEmpleador extends TicketDeBusqueda {
 	}
 	
 	
-
 }

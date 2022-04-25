@@ -1,11 +1,11 @@
 package usuariosDelSistema;
 
 import java.util.ArrayList;
+import armaTickets.*;
 
 public class Sistema {
     private static Sistema instancia=null;
-    private ArrayList<Empleado> EmpleadosPretensos=new ArrayList<Empleado>();
-    private ArrayList<Empleador> Empleadores = new ArrayList<Empleador>();
+    private ArrayList<Usuario> usuarios=new ArrayList<Usuario>();
 
 
     private Sistema(){
@@ -18,20 +18,38 @@ public class Sistema {
         return instancia;
     }
     
-    public void agregarEmpleado(Empleado empleado){this.EmpleadosPretensos.add(empleado);}
+   public void agregarUsuario(Usuario user){
+       this.usuarios.add(user);
+   }
+   
+   public void eliminarUsuario(Usuario user){
+      this.usuarios.remove(user);
+  }
 
-    public void eliminarEmpleado(Empleado empleado){this.EmpleadosPretensos.remove(empleado);}
-
-    public ArrayList<Empleado> getEmpleadosPretensos(){return this.EmpleadosPretensos;}
-
-    public void agregarEmpleador(Empleador empleador){this.Empleadores.add(empleador);}
-
-    public void eliminarEmpleador(Empleador empleador){this.Empleadores.remove(empleador);}
-
-    public ArrayList<Empleador> getEmpleadores(){return this.Empleadores;}
+   public ArrayList<Usuario> getUsuarios(){
+      return usuarios;
+  }
 
 
+public void comisionEmpleadoPretenso(Empleado empleado){ //determino el porcentaje que le cobro de comision y calculo el monto a cobrar
+ String tpl=empleado.getEmpleadorSeleccionado().getTicketEmpleador().getFormularioDeBusqueda().getPuestoLaboral().getTipoPuestoLaboral();//cambien esto hdps
+ double porc,comision;
 
+ if(tpl.equals("Junior"))
+   porc=0.8;
+  else
+   if(tpl.equals("Senior")) 
+    porc=0.9;
+    else
+     porc=1;
+  porc-=0.01*empleado.getPuntaje();
+  comision=empleado.getTicket().getFormularioDeBusqueda().getRemuneracion().getMonto()*porc;  
+
+}
+
+
+
+  
 }
 
 /*

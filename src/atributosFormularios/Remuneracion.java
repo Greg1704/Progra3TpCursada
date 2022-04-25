@@ -1,7 +1,7 @@
 package atributosFormularios;
 
 public class Remuneracion {
-	private double remuneracion;
+	private double monto; // cambio de nombre para cambiar el nombre del get asi no se superpone con el get de la clase
 	private int peso;
 	
 	public Remuneracion(double remuneracion,int peso) {
@@ -9,11 +9,11 @@ public class Remuneracion {
 		this.peso = peso;
 	}
 
-	public double getRemuneracion() {
+	public double getMonto() {
 		return remuneracion;
 	}
 
-	public void setRemuneracion(double remuneracion) {
+	public void setMonto(double remuneracion) {
 		this.remuneracion = remuneracion;
 	}
 

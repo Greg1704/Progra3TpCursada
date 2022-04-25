@@ -78,4 +78,6 @@ public class Empleado extends Usuario{
 		return ticket;
 	}
 	
+	
+
 }

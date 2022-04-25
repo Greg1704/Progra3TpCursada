@@ -15,5 +15,6 @@ public class TicketEmpleado extends TicketDeBusqueda {
 	public void setResultado(boolean resultado) {
 		this.resultado = resultado;
 	}
+
 	
 }
