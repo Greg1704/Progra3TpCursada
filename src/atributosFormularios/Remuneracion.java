@@ -5,16 +5,16 @@ public class Remuneracion {
 	private int peso;
 	
 	public Remuneracion(double remuneracion,int peso) {
-		this.remuneracion = remuneracion;
+		this.monto = remuneracion;
 		this.peso = peso;
 	}
 
 	public double getMonto() {
-		return remuneracion;
+		return monto;
 	}
 
 	public void setMonto(double remuneracion) {
-		this.remuneracion = remuneracion;
+		this.monto = remuneracion;
 	}
 
 	public int getPeso() {

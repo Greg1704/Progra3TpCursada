@@ -27,8 +27,9 @@ public class FormularioDeBusqueda {
 	}
 	
 	public TipoPuestoLaboral getPuestoLaboral(){ //Esto se cambia para evitar confusiones 
-		return this.formulario.tipoPuestoLaboral;
+		return this.tipoPuestoLaboral;
 	}
+	
 	public Remuneracion getRemuneracion(){
 		return this.remuneracion;
 	}

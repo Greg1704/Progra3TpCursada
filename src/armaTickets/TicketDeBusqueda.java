@@ -41,7 +41,7 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 	}
 
 	public FormularioDeBusqueda getFormularioDeBusqueda(){
-		return this.FormularioDeBusqueda;
+		return this.formulario;
 	}
 
 	
