@@ -14,7 +14,6 @@ public class RondaEncuentros {
 	private static double v1 = 60000;
 	private static double v2 = 120000;
 
-
 	public RondaEncuentros(ArrayList<Empleado> empleadosPretensos, ArrayList<Empleador> empleadores) {
 		super();
 		this.empleadosPretensos = empleadosPretensos;
@@ -39,7 +38,7 @@ public class RondaEncuentros {
 
 	public void enfrentamientoEmpleados() {
 		double puntajeAux;
-		
+
 		for (Empleado empleado : empleadosPretensos) {
 			if (empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
 				empleado.setLista(new ListaAsignaciones());
@@ -49,7 +48,8 @@ public class RondaEncuentros {
 					aux = new UsuarioyPuntaje(empleador);
 
 					puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getPeso()
-							* enfrentamientoCargaHoraria(empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getCargaHoraria(),
+							* enfrentamientoCargaHoraria(
+									empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getCargaHoraria(),
 									empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria()
 											.getCargaHoraria());
 
@@ -101,7 +101,7 @@ public class RondaEncuentros {
 
 	public void enfrentamientoEmpleadores() {
 		double puntajeAux;
-		
+
 		for (Empleador empleador : empleadores) {
 			if (empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
 				empleador.setLista(new ListaAsignaciones());
