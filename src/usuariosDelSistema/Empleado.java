@@ -77,6 +77,11 @@ public class Empleado extends Usuario{
 	public void setEmpleadorSeleccionado(Empleador empleadorSeleccionado) {
 		this.empleadorSeleccionado = empleadorSeleccionado;
 	}
+	
+	public void rondaElecciones(){
+		
+		
+	}
 
 
 }

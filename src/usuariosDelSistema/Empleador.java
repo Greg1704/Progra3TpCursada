@@ -1,10 +1,13 @@
 package usuariosDelSistema;
 
+import java.util.ArrayList;
+
 import armaTickets.TicketEmpleador;
 
 public abstract class Empleador extends Usuario implements EmpleadorComision{
     protected String nombre;
 	TicketEmpleador ticketEmpleador;
+	ArrayList <Empleado>empleadosSeleccionados = new ArrayList<Empleado>();
 
 	public Empleador(String usuario, String contrasenia,String nombre) {
 		super(usuario, contrasenia);
@@ -27,6 +30,22 @@ public abstract class Empleador extends Usuario implements EmpleadorComision{
 		this.ticketEmpleador = ticketEmpleador;
 	}
     
-	 
+	public void agregaEmpleado(Empleado e) {
+		this.empleadosSeleccionados.add(e);
+	}
+	
+	public void eliminaEmpleado(Empleado e) {
+		this.empleadosSeleccionados.remove(e);
+	}
+	
+	public void rondaElecciones() {
+		
+		
+		
+		
+		
+		
+	}
+	
 
 }

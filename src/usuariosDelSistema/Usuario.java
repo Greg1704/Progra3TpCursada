@@ -41,6 +41,8 @@ public abstract class Usuario {
 	public void setLista(ListaAsignaciones lista) {
 		this.lista = lista;
 	}
+	
+	public abstract void rondaElecciones();
 
 	/*public void Login(String usuario, String contrasenia) throws ErrorContrasenia, ErrorUsuario {
 		Usuario user;
