@@ -79,7 +79,7 @@ public class Empleado extends Usuario{
 	}
 	
 	public void rondaElecciones(){
-		
+
 		
 	}
 

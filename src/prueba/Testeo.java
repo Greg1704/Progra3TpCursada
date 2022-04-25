@@ -37,6 +37,9 @@ public class Testeo {
 		t2 = new TicketEmpleado(LocalDateTime.now(),f2);
 		
 		
+		
+		
+		
 	}
 
 }

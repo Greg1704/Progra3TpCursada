@@ -5,7 +5,7 @@ import java.util.*;
 import java.time.*;
 
 public class ListaAsignaciones {
-	ArrayList <UsuarioyPuntaje>ordenados = new ArrayList<UsuarioyPuntaje>();
+	private ArrayList <UsuarioyPuntaje>ordenados = new ArrayList<UsuarioyPuntaje>();
 	private LocalDateTime fecha;
 
 	public ListaAsignaciones() {

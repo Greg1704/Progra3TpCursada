@@ -8,10 +8,12 @@ public abstract class Empleador extends Usuario implements EmpleadorComision{
     protected String nombre;
 	TicketEmpleador ticketEmpleador;
 	ArrayList <Empleado>empleadosSeleccionados = new ArrayList<Empleado>();
+	int cantidadEmpleadosSeleccionados;
 
 	public Empleador(String usuario, String contrasenia,String nombre) {
 		super(usuario, contrasenia);
 		this.nombre = nombre;
+		this.cantidadEmpleadosSeleccionados = 0;
 	}
 
 	public String getNombre() {

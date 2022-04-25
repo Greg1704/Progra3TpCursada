@@ -65,16 +65,23 @@ public class Sistema {
 		encuentros.enfrentamientoEmpleados();
 		encuentros.enfrentamientoEmpleadores();
 	}
+
 	
 	private void rondaDeElecciones() {
 		
 		for (Empleador empleador : empleadores) {
-			empleador.rondaElecciones();
+			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo"))
+				empleador.rondaElecciones();
 		}
 		
 		for (Empleado empleado : empleadosPretensos) {
-			empleado.rondaElecciones();
+			if(empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo"))
+				empleado.rondaElecciones();
 		}
+	}
+	
+	private void rondaContrataciones() {
+		
 		
 	}
 	
