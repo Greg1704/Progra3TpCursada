@@ -25,6 +25,10 @@ public class Empleado extends Usuario{
 	public void setTicket(TicketEmpleado ticket) {
 		this.ticket = ticket;
 	}
+	
+	public TicketEmpleado getTicket() {
+		return ticket;
+	}
 
 	public String getNya() {
 		return nya;
@@ -74,10 +78,5 @@ public class Empleado extends Usuario{
 		this.empleadorSeleccionado = empleadorSeleccionado;
 	}
 
-	public TicketEmpleado getTicket() {
-		return ticket;
-	}
-	
-	
 
 }

@@ -25,9 +25,8 @@ public class UsuarioyPuntaje implements Comparable<UsuarioyPuntaje>{
 		if(o.getPuntaje() < puntaje) {
 			return 1;
 		}
-		else {
+		else 
 			return -1;
-		}
 	}
 
 }

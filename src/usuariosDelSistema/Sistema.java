@@ -5,9 +5,11 @@ import armaTickets.*;
 
 public class Sistema {
 	private static Sistema instancia = null;
-	private ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
 	private ArrayList<Empleador> empleadores = new ArrayList<Empleador>();
-
+	//faltan 2 metodos
+	
+	
 	private Sistema() {
 		System.out.println("Faltan cosas");
 	}
@@ -18,9 +20,21 @@ public class Sistema {
 		return instancia;
 	}
 
+	public void agregaEmpleado(Empleado e) {
+		this.empleadosPretensos.add(e);
+	}
 	
+	public void sacaEmpleado(Empleado e) {
+		this.empleadosPretensos.remove(e);
+	}
 	
+	public void agregaEmpleador(Empleador e) {
+		this.empleadores.add(e);
+	}
 	
+	public void sacaEmpleador(Empleado e) {
+		this.empleadores.remove(e);
+	}
 
 	public double comisionEmpleadoPretenso(Empleado empleado) { // determino el porcentaje que le cobro de comision y
 																// calculo el monto a cobrar
