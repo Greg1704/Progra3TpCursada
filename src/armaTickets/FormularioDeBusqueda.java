@@ -33,4 +33,31 @@ public class FormularioDeBusqueda {
 	public Remuneracion getRemuneracion(){
 		return this.remuneracion;
 	}
+
+	public Locacion getLocacion() {
+		return locacion;
+	}
+
+	public CargaHoraria getCargaHoraria() {
+		return cargaHoraria;
+	}
+
+	public TipoPuestoLaboral getTipoPuestoLaboral() {
+		return tipoPuestoLaboral;
+	}
+
+	public Edad getEdad() {
+		return edad;
+	}
+
+	public ExperienciaPrevia getExperienciaPrevia() {
+		return experienciaPrevia;
+	}
+
+	public EstudiosCursados getEstudiosCursados() {
+		return estudiosCursados;
+	}
+	
+	
+	
 }

@@ -12,6 +12,9 @@ public class RondaEncuentros {
 	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
 	private ArrayList<Empleador> empleadores = new ArrayList<Empleador>();
 	private UsuarioyPuntaje aux;
+	private double v1 = 60000;
+	private double v2 = 120000;
+	private double puntajeAux;
 	
 	public RondaEncuentros(ArrayList<Empleado> empleadosPretensos, ArrayList<Empleador> empleadores) {
 		super();
@@ -19,21 +22,42 @@ public class RondaEncuentros {
 		this.empleadores = empleadores;
 	}
 	
+
+	public double getV1() {
+		return v1;
+	}
+
+	public void setV1(double v1) {
+		this.v1 = v1;
+	}
+
+	public double getV2() {
+		return v2;
+	}
+
+	public void setV2(double v2) {
+		this.v2 = v2;
+	}
+
+
 	public void enfrentamientoEmpleados() {
 		
 		for (Empleado empleado : empleadosPretensos) {
 			
+			puntajeAux = 0;
 			empleado.setLista(new ListaAsignaciones());
 			
 			for (Empleador empleador : empleadores) {
 				aux = new UsuarioyPuntaje(empleador);		
 				
+				puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getPeso() *
+						enfrentamientoCargaHoraria(empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getCargaHoraria(),empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria().getCargaHoraria());
 				
-				
-				
-				
-				
-				
+				puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getEdad().getPeso() *
+						enfrentamientoEdad(empleado.getTicket().getFormularioDeBusqueda().getEdad().getEdad(),empleador.getTicketEmpleador().getFormularioDeBusqueda().getEdad().getEdad());
+
+				puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getEstudiosCursados().getPeso() *
+						enfrentamientoEstudiosCursados(empleado.getTicket().getFormularioDeBusqueda().getEstudiosCursados().);
 				
 				empleado.getLista().agregaElemento(aux);
 			}
@@ -181,8 +205,57 @@ public class RondaEncuentros {
 	
 		return locEmpleador.versus(locEmpleado);
 	}
-
 	
+	public double enfrentamientoTipoPuesto(String Empleado,String Empleador) {
+		I_TipoDePuesto tpEmpleado;
+		I_TipoDePuesto tpEmpleador;
+	
+		if (Empleado.equalsIgnoreCase("Junior")) 
+			tpEmpleado = (Junior)new Junior();
+		else {
+			if (Empleado.equalsIgnoreCase("Senior"))
+				tpEmpleado = (Senior)new Senior();
+			else
+				tpEmpleado = (Managment)new Managment();
+		}
+		
+		if (Empleador.equalsIgnoreCase("Junior")) 
+			tpEmpleador = (Junior)new Junior();
+		else {
+			if (Empleador.equalsIgnoreCase("Senior"))
+				tpEmpleador = (Senior)new Senior();
+			else
+				tpEmpleador = (Managment)new Managment();
+		}
+	
+		return tpEmpleador.versus(tpEmpleado);
+	}
+	
+	public double enfrentamientoRemuneracion(double Empleado,double Empleador) {
+		I_Remuneracion rEmpleado;
+		I_Remuneracion rEmpleador;
+		
+		if (Empleado<v1) 
+			rEmpleado = (MenorV1)new MenorV1();
+		else {
+			if (Empleado > v2) 
+				rEmpleado = (MayorV2)new MayorV2();
+			else
+				rEmpleado = (EntreV1yV2)new EntreV1yV2();
+		}
+		
+		if (Empleador<v1) 
+			rEmpleador = (MenorV1)new MenorV1();
+		else {
+			if (Empleador > v2) 
+				rEmpleador = (MayorV2)new MayorV2();
+			else
+				rEmpleador = (EntreV1yV2)new EntreV1yV2();
+		}
+		
+		return rEmpleador.versus(rEmpleado);
+	}
+
 }
 
 	
