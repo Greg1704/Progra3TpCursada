@@ -81,10 +81,28 @@ public class Sistema {
 	}
 	
 	private void rondaDeContrataciones() {
-		int i;
-		
+		ArrayList<Empleado> aux;
+
 		for (Empleador empleador : empleadores) {
-			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo"))
+			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
+				aux = empleador.getEmpleadosSeleccionados();
+				
+				for (int i = 0; i < empleador.getCantidadEmpleadosSeleccionados(); i++) {
+					
+					if (aux.get(i).getEmpleadorSeleccionado().getNombre().equalsIgnoreCase(empleador.getNombre())) {
+						empleador.getTicketEmpleador().setCantEmpleados(empleador.getTicketEmpleador().getCantEmpleados() - 1);
+						aux.get(i).getTicket().finaliza();
+					}
+					
+				}
+				
+				if (empleador.getTicketEmpleador().getCantEmpleados() == 0)
+					empleador.getTicketEmpleador().finaliza();
+				
+				
+				
+				
+			}
 				
 		}
 		

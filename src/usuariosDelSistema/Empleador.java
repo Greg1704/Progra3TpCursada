@@ -6,9 +6,9 @@ import armaTickets.TicketEmpleador;
 
 public abstract class Empleador extends Usuario implements EmpleadorComision {
 	protected String nombre;
-	TicketEmpleador ticketEmpleador;
-	ArrayList<Empleado> empleadosSeleccionados = new ArrayList<Empleado>();
-	int cantidadEmpleadosSeleccionados;
+	private TicketEmpleador ticketEmpleador;
+	private ArrayList<Empleado> empleadosSeleccionados = new ArrayList<Empleado>();
+	private int cantidadEmpleadosSeleccionados;
 
 	public Empleador(String usuario, String contrasenia, String nombre) {
 		super(usuario, contrasenia);
@@ -40,6 +40,17 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		this.empleadosSeleccionados.remove(e);
 	}
 
+	public int getCantidadEmpleadosSeleccionados() {
+		return cantidadEmpleadosSeleccionados;
+	}
+
+	public void setCantidadEmpleadosSeleccionados(int cantidadEmpleadosSeleccionados) {
+		this.cantidadEmpleadosSeleccionados = cantidadEmpleadosSeleccionados;
+	}
+
+	public ArrayList<Empleado> getEmpleadosSeleccionados() {
+		return empleadosSeleccionados;
+	}
 
 	public void rondaElecciones() {//MISMA EXCEPCION QUE EN EMPLEADOS POR SI LA LISTA LLEGA NULL
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
@@ -52,6 +63,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 			i++;
 		}
 		
+		this.cantidadEmpleadosSeleccionados = i;
 
 	}
 
