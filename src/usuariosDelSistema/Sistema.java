@@ -99,9 +99,6 @@ public class Sistema {
 				if (empleador.getTicketEmpleador().getCantEmpleados() == 0)
 					empleador.getTicketEmpleador().finaliza();
 				
-				
-				
-				
 			}
 				
 		}
@@ -115,4 +112,5 @@ public class Sistema {
 
 /*
 	FALTA HACER EL SISTEMA DEL COBRO
+	UNA VEZ DESPUES DE COBRAR HAY QUE SACAR LOS TICKETS DE FINALIZADO
  */
