@@ -40,9 +40,18 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		this.empleadosSeleccionados.remove(e);
 	}
 
-	@Override
 
-	public void rondaElecciones() {
+	public void rondaElecciones() {//MISMA EXCEPCION QUE EN EMPLEADOS POR SI LA LISTA LLEGA NULL
+		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
+		int i = 0;
+		
+		//aca va la excepcion en caso de ser null la lista ordenados
+		
+		while(i < super.getLista().getOrdenados().size() && i < cuposTotal) {
+			this.empleadosSeleccionados.add((Empleado) super.getLista().getOrdenados().get(i).getUsuario());
+			i++;
+		}
+		
 
 	}
 

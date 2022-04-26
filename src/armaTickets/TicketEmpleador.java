@@ -12,6 +12,26 @@ public class TicketEmpleador extends TicketDeBusqueda {
 		super(fechaAlta, formulario);
 		this.cantEmpleados = cantEmpleados;
 	}
+
+
+	public int getCantEmpleados() {
+		return cantEmpleados;
+	}
+
+
+	public void setCantEmpleados(int cantEmpleados) {
+		this.cantEmpleados = cantEmpleados;
+	}
+
+
+	public int getEmpleadosObtenidos() {
+		return empleadosObtenidos;
+	}
+
+
+	public void setEmpleadosObtenidos(int empleadosObtenidos) {
+		this.empleadosObtenidos = empleadosObtenidos;
+	}
 	
 	
 }

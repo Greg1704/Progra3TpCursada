@@ -80,14 +80,21 @@ public class Sistema {
 		}
 	}
 	
-	private void rondaContrataciones() {
+	private void rondaDeContrataciones() {
+		int i;
 		
+		for (Empleador empleador : empleadores) {
+			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo"))
+				
+		}
 		
 	}
+	
+	
 	
 	
 }
 
 /*
-
+	FALTA HACER EL SISTEMA DEL COBRO
  */

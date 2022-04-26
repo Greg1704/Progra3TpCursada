@@ -78,9 +78,9 @@ public class Empleado extends Usuario{
 		this.empleadorSeleccionado = empleadorSeleccionado;
 	}
 	
-	public void rondaElecciones(){
+	public void rondaElecciones(){ //OTRA EXCEPCION EN CASO QUE ORDENADOS SEA NULL
 		
-		
+		this.empleadorSeleccionado = (Empleador) super.getLista().getOrdenados().get(0).getUsuario();
 		
 	}
 

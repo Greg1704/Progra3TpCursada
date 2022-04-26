@@ -12,7 +12,6 @@ public class ListaAsignaciones {
 		this.fecha = LocalDateTime.now(); //PUEDE FALLAR
 	}
 	
-	
 	public ArrayList<UsuarioyPuntaje> getOrdenados() {
 		return ordenados;
 	}
