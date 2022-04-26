@@ -1,7 +1,7 @@
 package usuariosDelSistema;
-import armaTickets.TicketEmpleado;
 
-import java.util.ArrayList;
+import armaTickets.TicketEmpleado;
+import java.util.ArrayList.*;
 
 public class Empleado extends Usuario{
 	private String nya; //Nombre y Apellido
@@ -79,7 +79,8 @@ public class Empleado extends Usuario{
 	}
 	
 	public void rondaElecciones(){
-
+		
+		
 		
 	}
 

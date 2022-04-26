@@ -33,4 +33,11 @@ public class UsuarioyPuntaje implements Comparable<UsuarioyPuntaje>{
 			return -1;
 	}
 
+	@Override
+	public String toString() {
+		return "Usuario: "+ usuario + " puntaje: " + puntaje;
+	}
+	
+	
+
 }

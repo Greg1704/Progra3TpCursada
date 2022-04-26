@@ -9,7 +9,6 @@ public abstract class Usuario {
 	private String usuario;
 	private String contrasenia;
 	private int puntaje = 0;
-	private Sistema Sis = Sistema.getInstancia();
 	private ListaAsignaciones lista;
 
 	public Usuario(String usuario, String contrasenia) {
@@ -43,6 +42,24 @@ public abstract class Usuario {
 	}
 	
 	public abstract void rondaElecciones();
+	
+	public void muestraUsuarios() {// HACER UNA EXCEPCION ACA!!!!!
+
+		for (int i = 0; i <= this.getLista().getOrdenados().size(); i++) {
+			System.out.println(this.getLista().getOrdenados().get(i).toString());
+		}
+
+	}
+
+
+	@Override
+	public String toString() {
+		return usuario;
+	}
+	
+	
+	
+	
 
 	/*public void Login(String usuario, String contrasenia) throws ErrorContrasenia, ErrorUsuario {
 		Usuario user;

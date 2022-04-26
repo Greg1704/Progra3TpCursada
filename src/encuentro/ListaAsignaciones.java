@@ -13,6 +13,10 @@ public class ListaAsignaciones {
 	}
 	
 	
+	public ArrayList<UsuarioyPuntaje> getOrdenados() {
+		return ordenados;
+	}
+
 	public LocalDateTime  getFecha() {
 		return fecha;
 	}
