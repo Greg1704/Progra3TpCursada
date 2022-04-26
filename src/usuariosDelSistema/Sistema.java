@@ -61,7 +61,7 @@ public class Sistema {
 	}
 
 	private void llamaRondaEncuentros() {
-		encuentros = new RondaEncuentros(empleadosPretensos,empleadores);
+		encuentros = new RondaEncuentros();
 		encuentros.enfrentamientoEmpleados();
 		encuentros.enfrentamientoEmpleadores();
 	}

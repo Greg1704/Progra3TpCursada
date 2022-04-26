@@ -1,24 +1,17 @@
 package encuentro;
 
 import java.util.ArrayList;
-
-import atributosFormularios.*;
-import usuariosDelSistema.Empleado;
-import usuariosDelSistema.Empleador;
 import calculosAspectosLaborales.*;
+import usuariosDelSistema.*;
+
 
 public class RondaEncuentros {
-	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
-	private ArrayList<Empleador> empleadores = new ArrayList<Empleador>();
+	private ArrayList<Empleado> empleadosPretensos = Sistema.getInstancia().getEmpleadosPretensos();
+	private ArrayList<Empleador> empleadores = Sistema.getInstancia().getEmpleadores();
 	private UsuarioyPuntaje aux;
 	private static double v1 = 60000;
 	private static double v2 = 120000;
-
-	public RondaEncuentros(ArrayList<Empleado> empleadosPretensos, ArrayList<Empleador> empleadores) {
-		super();
-		this.empleadosPretensos = empleadosPretensos;
-		this.empleadores = empleadores;
-	}
+	
 
 	public static double getV1() {
 		return v1;
