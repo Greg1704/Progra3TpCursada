@@ -13,7 +13,7 @@ public class Sistema {
 		System.out.println("Faltan cosas");
 	}
 
-	private static Sistema getInstancia() {
+	public static Sistema getInstancia() {
 		if (instancia == null)
 			instancia = new Sistema();
 		return instancia;
