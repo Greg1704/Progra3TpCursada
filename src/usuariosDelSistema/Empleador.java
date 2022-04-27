@@ -11,10 +11,11 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	private int cantidadEmpleadosSeleccionados;
 	private String rubro;
 
-	public Empleador(String usuario, String contrasenia, String nombre) {
+	public Empleador(String usuario, String contrasenia, String nombre,TicketEmpleador ticketEmpleador) {
 		super(usuario, contrasenia);
 		this.nombre = nombre;
 		this.cantidadEmpleadosSeleccionados = 0;
+		this.ticketEmpleador = ticketEmpleador;
 	}
 
 	public String getNombre() {

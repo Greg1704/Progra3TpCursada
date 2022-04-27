@@ -13,13 +13,14 @@ public class Empleado extends Usuario{
 	private Empleador empleadorSeleccionado;
 
 
-	public Empleado(String usuario, String contrasenia, String nya, int dni, int telefono, int edad, String ciudad) {
+	public Empleado(String usuario, String contrasenia, String nya, int dni, int telefono, int edad, String ciudad,TicketEmpleado ticket) {
 		super(usuario, contrasenia);
 		this.nya = nya;
 		this.dni = dni;
 		this.telefono = telefono;
 		this.edad = edad;
 		this.ciudad = ciudad;
+		this.ticket = ticket;
 	}
 
 	public void setTicket(TicketEmpleado ticket) {

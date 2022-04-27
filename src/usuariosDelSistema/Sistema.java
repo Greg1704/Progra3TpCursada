@@ -60,14 +60,14 @@ public class Sistema {
 		return empleado.getTicket().getFormularioDeBusqueda().getRemuneracion().getMonto() * porc;
 	}
 
-	private void llamaRondaEncuentros() {
+	public void llamaRondaEncuentros() {
 		encuentros = new RondaEncuentros();
 		encuentros.enfrentamientoEmpleados();
 		encuentros.enfrentamientoEmpleadores();
 	}
 
 	
-	private void rondaDeElecciones() {
+	public void rondaDeElecciones() {
 		ArrayList<Empleador> empleadoresElegidos = new ArrayList<Empleador>();
 		
 		for (Empleador empleador : empleadores) {
@@ -84,7 +84,7 @@ public class Sistema {
 		this.empleadoresNoSeleccionados(empleadoresElegidos);
 	}
 
-	private void empleadoresNoSeleccionados(ArrayList<Empleador> empleadoresElegidos){
+	public void empleadoresNoSeleccionados(ArrayList<Empleador> empleadoresElegidos){
 
 		for(Empleador empleador : empleadores){
 			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")){
@@ -97,7 +97,7 @@ public class Sistema {
 
 
 
-	private void rondaDeContrataciones() {
+	public void rondaDeContrataciones() {
 		ArrayList<Empleado> aux;
 		RubroFactory rubroFactory;
 		RubroDecorator rubroEmpleador;

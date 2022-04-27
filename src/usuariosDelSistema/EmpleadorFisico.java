@@ -1,9 +1,11 @@
 package usuariosDelSistema;
 
+import armaTickets.TicketEmpleador;
+
 public class EmpleadorFisico extends Empleador{
 
-	public EmpleadorFisico(String usuario, String contrasenia, String nombre) {
-		super(usuario, contrasenia, nombre);
+	public EmpleadorFisico(String usuario, String contrasenia, String nombre,TicketEmpleador ticketEmpleador) {
+		super(usuario, contrasenia, nombre,ticketEmpleador);
 	}
 
 
