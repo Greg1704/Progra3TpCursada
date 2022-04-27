@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bae00f15-2261-459a-b802-e8a456c13c3a" name="Changes" comment="Tomas Bedini, retocas lo que hice sin consultarme y te mato :)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/ComercioInternacional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/ComercioInternacional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/ComercioLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/ComercioLocal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Salud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Salud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Empleador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Empleador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

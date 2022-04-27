@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import armaTickets.TicketEmpleador;
 
 public abstract class Empleador extends Usuario implements EmpleadorComision {
-	protected String nombre;
+	private String nombre;
 	private TicketEmpleador ticketEmpleador;
 	private ArrayList<Empleado> empleadosSeleccionados = new ArrayList<Empleado>();
 	private int cantidadEmpleadosSeleccionados;

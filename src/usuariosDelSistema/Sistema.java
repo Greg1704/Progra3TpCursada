@@ -68,6 +68,7 @@ public class Sistema {
 
 	
 	private void rondaDeElecciones() {
+		ArrayList<Empleador> empleadoresElegidos = new ArrayList<Empleador>();
 		
 		for (Empleador empleador : empleadores) {
 			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo"))
@@ -75,10 +76,26 @@ public class Sistema {
 		}
 		
 		for (Empleado empleado : empleadosPretensos) {
-			if(empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo"))
+			if(empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
 				empleado.rondaElecciones();
+				empleadoresElegidos.add(empleado.getEmpleadorSeleccionado());
+			}
+		}
+		this.empleadoresNoSeleccionados(empleadoresElegidos);
+	}
+
+	private void empleadoresNoSeleccionados(ArrayList<Empleador> empleadoresElegidos){
+
+		for(Empleador empleador : empleadores){
+			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")){
+				if(!empleadoresElegidos.contains(empleador))
+					empleador.setPuntaje(empleador.getPuntaje() - 20);
+				//Resta 20 porque el empleador no es elegido por nadie
+			}
 		}
 	}
+
+
 
 	private void rondaDeContrataciones() {
 		ArrayList<Empleado> aux;
@@ -114,7 +131,13 @@ public class Sistema {
 		}
 		
 	}
-	
+
+
+	public void busquedaLaboral(){
+		this.llamaRondaEncuentros();
+		this.rondaDeElecciones();
+		this.rondaDeContrataciones();
+	}
 	
 	
 	
