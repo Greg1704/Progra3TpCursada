@@ -8,6 +8,6 @@ public class ComercioInternacional extends RubroDecorator{
 
     @Override
     public double getComision() {
-        return getEmpleador().getComision() + 0.5;
+        return getEmpleador().getComision() + 0.5 - 0.01* getEmpleador().getPuntaje();
     }
 }

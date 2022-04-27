@@ -81,7 +81,26 @@ public class Empleado extends Usuario{
 	public void rondaElecciones(){ //OTRA EXCEPCION EN CASO QUE ORDENADOS SEA NULL
 		
 		this.empleadorSeleccionado = (Empleador) super.getLista().getOrdenados().get(0).getUsuario();
+		this.empleadorSeleccionado.setPuntaje(getPuntaje() + 10); //Suma 10 puntos por estar primero en la lista
 		
+	}
+
+	@Override
+	public void ActivaTicket() {
+		this.ticket.activa();
+	}
+
+	@Override
+	public void SuspendeTicket() {
+		this.ticket.suspende();
+	}
+
+	@Override
+	public void CancelaTicket() {
+		this.ticket.cancela();
+		this.ticket = null;
+		this.setPuntaje(this.getPuntaje() - 1);
+		//Se le resta un punto al Empleado por cancelar el ticket
 	}
 
 

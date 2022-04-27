@@ -8,6 +8,6 @@ public class ComercioLocal extends RubroDecorator{
 
     @Override
     public double getComision() {
-        return getEmpleador().getComision() + 0.4;
+        return getEmpleador().getComision() + 0.4 - 0.01* getEmpleador().getPuntaje();
     }
 }

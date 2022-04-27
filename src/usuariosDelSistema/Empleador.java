@@ -61,11 +61,29 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		this.rubro = rubro;
 	}
 
+	@Override
+	public void ActivaTicket() {
+		this.ticketEmpleador.activa();
+	}
+
+	@Override
+	public void SuspendeTicket() {
+		this.ticketEmpleador.suspende();
+	}
+
+	@Override
+	public void CancelaTicket() {
+		this.ticketEmpleador.cancela();
+		this.ticketEmpleador = null;
+	}
+
 	public void rondaElecciones() {//MISMA EXCEPCION QUE EN EMPLEADOS POR SI LA LISTA LLEGA NULL
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
 		int i = 0;
 		
 		//aca va la excepcion en caso de ser null la lista ordenados
+		super.getLista().getOrdenados().get(0).setPuntaje(super.getLista().getOrdenados().get(0).getPuntaje() + 5);
+		//Suma 5 puntos por estar primero en la lista
 		
 		while(i < super.getLista().getOrdenados().size() && i < cuposTotal) {
 			this.empleadosSeleccionados.add((Empleado) super.getLista().getOrdenados().get(i).getUsuario());
@@ -75,5 +93,6 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		this.cantidadEmpleadosSeleccionados = i;
 
 	}
+
 
 }

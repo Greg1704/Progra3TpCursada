@@ -22,6 +22,10 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 		return estadoTicket;
 	}
 
+	public void setEstadoTicket(String estadoTicket) {
+		this.estadoTicket = estadoTicket;
+	}
+
 	@Override
 	public void activa() {
 		this.estadoTicket = "Activado";

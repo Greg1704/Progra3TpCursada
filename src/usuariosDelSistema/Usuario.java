@@ -58,8 +58,13 @@ public abstract class Usuario {
 	}
 	
 	
-	
-	
+	public abstract void ActivaTicket();
+
+	public abstract void SuspendeTicket();
+
+	public abstract void CancelaTicket();
+
+
 
 	/*public void Login(String usuario, String contrasenia) throws ErrorContrasenia, ErrorUsuario {
 		Usuario user;

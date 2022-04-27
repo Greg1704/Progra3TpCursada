@@ -79,7 +79,7 @@ public class Sistema {
 				empleado.rondaElecciones();
 		}
 	}
-	
+
 	private void rondaDeContrataciones() {
 		ArrayList<Empleado> aux;
 		RubroFactory rubroFactory;
@@ -95,12 +95,15 @@ public class Sistema {
 					if (aux.get(i).getEmpleadorSeleccionado().getNombre().equalsIgnoreCase(empleador.getNombre())) {
 						empleador.getTicketEmpleador().setCantEmpleados(empleador.getTicketEmpleador().getCantEmpleados() - 1);
 						aux.get(i).getTicket().finaliza();
+						aux.get(i).setPuntaje(aux.get(i).getPuntaje() + 10);
+						//Calcular comision blablabla
 					}
 					
 				}
 				
 				if (empleador.getTicketEmpleador().getCantEmpleados() == 0) {
 					empleador.getTicketEmpleador().finaliza();
+					empleador.setPuntaje(empleador.getPuntaje() + 50);//suma 50 por estado finalizado
 					rubroFactory=new RubroFactory();
 					rubroEmpleador = rubroFactory.getRubro(empleador.getRubro(),empleador);
 					comision=empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion().getMonto()*rubroEmpleador.getComision();

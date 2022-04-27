@@ -18,5 +18,4 @@ public class TicketEmpleado extends TicketDeBusqueda {
 		this.resultado = resultado;
 	}
 
-	
 }

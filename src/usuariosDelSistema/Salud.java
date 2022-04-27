@@ -8,6 +8,6 @@ public class Salud extends RubroDecorator{
 
     @Override
     public double getComision() {
-        return getEmpleador().getComision() + 0.3;
+        return getEmpleador().getComision() + 0.3 -0.01* getEmpleador().getPuntaje();
     }
 }
