@@ -70,7 +70,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	public void SuspendeTicket() {
 		this.ticketEmpleador.suspende();
 	}
-
+  
 	@Override
 	public void CancelaTicket() {
 		this.ticketEmpleador.cancela();
