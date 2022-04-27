@@ -53,6 +53,14 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		return empleadosSeleccionados;
 	}
 
+	public String getRubro() {
+		return rubro;
+	}
+
+	public void setRubro(String rubro) {
+		this.rubro = rubro;
+	}
+
 	public void rondaElecciones() {//MISMA EXCEPCION QUE EN EMPLEADOS POR SI LA LISTA LLEGA NULL
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
 		int i = 0;

@@ -82,6 +82,9 @@ public class Sistema {
 	
 	private void rondaDeContrataciones() {
 		ArrayList<Empleado> aux;
+		RubroFactory rubroFactory;
+		RubroDecorator rubroEmpleador;
+		double comision; //La creo porque no se uqe hacer con la linea 106(Despues lo discutimos tomi, me lo cambias y te mato)
 
 		for (Empleador empleador : empleadores) {
 			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
@@ -96,8 +99,12 @@ public class Sistema {
 					
 				}
 				
-				if (empleador.getTicketEmpleador().getCantEmpleados() == 0)
+				if (empleador.getTicketEmpleador().getCantEmpleados() == 0) {
 					empleador.getTicketEmpleador().finaliza();
+					rubroFactory=new RubroFactory();
+					rubroEmpleador = rubroFactory.getRubro(empleador.getRubro(),empleador);
+					comision=empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion().getMonto()*rubroEmpleador.getComision();
+				}
 				
 			}
 				

@@ -2,12 +2,12 @@ package usuariosDelSistema;
 
 public class Salud extends RubroDecorator{
 
-    public Salud(EmpleadorComision empleadorComision) {
-        super(empleadorComision);
+    public Salud(Empleador empleador) {
+        super(empleador);
     }
 
     @Override
     public double getComision() {
-        return getEmpleadorComision().getComision() + 0.3;
+        return getEmpleador().getComision() + 0.3;
     }
 }

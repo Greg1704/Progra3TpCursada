@@ -2,12 +2,12 @@ package usuariosDelSistema;
 
 public class ComercioInternacional extends RubroDecorator{
 
-    public ComercioInternacional(EmpleadorComision empleadorComision) {
-        super(empleadorComision);
+    public ComercioInternacional(Empleador empleador) {
+        super(empleador);
     }
 
     @Override
     public double getComision() {
-        return getEmpleadorComision().getComision() + 0.5;
+        return getEmpleador().getComision() + 0.5;
     }
 }

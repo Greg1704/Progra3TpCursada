@@ -1,17 +1,17 @@
 package usuariosDelSistema;
 
 public abstract class RubroDecorator implements EmpleadorComision{
-    EmpleadorComision empleadorComision;
+    private Empleador empleador;
 
     public RubroDecorator(EmpleadorComision empleadorComision) {
-        this.empleadorComision = empleadorComision;
+        this.empleador = empleador;
     }
 
-    public EmpleadorComision getEmpleadorComision() {
-        return empleadorComision;
+    public Empleador getEmpleador() {
+        return empleador;
     }
 
-    public void setEmpleadorComision(EmpleadorComision empleadorComision) {
-        this.empleadorComision = empleadorComision;
+    public void setEmpleador(Empleador empleador) {
+        this.empleador = empleador;
     }
 }
