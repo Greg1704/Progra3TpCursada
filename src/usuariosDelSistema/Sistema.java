@@ -110,7 +110,7 @@ public class Sistema {
 	}
 
 	
-	public void llamaRondaEncuentros() {
+	public void llamaRondaEncuentros() { // void q recibe excepc?
 		encuentros = new RondaEncuentros();
 		encuentros.enfrentamientoEmpleados();
 		encuentros.enfrentamientoEmpleadores();
@@ -171,7 +171,7 @@ public class Sistema {
 				
 				if (empleador.getTicketEmpleador().getCantEmpleados() == 0) {
 					empleador.getTicketEmpleador().finaliza();
-					empleador.setPuntaje(empleador.getPuntaje() + 50);//suma 50 por estado finalizado
+					empleador.setPuntaje(empleador.getPuntaje() + 50); //suma 50 por estado finalizado
 					rubroFactory=new RubroFactory();
 					rubroEmpleador = rubroFactory.getRubro(empleador.getRubro(),empleador);
 					comision=empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion().getMonto()*rubroEmpleador.getComision();
@@ -190,13 +190,11 @@ public class Sistema {
 	 * 
 	 */
 
-	public void busquedaLaboral(){
+	public void busquedaLaboral() {
 		this.llamaRondaEncuentros();
 		this.rondaDeElecciones();
 		this.rondaDeContrataciones();
 	}
-	
-	
 	
 }
 

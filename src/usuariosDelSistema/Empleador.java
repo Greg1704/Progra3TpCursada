@@ -78,12 +78,17 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		this.ticketEmpleador.cancela();
 		this.ticketEmpleador = null;
 	}
+	
+	
+	/**
+	 * PostCond: Se crea un empleador de tipo jurídico. 
+	 */
+	
 
-	public void rondaElecciones() {//MISMA EXCEPCION QUE EN EMPLEADOS POR SI LA LISTA LLEGA NULL
+	public void rondaElecciones() { 
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
 		int i = 0;
 		
-		//aca va la excepcion en caso de ser null la lista ordenados
 		super.getLista().getOrdenados().get(0).setPuntaje(super.getLista().getOrdenados().get(0).getPuntaje() + 5);
 		//Suma 5 puntos por estar primero en la lista
 		
