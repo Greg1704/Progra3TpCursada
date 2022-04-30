@@ -11,11 +11,12 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	private int cantidadEmpleadosSeleccionados;
 	private String rubro;
 
-	public Empleador(String usuario, String contrasenia, String nombre,TicketEmpleador ticketEmpleador) {
+	public Empleador(String usuario, String contrasenia, String nombre,TicketEmpleador ticketEmpleador,String rubro) {
 		super(usuario, contrasenia);
 		this.nombre = nombre;
 		this.cantidadEmpleadosSeleccionados = 0;
 		this.ticketEmpleador = ticketEmpleador;
+		this.rubro = rubro;
 	}
 
 	public String getNombre() {
@@ -95,5 +96,12 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Empleador [nombre=" + nombre + ", ticketEmpleador=" + ticketEmpleador + ", empleadosSeleccionados="
+				+ empleadosSeleccionados + ", cantidadEmpleadosSeleccionados=" + cantidadEmpleadosSeleccionados + "]";
+	}
+
+	
 
 }

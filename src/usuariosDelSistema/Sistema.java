@@ -8,10 +8,6 @@ public class Sistema {
 	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
 	private ArrayList<Empleador> empleadores = new ArrayList<Empleador>();
 	private RondaEncuentros encuentros;
-	
-	private Sistema() {
-		System.out.println("Faltan cosas");
-	}
 
 	public static Sistema getInstancia() {
 		if (instancia == null)

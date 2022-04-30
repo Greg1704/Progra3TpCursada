@@ -4,8 +4,10 @@ import armaTickets.TicketEmpleador;
 
 public class EmpleadorJuridico extends Empleador{
 
-	public EmpleadorJuridico(String usuario, String contrasenia, String nombre,TicketEmpleador ticketEmpleador) {
-		super(usuario, contrasenia, nombre,ticketEmpleador);
+	public EmpleadorJuridico(String usuario, String contrasenia, String nombre, TicketEmpleador ticketEmpleador,
+			String rubro) {
+		super(usuario, contrasenia, nombre, ticketEmpleador, rubro);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override

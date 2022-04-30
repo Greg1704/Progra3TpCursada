@@ -50,5 +50,10 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 		return this.formulario;
 	}
 
+	@Override
+	public String toString() {
+		return "TicketDeBusqueda [estadoTicket=" + estadoTicket + "]";
+	}
+
 	
 }

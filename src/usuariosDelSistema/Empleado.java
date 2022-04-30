@@ -104,5 +104,12 @@ public class Empleado extends Usuario{
 		//Se le resta un punto al Empleado por cancelar el ticket
 	}
 
+	@Override
+	public String toString() {
+		return "Empleado [nya=" + nya + ", ticket=" + ticket + ", empleadorSeleccionado=" + empleadorSeleccionado + "]";
+	}
+
+	
+	
 
 }

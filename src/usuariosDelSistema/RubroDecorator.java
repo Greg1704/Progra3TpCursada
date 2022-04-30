@@ -4,7 +4,7 @@ public abstract class RubroDecorator implements EmpleadorComision{
     private Empleador empleador;
 
     public RubroDecorator(EmpleadorComision empleadorComision) {
-        this.empleador = empleador;
+        this.empleador = (Empleador) empleadorComision;
     }
 
     public Empleador getEmpleador() {
