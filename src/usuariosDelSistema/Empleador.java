@@ -98,8 +98,8 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 
 	@Override
 	public String toString() {
-		return "Empleador [nombre=" + nombre + ", ticketEmpleador=" + ticketEmpleador + ", empleadosSeleccionados="
-				+ empleadosSeleccionados + ", cantidadEmpleadosSeleccionados=" + cantidadEmpleadosSeleccionados + "]";
+		return "Empleador [nombre=" + nombre + ", ticketEmpleador=" + ticketEmpleador + ", cantEmpleadosSeleccionados="
+				+ cantidadEmpleadosSeleccionados+ "]";
 	}
 
 	

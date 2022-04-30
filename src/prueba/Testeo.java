@@ -75,18 +75,12 @@ public class Testeo {
 		agencia.busquedaLaboral();
 		
 		System.out.println(e1.toString());
-		System.out.println(e1.toString());
-		System.out.println(e1.toString());
-		System.out.println(e1.toString());
-		System.out.println(e2);
-		System.out.println(e3);
-		System.out.println(e4);
-		System.out.println(e5);
-		System.out.println(em1);
-		System.out.println(em2);
-		
-
-		
+		System.out.println(e2.toString());
+		System.out.println(e3.toString());
+		System.out.println(e4.toString());
+		System.out.println(e5.toString());
+		System.out.println(em1.toString());
+		System.out.println(em2.toString());
 	}
 
 }

@@ -106,7 +106,7 @@ public class Empleado extends Usuario{
 
 	@Override
 	public String toString() {
-		return "Empleado [nya=" + nya + ", ticket=" + ticket + ", empleadorSeleccionado=" + empleadorSeleccionado + "]";
+		return "Empleado [nya=" + nya + ", ticket=" + ticket + "]";
 	}
 
 	
