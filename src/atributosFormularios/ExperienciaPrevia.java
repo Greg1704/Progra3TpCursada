@@ -1,12 +1,19 @@
 package atributosFormularios;
 
+import calculosAspectosLaborales.ExperienciaPreviaFactory;
+import calculosAspectosLaborales.I_ExperienciaPrevia;
+import excepciones.AtributoInvalidoException;
+
 public class ExperienciaPrevia {
 	private String experienciaPrevia;
 	private int peso;
+	private I_ExperienciaPrevia instanciaExperiencia;
 	
-	public ExperienciaPrevia(String experienciaPrevia,int peso) {
+	public ExperienciaPrevia(String experienciaPrevia,int peso) throws AtributoInvalidoException {
 		this.experienciaPrevia = experienciaPrevia;
 		this.peso = peso;
+		ExperienciaPreviaFactory factory = new ExperienciaPreviaFactory();
+		instanciaExperiencia = factory.getExperienciaPrevia(experienciaPrevia);
 	}
 
 	public String getExperienciaPrevia() {
@@ -24,5 +31,8 @@ public class ExperienciaPrevia {
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
-	
+
+	public I_ExperienciaPrevia getInstanciaExperiencia() {
+		return instanciaExperiencia;
+	}
 }

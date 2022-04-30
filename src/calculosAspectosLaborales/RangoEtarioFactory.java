@@ -1,9 +1,11 @@
 package calculosAspectosLaborales;
 
+import excepciones.AtributoInvalidoException;
+
 public class RangoEtarioFactory {
-    public I_RangoEtario getRangoEtario(int rangoEtario){
+    public I_RangoEtario getRangoEtario(int rangoEtario) throws AtributoInvalidoException {
         if(rangoEtario<18){
-            return null;
+            throw new AtributoInvalidoException("Atributo Edad invalido");
         }
         if(rangoEtario < 40)
             return (Menos40) new Menos40();

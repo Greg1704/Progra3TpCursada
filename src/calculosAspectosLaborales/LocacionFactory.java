@@ -1,12 +1,11 @@
 package calculosAspectosLaborales;
 
+import excepciones.AtributoInvalidoException;
+
 public class LocacionFactory {
 
-    public I_Locacion getLocacion(String locacion){
+    public I_Locacion getLocacion(String locacion) throws AtributoInvalidoException {
 
-        if(locacion == null){
-            return null;
-        }
         if(locacion.equalsIgnoreCase("HomeOffice")){
             return (HomeOffice) new HomeOffice();
         }
@@ -14,7 +13,6 @@ public class LocacionFactory {
             return (Presencial) new Presencial();
         if (locacion.equalsIgnoreCase("Indistinto"))
             return (Indistinto) new Indistinto();
-
-        return null;
+        throw new AtributoInvalidoException("Atributo Locacion incorrecto");
     }
 }

@@ -2,8 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bae00f15-2261-459a-b802-e8a456c13c3a" name="Changes" comment="Funciona con el ejemplo dado">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/armaTickets/FormularioDeBusqueda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/armaTickets/FormularioDeBusqueda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/armaTickets/TicketDeBusqueda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/armaTickets/TicketDeBusqueda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/armaTickets/TicketEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/armaTickets/TicketEmpleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/armaTickets/TicketEmpleador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/armaTickets/TicketEmpleador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/atributosFormularios/CargaHoraria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/atributosFormularios/CargaHoraria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/atributosFormularios/Edad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/atributosFormularios/Edad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/atributosFormularios/EstudiosCursados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/atributosFormularios/EstudiosCursados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/atributosFormularios/ExperienciaPrevia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/atributosFormularios/ExperienciaPrevia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/atributosFormularios/Locacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/atributosFormularios/Locacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/atributosFormularios/Remuneracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/atributosFormularios/Remuneracion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/atributosFormularios/TipoPuestoLaboral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/atributosFormularios/TipoPuestoLaboral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculosAspectosLaborales/CargaHorariaFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculosAspectosLaborales/CargaHorariaFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculosAspectosLaborales/EstudiosCursadosFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculosAspectosLaborales/EstudiosCursadosFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculosAspectosLaborales/ExperienciaPreviaFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculosAspectosLaborales/ExperienciaPreviaFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculosAspectosLaborales/LocacionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculosAspectosLaborales/LocacionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculosAspectosLaborales/RangoEtarioFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculosAspectosLaborales/RangoEtarioFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculosAspectosLaborales/RemuneracionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculosAspectosLaborales/RemuneracionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/calculosAspectosLaborales/TipoDePuestoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/calculosAspectosLaborales/TipoDePuestoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/encuentro/RondaEncuentros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/encuentro/RondaEncuentros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/excepcionesEmpleado/ContraseniaIncorrectaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excepciones/ContraseniaIncorrectaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/excepcionesEmpleado/LoginIncorrectoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excepciones/LoginIncorrectoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/excepcionesEmpleado/UsuarioIncorrectoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excepciones/UsuarioIncorrectoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/prueba/Testeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prueba/Testeo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

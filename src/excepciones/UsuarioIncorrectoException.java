@@ -1,4 +1,4 @@
-package excepcionesEmpleado;
+package excepciones;
 
 public class UsuarioIncorrectoException extends LoginIncorrectoException
 {

@@ -1,5 +1,8 @@
 package armaTickets;
 
+import excepciones.AtributoInvalidoException;
+import excepciones.FormularioInvalidoException;
+
 import java.time.LocalDateTime;
 
 public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
@@ -7,11 +10,22 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 	private String estadoTicket;
 	private FormularioDeBusqueda formulario;
 	
-	public TicketDeBusqueda(LocalDateTime fechaAlta, FormularioDeBusqueda formulario) {
+	public TicketDeBusqueda(LocalDateTime fechaAlta,String locacion,int pesoLocacion, double remuneracion, int pesoRemuneracion,String cargaHoraria,int pesoCargaHoraria,
+							String tipoPuestoLaboral,int pesoTipoPuestoLaboral, int edad,int pesoEdad, String experienciaPrevia,int pesoExperienciaPrevia,
+							String estudiosCursados,int pesoEstudiosCursados) {
 		super();
 		this.fechaAlta = fechaAlta;
 		this.estadoTicket = "Activo";
-		this.formulario = formulario;
+		try {
+			this.formulario = new FormularioDeBusqueda(locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
+			 tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
+			 estudiosCursados, pesoEstudiosCursados);
+		} catch (FormularioInvalidoException e) {
+			System.out.println(e.getMessage());
+			this.suspende();
+		} catch (AtributoInvalidoException e) {
+			e.printStackTrace(); //No deberia entrar nunca aca
+		}
 	}
 
 	public LocalDateTime getFechaAlta() {

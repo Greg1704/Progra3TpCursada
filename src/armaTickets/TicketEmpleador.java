@@ -8,8 +8,12 @@ public class TicketEmpleador extends TicketDeBusqueda {
 	
 	
 	
-	public TicketEmpleador(LocalDateTime fechaAlta, FormularioDeBusqueda formulario,int cantEmpleados) {
-		super(fechaAlta, formulario);
+	public TicketEmpleador(LocalDateTime fechaAlta,String locacion,int pesoLocacion, double remuneracion, int pesoRemuneracion,String cargaHoraria,int pesoCargaHoraria,
+						   String tipoPuestoLaboral,int pesoTipoPuestoLaboral, int edad,int pesoEdad, String experienciaPrevia,int pesoExperienciaPrevia,
+						   String estudiosCursados,int pesoEstudiosCursados,int cantEmpleados) {
+		super(fechaAlta,locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
+				tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
+				estudiosCursados, pesoEstudiosCursados);
 		this.cantEmpleados = cantEmpleados;
 	}
 

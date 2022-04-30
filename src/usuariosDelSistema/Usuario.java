@@ -1,9 +1,6 @@
 package usuariosDelSistema;
 
-import java.util.ArrayList;
 import encuentro.ListaAsignaciones;
-import excepcionesEmpleado.ContraseniaIncorrectaException;
-import excepcionesEmpleado.UsuarioIncorrectoException;
 
 public abstract class Usuario {
 	private String usuario;

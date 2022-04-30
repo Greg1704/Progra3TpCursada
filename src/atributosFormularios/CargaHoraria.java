@@ -1,12 +1,19 @@
 package atributosFormularios;
 
+import calculosAspectosLaborales.CargaHorariaFactory;
+import calculosAspectosLaborales.I_CargaHoraria;
+import excepciones.AtributoInvalidoException;
+
 public class CargaHoraria {
 	private String cargaHoraria;
 	private int peso;
+	private I_CargaHoraria instanciaHorario;
 	
-	public CargaHoraria(String cargaHoraria,int peso) {
+	public CargaHoraria(String cargaHoraria,int peso) throws AtributoInvalidoException {
 		this.cargaHoraria = cargaHoraria;
 		this.peso = peso;
+		CargaHorariaFactory factory = new CargaHorariaFactory();
+		instanciaHorario = factory.getCargaHoraria(cargaHoraria);
 	}
 
 	public String getCargaHoraria() {
@@ -24,7 +31,8 @@ public class CargaHoraria {
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
-	
-	
 
+	public I_CargaHoraria getInstanciaHorario() {
+		return instanciaHorario;
+	}
 }

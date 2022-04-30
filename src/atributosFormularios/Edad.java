@@ -1,12 +1,19 @@
 package atributosFormularios;
 
+import calculosAspectosLaborales.I_RangoEtario;
+import calculosAspectosLaborales.RangoEtarioFactory;
+import excepciones.AtributoInvalidoException;
+
 public class Edad {
 	private int edad;
 	private int peso;
+	private I_RangoEtario instanciaEdad;
 	
-	public Edad(int edad,int peso) {
+	public Edad(int edad,int peso) throws AtributoInvalidoException {
 		this.edad = edad;
 		this.peso = peso;
+		RangoEtarioFactory factory= new RangoEtarioFactory();
+		instanciaEdad = factory.getRangoEtario(edad);
 	}
 
 	public int getEdad() {
@@ -24,8 +31,9 @@ public class Edad {
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
-	
-	
 
+	public I_RangoEtario getInstanciaEdad() {
+		return instanciaEdad;
+	}
 }
 

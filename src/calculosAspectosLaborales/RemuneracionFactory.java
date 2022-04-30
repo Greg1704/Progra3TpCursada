@@ -1,11 +1,12 @@
 package calculosAspectosLaborales;
 
 import encuentro.RondaEncuentros;
+import excepciones.AtributoInvalidoException;
 
 public class RemuneracionFactory {
-    public I_Remuneracion getRemuneracion(double remuneracion){
+    public I_Remuneracion getRemuneracion(double remuneracion) throws AtributoInvalidoException {
         if(remuneracion < 0){
-            return null;
+            throw new AtributoInvalidoException("Atributo Remuneracion menor a cero");
         }
         if(remuneracion < RondaEncuentros.getV1()){
             return (MenorV1) new MenorV1();

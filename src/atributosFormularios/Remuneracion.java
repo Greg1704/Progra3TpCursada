@@ -1,12 +1,19 @@
 package atributosFormularios;
 
+import calculosAspectosLaborales.I_Remuneracion;
+import calculosAspectosLaborales.RemuneracionFactory;
+import excepciones.AtributoInvalidoException;
+
 public class Remuneracion {
 	private double monto; // cambio de nombre para cambiar el nombre del get asi no se superpone con el get de la clase
 	private int peso;
+	private I_Remuneracion instanciaRemuneracion;
 	
-	public Remuneracion(double remuneracion,int peso) {
+	public Remuneracion(double remuneracion,int peso) throws AtributoInvalidoException {
 		this.monto = remuneracion;
 		this.peso = peso;
+		RemuneracionFactory factory= new RemuneracionFactory();
+		instanciaRemuneracion= factory.getRemuneracion(remuneracion);
 	}
 
 	public double getMonto() {
@@ -25,5 +32,7 @@ public class Remuneracion {
 		this.peso = peso;
 	}
 
-	
+	public I_Remuneracion getInstanciaRemuneracion() {
+		return instanciaRemuneracion;
+	}
 }

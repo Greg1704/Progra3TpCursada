@@ -1,12 +1,19 @@
 package atributosFormularios;
 
+import calculosAspectosLaborales.EstudiosCursadosFactory;
+import calculosAspectosLaborales.I_EstudiosCursados;
+import excepciones.AtributoInvalidoException;
+
 public class EstudiosCursados {
+	private I_EstudiosCursados instanciaEstudios;
 	private String estudiosCursados;
 	private int peso;
 	
-	public EstudiosCursados(String estudiosCursados,int peso) {
+	public EstudiosCursados(String estudiosCursados,int peso) throws AtributoInvalidoException {
 		this.estudiosCursados = estudiosCursados;
 		this.peso = peso;
+		EstudiosCursadosFactory factory=new EstudiosCursadosFactory();
+		this.instanciaEstudios= factory.getEstudiosCursados(estudiosCursados);
 	}
 
 	public String getEstudiosCursados() {
@@ -25,5 +32,7 @@ public class EstudiosCursados {
 		this.peso = peso;
 	}
 
-	
+	public I_EstudiosCursados getInstanciaEstudios() {
+		return instanciaEstudios;
+	}
 }
