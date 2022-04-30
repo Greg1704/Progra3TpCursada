@@ -1,5 +1,11 @@
 package usuariosDelSistema;
 
+/**
+ * Clase en la que se aplica patrón factory para poder obtener una nueva instancia de rubro específico del empleador.
+ * 
+ * 
+ */ 
+
 public class RubroFactory {
     public RubroDecorator getRubro(String rubro, Empleador empleador){
         if(rubro == null)

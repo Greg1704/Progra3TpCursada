@@ -13,15 +13,6 @@ import encuentro.RondaEncuentros;
  */
 
 
-
-/**
- * @author Mateo
- *
- */
-/**
- * @author Mateo
- *
- */
 public class Sistema {
 	private static Sistema instancia = null;
 	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
@@ -37,8 +28,8 @@ public class Sistema {
 	
 	/**
 	 * el método <b> agregaEmpleado </b> agrega un empleado a la lista de empleados del <b> Sistema </b> <br>
-	 * @param e: Empleado que será agregado a la lista de empleados del sistema
-	 * PreCond: Empleado debe ser distinto de null
+	 * @param e: Empleado que será agregado a la lista de empleados del sistema <br>
+	 * PreCond: Empleado debe ser distinto de null <br>
 	 * PostCond: Se agrega empleado a la lista
 	 *
 	 */
@@ -51,7 +42,7 @@ public class Sistema {
 	
 	/**
 	 * el método <b> sacaEmpleado </b> saca un empleado a la lista de empleados del <b> Sistema </b> <br>
-	 * @param e: Empleado que será removido de la lista de empleados del sistema
+	 * @param e: Empleado que será removido de la lista de empleados del sistema <br>
 	 * PostCond: Se remueve empleado de la lista si el dato es válido
 	 *
 	 */
@@ -63,7 +54,7 @@ public class Sistema {
 	
 	/**
 	 * el método <b> agregaEmpleador </b> agrega un empleador a la lista de empleadores del <b> Sistema </b> <br>
-	 * @param e: Empleador que será agregado a la lista de empleadores del sistema
+	 * @param e: Empleador que será agregado a la lista de empleadores del sistema <br>
 	 * PreCond: Empleador debe ser distinto de null
 	 * PostCond: Se agrega empleador a la lista
 	 *
@@ -76,7 +67,7 @@ public class Sistema {
 	
 	/**
 	 * el método <b> sacaEmpleador </b> saca un empleado a la lista de empleados del <b> Sistema </b> <br>
-	 * @param e: Empleador que será removido de la lista de empleadores del sistema
+	 * @param e: Empleador que será removido de la lista de empleadores del sistema <br>
 	 * PostCond: Se remueve empleador de la lista si el dato es válido
 	 *
 	 */
@@ -96,8 +87,8 @@ public class Sistema {
 	
 	/**
 	 * el método <b> comisionEmpleadoPretenso </b> calcula la comisión del empleado dependiendo del cargo que éste posee <br>
-	 * @param empleado: Empleado al que le será calculada la comisión
-	 * PreCond: Empleado debe ser distinto de null y válido
+	 * @param empleado: Empleado al que le será calculada la comisión <br>
+	 * PreCond: Empleado debe ser distinto de null y válido <br>
 	 * PostCond: Se retornará la comisión como un "double" 
 	 *
 	 */
