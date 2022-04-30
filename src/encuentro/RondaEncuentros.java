@@ -29,6 +29,11 @@ public class RondaEncuentros {
 		this.v2 = v2;
 	}
 
+	/** @author Grupo4 <br>
+	 * El método calcula el puntaje de todos los empleadores en cuestión de cada empleado <br>
+	 * PostCond: debe devolver una lista ordenada de empleadores para cada empleado ó una vacía.
+	 */
+	
 	public void enfrentamientoEmpleados() {
 		double puntajeAux;
 
@@ -92,6 +97,12 @@ public class RondaEncuentros {
 			}
 		}
 	}
+	
+	/** @author Grupo4 <br>
+	 * El método calcula el puntaje de todos los empleadores en cuestión de cada empleado <br>
+	 * PostCond: debe devolver una lista ordenada de empleados para cada empleador ó una vacía, y, además, le resta en la plataforma al empleado que sale <br>
+	 * último en la lista, 5 puntos.
+	 */
 
 	public void enfrentamientoEmpleadores() {
 		double puntajeAux;
@@ -162,6 +173,11 @@ public class RondaEncuentros {
 		}
 
 	}
+	
+	/** @author Grupo4 <br>
+	 * Se crea una instancia de Factory para luego con esa instancia identificar los Strings de Empleado y Empleador con sus <br>
+	 * respectivas cargas horarias, así, creando instancias de estas, para luego, aplicar Double Dispatch.
+	 */
 
 	public double enfrentamientoCargaHoraria(String Empleado, String Empleador) {
 		CargaHorariaFactory cargaHorariaFactory= new CargaHorariaFactory();

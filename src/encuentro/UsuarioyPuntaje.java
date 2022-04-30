@@ -6,6 +6,11 @@ public class UsuarioyPuntaje implements Comparable<UsuarioyPuntaje>{
 	private Usuario usuario;
 	private double puntaje;
 	
+	/**
+	 * @author Grupo4 <br>
+	 * PreCond: <b> usuario </b> debe ser un usuario válido <br>
+	 */
+	
 	public UsuarioyPuntaje(Usuario usuario) {
 		this.usuario = usuario;
 		this.puntaje = 0;
@@ -25,7 +30,8 @@ public class UsuarioyPuntaje implements Comparable<UsuarioyPuntaje>{
 	}
 
 
-	public int compareTo(UsuarioyPuntaje o) { //puede haber error aca!!!!!
+	
+	public int compareTo(UsuarioyPuntaje o) { 
 		if(o.getPuntaje() < puntaje) {
 			return 1;
 		}

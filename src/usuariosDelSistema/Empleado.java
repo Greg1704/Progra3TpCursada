@@ -79,7 +79,7 @@ public class Empleado extends Usuario{
 		this.empleadorSeleccionado = empleadorSeleccionado;
 	}
 	
-	public void rondaElecciones(){ //OTRA EXCEPCION EN CASO QUE ORDENADOS SEA NULL
+	public void rondaElecciones(){ //OTRA EXCEPCION EN CASO QUE SEA NULL Y SE HAGA GET();
 		
 		this.empleadorSeleccionado = (Empleador) super.getLista().getOrdenados().get(0).getUsuario();
 		this.empleadorSeleccionado.setPuntaje(getPuntaje() + 10); //Suma 10 puntos por estar primero en la lista

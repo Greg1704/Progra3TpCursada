@@ -73,7 +73,7 @@ public class Sistema {
 	 */
 	
 	
-	public void sacaEmpleador(Empleado e) {
+	public void sacaEmpleador(Empleado e) { // excepción
 		this.empleadores.remove(e);
 	}
 	
@@ -110,7 +110,7 @@ public class Sistema {
 	}
 
 	
-	public void llamaRondaEncuentros() { // void q recibe excepc?
+	public void llamaRondaEncuentros() { 
 		encuentros = new RondaEncuentros();
 		encuentros.enfrentamientoEmpleados();
 		encuentros.enfrentamientoEmpleadores();

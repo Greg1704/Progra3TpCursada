@@ -9,7 +9,7 @@ public class ListaAsignaciones {
 	private LocalDateTime fecha;
 
 	public ListaAsignaciones() {
-		this.fecha = LocalDateTime.now(); //PUEDE FALLAR
+		this.fecha = LocalDateTime.now(); 
 	}
 	
 	public ArrayList<UsuarioyPuntaje> getOrdenados() {
@@ -28,7 +28,7 @@ public class ListaAsignaciones {
 		Collections.sort(ordenados);
 	}
 	
-	public void eliminaElemento(UsuarioyPuntaje u) {
+	public void eliminaElemento(UsuarioyPuntaje u) { //exc
 		ordenados.remove(u);
 		Collections.sort(ordenados);
 	}
