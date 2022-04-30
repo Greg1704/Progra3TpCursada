@@ -120,6 +120,7 @@ public class Sistema {
 					rubroFactory=new RubroFactory();
 					rubroEmpleador = rubroFactory.getRubro(empleador.getRubro(),empleador);
 					comision=empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion().getMonto()*rubroEmpleador.getComision();
+					System.out.println(empleador.toString() + "comision = " + comision);
 				}
 				
 			}
