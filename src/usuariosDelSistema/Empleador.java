@@ -111,7 +111,6 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 					estudiosCursados, pesoEstudiosCursados,cantEmpleados);
 		} catch (FormularioInvalidoException e) {
 			System.out.println(e.getMessage() + " del Empleador " + this.nombre);
-			ticketEmpleador.suspende();
 		}
 	}
 

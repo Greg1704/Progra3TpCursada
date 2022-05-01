@@ -39,14 +39,14 @@ public class RondaEncuentros {
 		double puntajeAux;
 
 		for (Empleado empleado : empleadosPretensos) {
-			if (empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
+			if (empleado.getTicket()!=null && empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
 				empleado.setLista(new ListaAsignaciones());
 
 				for (Empleador empleador : empleadores) {
 					puntajeAux = 0;
 					aux = new UsuarioyPuntaje(empleador);
 
-					if (empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
+					if (empleador.getTicketEmpleador()!=null && empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
 						puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getPeso()
 								* enfrentamientoCargaHoraria(
 										empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria()
@@ -119,14 +119,14 @@ public class RondaEncuentros {
 		double puntajeAux;
 
 		for (Empleador empleador : empleadores) {
-			if (empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
+			if (empleador.getTicketEmpleador()!=null && empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
 				empleador.setLista(new ListaAsignaciones());
 
 				for (Empleado empleado : empleadosPretensos) {
 					puntajeAux = 0;
 					aux = new UsuarioyPuntaje(empleado);
 
-					if (empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
+					if (empleado.getTicket()!=null && empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
 						puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria()
 								.getPeso()
 								* enfrentamientoCargaHoraria(

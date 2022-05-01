@@ -120,12 +120,12 @@ public class Sistema {
 		ArrayList<Empleador> empleadoresElegidos = new ArrayList<Empleador>();
 		
 		for (Empleador empleador : empleadores) {
-			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo"))
+			if(empleador.getTicketEmpleador()!=null && empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo"))
 				empleador.rondaElecciones();
 		}
 		
 		for (Empleado empleado : empleadosPretensos) {
-			if(empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
+			if(empleado.getTicket()!=null && empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
 				empleado.rondaElecciones();
 				empleadoresElegidos.add(empleado.getEmpleadorSeleccionado());
 			}
@@ -140,7 +140,7 @@ public class Sistema {
 	public void empleadoresNoSeleccionados(ArrayList<Empleador> empleadoresElegidos){ 
 
 		for(Empleador empleador : empleadores){
-			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")){
+			if(empleador.getTicketEmpleador()!=null && empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")){
 				if(!empleadoresElegidos.contains(empleador))
 					empleador.setPuntaje(empleador.getPuntaje() - 20);
 				//Resta 20 porque el empleador no es elegido por nadie
@@ -155,7 +155,7 @@ public class Sistema {
 		double comision; 
 
 		for (Empleador empleador : empleadores) {
-			if(empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
+			if(empleador.getTicketEmpleador()!=null && empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
 				aux = empleador.getEmpleadosSeleccionados();
 				
 				for (int i = 0; i < empleador.getCantidadEmpleadosSeleccionados(); i++) {

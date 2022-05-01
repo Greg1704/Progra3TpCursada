@@ -37,7 +37,7 @@ public class Testeo {
 		em1.crearTicket("Presencial",10,125000,1,"Extendida",5,"Managment",5,30,1,"Mucha",10,"Terciario",10,3);
 
 		em2 = new EmpleadorFisico("LaDespensaDelTioMario","RitaTeAmo","La despensa del tio Mario","ComercioLocal");
-		em2.crearTicket("Presencial",10,-45000,10,"Completa",5,"Junior",5,25,3,"Nada",1,"Primario",1,1);
+		em2.crearTicket("Presencial",10,45000,10,"Completa",5,"Junior",5,25,3,"Nada",1,"Primario",1,1);
 		
 		agencia.agregaEmpleado(e1);
 		agencia.agregaEmpleado(e2);
