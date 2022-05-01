@@ -31,7 +31,7 @@ public class Testeo {
 		e4.crearTicket("HomeOffice",1,45000,1,"Media",1,"Junior",1,23,1,"Nada",1,"Terciario",1);
 
 		e5 = new Empleado("DarthVader78","YoSoyTuPadre","Cacho Enriquez",32456765,482565,42,"Mar Del Plata");
-		e5.crearTicket("Indistinto",1,45000,1,"Completa",1,"Senior",1,42,1,"Media",1,"Secundario",1);
+		e5.crearTicket("HomeOffice",1,45000,1,"Completa",1,"Senior",1,42,1,"Media",1,"Secundario",1);
 
 		em1 = new EmpleadorJuridico("CocaCola Inc","PepsiNoExistis","Coca Cola Incorporation","ComercioInternacional");
 		em1.crearTicket("Presencial",10,125000,1,"Extendida",5,"Managment",5,30,1,"Mucha",10,"Terciario",10,3);
@@ -54,8 +54,8 @@ public class Testeo {
 		System.out.println(e3.toString());
 		System.out.println(e4.toString());
 		System.out.println(e5.toString());
-		System.out.println(em1.toString());
-		System.out.println(em2.toString());
+		/*System.out.println(em1.toString());
+		System.out.println(em2.toString()); */
 	}
 
 }

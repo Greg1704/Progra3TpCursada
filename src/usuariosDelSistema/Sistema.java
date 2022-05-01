@@ -96,7 +96,7 @@ public class Sistema {
 	public double comisionEmpleadoPretenso(Empleado empleado) { // determino el porcentaje que le cobro de comision y
 																// calculo el monto a cobrar
 		String tpl = empleado.getEmpleadorSeleccionado().getTicketEmpleador().getFormularioDeBusqueda()
-				.getPuestoLaboral().getTipoPuestoLaboral();// cambien esto hdps
+				.getPuestoLaboral().getTipoPuestoLaboral();
 		double porc;
 
 		if (tpl.equalsIgnoreCase("Junior"))
@@ -165,7 +165,8 @@ public class Sistema {
 						aux.get(i).getTicket().setResultado(true);
 						aux.get(i).getTicket().finaliza();
 						aux.get(i).setPuntaje(aux.get(i).getPuntaje() + 10);
-						//Calcular comision blablabla
+						comision=this.comisionEmpleadoPretenso(aux.get(i));
+						System.out.println("Comision para el empleado "+ aux.get(i).getNya() + ": " + comision);
 					}
 					
 				}
@@ -176,7 +177,7 @@ public class Sistema {
 					rubroFactory=new RubroFactory();
 					rubroEmpleador = rubroFactory.getRubro(empleador.getRubro(),empleador);
 					comision=empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion().getMonto()*rubroEmpleador.getComision();
-					System.out.println(empleador.toString() + "comision = " + comision);
+					System.out.println("Comision para el empleador " + empleador.getNombre() + ": " + comision);
 				}
 				
 			}
