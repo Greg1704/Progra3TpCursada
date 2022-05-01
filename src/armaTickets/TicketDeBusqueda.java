@@ -23,8 +23,6 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 		} catch (FormularioInvalidoException e) {
 			System.out.println(e.getMessage());
 			this.suspende();
-		} catch (AtributoInvalidoException e) {
-			e.printStackTrace(); //No deberia entrar nunca aca
 		}
 	}
 

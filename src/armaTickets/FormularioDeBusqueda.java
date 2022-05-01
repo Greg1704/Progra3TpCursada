@@ -17,7 +17,7 @@ public class FormularioDeBusqueda {
 	
 	public FormularioDeBusqueda(String locacion,int pesoLocacion, double remuneracion, int pesoRemuneracion,String cargaHoraria,int pesoCargaHoraria, 
 			String tipoPuestoLaboral,int pesoTipoPuestoLaboral, int edad,int pesoEdad, String experienciaPrevia,int pesoExperienciaPrevia,
-			String estudiosCursados,int pesoEstudiosCursados) throws AtributoInvalidoException, FormularioInvalidoException {
+			String estudiosCursados,int pesoEstudiosCursados) throws FormularioInvalidoException {
 		try {
 			this.locacion = new Locacion(locacion, pesoLocacion);
 			this.remuneracion = new Remuneracion(remuneracion, pesoRemuneracion);
