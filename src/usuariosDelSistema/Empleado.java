@@ -1,6 +1,9 @@
 package usuariosDelSistema;
 
 import armaTickets.TicketEmpleado;
+import excepciones.FormularioInvalidoException;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList.*;
 
 public class Empleado extends Usuario{
@@ -13,14 +16,13 @@ public class Empleado extends Usuario{
 	private Empleador empleadorSeleccionado;
 
 
-	public Empleado(String usuario, String contrasenia, String nya, int dni, int telefono, int edad, String ciudad,TicketEmpleado ticket) {
+	public Empleado(String usuario, String contrasenia, String nya, int dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
 		this.nya = nya;
 		this.dni = dni;
 		this.telefono = telefono;
 		this.edad = edad;
 		this.ciudad = ciudad;
-		this.ticket = ticket;
 	}
 
 	public void setTicket(TicketEmpleado ticket) {
@@ -102,6 +104,19 @@ public class Empleado extends Usuario{
 		this.ticket = null;
 		this.setPuntaje(this.getPuntaje() - 1);
 		//Se le resta un punto al Empleado por cancelar el ticket
+	}
+
+	public void crearTicket(String locacion, int pesoLocacion, double remuneracion, int pesoRemuneracion, String cargaHoraria, int pesoCargaHoraria,
+							String tipoPuestoLaboral, int pesoTipoPuestoLaboral, int edad, int pesoEdad, String experienciaPrevia, int pesoExperienciaPrevia,
+							String estudiosCursados, int pesoEstudiosCursados){
+		try {
+			ticket = new TicketEmpleado(LocalDateTime.now(), locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
+					tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
+					estudiosCursados, pesoEstudiosCursados);
+		} catch (FormularioInvalidoException e) {
+			System.out.println(e.getMessage() + " del Empleado " + this.nya);
+			ticket.suspende();
+		}
 	}
 
 	@Override

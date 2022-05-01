@@ -7,13 +7,13 @@ public class EmpleadorJuridico extends Empleador{
 	
 	/**
 	 * @author Grupo4 <br>
-	 * PostCond: Se crea un empleador de tipo jurídico. 
+	 * PostCond: Se crea un empleador de tipo jurï¿½dico. 
 	 */
 	
 	
-	public EmpleadorJuridico(String usuario, String contrasenia, String nombre, TicketEmpleador ticketEmpleador,
+	public EmpleadorJuridico(String usuario, String contrasenia, String nombre,
 			String rubro) {
-		super(usuario, contrasenia, nombre, ticketEmpleador, rubro);
+		super(usuario, contrasenia, nombre,rubro);
 	}
 
 	@Override

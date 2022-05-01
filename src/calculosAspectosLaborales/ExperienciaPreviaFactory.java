@@ -10,6 +10,6 @@ public class ExperienciaPreviaFactory {
             return (ExpPreviaMedia) new ExpPreviaMedia();
         if(experienciaPrevia.equalsIgnoreCase("Mucha"))
             return (Mucha) new Mucha();
-        throw new AtributoInvalidoException("Atributo Experiencia Prebvia incorrecto");
+        throw new AtributoInvalidoException("Atributo Experiencia Previa incorrecto");
     }
 }

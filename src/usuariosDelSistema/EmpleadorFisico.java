@@ -6,13 +6,13 @@ public class EmpleadorFisico extends Empleador{
 	
 	/**
 	 * @author Grupo4 <br>
-	 * PostCond: Se crea un empleador de tipo físico. 
+	 * PostCond: Se crea un empleador de tipo fï¿½sico. 
 	 */
 	
 
-	public EmpleadorFisico(String usuario, String contrasenia, String nombre, TicketEmpleador ticketEmpleador,
+	public EmpleadorFisico(String usuario, String contrasenia, String nombre,
 			String rubro) {
-		super(usuario, contrasenia, nombre, ticketEmpleador, rubro);
+		super(usuario, contrasenia, nombre, rubro);
 	}
 
 	@Override

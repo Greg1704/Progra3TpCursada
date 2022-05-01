@@ -1,5 +1,7 @@
 package armaTickets;
 
+import excepciones.FormularioInvalidoException;
+
 import java.time.LocalDateTime;
 
 public class TicketEmpleador extends TicketDeBusqueda {
@@ -10,7 +12,7 @@ public class TicketEmpleador extends TicketDeBusqueda {
 	
 	public TicketEmpleador(LocalDateTime fechaAlta,String locacion,int pesoLocacion, double remuneracion, int pesoRemuneracion,String cargaHoraria,int pesoCargaHoraria,
 						   String tipoPuestoLaboral,int pesoTipoPuestoLaboral, int edad,int pesoEdad, String experienciaPrevia,int pesoExperienciaPrevia,
-						   String estudiosCursados,int pesoEstudiosCursados,int cantEmpleados) {
+						   String estudiosCursados,int pesoEstudiosCursados,int cantEmpleados) throws FormularioInvalidoException {
 		super(fechaAlta,locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
 				tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
 				estudiosCursados, pesoEstudiosCursados);

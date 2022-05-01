@@ -12,18 +12,14 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 	
 	public TicketDeBusqueda(LocalDateTime fechaAlta,String locacion,int pesoLocacion, double remuneracion, int pesoRemuneracion,String cargaHoraria,int pesoCargaHoraria,
 							String tipoPuestoLaboral,int pesoTipoPuestoLaboral, int edad,int pesoEdad, String experienciaPrevia,int pesoExperienciaPrevia,
-							String estudiosCursados,int pesoEstudiosCursados) {
+							String estudiosCursados,int pesoEstudiosCursados) throws FormularioInvalidoException {
 		super();
 		this.fechaAlta = fechaAlta;
 		this.estadoTicket = "Activo";
-		try {
-			this.formulario = new FormularioDeBusqueda(locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
+		this.formulario = new FormularioDeBusqueda(locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
 			 tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
 			 estudiosCursados, pesoEstudiosCursados);
-		} catch (FormularioInvalidoException e) {
-			System.out.println(e.getMessage());
-			this.suspende();
-		}
+
 	}
 
 	public LocalDateTime getFechaAlta() {

@@ -1,8 +1,10 @@
 package usuariosDelSistema;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import armaTickets.TicketEmpleador;
+import excepciones.FormularioInvalidoException;
 
 public abstract class Empleador extends Usuario implements EmpleadorComision {
 	private String nombre;
@@ -11,11 +13,10 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	private int cantidadEmpleadosSeleccionados;
 	private String rubro;
 
-	public Empleador(String usuario, String contrasenia, String nombre,TicketEmpleador ticketEmpleador,String rubro) {
+	public Empleador(String usuario, String contrasenia, String nombre,String rubro) {
 		super(usuario, contrasenia);
 		this.nombre = nombre;
 		this.cantidadEmpleadosSeleccionados = 0;
-		this.ticketEmpleador = ticketEmpleador;
 		this.rubro = rubro;
 	}
 
@@ -81,11 +82,11 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	
 	
 	/**
-	 * PostCond: Se crea un empleador de tipo jurídico. 
+	 * PostCond: Se crea un empleador de tipo jurï¿½dico. 
 	 */
 	
 
-	public void rondaElecciones() { // hacer excepcion (try catch), tirar excepción en el get()
+	public void rondaElecciones() { // hacer excepcion (try catch), tirar excepciï¿½n en el get()
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
 		int i = 0;
 		
@@ -99,6 +100,19 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		
 		this.cantidadEmpleadosSeleccionados = i;
 
+	}
+
+	public void crearTicket(String locacion, int pesoLocacion, double remuneracion, int pesoRemuneracion, String cargaHoraria, int pesoCargaHoraria,
+							String tipoPuestoLaboral, int pesoTipoPuestoLaboral, int edad, int pesoEdad, String experienciaPrevia, int pesoExperienciaPrevia,
+							String estudiosCursados, int pesoEstudiosCursados, int cantEmpleados){
+		try {
+			ticketEmpleador=new TicketEmpleador(LocalDateTime.now(),locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
+					tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
+					estudiosCursados, pesoEstudiosCursados,cantEmpleados);
+		} catch (FormularioInvalidoException e) {
+			System.out.println(e.getMessage() + " del Empleador " + this.nombre);
+			ticketEmpleador.suspende();
+		}
 	}
 
 	@Override
