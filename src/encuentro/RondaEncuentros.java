@@ -4,20 +4,18 @@ import java.util.ArrayList;
 import calculosAspectosLaborales.*;
 import usuariosDelSistema.*;
 
-
 public class RondaEncuentros {
 	private ArrayList<Empleado> empleadosPretensos = Sistema.getInstancia().getEmpleadosPretensos();
 	private ArrayList<Empleador> empleadores = Sistema.getInstancia().getEmpleadores();
 	private UsuarioyPuntaje aux;
 	private static double v1 = 60000;
 	private static double v2 = 120000;
-	
 
 	public static double getV1() {
 		return v1;
 	}
 
-	public  void setV1(double v1) {
+	public void setV1(double v1) {
 		this.v1 = v1;
 	}
 
@@ -25,15 +23,18 @@ public class RondaEncuentros {
 		return v2;
 	}
 
-	public  void setV2(double v2) {
+	public void setV2(double v2) {
 		this.v2 = v2;
 	}
 
-	/** @author Grupo4 <br>
-	 * El m�todo calcula el puntaje de todos los empleadores en cuesti�n de cada empleado <br>
-	 * PostCond: debe devolver una lista ordenada de empleadores para cada empleado � una vac�a.
+	/**
+	 * @author Grupo4 <br>
+	 *         El m�todo calcula el puntaje de todos los empleadores en cuesti�n
+	 *         de cada empleado <br>
+	 *         PostCond: debe devolver una lista ordenada de empleadores para cada
+	 *         empleado � una vac�a.
 	 */
-	
+
 	public void enfrentamientoEmpleados() {
 		double puntajeAux;
 
@@ -45,63 +46,73 @@ public class RondaEncuentros {
 					puntajeAux = 0;
 					aux = new UsuarioyPuntaje(empleador);
 
-					puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getPeso()
-							* enfrentamientoCargaHoraria(
-									empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getInstanciaHorario(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria()
-											.getInstanciaHorario());
+					if (empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
+						puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getPeso()
+								* enfrentamientoCargaHoraria(
+										empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria()
+												.getInstanciaHorario(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria()
+												.getInstanciaHorario());
 
-					puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getEdad().getPeso()
-							* enfrentamientoEdad(empleado.getTicket().getFormularioDeBusqueda().getEdad().getInstanciaEdad(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getEdad().getInstanciaEdad());
+						puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getEdad().getPeso()
+								* enfrentamientoEdad(
+										empleado.getTicket().getFormularioDeBusqueda().getEdad().getInstanciaEdad(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getEdad()
+												.getInstanciaEdad());
 
-					puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getEstudiosCursados().getPeso()
-							* enfrentamientoEstudiosCursados(
-									empleado.getTicket().getFormularioDeBusqueda().getEstudiosCursados()
-											.getInstanciaEstudios(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getEstudiosCursados()
-											.getInstanciaEstudios());
+						puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getEstudiosCursados().getPeso()
+								* enfrentamientoEstudiosCursados(
+										empleado.getTicket().getFormularioDeBusqueda().getEstudiosCursados()
+												.getInstanciaEstudios(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getEstudiosCursados()
+												.getInstanciaEstudios());
 
-					puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getExperienciaPrevia().getPeso()
-							* enfrentamientoExpPrevia(
-									empleado.getTicket().getFormularioDeBusqueda().getExperienciaPrevia()
-											.getInstanciaExperiencia(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getExperienciaPrevia()
-											.getInstanciaExperiencia());
+						puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getExperienciaPrevia().getPeso()
+								* enfrentamientoExpPrevia(
+										empleado.getTicket().getFormularioDeBusqueda().getExperienciaPrevia()
+												.getInstanciaExperiencia(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getExperienciaPrevia()
+												.getInstanciaExperiencia());
 
-					puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getLocacion().getPeso()
-							* enfrentamientoLocacion(
-									empleado.getTicket().getFormularioDeBusqueda().getLocacion().getInstanciaLocacion(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getLocacion()
-											.getInstanciaLocacion());
+						puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getLocacion().getPeso()
+								* enfrentamientoLocacion(
+										empleado.getTicket().getFormularioDeBusqueda().getLocacion()
+												.getInstanciaLocacion(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getLocacion()
+												.getInstanciaLocacion());
 
-					puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getPuestoLaboral().getPeso()
-							* enfrentamientoTipoPuesto(
-									empleado.getTicket().getFormularioDeBusqueda().getPuestoLaboral()
-											.getInstanciaLaboral(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getPuestoLaboral()
-											.getInstanciaLaboral());
+						puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getPuestoLaboral().getPeso()
+								* enfrentamientoTipoPuesto(
+										empleado.getTicket().getFormularioDeBusqueda().getPuestoLaboral()
+												.getInstanciaLaboral(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getPuestoLaboral()
+												.getInstanciaLaboral());
 
-					puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getRemuneracion().getPeso()
-							* enfrentamientoRemuneracion(
-									empleado.getTicket().getFormularioDeBusqueda().getRemuneracion().getInstanciaRemuneracion(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion()
-											.getInstanciaRemuneracion());
+						puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getRemuneracion().getPeso()
+								* enfrentamientoRemuneracion(
+										empleado.getTicket().getFormularioDeBusqueda().getRemuneracion()
+												.getInstanciaRemuneracion(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion()
+												.getInstanciaRemuneracion());
 
-					aux.setPuntaje(puntajeAux);
+						aux.setPuntaje(puntajeAux);
 
-					empleado.getLista().agregaElemento(aux);
+						empleado.getLista().agregaElemento(aux);
+					}
 				}
-
 
 			}
 		}
 	}
-	
-	/** @author Grupo4 <br>
-	 * El m�todo calcula el puntaje de todos los empleadores en cuesti�n de cada empleado <br>
-	 * PostCond: debe devolver una lista ordenada de empleados para cada empleador � una vac�a, y, adem�s, le resta en la plataforma al empleado que sale <br>
-	 * �ltimo en la lista, 5 puntos.
+
+	/**
+	 * @author Grupo4 <br>
+	 *         El m�todo calcula el puntaje de todos los empleadores en cuesti�n
+	 *         de cada empleado <br>
+	 *         PostCond: debe devolver una lista ordenada de empleados para cada
+	 *         empleador � una vac�a, y, adem�s, le resta en la plataforma al
+	 *         empleado que sale <br>
+	 *         �ltimo en la lista, 5 puntos.
 	 */
 
 	public void enfrentamientoEmpleadores() {
@@ -115,68 +126,83 @@ public class RondaEncuentros {
 					puntajeAux = 0;
 					aux = new UsuarioyPuntaje(empleado);
 
-					puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria().getPeso()
-							* enfrentamientoCargaHoraria(
-									empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getInstanciaHorario(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria()
-											.getInstanciaHorario());
+					if (empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
+						puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria()
+								.getPeso()
+								* enfrentamientoCargaHoraria(
+										empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria()
+												.getInstanciaHorario(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria()
+												.getInstanciaHorario());
 
-					puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria().getPeso()
-							* enfrentamientoEdad(empleado.getTicket().getFormularioDeBusqueda().getEdad().getInstanciaEdad(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getEdad().getInstanciaEdad());
+						puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria()
+								.getPeso()
+								* enfrentamientoEdad(
+										empleado.getTicket().getFormularioDeBusqueda().getEdad().getInstanciaEdad(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getEdad()
+												.getInstanciaEdad());
 
-					puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getEstudiosCursados()
-							.getPeso()
-							* enfrentamientoEstudiosCursados(
-									empleado.getTicket().getFormularioDeBusqueda().getEstudiosCursados()
-											.getInstanciaEstudios(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getEstudiosCursados()
-											.getInstanciaEstudios());
+						puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getEstudiosCursados()
+								.getPeso()
+								* enfrentamientoEstudiosCursados(
+										empleado.getTicket().getFormularioDeBusqueda().getEstudiosCursados()
+												.getInstanciaEstudios(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getEstudiosCursados()
+												.getInstanciaEstudios());
 
-					puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getExperienciaPrevia()
-							.getPeso()
-							* enfrentamientoExpPrevia(
-									empleado.getTicket().getFormularioDeBusqueda().getExperienciaPrevia()
-											.getInstanciaExperiencia(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getExperienciaPrevia()
-											.getInstanciaExperiencia());
+						puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getExperienciaPrevia()
+								.getPeso()
+								* enfrentamientoExpPrevia(
+										empleado.getTicket().getFormularioDeBusqueda().getExperienciaPrevia()
+												.getInstanciaExperiencia(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getExperienciaPrevia()
+												.getInstanciaExperiencia());
 
-					puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getLocacion().getPeso()
-							* enfrentamientoLocacion(
-									empleado.getTicket().getFormularioDeBusqueda().getLocacion().getInstanciaLocacion(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getLocacion()
-											.getInstanciaLocacion());
+						puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getLocacion().getPeso()
+								* enfrentamientoLocacion(
+										empleado.getTicket().getFormularioDeBusqueda().getLocacion()
+												.getInstanciaLocacion(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getLocacion()
+												.getInstanciaLocacion());
 
-					puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getPuestoLaboral().getPeso()
-							* enfrentamientoTipoPuesto(
-									empleado.getTicket().getFormularioDeBusqueda().getPuestoLaboral()
-											.getInstanciaLaboral(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getPuestoLaboral()
-											.getInstanciaLaboral());
+						puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getPuestoLaboral()
+								.getPeso()
+								* enfrentamientoTipoPuesto(
+										empleado.getTicket().getFormularioDeBusqueda().getPuestoLaboral()
+												.getInstanciaLaboral(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getPuestoLaboral()
+												.getInstanciaLaboral());
 
-					puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion().getPeso()
-							* enfrentamientoRemuneracion(
-									empleado.getTicket().getFormularioDeBusqueda().getRemuneracion().getInstanciaRemuneracion(),
-									empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion()
-											.getInstanciaRemuneracion());
+						puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion()
+								.getPeso()
+								* enfrentamientoRemuneracion(
+										empleado.getTicket().getFormularioDeBusqueda().getRemuneracion()
+												.getInstanciaRemuneracion(),
+										empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion()
+												.getInstanciaRemuneracion());
 
-					aux.setPuntaje(puntajeAux);
+						aux.setPuntaje(puntajeAux);
 
-					empleador.getLista().agregaElemento(aux);
+						empleador.getLista().agregaElemento(aux);
 
+					}
 				}
-				empleador.getLista().getOrdenados().get(empleador.getLista().getOrdenados().size()-1).setPuntaje
-						(empleador.getLista().getOrdenados().get(empleador.getLista().getOrdenados().size()-1).getPuntaje() - 5);
-						//Resta 5 puntos por terminar ultimo en la lista
+				empleador.getLista().getOrdenados().get(empleador.getLista().getOrdenados().size() - 1)
+						.setPuntaje(empleador.getLista().getOrdenados()
+								.get(empleador.getLista().getOrdenados().size() - 1).getPuntaje() - 5);
+				// Resta 5 puntos por terminar ultimo en la lista
 
 			}
 		}
 
 	}
-	
-	/** @author Grupo4 <br>
-	 * Se crea una instancia de Factory para luego con esa instancia identificar los Strings de Empleado y Empleador con sus <br>
-	 * respectivas cargas horarias, as�, creando instancias de estas, para luego, aplicar Double Dispatch.
+
+	/**
+	 * @author Grupo4 <br>
+	 *         Se crea una instancia de Factory para luego con esa instancia
+	 *         identificar los Strings de Empleado y Empleador con sus <br>
+	 *         respectivas cargas horarias, as�, creando instancias de estas, para
+	 *         luego, aplicar Double Dispatch.
 	 */
 
 	public double enfrentamientoCargaHoraria(I_CargaHoraria chEmpleado, I_CargaHoraria chEmpleador) {
@@ -188,11 +214,11 @@ public class RondaEncuentros {
 		return eEmpleador.versus(eEmpleado);
 	}
 
-	public double enfrentamientoEstudiosCursados(I_EstudiosCursados ecEmpleado,I_EstudiosCursados ecEmpleador) {
+	public double enfrentamientoEstudiosCursados(I_EstudiosCursados ecEmpleado, I_EstudiosCursados ecEmpleador) {
 		return ecEmpleador.versus(ecEmpleado);
 	}
 
-	public double enfrentamientoExpPrevia(I_ExperienciaPrevia expEmpleado,I_ExperienciaPrevia expEmpleador) {
+	public double enfrentamientoExpPrevia(I_ExperienciaPrevia expEmpleado, I_ExperienciaPrevia expEmpleador) {
 		return expEmpleador.versus(expEmpleado);
 	}
 
