@@ -42,7 +42,7 @@ public abstract class Usuario {
 
 	public abstract void rondaElecciones();
 
-	public abstract void muestraUsuarios();// HACER UNA EXCEPCION ACA!!!!!
+	public abstract void muestraUsuarios();
 
 	@Override
 	public String toString() {

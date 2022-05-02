@@ -109,7 +109,6 @@ public class Empleado extends Usuario{
 
 	
 	public void muestraUsuarios() {
-		
 		try {
 			muestraEmpleadores();
 		}catch (ListaVaciaException e){
@@ -118,8 +117,7 @@ public class Empleado extends Usuario{
 		
 	}
 	
-	private void muestraEmpleadores() throws ListaVaciaException{
-		
+	private void muestraEmpleadores() throws ListaVaciaException{	
 		if(this.lista == null)
 			throw new ListaVaciaException();
 		else {

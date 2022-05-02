@@ -82,7 +82,6 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	}
 	
 	public void muestraUsuarios() {
-		
 		try {
 			muestraEmpleados();
 		}catch (ListaVaciaException e){
@@ -92,7 +91,6 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	}
 	
 	private void muestraEmpleados() throws ListaVaciaException{
-		
 		if(this.lista == null)
 			throw new ListaVaciaException();
 		else {
