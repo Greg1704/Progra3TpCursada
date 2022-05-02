@@ -2,6 +2,7 @@ package usuariosDelSistema;
 
 import armaTickets.TicketEmpleado;
 import excepciones.FormularioInvalidoException;
+import excepciones.ListaVaciaException;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList.*;
@@ -106,6 +107,30 @@ public class Empleado extends Usuario{
 		//Se le resta un punto al Empleado por cancelar el ticket
 	}
 
+	
+	public void muestraUsuarios() {
+		
+		try {
+			muestraEmpleadores();
+		}catch (ListaVaciaException e){
+			System.out.println("Lista vacia, no hay empleadores seleccionados");
+		}
+		
+	}
+	
+	private void muestraEmpleadores() throws ListaVaciaException{
+		
+		if(this.lista == null)
+			throw new ListaVaciaException();
+		else {
+			for (int i = 0; i < this.lista.getOrdenados().size() ; i++)
+				System.out.println(this.lista.getOrdenados().get(i).getUsuario().getUsuario());
+		}
+		
+	}
+	
+	
+	
 	public void crearTicket(String locacion, int pesoLocacion, double remuneracion, int pesoRemuneracion, String cargaHoraria, int pesoCargaHoraria,
 							String tipoPuestoLaboral, int pesoTipoPuestoLaboral, int edad, int pesoEdad, String experienciaPrevia, int pesoExperienciaPrevia,
 							String estudiosCursados, int pesoEstudiosCursados){

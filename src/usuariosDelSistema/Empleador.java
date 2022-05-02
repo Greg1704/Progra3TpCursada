@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import armaTickets.TicketEmpleador;
 import excepciones.FormularioInvalidoException;
+import excepciones.ListaVaciaException;
 
 public abstract class Empleador extends Usuario implements EmpleadorComision {
 	private String nombre;
@@ -78,6 +79,27 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	public void CancelaTicket() {
 		this.ticketEmpleador.cancela();
 		this.ticketEmpleador = null;
+	}
+	
+	public void muestraUsuarios() {
+		
+		try {
+			muestraEmpleados();
+		}catch (ListaVaciaException e){
+			System.out.println("Lista vacia, no hay empleados seleccionados");
+		}
+		
+	}
+	
+	private void muestraEmpleados() throws ListaVaciaException{
+		
+		if(this.lista == null)
+			throw new ListaVaciaException();
+		else {
+			for (int i = 0; i < this.lista.getOrdenados().size() ; i++)
+				System.out.println(this.lista.getOrdenados().get(i).getUsuario().getUsuario());
+		}
+		
 	}
 	
 	

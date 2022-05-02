@@ -6,7 +6,7 @@ public abstract class Usuario {
 	private String usuario;
 	private String contrasenia;
 	private int puntaje = 0;
-	private ListaAsignaciones lista;
+	protected ListaAsignaciones lista;
 
 	public Usuario(String usuario, String contrasenia) {
 		this.usuario = usuario;
@@ -26,13 +26,12 @@ public abstract class Usuario {
 	}
 
 	public void setPuntaje(int puntaje) {
-		if(puntaje>0)
+		if (puntaje > 0)
 			this.puntaje = puntaje;
 		else
 			this.puntaje = 0;
 	}
 
-	
 	public ListaAsignaciones getLista() {
 		return lista;
 	}
@@ -40,46 +39,31 @@ public abstract class Usuario {
 	public void setLista(ListaAsignaciones lista) {
 		this.lista = lista;
 	}
-	
+
 	public abstract void rondaElecciones();
-	
-	public void muestraUsuarios() {// HACER UNA EXCEPCION ACA!!!!!
 
-		for (int i = 0; i <= this.getLista().getOrdenados().size(); i++) {
-			System.out.println(this.getLista().getOrdenados().get(i).toString());
-		}
-
-	}
-
+	public abstract void muestraUsuarios();// HACER UNA EXCEPCION ACA!!!!!
 
 	@Override
 	public String toString() {
 		return usuario;
 	}
-	
-	
+
 	public abstract void ActivaTicket();
 
 	public abstract void SuspendeTicket();
 
 	public abstract void CancelaTicket();
 
-
-
-	/*public void Login(String usuario, String contrasenia) throws ErrorContrasenia, ErrorUsuario {
-		Usuario user;
-		int i;
-		ArrayList<Usuario> users = this.Sis.getInstancia().getUsuarios();// A chequear esta linea xd//
-		i = users.indexOf(this.usuario.equals(usuario));
-		if (i > 0) { // si existe el usuario...compruebo la contraseña//
-			user = users.get(i);
-			if (user.contrasenia.equals(contrasenia))
-				System.out.println("login realizado"); // Hay que ver que hacemos aca//
-			else
-				throw new ErrorContrasenia();
-		} else
-			throw new ErrorUsuario();
-	}
-	*/
+	/*
+	 * public void Login(String usuario, String contrasenia) throws
+	 * ErrorContrasenia, ErrorUsuario { Usuario user; int i; ArrayList<Usuario>
+	 * users = this.Sis.getInstancia().getUsuarios();// A chequear esta linea xd// i
+	 * = users.indexOf(this.usuario.equals(usuario)); if (i > 0) { // si existe el
+	 * usuario...compruebo la contraseña// user = users.get(i); if
+	 * (user.contrasenia.equals(contrasenia)) System.out.println("login realizado");
+	 * // Hay que ver que hacemos aca// else throw new ErrorContrasenia(); } else
+	 * throw new ErrorUsuario(); }
+	 */
 
 }

@@ -56,6 +56,13 @@ public class Testeo {
 		System.out.println(e5.toString());
 		System.out.println(em1.toString());
 		System.out.println(em2.toString());
+		
+		System.out.println("***********************");
+		
+		em2.muestraUsuarios();
+		System.out.println("***********************");
+		e5.muestraUsuarios();
+		
 	}
 
 }
