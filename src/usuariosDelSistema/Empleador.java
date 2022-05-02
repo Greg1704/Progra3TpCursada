@@ -85,14 +85,14 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		try {
 			muestraEmpleados();
 		}catch (ListaVaciaException e){
-			System.out.println("Lista vacia, no hay empleados seleccionados");
+			System.out.println(e.getMessage());
 		}
 		
 	}
 	
 	private void muestraEmpleados() throws ListaVaciaException{
 		if(this.lista == null)
-			throw new ListaVaciaException();
+			throw new ListaVaciaException("Lista vacia, no hay empleados seleccionados");
 		else {
 			for (int i = 0; i < this.lista.getOrdenados().size() ; i++)
 				System.out.println(this.lista.getOrdenados().get(i).getUsuario().getUsuario());

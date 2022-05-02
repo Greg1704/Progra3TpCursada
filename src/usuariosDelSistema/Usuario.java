@@ -1,6 +1,8 @@
 package usuariosDelSistema;
 
 import encuentro.ListaAsignaciones;
+import excepciones.ContraseniaIncorrectaException;
+import excepciones.UsuarioIncorrectoException;
 
 public abstract class Usuario {
 	private String usuario;
@@ -55,15 +57,7 @@ public abstract class Usuario {
 
 	public abstract void CancelaTicket();
 
-	/*
-	 * public void Login(String usuario, String contrasenia) throws
-	 * ErrorContrasenia, ErrorUsuario { Usuario user; int i; ArrayList<Usuario>
-	 * users = this.Sis.getInstancia().getUsuarios();// A chequear esta linea xd// i
-	 * = users.indexOf(this.usuario.equals(usuario)); if (i > 0) { // si existe el
-	 * usuario...compruebo la contraseña// user = users.get(i); if
-	 * (user.contrasenia.equals(contrasenia)) System.out.println("login realizado");
-	 * // Hay que ver que hacemos aca// else throw new ErrorContrasenia(); } else
-	 * throw new ErrorUsuario(); }
-	 */
+
+
 
 }

@@ -112,14 +112,14 @@ public class Empleado extends Usuario{
 		try {
 			muestraEmpleadores();
 		}catch (ListaVaciaException e){
-			System.out.println("Lista vacia, no hay empleadores seleccionados");
+			System.out.println(e.getMessage());
 		}
 		
 	}
 	
 	private void muestraEmpleadores() throws ListaVaciaException{	
 		if(this.lista == null)
-			throw new ListaVaciaException();
+			throw new ListaVaciaException("Lista vacia, no hay empleadores seleccionados");
 		else {
 			for (int i = 0; i < this.lista.getOrdenados().size() ; i++)
 				System.out.println(this.lista.getOrdenados().get(i).getUsuario().getUsuario());
