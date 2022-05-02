@@ -59,9 +59,19 @@ public class Testeo {
 		
 		System.out.println("***********************");
 		
-		em2.muestraUsuarios();
+		e1.muestraUsuarios();
+		System.out.println("***********************");
+		e2.muestraUsuarios();
+		System.out.println("***********************");
+		e3.muestraUsuarios();
+		System.out.println("***********************");
+		e4.muestraUsuarios();
 		System.out.println("***********************");
 		e5.muestraUsuarios();
+		System.out.println("***********************");
+		em1.muestraUsuarios();
+		System.out.println("***********************");
+		em2.muestraUsuarios();
 		
 	}
 
