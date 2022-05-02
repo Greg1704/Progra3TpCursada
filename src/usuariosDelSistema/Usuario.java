@@ -5,9 +5,9 @@ import excepciones.ContraseniaIncorrectaException;
 import excepciones.UsuarioIncorrectoException;
 
 public abstract class Usuario {
-	private String usuario;
-	private String contrasenia;
-	private int puntaje = 0;
+	protected String usuario;
+	protected String contrasenia;
+	protected int puntaje = 0;
 	protected ListaAsignaciones lista;
 
 	public Usuario(String usuario, String contrasenia) {
@@ -57,7 +57,6 @@ public abstract class Usuario {
 
 	public abstract void CancelaTicket();
 
-
-
+	public abstract void Login(String usuario, String contrasenia);
 
 }

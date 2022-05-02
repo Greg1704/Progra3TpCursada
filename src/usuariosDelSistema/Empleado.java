@@ -1,8 +1,11 @@
 package usuariosDelSistema;
 
 import armaTickets.TicketEmpleado;
+import excepciones.ContraseniaIncorrectaException;
 import excepciones.FormularioInvalidoException;
 import excepciones.ListaVaciaException;
+import excepciones.LoginIncorrectoException;
+import excepciones.UsuarioIncorrectoException;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList.*;
@@ -15,7 +18,6 @@ public class Empleado extends Usuario{
 	private String ciudad;
 	private TicketEmpleado ticket;
 	private Empleador empleadorSeleccionado;
-
 
 	public Empleado(String usuario, String contrasenia, String nya, int dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
@@ -81,6 +83,36 @@ public class Empleado extends Usuario{
 	public void setEmpleadorSeleccionado(Empleador empleadorSeleccionado) {
 		this.empleadorSeleccionado = empleadorSeleccionado;
 	}
+	
+	public void Login(String usuario, String contrasenia){
+
+		try {
+			buscaEmpleado(usuario,contrasenia);
+			System.out.println("Login completado.");
+		}catch (ContraseniaIncorrectaException e) {
+			System.out.println(e.getMessage());
+		}
+		catch(UsuarioIncorrectoException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public Empleado buscaEmpleado(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
+		int i = 0;
+		
+		while (i < Sistema.getInstancia().getEmpleadosPretensos().size()) {
+			if (Sistema.getInstancia().getEmpleadosPretensos().get(i).usuario.compareTo(usuario) == 0) {
+				if(Sistema.getInstancia().getEmpleadosPretensos().get(i).contrasenia.compareTo(contrasenia) == 0)
+					return Sistema.getInstancia().getEmpleadosPretensos().get(i);
+				else
+					throw new ContraseniaIncorrectaException();
+			}
+			i++;		
+		}
+		throw new UsuarioIncorrectoException();
+		
+	}
+	
 	
 	public void rondaElecciones(){ //OTRA EXCEPCION EN CASO QUE SEA NULL Y SE HAGA GET();
 		

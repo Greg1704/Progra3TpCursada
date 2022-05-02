@@ -4,8 +4,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import armaTickets.TicketEmpleador;
+import excepciones.ContraseniaIncorrectaException;
 import excepciones.FormularioInvalidoException;
 import excepciones.ListaVaciaException;
+import excepciones.UsuarioIncorrectoException;
 
 public abstract class Empleador extends Usuario implements EmpleadorComision {
 	private String nombre;
@@ -74,6 +76,37 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	public void SuspendeTicket() {
 		this.ticketEmpleador.suspende();
 	}
+	
+	public void Login(String usuario, String contrasenia){
+
+		try {
+			buscaEmpleador(usuario,contrasenia);
+			System.out.println("Login completado.");
+		}catch (ContraseniaIncorrectaException e) {
+			System.out.println(e.getMessage());
+		}
+		catch(UsuarioIncorrectoException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public Empleador buscaEmpleador(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
+		int i = 0;
+		
+		while (i < Sistema.getInstancia().getEmpleadores().size()) {
+			if (Sistema.getInstancia().getEmpleadores().get(i).usuario.compareTo(usuario) == 0) {
+				if(Sistema.getInstancia().getEmpleadores().get(i).contrasenia.compareTo(contrasenia) == 0)
+					return Sistema.getInstancia().getEmpleadores().get(i);
+				else
+					throw new ContraseniaIncorrectaException();
+			}
+			i++;		
+		}
+		throw new UsuarioIncorrectoException();
+		
+	}
+	
+	
   
 	@Override
 	public void CancelaTicket() {
