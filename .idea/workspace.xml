@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bae00f15-2261-459a-b802-e8a456c13c3a" name="Changes" comment="Tomi me acaba de decir que hace 3 anios estuvimos a un dia de rendir algebra A&#10;Recontra relevante eh">
+    <list default="true" id="bae00f15-2261-459a-b802-e8a456c13c3a" name="Changes" comment="Cambios improvisados en testeo *bailecito de iCarly*">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/encuentro/RondaEncuentros.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/encuentro/RondaEncuentros.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/prueba/Testeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prueba/Testeo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Empleador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Empleador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651447717489</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cambios improvisados en testeo *bailecito de iCarly*">
+      <created>1651448834457</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651448834457</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +137,7 @@
     <MESSAGE value="Funciona con el ejemplo dado" />
     <MESSAGE value="Tomi me acaba de decir que hace 3 anios estuvimos a un dia de rendir algebra A" />
     <MESSAGE value="Tomi me acaba de decir que hace 3 anios estuvimos a un dia de rendir algebra A&#10;Recontra relevante eh" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tomi me acaba de decir que hace 3 anios estuvimos a un dia de rendir algebra A&#10;Recontra relevante eh" />
+    <MESSAGE value="Cambios improvisados en testeo *bailecito de iCarly*" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios improvisados en testeo *bailecito de iCarly*" />
   </component>
 </project>

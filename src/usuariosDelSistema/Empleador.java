@@ -89,8 +89,8 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	public void rondaElecciones() { // hacer excepcion (try catch), tirar excepci�n en el get()
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
 		int i = 0;
-		
-		super.getLista().getOrdenados().get(0).setPuntaje(super.getLista().getOrdenados().get(0).getPuntaje() + 5);
+
+		super.getLista().getOrdenados().get(0).getUsuario().setPuntaje(super.getLista().getOrdenados().get(0).getUsuario().getPuntaje() + 5);
 		//Suma 5 puntos por estar primero en la lista
 		
 		while(i < super.getLista().getOrdenados().size() && i < cuposTotal) {

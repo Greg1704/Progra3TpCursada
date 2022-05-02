@@ -115,7 +115,6 @@ public class Empleado extends Usuario{
 					estudiosCursados, pesoEstudiosCursados);
 		} catch (FormularioInvalidoException e) {
 			System.out.println(e.getMessage() + " del Empleado " + this.nya);
-			ticket.suspende();
 		}
 	}
 

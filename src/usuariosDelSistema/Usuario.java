@@ -26,7 +26,10 @@ public abstract class Usuario {
 	}
 
 	public void setPuntaje(int puntaje) {
-		this.puntaje = puntaje;
+		if(puntaje>0)
+			this.puntaje = puntaje;
+		else
+			this.puntaje = 0;
 	}
 
 	

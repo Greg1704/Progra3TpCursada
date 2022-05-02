@@ -188,8 +188,8 @@ public class RondaEncuentros {
 					}
 				}
 				empleador.getLista().getOrdenados().get(empleador.getLista().getOrdenados().size() - 1)
-						.setPuntaje(empleador.getLista().getOrdenados()
-								.get(empleador.getLista().getOrdenados().size() - 1).getPuntaje() - 5);
+						.getUsuario().setPuntaje(empleador.getLista().getOrdenados()
+								.get(empleador.getLista().getOrdenados().size() - 1).getUsuario().getPuntaje() - 5);
 				// Resta 5 puntos por terminar ultimo en la lista
 
 			}
