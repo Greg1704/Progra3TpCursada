@@ -3,6 +3,7 @@ package usuariosDelSistema;
 import java.util.ArrayList;
 import encuentro.RondaEncuentros;
 import excepciones.ListaVaciaException;
+import excepciones.NingunActivoException;
 
 /**
  * @author Grupo4 <br>
@@ -117,21 +118,19 @@ public class Sistema {
 		return empleado.getTicket().getFormularioDeBusqueda().getRemuneracion().getMonto() * porc;
 	}
 
-	public void llamaRondaEncuentros() throws ListaVaciaException{ 
+	public void llamaRondaEncuentros() throws ListaVaciaException {
 		encuentros = new RondaEncuentros();
-		
+
 		if (this.empleadores.size() == 0)
 			throw new ListaVaciaException("No se encuentran empleadores en el sistema por el momento");
-		else 
+		else
 			encuentros.enfrentamientoEmpleadores();
-		
+
 		if (this.empleadosPretensos.size() == 0)
 			throw new ListaVaciaException("No se encuentran empleados pretensos en el sistema por el momento");
-		else 
+		else
 			encuentros.enfrentamientoEmpleados();
 	}
-		
-		
 
 	public void rondaDeElecciones() {
 		ArrayList<Empleador> empleadoresElegidos = new ArrayList<Empleador>();
@@ -215,15 +214,40 @@ public class Sistema {
 	 * 
 	 */
 
-	public void busquedaLaboral() {	
+	public void busquedaLaboral() {
 		try {
+			verificaActivos();
 			this.llamaRondaEncuentros();
 			this.rondaDeElecciones();
 			this.rondaDeContrataciones();
-		}catch (ListaVaciaException e) {
+		} catch (NingunActivoException e) {
+			System.out.println(e.getMessage());
+		} catch (ListaVaciaException e) {
 			System.out.println(e.getMessage());
 		}
-		
+
+	}
+
+	private void verificaActivos() throws NingunActivoException {
+		boolean empleadoActivo = false;
+		boolean empleadorActivo = false;
+
+		for (Empleador empleador : empleadores) {
+			if (empleador.getTicketEmpleador() != null
+					&& empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo"))
+				empleadorActivo = true;
+		}
+
+		for (Empleado empleado : empleadosPretensos) {
+			if (empleado.getTicket() != null && empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo"))
+				empleadoActivo = true;
+		}
+
+		if (!empleadoActivo)
+			throw new NingunActivoException("No hay empleados con tickets activos");
+
+		if (!empleadorActivo)
+			throw new NingunActivoException("No hay empleadores con tickets activos");
 	}
 
 }
