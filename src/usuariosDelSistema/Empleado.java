@@ -175,7 +175,7 @@ public class Empleado extends Usuario{
 
 	@Override
 	public String toString() {
-		return "Empleado [nya=" + nya + ", ticket=" + ticket + ", puntaje= "+ getPuntaje() + "]";
+		return "Empleado: Nombre y Apellido: " + nya + ticket + ". Puntaje: "+ getPuntaje();
 	}
 
 	

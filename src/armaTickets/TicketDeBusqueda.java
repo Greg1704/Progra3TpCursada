@@ -60,7 +60,7 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 
 	@Override
 	public String toString() {
-		return "TicketDeBusqueda [estadoTicket=" + estadoTicket + "]";
+		return ". Estado de Ticket: " + estadoTicket;
 	}
 
 	
