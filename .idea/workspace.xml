@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bae00f15-2261-459a-b802-e8a456c13c3a" name="Changes" comment="Cambios improvisados en testeo *bailecito de iCarly*">
-      <change beforePath="$PROJECT_DIR$/src/excepciones/ListaVaciaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/excepciones/ListaVaciaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Empleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Empleador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Empleador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/prueba/Testeo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prueba/Testeo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/usuariosDelSistema/Sistema.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

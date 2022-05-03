@@ -17,6 +17,7 @@ public class Testeo {
 
 		EmpleadorJuridico em1;
 		EmpleadorFisico em2;
+		EmpleadorFisico em3;
 
 		e1 = new Empleado("Juanu","contrasenia","Juan pedro Garcia",43322122,22345654,25,"Mar del Plata");
 		e1.crearTicket("HomeOffice",1,45000,1,"Completa",1,"Junior",1,25,1,"Media",1,"Secundario",1);
@@ -38,7 +39,9 @@ public class Testeo {
 
 		em2 = new EmpleadorFisico("LaDespensaDelTioMario","RitaTeAmo","La despensa del tio Mario","ComercioLocal");
 		em2.crearTicket("Presencial",10,45000,10,"Completa",5,"Junior",5,25,3,"Nada",1,"Primario",1,1);
-		
+
+		em3 = new EmpleadorFisico("Puma","MateoVendeZapas","Puma Arg","ComercioLocal");
+		em3.crearTicket("Presencial",8,70000,10,"Extendida",8,"Senior",10,43,3,"Media",5,"Primario",1,2);
 		agencia.agregaEmpleado(e1);
 		agencia.agregaEmpleado(e2);
 		agencia.agregaEmpleado(e3);
@@ -46,6 +49,7 @@ public class Testeo {
 		agencia.agregaEmpleado(e5);
 		agencia.agregaEmpleador(em1);
 		agencia.agregaEmpleador(em2);
+		agencia.agregaEmpleador(em3);
 		
 		agencia.busquedaLaboral();
 		
@@ -56,6 +60,7 @@ public class Testeo {
 		System.out.println(e5.toString());
 		System.out.println(em1.toString());
 		System.out.println(em2.toString());
+		System.out.println(em3.toString());
 		
 		System.out.println("***********************");
 		
@@ -72,6 +77,8 @@ public class Testeo {
 		em1.muestraUsuarios();
 		System.out.println("***********************");
 		em2.muestraUsuarios();
+		System.out.println("***********************");
+		em3.muestraUsuarios();
 		
 		System.out.println("***********************");
 		System.out.println("***********************");

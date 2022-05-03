@@ -186,6 +186,7 @@ public class Sistema {
 						aux.get(i).getTicket().finaliza();
 						aux.get(i).setPuntaje(aux.get(i).getPuntaje() + 10);
 						comision = this.comisionEmpleadoPretenso(aux.get(i));
+						System.out.println("El empleado " + aux.get(i).getNya() + " fue contratado por la empresa " + empleador.getNombre());
 						System.out.println("Comision para el empleado " + aux.get(i).getNya() + ": " + comision);
 					}
 
