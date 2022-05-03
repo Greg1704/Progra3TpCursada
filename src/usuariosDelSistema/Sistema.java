@@ -228,6 +228,10 @@ public class Sistema {
 
 	}
 
+	/**
+	 * Metodo que verifica si existe al menos un ticket que este en estado activo en cada una de las listas <br>
+	 * @throws NingunActivoException : se lanza esta excepcion en caso que no haya usuarios activos en alguna de las listas  <br>
+	 */
 	private void verificaActivos() throws NingunActivoException {
 		boolean empleadoActivo = false;
 		boolean empleadorActivo = false;
