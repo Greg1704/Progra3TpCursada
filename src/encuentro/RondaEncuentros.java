@@ -205,32 +205,32 @@ public class RondaEncuentros {
 	 *         luego, aplicar Double Dispatch.
 	 */
 
-	public double enfrentamientoCargaHoraria(I_CargaHoraria chEmpleado, I_CargaHoraria chEmpleador) {
+	private double enfrentamientoCargaHoraria(I_CargaHoraria chEmpleado, I_CargaHoraria chEmpleador) {
 		return chEmpleador.versus(chEmpleado);
 	}
 
-	public double enfrentamientoEdad(I_RangoEtario eEmpleado, I_RangoEtario eEmpleador) {
+	private double enfrentamientoEdad(I_RangoEtario eEmpleado, I_RangoEtario eEmpleador) {
 
 		return eEmpleador.versus(eEmpleado);
 	}
 
-	public double enfrentamientoEstudiosCursados(I_EstudiosCursados ecEmpleado, I_EstudiosCursados ecEmpleador) {
+	private double enfrentamientoEstudiosCursados(I_EstudiosCursados ecEmpleado, I_EstudiosCursados ecEmpleador) {
 		return ecEmpleador.versus(ecEmpleado);
 	}
 
-	public double enfrentamientoExpPrevia(I_ExperienciaPrevia expEmpleado, I_ExperienciaPrevia expEmpleador) {
+	private double enfrentamientoExpPrevia(I_ExperienciaPrevia expEmpleado, I_ExperienciaPrevia expEmpleador) {
 		return expEmpleador.versus(expEmpleado);
 	}
 
-	public double enfrentamientoLocacion(I_Locacion locEmpleado, I_Locacion locEmpleador) {
+	private double enfrentamientoLocacion(I_Locacion locEmpleado, I_Locacion locEmpleador) {
 		return locEmpleador.versus(locEmpleado);
 	}
 
-	public double enfrentamientoTipoPuesto(I_TipoDePuesto tpEmpleado, I_TipoDePuesto tpEmpleador) {
+	private double enfrentamientoTipoPuesto(I_TipoDePuesto tpEmpleado, I_TipoDePuesto tpEmpleador) {
 		return tpEmpleador.versus(tpEmpleado);
 	}
 
-	public double enfrentamientoRemuneracion(I_Remuneracion rEmpleado, I_Remuneracion rEmpleador) {
+	private double enfrentamientoRemuneracion(I_Remuneracion rEmpleado, I_Remuneracion rEmpleador) {
 		return rEmpleador.versus(rEmpleado);
 	}
 
