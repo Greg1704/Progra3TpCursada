@@ -7,10 +7,10 @@ import excepciones.NingunActivoException;
 
 /**
  * @author Grupo4 <br>
- *         Clase que representa el <b> Sistema </b> con sus mï¿½todos
- *         principales para el correcto desempeï¿½o del programa <br>
- *         Tiene aplicado mï¿½todo Singleton definido en getInstancia(): no
- *         puede haber mï¿½s de un <b> Sistema </b>.
+ *         Clase que representa el <b> Sistema </b> con sus métodos
+ *         principales para el correcto desempeño del programa <br>
+ *         Tiene aplicado método Singleton definido en getInstancia(): no
+ *         puede haber más de un <b> Sistema </b>.
  */
 
 public class Sistema {
@@ -26,10 +26,10 @@ public class Sistema {
 	}
 
 	/**
-	 * el mï¿½todo <b> agregaEmpleado </b> agrega un empleado a la lista de
+	 * el método <b> agregaEmpleado </b> agrega un empleado a la lista de
 	 * empleados del <b> Sistema </b> <br>
 	 * 
-	 * @param e: Empleado que serï¿½ agregado a la lista de empleados del sistema
+	 * @param e: Empleado que será agregado a la lista de empleados del sistema
 	 *           <br>
 	 *           PreCond: Empleado debe ser distinto de null <br>
 	 *           PostCond: Se agrega empleado a la lista
@@ -41,25 +41,25 @@ public class Sistema {
 	}
 
 	/**
-	 * el mï¿½todo <b> sacaEmpleado </b> saca un empleado a la lista de empleados
+	 * el método <b> sacaEmpleado </b> saca un empleado a la lista de empleados
 	 * del <b> Sistema </b> <br>
 	 * 
-	 * @param e: Empleado que serï¿½ removido de la lista de empleados del sistema
+	 * @param e: Empleado que será removido de la lista de empleados del sistema
 	 *           <br>
-	 *           PostCond: Se remueve empleado de la lista si el dato es vï¿½lido
+	 *           PostCond: Se remueve empleado de la lista si el dato es válido
 	 *
 	 */
 
-	public void sacaEmpleado(Empleado e) { // excepcion si el empleado es invï¿½lido , ya que remove() devuelve false si
+	public void sacaEmpleado(Empleado e) { // excepcion si el empleado es inválido , ya que remove() devuelve false si
 											// no se elimina nada
 		this.empleadosPretensos.remove(e);
 	}
 
 	/**
-	 * el mï¿½todo <b> agregaEmpleador </b> agrega un empleador a la lista de
+	 * el método <b> agregaEmpleador </b> agrega un empleador a la lista de
 	 * empleadores del <b> Sistema </b> <br>
 	 * 
-	 * @param e: Empleador que serï¿½ agregado a la lista de empleadores del sistema
+	 * @param e: Empleador que será agregado a la lista de empleadores del sistema
 	 *           <br>
 	 *           PreCond: Empleador debe ser distinto de null PostCond: Se agrega
 	 *           empleador a la lista
@@ -71,12 +71,12 @@ public class Sistema {
 	}
 
 	/**
-	 * el mï¿½todo <b> sacaEmpleador </b> saca un empleado a la lista de empleados
+	 * el método <b> sacaEmpleador </b> saca un empleado a la lista de empleados
 	 * del <b> Sistema </b> <br>
 	 * 
-	 * @param e: Empleador que serï¿½ removido de la lista de empleadores del
+	 * @param e: Empleador que será removido de la lista de empleadores del
 	 *           sistema <br>
-	 *           PostCond: Se remueve empleador de la lista si el dato es vï¿½lido
+	 *           PostCond: Se remueve empleador de la lista si el dato es válido
 	 *
 	 */
 
@@ -93,12 +93,12 @@ public class Sistema {
 	}
 
 	/**
-	 * el mï¿½todo <b> comisionEmpleadoPretenso </b> calcula la comisiï¿½n del
-	 * empleado dependiendo del cargo que ï¿½ste posee <br>
+	 * el método <b> comisionEmpleadoPretenso </b> calcula la comisión del
+	 * empleado dependiendo del cargo que éste posee <br>
 	 * 
-	 * @param empleado: Empleado al que le serï¿½ calculada la comisiï¿½n <br>
-	 *                  PreCond: Empleado debe ser distinto de null y vï¿½lido <br>
-	 *                  PostCond: Se retornarï¿½ la comisiï¿½n como un "double"
+	 * @param empleado: Empleado al que le será calculada la comisión <br>
+	 *                  PreCond: Empleado debe ser distinto de null y válido <br>
+	 *                  PostCond: Se retornará la comisión como un "double"
 	 *
 	 */
 
@@ -209,7 +209,7 @@ public class Sistema {
 	}
 
 	/**
-	 * En este mï¿½todo se aplica el patrï¿½n Template para invocar los mï¿½todos
+	 * En este método se aplica el patrón Template para invocar los métodos
 	 * que corresponden a las interacciones entre empleados y empleadores, <br>
 	 * desde la ronda de encuentros hasta la ronda de contrataciones.
 	 * 

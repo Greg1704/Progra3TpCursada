@@ -135,7 +135,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	
 	
 	/**
-	 * PostCond: Se crea un empleador de tipo jurï¿½dico. 
+	 * PostCond: Se crea un empleador de tipo jurídico. 
 	 */
 	
 

@@ -7,7 +7,7 @@ public class EmpleadorJuridico extends Empleador{
 	
 	/**
 	 * @author Grupo4 <br>
-	 * PostCond: Se crea un empleador de tipo jurï¿½dico. 
+	 * PostCond: Se crea un empleador de tipo jurídico. 
 	 */
 	
 	

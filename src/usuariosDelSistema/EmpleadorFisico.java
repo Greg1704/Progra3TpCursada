@@ -6,7 +6,7 @@ public class EmpleadorFisico extends Empleador{
 	
 	/**
 	 * @author Grupo4 <br>
-	 * PostCond: Se crea un empleador de tipo fï¿½sico. 
+	 * PostCond: Se crea un empleador de tipo físico. 
 	 */
 	
 
