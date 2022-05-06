@@ -139,7 +139,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 	 */
 	
 
-	public void rondaElecciones() { // hacer excepcion (try catch), tirar excepci�n en el get()
+	public void rondaElecciones() {
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
 		int i = 0;
 

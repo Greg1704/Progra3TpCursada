@@ -28,7 +28,7 @@ public class ListaAsignaciones {
 		Collections.sort(ordenados);
 	}
 	
-	public void eliminaElemento(UsuarioyPuntaje u) { //exc
+	public void eliminaElemento(UsuarioyPuntaje u) {
 		ordenados.remove(u);
 		Collections.sort(ordenados);
 	}
