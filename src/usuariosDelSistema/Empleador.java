@@ -133,11 +133,6 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		
 	}
 	
-	
-	/**
-	 * PostCond: Se crea un empleador de tipo jurídico. 
-	 */
-	
 
 	public void rondaElecciones() {
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();

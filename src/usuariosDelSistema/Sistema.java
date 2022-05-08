@@ -61,7 +61,8 @@ public class Sistema {
 	 * 
 	 * @param e: Empleador que será agregado a la lista de empleadores del sistema
 	 *           <br>
-	 *           PreCond: Empleador debe ser distinto de null PostCond: Se agrega
+	 *           PreCond: Empleador debe ser distinto de null <br>
+	 *           PostCond: Se agrega
 	 *           empleador a la lista
 	 *
 	 */
