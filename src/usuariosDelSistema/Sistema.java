@@ -81,7 +81,7 @@ public class Sistema {
 	 *
 	 */
 
-	public void sacaEmpleador(Empleado e) { // excepci�n
+	public void sacaEmpleador(Empleador e) { 
 		this.empleadores.remove(e);
 	}
 
