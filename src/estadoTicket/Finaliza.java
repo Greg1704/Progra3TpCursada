@@ -11,25 +11,22 @@ public class Finaliza implements I_EstadoTicket {
 	
 	@Override
 	public String activa() {
-		// TODO Auto-generated method stub
+		return "El ticket ya fue finalizado.";
 	}
 
 	@Override
 	public String suspende() {
-		// TODO Auto-generated method stub
-
+		return "El ticket ya fue finalizado.";
 	}
 
 	@Override
 	public String cancela() {
-		// TODO Auto-generated method stub
-
+		return "El ticket ya fue finalizado.";
 	}
 
 	@Override
 	public String finaliza() {
-		// TODO Auto-generated method stub
-
+		return "El ticket se encuentra finalizado.";
 	}
 	
 }

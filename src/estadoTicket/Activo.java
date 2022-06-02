@@ -12,25 +12,25 @@ public class Activo implements I_EstadoTicket {
 
 	@Override
 	public String activa() {
-		// TODO Auto-generated method stub
+		return "El Ticket ya esta activo.";
 	}
 
 	@Override
 	public String suspende() {
-		// TODO Auto-generated method stub
-
+		this.ticket.setEstado(new Suspende(ticket));
+		return "Ticket suspendido.";
 	}
 
 	@Override
 	public String cancela() {
-		// TODO Auto-generated method stub
-
+		this.ticket.setEstado(new Cancela(ticket));
+		return "Ticket cancelado.";
 	}
 
 	@Override
 	public String finaliza() {
-		// TODO Auto-generated method stub
-
+		this.ticket.setEstado(new Finaliza(ticket));
+		return "Ticket finalizado.";
 	}
 
 }

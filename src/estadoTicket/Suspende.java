@@ -11,25 +11,24 @@ public class Suspende implements I_EstadoTicket {
 	
 	@Override
 	public String activa() {
-		// TODO Auto-generated method stub
+		this.ticket.setEstado(new Activo(ticket));
+		return "Ticket activado nuevamente.";
 	}
 
 	@Override
 	public String suspende() {
-		// TODO Auto-generated method stub
-
+		return "El ticket ya se encuentra suspendido.";
 	}
 
 	@Override
 	public String cancela() {
-		// TODO Auto-generated method stub
-
+		this.ticket.setEstado(new Cancela(ticket));
+		return "Ticket cancelado.";
 	}
 
 	@Override
-	public String finaliza() {
-		// TODO Auto-generated method stub
-
+	public String finaliza() {//no podria llegar nunca a esta instancia de todas formas
+		return "No es posible, el ticket se encuentra finalizado";
 	}
 
 }

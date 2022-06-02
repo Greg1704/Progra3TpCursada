@@ -5,6 +5,7 @@ import excepciones.FormularioInvalidoException;
 
 import java.time.LocalDateTime;
 
+import estadoTicket.Activo;
 import estadoTicket.I_EstadoTicket;
 
 public abstract class TicketDeBusqueda{
@@ -18,6 +19,7 @@ public abstract class TicketDeBusqueda{
 							String estudiosCursados,int pesoEstudiosCursados) throws FormularioInvalidoException {
 		super();
 		this.fechaAlta = fechaAlta;
+		this.estado = new Activo(this);
 		this.formulario = new FormularioDeBusqueda(locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
 			 tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
 			 estudiosCursados, pesoEstudiosCursados);
@@ -46,24 +48,25 @@ public abstract class TicketDeBusqueda{
 		return ". Estado de Ticket: " + estadoTicket;
 	}
 	
-	@Override
-	public String activa() {
-		this.estadoTicket = "Activado";
+	
+	public void setEstado(I_EstadoTicket estado) {
+		this.estado = estado;
 	}
 	
-	@Override
+	public String activa() {
+		return this.estado.activa();
+	}
+	
 	public String suspende() {
-		this.estadoTicket = "Suspendido";
+		return this.estado.suspende();
 	}
 
-	@Override
 	public String cancela() {
-		this.estadoTicket = "Cancelado";
+		return this.estado.cancela();
 	}
 
-	@Override
 	public String finaliza() {
-		this.estadoTicket = "Finalizado";
+		return this.estado.finaliza();
 	}
 
 	

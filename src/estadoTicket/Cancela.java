@@ -11,25 +11,22 @@ public class Cancela implements I_EstadoTicket {
 	
 	@Override
 	public String activa() {
-		// TODO Auto-generated method stub
+		return "El ticket se encuentra cancelado.";
 	}
 
 	@Override
 	public String suspende() {
-		// TODO Auto-generated method stub
-
+		return "El ticket se encuentra cancelado.";
 	}
 
 	@Override
 	public String cancela() {
-		// TODO Auto-generated method stub
-
+		return "El ticket ya se encuentra finalizado.";
 	}
 
 	@Override
 	public String finaliza() {
-		// TODO Auto-generated method stub
-
+		return "El ticket se encuentra cancelado.";
 	}
 
 }
