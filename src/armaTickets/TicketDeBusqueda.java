@@ -5,17 +5,19 @@ import excepciones.FormularioInvalidoException;
 
 import java.time.LocalDateTime;
 
-public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
+import estadoTicket.I_EstadoTicket;
+
+public abstract class TicketDeBusqueda{
 	private LocalDateTime fechaAlta;
 	private String estadoTicket;
 	private FormularioDeBusqueda formulario;
+	private I_EstadoTicket estado;
 	
 	public TicketDeBusqueda(LocalDateTime fechaAlta,String locacion,int pesoLocacion, double remuneracion, int pesoRemuneracion,String cargaHoraria,int pesoCargaHoraria,
 							String tipoPuestoLaboral,int pesoTipoPuestoLaboral, int edad,int pesoEdad, String experienciaPrevia,int pesoExperienciaPrevia,
 							String estudiosCursados,int pesoEstudiosCursados) throws FormularioInvalidoException {
 		super();
 		this.fechaAlta = fechaAlta;
-		this.estadoTicket = "Activo";
 		this.formulario = new FormularioDeBusqueda(locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
 			 tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
 			 estudiosCursados, pesoEstudiosCursados);
@@ -34,25 +36,6 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 		this.estadoTicket = estadoTicket;
 	}
 
-	@Override
-	public void activa() {
-		this.estadoTicket = "Activado";
-	}
-	
-	@Override
-	public void suspende() {
-		this.estadoTicket = "Suspendido";
-	}
-
-	@Override
-	public void cancela() {
-		this.estadoTicket = "Cancelado";
-	}
-
-	@Override
-	public void finaliza() {
-		this.estadoTicket = "Finalizado";
-	}
 
 	public FormularioDeBusqueda getFormularioDeBusqueda(){
 		return this.formulario;
@@ -61,6 +44,26 @@ public abstract class TicketDeBusqueda implements EstadoTicketDeBusqueda{
 	@Override
 	public String toString() {
 		return ". Estado de Ticket: " + estadoTicket;
+	}
+	
+	@Override
+	public String activa() {
+		this.estadoTicket = "Activado";
+	}
+	
+	@Override
+	public String suspende() {
+		this.estadoTicket = "Suspendido";
+	}
+
+	@Override
+	public String cancela() {
+		this.estadoTicket = "Cancelado";
+	}
+
+	@Override
+	public String finaliza() {
+		this.estadoTicket = "Finalizado";
 	}
 
 	
