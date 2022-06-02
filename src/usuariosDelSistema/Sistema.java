@@ -17,7 +17,6 @@ public class Sistema {
 	private static Sistema instancia = null;
 	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
 	private ArrayList<Empleador> empleadores = new ArrayList<Empleador>();
-	private ArrayList<TicketSimplificado> bolsaDeTrabajo = new ArrayList<TicketSimplificado>;
 	private RondaEncuentros encuentros;
 
 	public static Sistema getInstancia() {
