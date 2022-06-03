@@ -1,6 +1,6 @@
 package usuariosDelSistema;
 
-public class ComercioLocal extends RubroDecorator{
+public class ComercioLocal extends RubroDecorator implements I_TipoTrabajo{
 
     public ComercioLocal(Empleador empleador) {
         super(empleador);
@@ -9,5 +9,25 @@ public class ComercioLocal extends RubroDecorator{
     @Override
     public double getComision() {
         return getEmpleador().getComision() + 0.4 - 0.01* getEmpleador().getPuntaje();
+    }
+
+    @Override
+    public double versus(I_TipoTrabajo tipoTrabajo) {
+        return tipoTrabajo.ComercioLocal();
+    }
+
+    @Override
+    public double Salud() {
+        return -1;
+    }
+
+    @Override
+    public double ComercioLocal() {
+        return 1;
+    }
+
+    @Override
+    public double ComercioInternacional() {
+        return -1;
     }
 }
