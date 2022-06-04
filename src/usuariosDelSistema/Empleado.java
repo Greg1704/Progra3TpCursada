@@ -6,6 +6,7 @@ import excepciones.FormularioInvalidoException;
 import excepciones.ListaVaciaException;
 import excepciones.LoginIncorrectoException;
 import excepciones.UsuarioIncorrectoException;
+import ticketSimplificado.TicketSimplificado;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList.*;
@@ -18,6 +19,8 @@ public class Empleado extends Usuario{
 	private String ciudad;
 	private TicketEmpleado ticket;
 	private Empleador empleadorSeleccionado;
+	private TicketSimplificado ticketSimpElegido = null;
+	private int pasadas=10;
 
 	public Empleado(String usuario, String contrasenia, String nya, int dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
@@ -173,12 +176,17 @@ public class Empleado extends Usuario{
 		}
 	}
 
+
 	@Override
 	public String toString() {
 		return "Empleado: Nombre y Apellido: " + nya + ticket + ". Puntaje: "+ getPuntaje();
 	}
 
-	
-	
 
+	@Override
+	public void run() {
+		if(this.pasadas!=0 && ticketSimpElegido==null){
+			//Lo llevamos al recurso compartido para que eliga
+		}
+	}
 }

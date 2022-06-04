@@ -168,6 +168,8 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 				+ cantidadEmpleadosSeleccionados;
 	}
 
-	
-
+	@Override
+	public void run() {
+		super.run();//claramente esto no queda asi
+	}
 }

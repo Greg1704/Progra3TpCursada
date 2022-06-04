@@ -4,7 +4,7 @@ import encuentro.ListaAsignaciones;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.UsuarioIncorrectoException;
 
-public abstract class Usuario {
+public abstract class Usuario extends Thread{
 	protected String usuario;
 	protected String contrasenia;
 	protected int puntaje = 0;
