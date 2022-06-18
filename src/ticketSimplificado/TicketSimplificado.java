@@ -7,9 +7,10 @@ import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
 import usuariosDelSistema.I_TipoTrabajo;
 import usuariosDelSistema.TipoTrabajoFactory;
-
+import javax.swing.JFrame;
 import java.util.Observable;
 
+@SuppressWarnings("deprecation")
 public class TicketSimplificado extends Observable implements Runnable{
 //habria que agregar 2 strings: rubro, y locacion. Con eso aplicar los decorator y agregarle las funcionalidades
 //a su vez hay que aplicar metodo run, para asi correrlo como un thread, podemos extender de clase thread o implementar
@@ -29,7 +30,8 @@ public class TicketSimplificado extends Observable implements Runnable{
       this.contratado=false;
    }
 
-   @Override
+   @SuppressWarnings("deprecation")
+@Override
    public void run() {
       while(this.contratado==false){
          //Entra al metodo, y cuando sale, puede o no estar contratado
@@ -39,6 +41,13 @@ public class TicketSimplificado extends Observable implements Runnable{
       notifyObservers(empleadoContratado);
    }
 
+public String getLocacion() {
+		return locacion.toString();
+	}
+
+   
    //Revisar si hay que agregar algun error a tipoTrabajoFactory
    //Revisar como relacionar las clases Salud, ComercioLocal, y ComercioInternacional con los empleados
 }
+
+

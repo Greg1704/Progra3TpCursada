@@ -10,8 +10,11 @@ import ticketSimplificado.TicketSimplificado;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList.*;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Empleado extends Usuario{
+@SuppressWarnings("deprecation")
+public class Empleado extends Usuario implements Observer {
 	private String nya; //Nombre y Apellido
 	private int dni;
 	private int telefono;
@@ -21,6 +24,7 @@ public class Empleado extends Usuario{
 	private Empleador empleadorSeleccionado;
 	private TicketSimplificado ticketSimpElegido = null;
 	private int pasadas=10;
+	private BolsaDeTrabajo bolsa = BolsaDeTrabajo.getInstancia();
 
 	public Empleado(String usuario, String contrasenia, String nya, int dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
@@ -29,6 +33,7 @@ public class Empleado extends Usuario{
 		this.telefono = telefono;
 		this.edad = edad;
 		this.ciudad = ciudad;
+		bolsa.addObserver(this);
 	}
 
 	public void setTicket(TicketEmpleado ticket) {
@@ -180,6 +185,11 @@ public class Empleado extends Usuario{
 	@Override
 	public String toString() {
 		return "Empleado: Nombre y Apellido: " + nya + ticket + ". Puntaje: "+ getPuntaje();
+	}
+
+	@Override
+	public void update(Observable o, Object arg) { // acá va a entrar si se eligió un ticket
+		
 	}
 
 

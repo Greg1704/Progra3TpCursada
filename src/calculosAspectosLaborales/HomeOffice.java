@@ -22,4 +22,11 @@ public class HomeOffice implements I_Locacion {
     public double indistinto() {
         return 1;
     }
+
+	@Override
+	public String toString() {
+		return "HomeOffice";
+	}
+    
+    
 }

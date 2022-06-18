@@ -191,10 +191,11 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	}
 
 	@Override
-	public void update(Observable o, Object arg) {
+	public void update(Observable o, Object arg) { // acá va a entrar si se eligió un ticket
 		//Se deberia ejecutar cuando el empleado se apropia del ticket
 		//El Object seria el empleado, se usaria este update para hacer los cambios en el empleado y el empleador
 		//Consultar con Grego o Manu
+		
 	}
 
 	@Override

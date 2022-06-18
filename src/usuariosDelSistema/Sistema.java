@@ -22,7 +22,6 @@ public class Sistema {
 	private ArrayList<TicketSimplificado> bolsaDeTrabajo = new ArrayList<TicketSimplificado>();
 	private RondaEncuentros encuentros;
 
-
 	private Sistema(){
 		this.nombre="La Agencia de Pedrito";
 	}
