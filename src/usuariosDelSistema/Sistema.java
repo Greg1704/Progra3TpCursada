@@ -15,11 +15,18 @@ import ticketSimplificado.TicketSimplificado;
  */
 
 public class Sistema {
+	private String nombre;
 	private static Sistema instancia = null;
 	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
 	private ArrayList<Empleador> empleadores = new ArrayList<Empleador>();
 	private ArrayList<TicketSimplificado> bolsaDeTrabajo = new ArrayList<TicketSimplificado>();
 	private RondaEncuentros encuentros;
+
+
+	private Sistema(){
+		this.nombre="La Agencia de Pedrito";
+	}
+
 
 	public static Sistema getInstancia() {
 		if (instancia == null)
@@ -55,6 +62,22 @@ public class Sistema {
 	public void sacaEmpleado(Empleado e) { // excepcion si el empleado es inv�lido , ya que remove() devuelve false si
 											// no se elimina nada
 		this.empleadosPretensos.remove(e);
+	}
+
+	public void agregaTicketSimplificado(TicketSimplificado t){
+		this.bolsaDeTrabajo.add(t);
+	}
+
+	public void sacaTicketSimplificado(TicketSimplificado t){
+		this.bolsaDeTrabajo.remove(t);
+	}
+
+	public ArrayList<TicketSimplificado> getBolsaDeTrabajo() {
+		return bolsaDeTrabajo;
+	}
+
+	public void setBolsaDeTrabajo(ArrayList<TicketSimplificado> bolsaDeTrabajo) {
+		this.bolsaDeTrabajo = bolsaDeTrabajo;
 	}
 
 	/**

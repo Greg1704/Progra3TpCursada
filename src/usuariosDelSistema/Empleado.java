@@ -183,10 +183,4 @@ public class Empleado extends Usuario{
 	}
 
 
-	@Override
-	public void run() {
-		if(this.pasadas!=0 && ticketSimpElegido==null){
-			//Lo llevamos al recurso compartido para que eliga
-		}
-	}
 }

@@ -2,25 +2,28 @@ package usuariosDelSistema;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import armaTickets.TicketEmpleador;
-import excepciones.ContraseniaIncorrectaException;
-import excepciones.FormularioInvalidoException;
-import excepciones.ListaVaciaException;
-import excepciones.UsuarioIncorrectoException;
+import excepciones.*;
+import ticketSimplificado.TicketSimplificado;
 
-public abstract class Empleador extends Usuario implements EmpleadorComision {
+public abstract class Empleador extends Usuario implements EmpleadorComision, Observer {
 	private String nombre;
 	private TicketEmpleador ticketEmpleador;
 	private ArrayList<Empleado> empleadosSeleccionados = new ArrayList<Empleado>();
 	private int cantidadEmpleadosSeleccionados;
 	private String rubro;
+	private ArrayList<TicketSimplificado> observables=new ArrayList<TicketSimplificado>();
+	private int cantObservados;
 
 	public Empleador(String usuario, String contrasenia, String nombre,String rubro) {
 		super(usuario, contrasenia);
 		this.nombre = nombre;
 		this.cantidadEmpleadosSeleccionados = 0;
 		this.rubro = rubro;
+		this.cantObservados=0;
 	}
 
 	public String getNombre() {
@@ -162,14 +165,42 @@ public abstract class Empleador extends Usuario implements EmpleadorComision {
 		}
 	}
 
+	public void crearTicketSimplificado(String locacion,String tipoTrabajo){
+		try {
+			TicketSimplificado ticketSimplificado= new TicketSimplificado(locacion,tipoTrabajo,this);
+			agregaObservable(ticketSimplificado);
+			ticketSimplificado.addObserver(this);
+			Thread t1=new Thread(ticketSimplificado);
+			t1.start(); //Arrancas el run, por ahora no se si es la mejor idea, consultar con Grego o Manu
+		} catch (AtributoInvalidoException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+	private void agregaObservable(TicketSimplificado ticketSimplificado){
+		if(cantObservados<3) {
+			observables.add(ticketSimplificado);
+			this.cantObservados++;
+		}
+	}
+
+	private void quitaObservable(TicketSimplificado ticketSimplificado){
+		observables.remove(ticketSimplificado);
+		this.cantObservados--;
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		//Se deberia ejecutar cuando el empleado se apropia del ticket
+		//El Object seria el empleado, se usaria este update para hacer los cambios en el empleado y el empleador
+		//Consultar con Grego o Manu
+	}
+
 	@Override
 	public String toString() {
 		return "Empleador: Nombre=" + nombre + ticketEmpleador + ". Cantidad de empleados seleccionados:"
 				+ cantidadEmpleadosSeleccionados;
 	}
 
-	@Override
-	public void run() {
-		super.run();//claramente esto no queda asi
-	}
 }
