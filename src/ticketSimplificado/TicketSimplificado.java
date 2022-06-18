@@ -3,10 +3,8 @@ package ticketSimplificado;
 import calculosAspectosLaborales.I_Locacion;
 import calculosAspectosLaborales.LocacionFactory;
 import excepciones.AtributoInvalidoException;
-import usuariosDelSistema.Empleado;
-import usuariosDelSistema.Empleador;
-import usuariosDelSistema.I_TipoTrabajo;
-import usuariosDelSistema.TipoTrabajoFactory;
+import usuariosDelSistema.*;
+
 import javax.swing.JFrame;
 import java.util.Observable;
 
@@ -30,12 +28,17 @@ public class TicketSimplificado extends Observable implements Runnable{
       this.contratado=false;
    }
 
+   public void setEmpleadoContratado(Empleado empleadoContratado) {
+      this.empleadoContratado = empleadoContratado;
+   }
+
    @SuppressWarnings("deprecation")
 @Override
    public void run() {
       while(this.contratado==false){
          //Entra al metodo, y cuando sale, puede o no estar contratado
          //Ya que puede entrar al recurso compartido, pero ser rechazado por el empleado
+         BolsaDeTrabajo.getInstancia().eleccionTicketSimplificado(this);
       }
       setChanged();
       notifyObservers(empleadoContratado);

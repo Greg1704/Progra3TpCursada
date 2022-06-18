@@ -180,21 +180,26 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 
 	private void agregaObservable(TicketSimplificado ticketSimplificado){
 		if(cantObservados<3) {
-			observables.add(ticketSimplificado);
+			this.observables.add(ticketSimplificado);
 			this.cantObservados++;
 		}
 	}
 
 	private void quitaObservable(TicketSimplificado ticketSimplificado){
-		observables.remove(ticketSimplificado);
+		this.observables.remove(ticketSimplificado);
 		this.cantObservados--;
 	}
 
 	@Override
-	public void update(Observable o, Object arg) { // acá va a entrar si se eligió un ticket
+	public void update(Observable o, Object arg) { // acï¿½ va a entrar si se eligiï¿½ un ticket
 		//Se deberia ejecutar cuando el empleado se apropia del ticket
 		//El Object seria el empleado, se usaria este update para hacer los cambios en el empleado y el empleador
 		//Consultar con Grego o Manu
+		Empleado emp=(Empleado) arg;
+		if(((Empleado) arg).getTicket()!=null)
+			((Empleado) arg).getTicket().suspende(); //Se le suspende el ticket normal ya que encontro trabajo por la bolsa
+		this.observables.remove(o);
+		this.cantObservados--;
 		
 	}
 

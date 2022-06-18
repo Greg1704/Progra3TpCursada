@@ -188,8 +188,15 @@ public class Empleado extends Usuario implements Observer {
 	}
 
 	@Override
-	public void update(Observable o, Object arg) { // acá va a entrar si se eligió un ticket
-		
+	public void update(Observable o, Object arg) { // acï¿½ va a entrar si se eligiï¿½ un ticket
+		//Hacer que al emopleado le salte una ventana emergente para elegir si lo acepta o no
+		//En el update de empleador se le suspende el Ticket normal(Consultar a grego o tomi)
+		/*
+			Muestra el ticket para que el empleado haga su eleccion
+			Y modifica los boolean descartado y eleccion en curso
+		* */
+
+		this.bolsa.setEleccionEnCurso(false);
 	}
 
 
