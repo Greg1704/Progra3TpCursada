@@ -282,10 +282,6 @@ public class Sistema {
 	}
 
 
-	public synchronized void BolsaTrabajo(Empleado empleado){
-		//No se si termina sirviendo pero por ahora queda aca(consultar con Grego o Tomi)
-	}
-
 }
 
 
