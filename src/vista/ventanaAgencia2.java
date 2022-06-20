@@ -54,7 +54,7 @@ public class ventanaAgencia2 extends JFrame implements KeyListener, MouseListene
 	 */
 	public ventanaAgencia2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1103, 682);
+		setBounds(100, 100, 1254, 722);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
