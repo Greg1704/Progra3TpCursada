@@ -48,7 +48,7 @@ public class ventanaEmpleado extends JFrame {
 	private JPanel panel_3;
 	private JLabel labelNombreAgencia;
 	private JPanel panel_4;
-	private JTextField textField;
+	private JTextField textFieldCrearAgencia;
 	private JPanel panelConfirmarNombreAgencia;
 	private JButton botonConfirmarNombreAgencia;
 	private JPanel panelRondaEncCont;
@@ -181,9 +181,9 @@ public class ventanaEmpleado extends JFrame {
 		this.panel_4 = new JPanel();
 		this.panelNombreAgencia.add(this.panel_4);
 		
-		this.textField = new JTextField();
-		this.textField.setColumns(10);
-		this.panel_4.add(this.textField);
+		this.textFieldCrearAgencia = new JTextField();
+		this.textFieldCrearAgencia.setColumns(10);
+		this.panel_4.add(this.textFieldCrearAgencia);
 		
 		this.panelConfirmarNombreAgencia = new JPanel();
 		this.panelCreacionAgencia.add(this.panelConfirmarNombreAgencia);
@@ -248,6 +248,21 @@ public class ventanaEmpleado extends JFrame {
 		
 		this.panel_2 = new JPanel();
 		this.tabbedPane.addTab("New tab", null, this.panel_2, null);
-	}
+		
+		
+		this.botonConfirmarNombreAgencia.setEnabled(false);
+        this.botonConfirmarTiposTickets.setEnabled(false);
+        this.botonRondaEncuentro.setEnabled(false);
+        this.botonRondaContraciones.setEnabled(false);
 
-}
+
+       // this.textFieldCrearAgencia.addKeyListener(new AgenciaKeyListener(this));
+
+
+
+    }
+
+    //public void setBotonConfirmarNombreAgencia(boolean hab) {
+        //this.botonConfirmarNombreAgencia.setEnabled(hab);
+    }
+
