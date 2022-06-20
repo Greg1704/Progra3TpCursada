@@ -263,7 +263,7 @@ public class ventanaEmpleado extends JFrame implements KeyListener{
 
        @Override
    	public void keyTyped(KeyEvent e) { 
-   		boolean hab1 = ventanaEmpleado.this.textFieldCrearAgencia.getText().isEmpty();
+   		boolean hab1 = !(ventanaEmpleado.this.textFieldCrearAgencia.getText().isEmpty());
    		ventanaEmpleado.this.botonConfirmarNombreAgencia.setEnabled(hab1);
        }
 
