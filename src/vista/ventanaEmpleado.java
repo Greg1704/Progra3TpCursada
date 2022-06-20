@@ -51,7 +51,7 @@ public class ventanaEmpleado extends JFrame implements KeyListener{
 	private JPanel panel_3;
 	private JLabel labelNombreAgencia;
 	private JPanel panel_4;
-	private JTextField textFieldCrearAgencia;
+	protected JTextField textFieldCrearAgencia;
 	private JPanel panelConfirmarNombreAgencia;
 	private JButton botonConfirmarNombreAgencia;
 	private JPanel panelRondaEncCont;
@@ -259,26 +259,31 @@ public class ventanaEmpleado extends JFrame implements KeyListener{
         this.botonRondaContraciones.setEnabled(false);
 
 
-       this.textFieldCrearAgencia.addKeyListener(new KeyListener() {
+       this.textFieldCrearAgencia.addKeyListener(new UnKeyListener(this));
 
-       @Override
-   	public void keyTyped(KeyEvent e) { 
-   		boolean hab1 = !(ventanaEmpleado.this.textFieldCrearAgencia.getText().isEmpty());
-   		ventanaEmpleado.this.botonConfirmarNombreAgencia.setEnabled(hab1);
-       }
 
-   	@Override
-   	public void keyPressed(KeyEvent e) { }
-   		// TODO Auto-generated method stub
-   		
+	}
+	
+	public void setBotonConfirmarNombreAgencia(boolean hab) {
+        this.botonConfirmarNombreAgencia.setEnabled(hab);
+    }
 
-   	@Override
-   	public void keyReleased(KeyEvent e) { }
-   		// TODO Auto-generated method stub
-   		
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 
-       });
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
