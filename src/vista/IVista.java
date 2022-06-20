@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 
 public interface IVista {
 	
-	public void setControlador(Controlador c);
+	//public void setControlador(Controlador c);
 	public void addActionListener(ActionListener listener);
 	static final String aniadeEmpleado = "Agregar nuevo empleado";
 	static final String aniadeEmpleador = "Agregar nuevo empleador";
