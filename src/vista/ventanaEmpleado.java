@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
 import java.awt.GridLayout;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
@@ -19,7 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.JList;
 import java.awt.Color;
 
-public class ventanaEmpleado extends JFrame {
+public class ventanaEmpleado extends JFrame implements KeyListener{
 
 	private JPanel contentPane;
 	private JTabbedPane tabbedPane;
@@ -256,13 +259,27 @@ public class ventanaEmpleado extends JFrame {
         this.botonRondaContraciones.setEnabled(false);
 
 
-       // this.textFieldCrearAgencia.addKeyListener(new AgenciaKeyListener(this));
+       this.textFieldCrearAgencia.addKeyListener(new KeyListener() {
 
+       @Override
+   	public void keyTyped(KeyEvent e) { 
+   		boolean hab1 = ventanaEmpleado.this.textFieldCrearAgencia.getText().isEmpty();
+   		ventanaEmpleado.this.botonConfirmarNombreAgencia.setEnabled(hab1);
+       }
 
+   	@Override
+   	public void keyPressed(KeyEvent e) { }
+   		// TODO Auto-generated method stub
+   		
 
-    }
+   	@Override
+   	public void keyReleased(KeyEvent e) { }
+   		// TODO Auto-generated method stub
+   		
 
-    //public void setBotonConfirmarNombreAgencia(boolean hab) {
-        //this.botonConfirmarNombreAgencia.setEnabled(hab);
-    }
+       });
+
+	}
+}
+
 
