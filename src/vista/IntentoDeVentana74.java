@@ -839,7 +839,7 @@ public class IntentoDeVentana74 extends JFrame {
 		this.panelConfirmarLoginEmpleador.add(this.btnConfirmarLoginEmpleador);
 		
 		this.panelCreacionEmpleador = new JPanel();
-		this.panelCreacionEmpleador.setBorder(new TitledBorder(null, "Crear Empleado", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelCreacionEmpleador.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Crear Empleador", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		this.panelCreacionEmpleador.setBounds(10, 214, 389, 348);
 		this.panelLoginCreacionEmpleador.add(this.panelCreacionEmpleador);
 		this.panelCreacionEmpleador.setLayout(new GridLayout(6, 0, 0, 0));
