@@ -20,8 +20,13 @@ public class UnMouseListener implements MouseListener {
 		boolean hab3 = v.botonMenosV1.isSelected() || v.botonEntreV1yV2.isSelected() || v.botonMasV2.isSelected();
 		boolean hab = hab1 && hab2 && hab3;
 		v.setBotonConfirmarTipoTickets(hab);
+		
+		if ((v.rdbtnActivo.isSelected() && !v.rdbtnSuspendido.isSelected() && !v.rdbtnCancelar.isSelected()) || (!v.rdbtnActivo.isSelected() && v.rdbtnSuspendido.isSelected() && !v.rdbtnCancelar.isSelected())
+			|| (!v.rdbtnActivo.isSelected() && !v.rdbtnSuspendido.isSelected() && v.rdbtnCancelar.isSelected())) {
+			v.btnCambiarEstado.setEnabled(true);
+		} else
+			v.btnCambiarEstado.setEnabled(false);
 	}
-
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -45,5 +50,4 @@ public class UnMouseListener implements MouseListener {
 		// TODO Auto-generated method stub
 
 	}
-
 }

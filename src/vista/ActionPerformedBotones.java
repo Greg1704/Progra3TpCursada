@@ -16,12 +16,17 @@ public class ActionPerformedBotones implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// aca se cruzan los datos con los datos del sistema para ver si el logeo esta bien o no, e iria con un if
 		
-		if (e.getActionCommand().equals(IVista.confirmaCreacionAgencia)) {
+		if (e.getActionCommand().equals(IVista.confirmaCreacionAgencia)) { // ventana Agencia
 			System.out.println("Lo ejecuta bien");
+			
+			//chequear si ya existe la agencia o no
+			
+			v.textFieldCrearAgencia.setText("");
+			v.setBotonConfirmarNombreAgencia(false);
 		} else
 			if (e.getActionCommand().equals(IVista.confirmaTicket)) {
 				System.out.println("bien");
-			} else
+			} else // ventana Empleado
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
 					v.textFieldUsuario.setText("");
 					v.textFieldContrasenia.setText("");
@@ -37,6 +42,9 @@ public class ActionPerformedBotones implements ActionListener {
 						v.textFieldTelefono.setText("");
 						v.textFieldEdad.setText("");
 						v.textFieldCiudad.setText("");
+					} else
+						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) {
+							v.comboBoxBolsaLocacion.setEnabled(false);
 					}
 	}
 }

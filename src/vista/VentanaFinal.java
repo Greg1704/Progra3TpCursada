@@ -1188,6 +1188,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 			this.btnConfirmarLogin.setEnabled(false);
 			this.btnConfirmacionCreacionUsuario.setEnabled(false);
 			this.btnConfirmacionCreacionTicket.setEnabled(false);
+			this.btnCambiarEstado.setEnabled(false);
 			this.btnConfirmacionEleccionEmpleado.setEnabled(false);
 			this.btnBolsaAceptar.setEnabled(false);
 			this.btnBolsaRechazar.setEnabled(false);
@@ -1232,6 +1233,9 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 			this.textFieldPesoRemuneracion.addKeyListener(new UnKeyListener(this));
 			this.textFieldPesoTipoDePuesto.addKeyListener(new UnKeyListener(this));
 			
+			this.rdbtnActivo.addMouseListener(new UnMouseListener(this));
+			this.rdbtnSuspendido.addMouseListener(new UnMouseListener(this));
+			this.rdbtnCancelar.addMouseListener(new UnMouseListener(this));
 			
 		}
 	       		
