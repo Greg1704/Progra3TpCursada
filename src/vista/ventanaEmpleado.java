@@ -11,6 +11,8 @@ import javax.swing.JTabbedPane;
 import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
@@ -22,7 +24,7 @@ import javax.swing.JTextField;
 import javax.swing.JList;
 import java.awt.Color;
 
-public class ventanaEmpleado extends JFrame implements KeyListener{
+public class ventanaEmpleado extends JFrame implements KeyListener, MouseListener{
 
 	private JPanel contentPane;
 	private JTabbedPane tabbedPane;
@@ -33,17 +35,17 @@ public class ventanaEmpleado extends JFrame implements KeyListener{
 	private JPanel PanelFuncionalidades;
 	private JPanel panelDatosTickets;
 	private JPanel panelTiposTrabajo;
-	private JRadioButton botonSalud;
-	private JRadioButton botonComercioLocal;
-	private JRadioButton botonComercioInternacional;
+	protected JRadioButton botonSalud;
+	protected JRadioButton botonComercioLocal;
+	protected JRadioButton botonComercioInternacional;
 	private JPanel panelTipoDePuesto;
-	private JRadioButton botonJunior;
-	private JRadioButton botonSenior;
-	private JRadioButton botonManagement;
+	protected JRadioButton botonJunior;
+	protected JRadioButton botonSenior;
+	protected JRadioButton botonManagement;
 	private JPanel panelRangoLaboral;
-	private JRadioButton botonMenosV1;
-	private JRadioButton botonEntreV1yV2;
-	private JRadioButton botonMasV2;
+	protected JRadioButton botonMenosV1;
+	protected JRadioButton botonEntreV1yV2;
+	protected JRadioButton botonMasV2;
 	private JPanel panelConfirmacion;
 	private JButton botonConfirmarTiposTickets;
 	private JPanel panelCreacionAgencia;
@@ -261,13 +263,39 @@ public class ventanaEmpleado extends JFrame implements KeyListener{
 
        this.textFieldCrearAgencia.addKeyListener(new UnKeyListener(this));
 
-
+       this.botonSalud.addMouseListener(new UnMouseListener(this));
+       this.botonComercioLocal.addMouseListener(new UnMouseListener(this));
+       this.botonComercioInternacional.addMouseListener(new UnMouseListener(this));
+       
+       this.botonJunior.addMouseListener(new UnMouseListener(this));
+       this.botonSenior.addMouseListener(new UnMouseListener(this));
+       this.botonManagement.addMouseListener(new UnMouseListener(this));
+       
+       this.botonMenosV1.addMouseListener(new UnMouseListener(this));
+       this.botonEntreV1yV2.addMouseListener(new UnMouseListener(this));
+       this.botonMasV2.addMouseListener(new UnMouseListener(this));
+       
+       /* if (hayRondaContrataciones) {
+       		this.botonRondaContrataciones.setEnabled(true);
+       	  else
+       	  	this.botonRondaContrataciones.setEnabled(false); //(esto viene por default en realidad pero no está de más)
+       	  if (hayRondaContrataciones & hayRondaEncuentro) {
+       		this.botonRondaEncuentro.setEnabled(true);
+       	  else
+       	  	this.botonRondaEncuentro.setEnabled(false); //(esto viene por default en realidad pero no está de más)
+       
+       */
+       
 	}
 	
 	public void setBotonConfirmarNombreAgencia(boolean hab) {
         this.botonConfirmarNombreAgencia.setEnabled(hab);
     }
 
+	public void setBotonConfirmarTipoTickets(boolean hab) {
+		this.botonConfirmarTiposTickets.setEnabled(hab);
+	}
+	
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -282,6 +310,36 @@ public class ventanaEmpleado extends JFrame implements KeyListener{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
