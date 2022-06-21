@@ -48,7 +48,7 @@ public class IntentoDeVentana74 extends JFrame {
 	private JPanel panel;
 	private JLabel labelNombreAgencia;
 	private JPanel panel_1;
-	private JTextField textField;
+	private JTextField textFieldCrearAgencia;
 	private JPanel panelConfirmarNombreAgencia;
 	private JButton botonConfirmarNombreAgencia;
 	private JPanel panelRondaEncCont;
@@ -69,69 +69,69 @@ public class IntentoDeVentana74 extends JFrame {
 	private JPanel panelLogin;
 	private JPanel panelUsuario;
 	private JLabel lblUsuario;
-	private JTextField textField_1;
+	private JTextField textFieldUsuario;
 	private JPanel panelContrasenia;
 	private JLabel lblContrasenia;
-	private JTextField textField_2;
+	private JTextField textFieldContrasenia;
 	private JPanel panelConfirmarLogin;
 	private JButton btnConfirmarLogin;
 	private JPanel panelCreacionEmpleado;
 	private JPanel panelCreacionUsuario;
 	private JLabel lblCreacionUsuario;
-	private JTextField textField_3;
+	private JTextField textFieldCreacionUsuario;
 	private JPanel panelCreacionContrasenia;
 	private JLabel lblCreacionContrasenia;
-	private JTextField textField_4;
+	private JTextField textFieldCreacionContrasenia;
 	private JPanel panelCreacionNyA;
 	private JLabel lblCreacionNyA;
-	private JTextField textField_5;
+	private JTextField textFieldCreacionNyA;
 	private JPanel panelDNI;
 	private JLabel lblDNI;
-	private JTextField textField_6;
+	private JTextField textFieldDNI;
 	private JPanel panelTelefono;
 	private JLabel lblTelefono;
-	private JTextField textField_7;
+	private JTextField textFieldTelefono;
 	private JPanel panelEdad;
 	private JLabel lblEdad;
-	private JTextField textField_8;
+	private JTextField textFieldEdad;
 	private JPanel panelCiudad;
 	private JLabel lblCiudad;
-	private JTextField textField_9;
+	private JTextField textFieldCiudad;
 	private JPanel panelConfirmacionCreacionUsuario;
 	private JButton btnConfirmacionCreacionUsuario;
 	private JPanel panelTicket;
 	private JPanel panelCreacionTicket;
 	private JPanel panelLocacion;
 	private JComboBox comboBoxLocacion;
-	private JTextField textField_10;
+	private JTextField textFieldPesoLocacion;
 	private JLabel labelPesoLocacion;
 	private JPanel panelRemuneracion;
 	private JComboBox comboBoxRemuneracion;
-	private JTextField textField_11;
+	private JTextField textFieldPesoRemuneracion;
 	private JLabel labelPesoRemuneracion;
 	private JPanel panelCargaHoraria;
 	private JComboBox comboBoxCargaHoraria;
-	private JTextField textField_12;
+	private JTextField textFieldPesoCargaHoraria;
 	private JLabel labelPesoCargaHoraria;
 	private JPanel panelTipoDePuesto_1;
 	private JComboBox comboBoxTipoDePuesto;
-	private JTextField textField_13;
+	private JTextField textFieldPesoTipoDePuesto;
 	private JLabel labelPesoTipoDePuesto;
 	private JPanel panelRangoEtario;
 	private JComboBox comboBoxRangoEtario;
-	private JTextField textField_14;
+	private JTextField textFieldPesoRangoEtario;
 	private JLabel labelPesoRangoEtario;
 	private JPanel panelExperienciaPrevia;
 	private JComboBox comboBoxExperienciaPrevia;
-	private JTextField textField_15;
+	private JTextField textFieldPesoExperienciaPrevia;
 	private JLabel labelPesoExperienciaPrevia;
 	private JPanel panelEstudiosCursados;
 	private JComboBox comboBoxEstudiosCursados;
-	private JTextField textField_16;
+	private JTextField textFieldPesoEstudiosCursados;
 	private JLabel labelPesoEstudiosCursados;
 	private JPanel panelConfirmacionCreacionTicket;
 	private JButton btnConfirmacionCreacionTicket;
-	private JList list;
+	private JList listTicketActual;
 	private JPanel panelEleccionYBolsa;
 	private JPanel panelRondaElecciones;
 	private JList listRondaEleccionesEmpleado;
@@ -179,7 +179,7 @@ public class IntentoDeVentana74 extends JFrame {
 		this.contentPane.add(this.tabbedPane, BorderLayout.CENTER);
 		
 		this.panelAgencia = new JPanel();
-		this.tabbedPane.addTab("New tab", null, this.panelAgencia, null);
+		this.tabbedPane.addTab("Agencia", null, this.panelAgencia, null);
 		this.panelAgencia.setLayout(new BorderLayout(0, 0));
 		
 		this.PanelGeneralAgencia = new JPanel();
@@ -264,9 +264,9 @@ public class IntentoDeVentana74 extends JFrame {
 		this.panel_1 = new JPanel();
 		this.panelNombreAgencia.add(this.panel_1);
 		
-		this.textField = new JTextField();
-		this.textField.setColumns(10);
-		this.panel_1.add(this.textField);
+		this.textFieldCrearAgencia = new JTextField();
+		this.textFieldCrearAgencia.setColumns(10);
+		this.panel_1.add(this.textFieldCrearAgencia);
 		
 		this.panelConfirmarNombreAgencia = new JPanel();
 		this.panelCreacionAgencia.add(this.panelConfirmarNombreAgencia);
@@ -327,7 +327,7 @@ public class IntentoDeVentana74 extends JFrame {
 		this.PanelListas.add(this.listTicketEmpleadores);
 		
 		this.panelEmpleado = new JPanel();
-		this.tabbedPane.addTab("New tab", null, this.panelEmpleado, null);
+		this.tabbedPane.addTab("Empleado", null, this.panelEmpleado, null);
 		this.panelEmpleado.setLayout(new BorderLayout(0, 0));
 		
 		this.panelGeneralEmpleado = new JPanel();
@@ -352,10 +352,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.lblUsuario.setBounds(70, 22, 46, 14);
 		this.panelUsuario.add(this.lblUsuario);
 		
-		this.textField_1 = new JTextField();
-		this.textField_1.setColumns(10);
-		this.textField_1.setBounds(172, 19, 176, 20);
-		this.panelUsuario.add(this.textField_1);
+		this.textFieldUsuario = new JTextField();
+		this.textFieldUsuario.setColumns(10);
+		this.textFieldUsuario.setBounds(172, 19, 176, 20);
+		this.panelUsuario.add(this.textFieldUsuario);
 		
 		this.panelContrasenia = new JPanel();
 		this.panelContrasenia.setLayout(null);
@@ -365,10 +365,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.lblContrasenia.setBounds(61, 22, 60, 14);
 		this.panelContrasenia.add(this.lblContrasenia);
 		
-		this.textField_2 = new JTextField();
-		this.textField_2.setColumns(10);
-		this.textField_2.setBounds(172, 19, 176, 20);
-		this.panelContrasenia.add(this.textField_2);
+		this.textFieldContrasenia = new JTextField();
+		this.textFieldContrasenia.setColumns(10);
+		this.textFieldContrasenia.setBounds(172, 19, 176, 20);
+		this.panelContrasenia.add(this.textFieldContrasenia);
 		
 		this.panelConfirmarLogin = new JPanel();
 		this.panelConfirmarLogin.setLayout(null);
@@ -392,10 +392,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.lblCreacionUsuario.setBounds(70, 22, 46, 14);
 		this.panelCreacionUsuario.add(this.lblCreacionUsuario);
 		
-		this.textField_3 = new JTextField();
-		this.textField_3.setColumns(10);
-		this.textField_3.setBounds(172, 19, 176, 20);
-		this.panelCreacionUsuario.add(this.textField_3);
+		this.textFieldCreacionUsuario = new JTextField();
+		this.textFieldCreacionUsuario.setColumns(10);
+		this.textFieldCreacionUsuario.setBounds(172, 19, 176, 20);
+		this.panelCreacionUsuario.add(this.textFieldCreacionUsuario);
 		
 		this.panelCreacionContrasenia = new JPanel();
 		this.panelCreacionContrasenia.setLayout(null);
@@ -405,10 +405,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.lblCreacionContrasenia.setBounds(61, 22, 60, 14);
 		this.panelCreacionContrasenia.add(this.lblCreacionContrasenia);
 		
-		this.textField_4 = new JTextField();
-		this.textField_4.setColumns(10);
-		this.textField_4.setBounds(172, 19, 176, 20);
-		this.panelCreacionContrasenia.add(this.textField_4);
+		this.textFieldCreacionContrasenia = new JTextField();
+		this.textFieldCreacionContrasenia.setColumns(10);
+		this.textFieldCreacionContrasenia.setBounds(172, 19, 176, 20);
+		this.panelCreacionContrasenia.add(this.textFieldCreacionContrasenia);
 		
 		this.panelCreacionNyA = new JPanel();
 		this.panelCreacionNyA.setLayout(null);
@@ -418,10 +418,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.lblCreacionNyA.setBounds(47, 22, 95, 14);
 		this.panelCreacionNyA.add(this.lblCreacionNyA);
 		
-		this.textField_5 = new JTextField();
-		this.textField_5.setColumns(10);
-		this.textField_5.setBounds(172, 19, 176, 20);
-		this.panelCreacionNyA.add(this.textField_5);
+		this.textFieldCreacionNyA = new JTextField();
+		this.textFieldCreacionNyA.setColumns(10);
+		this.textFieldCreacionNyA.setBounds(172, 19, 176, 20);
+		this.panelCreacionNyA.add(this.textFieldCreacionNyA);
 		
 		this.panelDNI = new JPanel();
 		this.panelDNI.setLayout(null);
@@ -431,10 +431,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.lblDNI.setBounds(82, 22, 39, 14);
 		this.panelDNI.add(this.lblDNI);
 		
-		this.textField_6 = new JTextField();
-		this.textField_6.setColumns(10);
-		this.textField_6.setBounds(172, 19, 176, 20);
-		this.panelDNI.add(this.textField_6);
+		this.textFieldDNI = new JTextField();
+		this.textFieldDNI.setColumns(10);
+		this.textFieldDNI.setBounds(172, 19, 176, 20);
+		this.panelDNI.add(this.textFieldDNI);
 		
 		this.panelTelefono = new JPanel();
 		this.panelTelefono.setLayout(null);
@@ -444,10 +444,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.lblTelefono.setBounds(69, 22, 52, 14);
 		this.panelTelefono.add(this.lblTelefono);
 		
-		this.textField_7 = new JTextField();
-		this.textField_7.setColumns(10);
-		this.textField_7.setBounds(172, 19, 176, 20);
-		this.panelTelefono.add(this.textField_7);
+		this.textFieldTelefono = new JTextField();
+		this.textFieldTelefono.setColumns(10);
+		this.textFieldTelefono.setBounds(172, 19, 176, 20);
+		this.panelTelefono.add(this.textFieldTelefono);
 		
 		this.panelEdad = new JPanel();
 		this.panelEdad.setLayout(null);
@@ -457,10 +457,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.lblEdad.setBounds(81, 22, 40, 14);
 		this.panelEdad.add(this.lblEdad);
 		
-		this.textField_8 = new JTextField();
-		this.textField_8.setColumns(10);
-		this.textField_8.setBounds(172, 19, 176, 20);
-		this.panelEdad.add(this.textField_8);
+		this.textFieldEdad = new JTextField();
+		this.textFieldEdad.setColumns(10);
+		this.textFieldEdad.setBounds(172, 19, 176, 20);
+		this.panelEdad.add(this.textFieldEdad);
 		
 		this.panelCiudad = new JPanel();
 		this.panelCiudad.setLayout(null);
@@ -470,10 +470,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.lblCiudad.setBounds(76, 22, 45, 14);
 		this.panelCiudad.add(this.lblCiudad);
 		
-		this.textField_9 = new JTextField();
-		this.textField_9.setColumns(10);
-		this.textField_9.setBounds(172, 19, 176, 20);
-		this.panelCiudad.add(this.textField_9);
+		this.textFieldCiudad = new JTextField();
+		this.textFieldCiudad.setColumns(10);
+		this.textFieldCiudad.setBounds(172, 19, 176, 20);
+		this.panelCiudad.add(this.textFieldCiudad);
 		
 		this.panelConfirmacionCreacionUsuario = new JPanel();
 		this.panelCreacionEmpleado.add(this.panelConfirmacionCreacionUsuario);
@@ -487,7 +487,7 @@ public class IntentoDeVentana74 extends JFrame {
 		
 		this.panelCreacionTicket = new JPanel();
 		this.panelCreacionTicket.setBorder(new TitledBorder(null, "Crear Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelCreacionTicket.setBounds(10, 11, 389, 591);
+		this.panelCreacionTicket.setBounds(10, 11, 389, 556);
 		this.panelTicket.add(this.panelCreacionTicket);
 		this.panelCreacionTicket.setLayout(new GridLayout(8, 0, 0, 0));
 		
@@ -500,10 +500,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxLocacion.setBounds(23, 26, 167, 22);
 		this.panelLocacion.add(this.comboBoxLocacion);
 		
-		this.textField_10 = new JTextField();
-		this.textField_10.setColumns(10);
-		this.textField_10.setBounds(314, 27, 35, 20);
-		this.panelLocacion.add(this.textField_10);
+		this.textFieldPesoLocacion = new JTextField();
+		this.textFieldPesoLocacion.setColumns(10);
+		this.textFieldPesoLocacion.setBounds(314, 27, 35, 20);
+		this.panelLocacion.add(this.textFieldPesoLocacion);
 		
 		this.labelPesoLocacion = new JLabel("Ponderación:");
 		this.labelPesoLocacion.setBounds(241, 30, 63, 14);
@@ -518,10 +518,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxRemuneracion.setBounds(23, 26, 167, 22);
 		this.panelRemuneracion.add(this.comboBoxRemuneracion);
 		
-		this.textField_11 = new JTextField();
-		this.textField_11.setColumns(10);
-		this.textField_11.setBounds(314, 27, 35, 20);
-		this.panelRemuneracion.add(this.textField_11);
+		this.textFieldPesoRemuneracion = new JTextField();
+		this.textFieldPesoRemuneracion.setColumns(10);
+		this.textFieldPesoRemuneracion.setBounds(314, 27, 35, 20);
+		this.panelRemuneracion.add(this.textFieldPesoRemuneracion);
 		
 		this.labelPesoRemuneracion = new JLabel("Ponderación:");
 		this.labelPesoRemuneracion.setBounds(241, 30, 63, 14);
@@ -536,10 +536,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxCargaHoraria.setBounds(23, 26, 167, 22);
 		this.panelCargaHoraria.add(this.comboBoxCargaHoraria);
 		
-		this.textField_12 = new JTextField();
-		this.textField_12.setColumns(10);
-		this.textField_12.setBounds(314, 27, 35, 20);
-		this.panelCargaHoraria.add(this.textField_12);
+		this.textFieldPesoCargaHoraria = new JTextField();
+		this.textFieldPesoCargaHoraria.setColumns(10);
+		this.textFieldPesoCargaHoraria.setBounds(314, 27, 35, 20);
+		this.panelCargaHoraria.add(this.textFieldPesoCargaHoraria);
 		
 		this.labelPesoCargaHoraria = new JLabel("Ponderación:");
 		this.labelPesoCargaHoraria.setBounds(241, 30, 63, 14);
@@ -554,10 +554,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxTipoDePuesto.setBounds(23, 26, 167, 22);
 		this.panelTipoDePuesto_1.add(this.comboBoxTipoDePuesto);
 		
-		this.textField_13 = new JTextField();
-		this.textField_13.setColumns(10);
-		this.textField_13.setBounds(314, 27, 35, 20);
-		this.panelTipoDePuesto_1.add(this.textField_13);
+		this.textFieldPesoTipoDePuesto = new JTextField();
+		this.textFieldPesoTipoDePuesto.setColumns(10);
+		this.textFieldPesoTipoDePuesto.setBounds(314, 27, 35, 20);
+		this.panelTipoDePuesto_1.add(this.textFieldPesoTipoDePuesto);
 		
 		this.labelPesoTipoDePuesto = new JLabel("Ponderación:");
 		this.labelPesoTipoDePuesto.setBounds(241, 30, 63, 14);
@@ -572,10 +572,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxRangoEtario.setBounds(23, 26, 167, 22);
 		this.panelRangoEtario.add(this.comboBoxRangoEtario);
 		
-		this.textField_14 = new JTextField();
-		this.textField_14.setColumns(10);
-		this.textField_14.setBounds(314, 27, 35, 20);
-		this.panelRangoEtario.add(this.textField_14);
+		this.textFieldPesoRangoEtario = new JTextField();
+		this.textFieldPesoRangoEtario.setColumns(10);
+		this.textFieldPesoRangoEtario.setBounds(314, 27, 35, 20);
+		this.panelRangoEtario.add(this.textFieldPesoRangoEtario);
 		
 		this.labelPesoRangoEtario = new JLabel("Ponderación:");
 		this.labelPesoRangoEtario.setBounds(241, 30, 63, 14);
@@ -590,10 +590,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxExperienciaPrevia.setBounds(23, 26, 167, 22);
 		this.panelExperienciaPrevia.add(this.comboBoxExperienciaPrevia);
 		
-		this.textField_15 = new JTextField();
-		this.textField_15.setColumns(10);
-		this.textField_15.setBounds(314, 27, 35, 20);
-		this.panelExperienciaPrevia.add(this.textField_15);
+		this.textFieldPesoExperienciaPrevia = new JTextField();
+		this.textFieldPesoExperienciaPrevia.setColumns(10);
+		this.textFieldPesoExperienciaPrevia.setBounds(314, 27, 35, 20);
+		this.panelExperienciaPrevia.add(this.textFieldPesoExperienciaPrevia);
 		
 		this.labelPesoExperienciaPrevia = new JLabel("Ponderación:");
 		this.labelPesoExperienciaPrevia.setBounds(241, 30, 63, 14);
@@ -608,10 +608,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxEstudiosCursados.setBounds(23, 26, 167, 22);
 		this.panelEstudiosCursados.add(this.comboBoxEstudiosCursados);
 		
-		this.textField_16 = new JTextField();
-		this.textField_16.setColumns(10);
-		this.textField_16.setBounds(314, 27, 35, 20);
-		this.panelEstudiosCursados.add(this.textField_16);
+		this.textFieldPesoEstudiosCursados = new JTextField();
+		this.textFieldPesoEstudiosCursados.setColumns(10);
+		this.textFieldPesoEstudiosCursados.setBounds(314, 27, 35, 20);
+		this.panelEstudiosCursados.add(this.textFieldPesoEstudiosCursados);
 		
 		this.labelPesoEstudiosCursados = new JLabel("Ponderación:");
 		this.labelPesoEstudiosCursados.setBounds(241, 30, 63, 14);
@@ -623,10 +623,10 @@ public class IntentoDeVentana74 extends JFrame {
 		this.btnConfirmacionCreacionTicket = new JButton("Confirmar");
 		this.panelConfirmacionCreacionTicket.add(this.btnConfirmacionCreacionTicket);
 		
-		this.list = new JList();
-		this.list.setBorder(new TitledBorder(null, "Ticket Actual", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.list.setBounds(10, 605, 389, 57);
-		this.panelTicket.add(this.list);
+		this.listTicketActual = new JList();
+		this.listTicketActual.setBorder(new TitledBorder(null, "Ticket Actual", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.listTicketActual.setBounds(10, 578, 389, 57);
+		this.panelTicket.add(this.listTicketActual);
 		
 		this.panelEleccionYBolsa = new JPanel();
 		this.panelEleccionYBolsa.setBorder(new TitledBorder(null, "Ronda de Elecci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -693,11 +693,11 @@ public class IntentoDeVentana74 extends JFrame {
 		this.panelPantallaBolsa.add(this.btnBolsaRechazar);
 		
 		this.btnInicioBolsa = new JButton("Arrancar");
-		this.btnInicioBolsa.setBounds(162, 286, 89, 23);
+		this.btnInicioBolsa.setBounds(162, 277, 89, 23);
 		this.panelBolsaTrabajo.add(this.btnInicioBolsa);
 		
 		this.panelEmpleador = new JPanel();
-		this.tabbedPane.addTab("New tab", null, this.panelEmpleador, null);
+		this.tabbedPane.addTab("Empleador", null, this.panelEmpleador, null);
 	}
 
 }
