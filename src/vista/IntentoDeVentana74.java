@@ -208,6 +208,18 @@ public class IntentoDeVentana74 extends JFrame {
 	private JLabel labelPesoEstudiosCursadosEmpleador;
 	private JPanel panelConfirmacionCreacionTicketEmpleador;
 	private JButton btnConfirmacionCreacionTicket_1;
+	private JList listTicketActualEmpleador;
+	private JPanel panelRondaDeEleccionEmpleador;
+	private JPanel panelRondaEleccionesEmpleador;
+	private JList listRondaEleccionesEmpleador;
+	private JButton btnConfirmacionEleccionEmpleador;
+	private JPanel panel_7;
+	private JPanel panelEmpleadorRequisitosTicketSimp;
+	private JComboBox comboBoxBolsaTipoTrabajo_1;
+	private JComboBox comboBoxBolsaLocacion_1;
+	private JLabel lblBolsaTipoTrabajo_1;
+	private JLabel lblBolsaLocacion_1;
+	private JButton btnCrearTicketSimplificado;
 
 	/**
 	 * Launch the application.
@@ -1025,6 +1037,62 @@ public class IntentoDeVentana74 extends JFrame {
 		
 		this.btnConfirmacionCreacionTicket_1 = new JButton("Confirmar");
 		this.panelConfirmacionCreacionTicketEmpleador.add(this.btnConfirmacionCreacionTicket_1);
+		
+		this.listTicketActualEmpleador = new JList();
+		this.listTicketActualEmpleador.setBorder(new TitledBorder(null, "Ticket Actual", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.listTicketActualEmpleador.setBounds(10, 577, 389, 57);
+		this.panelTicketEmpleador.add(this.listTicketActualEmpleador);
+		
+		this.panelRondaDeEleccionEmpleador = new JPanel();
+		this.panelGeneralEmpleador.add(this.panelRondaDeEleccionEmpleador);
+		this.panelRondaDeEleccionEmpleador.setLayout(null);
+		
+		this.panelRondaEleccionesEmpleador = new JPanel();
+		this.panelRondaEleccionesEmpleador.setBorder(new TitledBorder(null, "Ronda de Elecci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelRondaEleccionesEmpleador.setLayout(null);
+		this.panelRondaEleccionesEmpleador.setBounds(10, 11, 395, 311);
+		this.panelRondaDeEleccionEmpleador.add(this.panelRondaEleccionesEmpleador);
+		
+		this.listRondaEleccionesEmpleador = new JList();
+		this.listRondaEleccionesEmpleador.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Empleados", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.listRondaEleccionesEmpleador.setBounds(10, 23, 377, 221);
+		this.panelRondaEleccionesEmpleador.add(this.listRondaEleccionesEmpleador);
+		
+		this.btnConfirmacionEleccionEmpleador = new JButton("Confirmar");
+		this.btnConfirmacionEleccionEmpleador.setBounds(162, 277, 89, 23);
+		this.panelRondaEleccionesEmpleador.add(this.btnConfirmacionEleccionEmpleador);
+		
+		this.panel_7 = new JPanel();
+		this.panel_7.setBorder(new TitledBorder(null, "Crear Ticket Simplificado", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panel_7.setBounds(10, 332, 387, 165);
+		this.panelRondaDeEleccionEmpleador.add(this.panel_7);
+		this.panel_7.setLayout(null);
+		
+		this.panelEmpleadorRequisitosTicketSimp = new JPanel();
+		this.panelEmpleadorRequisitosTicketSimp.setLayout(null);
+		this.panelEmpleadorRequisitosTicketSimp.setBorder(new TitledBorder(null, "Requisitos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelEmpleadorRequisitosTicketSimp.setBounds(10, 23, 366, 75);
+		this.panel_7.add(this.panelEmpleadorRequisitosTicketSimp);
+		
+		this.comboBoxBolsaTipoTrabajo_1 = new JComboBox();
+		this.comboBoxBolsaTipoTrabajo_1.setBounds(23, 26, 138, 22);
+		this.panelEmpleadorRequisitosTicketSimp.add(this.comboBoxBolsaTipoTrabajo_1);
+		
+		this.comboBoxBolsaLocacion_1 = new JComboBox();
+		this.comboBoxBolsaLocacion_1.setBounds(195, 26, 138, 22);
+		this.panelEmpleadorRequisitosTicketSimp.add(this.comboBoxBolsaLocacion_1);
+		
+		this.lblBolsaTipoTrabajo_1 = new JLabel("Tipo de trabajo");
+		this.lblBolsaTipoTrabajo_1.setBounds(53, 11, 81, 14);
+		this.panelEmpleadorRequisitosTicketSimp.add(this.lblBolsaTipoTrabajo_1);
+		
+		this.lblBolsaLocacion_1 = new JLabel("Locación:");
+		this.lblBolsaLocacion_1.setBounds(247, 11, 58, 14);
+		this.panelEmpleadorRequisitosTicketSimp.add(this.lblBolsaLocacion_1);
+		
+		this.btnCrearTicketSimplificado = new JButton("Crear");
+		this.btnCrearTicketSimplificado.setBounds(147, 109, 89, 23);
+		this.panel_7.add(this.btnCrearTicketSimplificado);
 	}
 
 }
