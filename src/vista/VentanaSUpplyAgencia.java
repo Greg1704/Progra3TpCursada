@@ -7,6 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.JList;
 import javax.swing.border.TitledBorder;
 import java.awt.FlowLayout;
@@ -19,10 +24,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Color;
 
-public class ventanaAgencia extends JFrame {
+public class VentanaSUpplyAgencia extends JFrame implements KeyListener, MouseListener{
 
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField textFieldCrearAgencia;
+	private JButton botonConfirmarNombreAgencia;
+	private JButton botonConfirmarTiposTickets;
+	private JButton botonRondaEncuentro;
+	private JButton botonRondaContraciones;
 
 	/**
 	 * Launch the application.
@@ -31,7 +40,7 @@ public class ventanaAgencia extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ventanaAgencia frame = new ventanaAgencia();
+					ventanaAgencia2 frame = new ventanaAgencia2();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,21 +52,21 @@ public class ventanaAgencia extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ventanaAgencia() {
+	public VentanaSUpplyAgencia() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1103, 682);
+		setBounds(100, 100, 1254, 722);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		JPanel PanelGeneral = new JPanel();
-		contentPane.add(PanelGeneral, BorderLayout.CENTER);
-		PanelGeneral.setLayout(new GridLayout(0, 2, 0, 0));
+		JPanel PanelGeneralAgencia = new JPanel();
+		contentPane.add(PanelGeneralAgencia, BorderLayout.CENTER);
+		PanelGeneralAgencia.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JPanel PanelFuncionalidades = new JPanel();
 		PanelFuncionalidades.setBorder(new CompoundBorder());
-		PanelGeneral.add(PanelFuncionalidades);
+		PanelGeneralAgencia.add(PanelFuncionalidades);
 		PanelFuncionalidades.setLayout(new GridLayout(4, 0, 0, 0));
 		
 		JPanel panelDatosTickets = new JPanel();
@@ -110,8 +119,8 @@ public class ventanaAgencia extends JFrame {
 		JPanel panelConfirmacion = new JPanel();
 		panelDatosTickets.add(panelConfirmacion);
 		
-		JButton btnNewButton = new JButton("Confirmar");
-		panelConfirmacion.add(btnNewButton);
+		this.botonConfirmarTiposTickets = new JButton("Confirmar");
+		panelConfirmacion.add(this.botonConfirmarTiposTickets);
 		
 		JPanel panelCreacionAgencia = new JPanel();
 		panelCreacionAgencia.setBorder(new TitledBorder(null, "Crear Agencia", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -132,15 +141,16 @@ public class ventanaAgencia extends JFrame {
 		JPanel panel_6 = new JPanel();
 		panelNombreAgencia.add(panel_6);
 		
-		textField = new JTextField();
-		panel_6.add(textField);
-		textField.setColumns(10);
+		textFieldCrearAgencia = new JTextField();
+		panel_6.add(textFieldCrearAgencia);
+		textFieldCrearAgencia.setColumns(10);
+			
 		
 		JPanel panelConfirmarNombreAgencia = new JPanel();
 		panelCreacionAgencia.add(panelConfirmarNombreAgencia);
 		
-		JButton botonConfirmarNombreAgencia = new JButton("Confirmar");
-		panelConfirmarNombreAgencia.add(botonConfirmarNombreAgencia);
+		this.botonConfirmarNombreAgencia = new JButton("Confirmar");
+		panelConfirmarNombreAgencia.add(this.botonConfirmarNombreAgencia);
 		
 		JPanel panelRondaEncCont = new JPanel();
 		panelRondaEncCont.setBorder(new TitledBorder(null, "Busqueda Laboral", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -154,14 +164,14 @@ public class ventanaAgencia extends JFrame {
 		panelRondaEncCont.add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 3, 0, 0));
 		
-		JButton botonRondaEncuentro = new JButton("Ronda de Encuentros");
-		panel_2.add(botonRondaEncuentro);
+		this.botonRondaEncuentro = new JButton("Ronda de Encuentros");
+		panel_2.add(this.botonRondaEncuentro);
 		
 		JPanel panel_3 = new JPanel();
 		panel_2.add(panel_3);
 		
-		JButton botonRondaContraciones = new JButton("Ronda de Contrataciones");
-		panel_2.add(botonRondaContraciones);
+		this.botonRondaContraciones = new JButton("Ronda de Contrataciones");
+		panel_2.add(this.botonRondaContraciones);
 		
 		JPanel panel = new JPanel();
 		panelRondaEncCont.add(panel);
@@ -172,7 +182,7 @@ public class ventanaAgencia extends JFrame {
 		
 		JPanel PanelListas = new JPanel();
 		PanelListas.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		PanelGeneral.add(PanelListas);
+		PanelGeneralAgencia.add(PanelListas);
 		PanelListas.setLayout(new GridLayout(4, 0, 0, 0));
 		
 		JList listEmpleados = new JList();
@@ -190,6 +200,65 @@ public class ventanaAgencia extends JFrame {
 		JList listTicketEmpleadores = new JList();
 		listTicketEmpleadores.setBorder(new TitledBorder(null, "Solicitudes de Empleadores", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		PanelListas.add(listTicketEmpleadores);
+		
+		
+		this.textFieldCrearAgencia.addKeyListener(this);
+		
+		
+		this.botonConfirmarNombreAgencia.setEnabled(false);
+		this.botonConfirmarTiposTickets.setEnabled(false);
+		this.botonRondaEncuentro.setEnabled(false);
+		this.botonRondaContraciones.setEnabled(false);
+		
+		//KeyListener eventoTeclado = new KeyListener(); 
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		boolean hab1 = this.textFieldCrearAgencia.getText().isEmpty();
+		this.botonConfirmarNombreAgencia.setEnabled(hab1);
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		//boolean habBotonConfirmarTipoTicket = 
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
