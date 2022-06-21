@@ -119,15 +119,12 @@ public class IntentoDeVentana74 extends JFrame {
 	private JLabel labelPesoTipoDePuesto;
 	private JPanel panelRangoEtario;
 	private JComboBox comboBoxRangoEtario;
-	private JTextField textFieldPesoRangoEtario;
 	private JLabel labelPesoRangoEtario;
 	private JPanel panelExperienciaPrevia;
 	private JComboBox comboBoxExperienciaPrevia;
-	private JTextField textFieldPesoExperienciaPrevia;
 	private JLabel labelPesoExperienciaPrevia;
 	private JPanel panelEstudiosCursados;
 	private JComboBox comboBoxEstudiosCursados;
-	private JTextField textFieldPesoEstudiosCursados;
 	private JLabel labelPesoEstudiosCursados;
 	private JPanel panelConfirmacionCreacionTicket;
 	private JButton btnConfirmacionCreacionTicket;
@@ -213,13 +210,24 @@ public class IntentoDeVentana74 extends JFrame {
 	private JPanel panelRondaEleccionesEmpleador;
 	private JList listRondaEleccionesEmpleador;
 	private JButton btnConfirmacionEleccionEmpleador;
-	private JPanel panel_7;
+	private JPanel panelTicketSimplificado;
 	private JPanel panelEmpleadorRequisitosTicketSimp;
 	private JComboBox comboBoxBolsaTipoTrabajo_1;
 	private JComboBox comboBoxBolsaLocacion_1;
 	private JLabel lblBolsaTipoTrabajo_1;
 	private JLabel lblBolsaLocacion_1;
 	private JButton btnCrearTicketSimplificado;
+	private JPanel panel_6;
+	private JRadioButton rdbtnActivo;
+	private JRadioButton rdbtnSuspendido;
+	private JRadioButton rdbtnCancelar;
+	private JButton btnCambiarEstado;
+	private JPanel panelEstadoTicketEmpleador;
+	private JRadioButton rdbtnActivoEmpleador;
+	private JRadioButton rdbtnSuspendidoEmpleador;
+	private JRadioButton rdbtnCancelarEmpleador;
+	private JButton btnCambiarEstadoEmpleador;
+	private JList listTicketSimplificadosEmpleador;
 
 	/**
 	 * Launch the application.
@@ -453,7 +461,7 @@ public class IntentoDeVentana74 extends JFrame {
 		
 		this.panelCreacionEmpleado = new JPanel();
 		this.panelCreacionEmpleado.setBorder(new TitledBorder(null, "Crear Empleado", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelCreacionEmpleado.setBounds(10, 214, 389, 448);
+		this.panelCreacionEmpleado.setBounds(10, 214, 389, 431);
 		this.panelLoginCreacionEmpleado.add(this.panelCreacionEmpleado);
 		this.panelCreacionEmpleado.setLayout(new GridLayout(8, 0, 0, 0));
 		
@@ -560,7 +568,7 @@ public class IntentoDeVentana74 extends JFrame {
 		
 		this.panelCreacionTicket = new JPanel();
 		this.panelCreacionTicket.setBorder(new TitledBorder(null, "Crear Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelCreacionTicket.setBounds(10, 11, 389, 556);
+		this.panelCreacionTicket.setBounds(10, 11, 389, 495);
 		this.panelTicket.add(this.panelCreacionTicket);
 		this.panelCreacionTicket.setLayout(new GridLayout(8, 0, 0, 0));
 		
@@ -645,13 +653,8 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxRangoEtario.setBounds(23, 26, 167, 22);
 		this.panelRangoEtario.add(this.comboBoxRangoEtario);
 		
-		this.textFieldPesoRangoEtario = new JTextField();
-		this.textFieldPesoRangoEtario.setColumns(10);
-		this.textFieldPesoRangoEtario.setBounds(314, 27, 35, 20);
-		this.panelRangoEtario.add(this.textFieldPesoRangoEtario);
-		
-		this.labelPesoRangoEtario = new JLabel("Ponderación:");
-		this.labelPesoRangoEtario.setBounds(241, 30, 63, 14);
+		this.labelPesoRangoEtario = new JLabel("Ponderación:  1");
+		this.labelPesoRangoEtario.setBounds(241, 30, 90, 14);
 		this.panelRangoEtario.add(this.labelPesoRangoEtario);
 		
 		this.panelExperienciaPrevia = new JPanel();
@@ -663,13 +666,8 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxExperienciaPrevia.setBounds(23, 26, 167, 22);
 		this.panelExperienciaPrevia.add(this.comboBoxExperienciaPrevia);
 		
-		this.textFieldPesoExperienciaPrevia = new JTextField();
-		this.textFieldPesoExperienciaPrevia.setColumns(10);
-		this.textFieldPesoExperienciaPrevia.setBounds(314, 27, 35, 20);
-		this.panelExperienciaPrevia.add(this.textFieldPesoExperienciaPrevia);
-		
-		this.labelPesoExperienciaPrevia = new JLabel("Ponderación:");
-		this.labelPesoExperienciaPrevia.setBounds(241, 30, 63, 14);
+		this.labelPesoExperienciaPrevia = new JLabel("Ponderación:  1");
+		this.labelPesoExperienciaPrevia.setBounds(241, 30, 83, 14);
 		this.panelExperienciaPrevia.add(this.labelPesoExperienciaPrevia);
 		
 		this.panelEstudiosCursados = new JPanel();
@@ -681,25 +679,44 @@ public class IntentoDeVentana74 extends JFrame {
 		this.comboBoxEstudiosCursados.setBounds(23, 26, 167, 22);
 		this.panelEstudiosCursados.add(this.comboBoxEstudiosCursados);
 		
-		this.textFieldPesoEstudiosCursados = new JTextField();
-		this.textFieldPesoEstudiosCursados.setColumns(10);
-		this.textFieldPesoEstudiosCursados.setBounds(314, 27, 35, 20);
-		this.panelEstudiosCursados.add(this.textFieldPesoEstudiosCursados);
-		
-		this.labelPesoEstudiosCursados = new JLabel("Ponderación:");
-		this.labelPesoEstudiosCursados.setBounds(241, 30, 63, 14);
+		this.labelPesoEstudiosCursados = new JLabel("Ponderación:  1");
+		this.labelPesoEstudiosCursados.setBounds(241, 30, 86, 14);
 		this.panelEstudiosCursados.add(this.labelPesoEstudiosCursados);
 		
 		this.panelConfirmacionCreacionTicket = new JPanel();
 		this.panelCreacionTicket.add(this.panelConfirmacionCreacionTicket);
+		this.panelConfirmacionCreacionTicket.setLayout(null);
 		
 		this.btnConfirmacionCreacionTicket = new JButton("Confirmar");
+		this.btnConfirmacionCreacionTicket.setBounds(150, 25, 79, 23);
 		this.panelConfirmacionCreacionTicket.add(this.btnConfirmacionCreacionTicket);
 		
 		this.listTicketActual = new JList();
 		this.listTicketActual.setBorder(new TitledBorder(null, "Ticket Actual", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.listTicketActual.setBounds(10, 578, 389, 57);
+		this.listTicketActual.setBounds(10, 577, 389, 57);
 		this.panelTicket.add(this.listTicketActual);
+		
+		this.panel_6 = new JPanel();
+		this.panel_6.setBorder(new TitledBorder(null, "Estado del Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panel_6.setBounds(10, 512, 387, 57);
+		this.panelTicket.add(this.panel_6);
+		this.panel_6.setLayout(null);
+		
+		this.rdbtnActivo = new JRadioButton("Activar");
+		this.rdbtnActivo.setBounds(6, 27, 63, 23);
+		this.panel_6.add(this.rdbtnActivo);
+		
+		this.rdbtnSuspendido = new JRadioButton("Suspender");
+		this.rdbtnSuspendido.setBounds(71, 27, 85, 23);
+		this.panel_6.add(this.rdbtnSuspendido);
+		
+		this.rdbtnCancelar = new JRadioButton("Cancelar");
+		this.rdbtnCancelar.setBounds(158, 27, 85, 23);
+		this.panel_6.add(this.rdbtnCancelar);
+		
+		this.btnCambiarEstado = new JButton("Cambiar");
+		this.btnCambiarEstado.setBounds(249, 27, 89, 23);
+		this.panel_6.add(this.btnCambiarEstado);
 		
 		this.panelEleccionYBolsa = new JPanel();
 		this.panelEleccionYBolsa.setBorder(new TitledBorder(null, "Ronda de Elecci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -823,9 +840,9 @@ public class IntentoDeVentana74 extends JFrame {
 		
 		this.panelCreacionEmpleador = new JPanel();
 		this.panelCreacionEmpleador.setBorder(new TitledBorder(null, "Crear Empleado", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelCreacionEmpleador.setBounds(10, 214, 389, 448);
+		this.panelCreacionEmpleador.setBounds(10, 214, 389, 348);
 		this.panelLoginCreacionEmpleador.add(this.panelCreacionEmpleador);
-		this.panelCreacionEmpleador.setLayout(new GridLayout(8, 0, 0, 0));
+		this.panelCreacionEmpleador.setLayout(new GridLayout(6, 0, 0, 0));
 		
 		this.panelCreacionUsuarioEmpleador = new JPanel();
 		this.panelCreacionUsuarioEmpleador.setLayout(null);
@@ -895,6 +912,28 @@ public class IntentoDeVentana74 extends JFrame {
 		
 		this.btnConfirmacionCreacionUsuario_1 = new JButton("Confirmar");
 		this.panelConfirmacionCreacionUsuario_1.add(this.btnConfirmacionCreacionUsuario_1);
+		
+		this.panelEstadoTicketEmpleador = new JPanel();
+		this.panelEstadoTicketEmpleador.setLayout(null);
+		this.panelEstadoTicketEmpleador.setBorder(new TitledBorder(null, "Estado del Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelEstadoTicketEmpleador.setBounds(12, 573, 387, 57);
+		this.panelLoginCreacionEmpleador.add(this.panelEstadoTicketEmpleador);
+		
+		this.rdbtnActivoEmpleador = new JRadioButton("Activar");
+		this.rdbtnActivoEmpleador.setBounds(6, 27, 63, 23);
+		this.panelEstadoTicketEmpleador.add(this.rdbtnActivoEmpleador);
+		
+		this.rdbtnSuspendidoEmpleador = new JRadioButton("Suspender");
+		this.rdbtnSuspendidoEmpleador.setBounds(71, 27, 85, 23);
+		this.panelEstadoTicketEmpleador.add(this.rdbtnSuspendidoEmpleador);
+		
+		this.rdbtnCancelarEmpleador = new JRadioButton("Cancelar");
+		this.rdbtnCancelarEmpleador.setBounds(158, 27, 85, 23);
+		this.panelEstadoTicketEmpleador.add(this.rdbtnCancelarEmpleador);
+		
+		this.btnCambiarEstadoEmpleador = new JButton("Cambiar");
+		this.btnCambiarEstadoEmpleador.setBounds(249, 27, 89, 23);
+		this.panelEstadoTicketEmpleador.add(this.btnCambiarEstadoEmpleador);
 		
 		this.panelTicketEmpleador = new JPanel();
 		this.panelGeneralEmpleador.add(this.panelTicketEmpleador);
@@ -1062,17 +1101,17 @@ public class IntentoDeVentana74 extends JFrame {
 		this.btnConfirmacionEleccionEmpleador.setBounds(162, 277, 89, 23);
 		this.panelRondaEleccionesEmpleador.add(this.btnConfirmacionEleccionEmpleador);
 		
-		this.panel_7 = new JPanel();
-		this.panel_7.setBorder(new TitledBorder(null, "Crear Ticket Simplificado", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panel_7.setBounds(10, 332, 387, 165);
-		this.panelRondaDeEleccionEmpleador.add(this.panel_7);
-		this.panel_7.setLayout(null);
+		this.panelTicketSimplificado = new JPanel();
+		this.panelTicketSimplificado.setBorder(new TitledBorder(null, "Crear Ticket Simplificado", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelTicketSimplificado.setBounds(10, 332, 387, 165);
+		this.panelRondaDeEleccionEmpleador.add(this.panelTicketSimplificado);
+		this.panelTicketSimplificado.setLayout(null);
 		
 		this.panelEmpleadorRequisitosTicketSimp = new JPanel();
 		this.panelEmpleadorRequisitosTicketSimp.setLayout(null);
 		this.panelEmpleadorRequisitosTicketSimp.setBorder(new TitledBorder(null, "Requisitos", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.panelEmpleadorRequisitosTicketSimp.setBounds(10, 23, 366, 75);
-		this.panel_7.add(this.panelEmpleadorRequisitosTicketSimp);
+		this.panelTicketSimplificado.add(this.panelEmpleadorRequisitosTicketSimp);
 		
 		this.comboBoxBolsaTipoTrabajo_1 = new JComboBox();
 		this.comboBoxBolsaTipoTrabajo_1.setBounds(23, 26, 138, 22);
@@ -1092,7 +1131,11 @@ public class IntentoDeVentana74 extends JFrame {
 		
 		this.btnCrearTicketSimplificado = new JButton("Crear");
 		this.btnCrearTicketSimplificado.setBounds(147, 109, 89, 23);
-		this.panel_7.add(this.btnCrearTicketSimplificado);
+		this.panelTicketSimplificado.add(this.btnCrearTicketSimplificado);
+		
+		this.listTicketSimplificadosEmpleador = new JList();
+		this.listTicketSimplificadosEmpleador.setBorder(new TitledBorder(null, "Tickets Simplificados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.listTicketSimplificadosEmpleador.setBounds(10, 510, 387, 124);
+		this.panelRondaDeEleccionEmpleador.add(this.listTicketSimplificadosEmpleador);
 	}
-
 }
