@@ -4,9 +4,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class UnKeyListener implements KeyListener{
-		ventanaEmpleado v;
+		VentanaRealEmpleado v;
 		
-		public UnKeyListener (ventanaEmpleado v) {
+		public UnKeyListener (VentanaRealEmpleado v) {
 			this.v = v;
 		}
 

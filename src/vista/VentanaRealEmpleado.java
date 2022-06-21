@@ -7,6 +7,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.BoxLayout;
 import java.awt.FlowLayout;
 import javax.swing.border.TitledBorder;
@@ -25,92 +34,92 @@ import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.border.LineBorder;
 
-public class VentanaRealEmpleado extends JFrame {
+public class VentanaRealEmpleado extends JFrame implements MouseListener, KeyListener, ItemListener, ActionListener{
 
-	private JPanel contentPane;
-	private JPanel panelEmpleado;
-	private JPanel panelLoginCreacion;
-	private JPanel panelTicket;
-	private JPanel panelEleccionYBolsa;
-	private JPanel panelLogin;
-	private JPanel panelUsuario;
-	private JPanel panelContrasenia;
-	private JPanel panelConfirmarLogin;
-	private JLabel lblUsuario;
-	private JTextField textFieldUsuario;
-	private JLabel lblContrasenia;
-	private JTextField textFieldContrasenia;
-	private JButton btnConfirmarLogin;
-	private JPanel panelCreacionEmpleado;
-	private JPanel panelCreacionUsuario;
-	private JLabel lblCreacionUsuario;
-	private JTextField textFieldCreacionUsuario;
-	private JPanel panelCreacionContrasenia;
-	private JLabel lblCreacionContrasenia;
-	private JTextField textFieldCreacionContrasenia;
-	private JPanel panelCreacionNyA;
-	private JLabel lblCreacionNyA;
-	private JTextField textFieldCreacionNyA;
-	private JPanel panelDNI;
-	private JLabel lblDNI;
-	private JTextField textFieldDNI;
-	private JPanel panelTelefono;
-	private JLabel lblTelefono;
-	private JTextField textFieldTelefono;
-	private JPanel panelEdad;
-	private JLabel lblEdad;
-	private JTextField textFieldEdad;
-	private JPanel panelCiudad;
-	private JLabel lblCiudad;
-	private JTextField textFieldCiudad;
-	private JPanel panelConfirmacionCreacionUsuario;
-	private JButton btnConfirmacionCreacionUsuario;
-	private JPanel panelCreacionTicket;
-	private JPanel panelLocacion;
-	private JComboBox comboBoxLocacion;
-	private JTextField textFieldPesoLocacion;
-	private JLabel labelPesoLocacion;
-	private JPanel panelRemuneracion;
-	private JComboBox comboBoxRemuneracion;
-	private JTextField textFieldPesoRemuneracion;
-	private JLabel labelPesoRemuneracion;
-	private JPanel panelCargaHoraria;
-	private JComboBox comboBoxCargaHoraria;
-	private JTextField textFieldPesoCargaHoraria;
-	private JLabel labelPesoCargaHoraria;
-	private JPanel panelTipoDePuesto;
-	private JComboBox comboBoxTipoDePuesto;
-	private JTextField textFieldPesoTipoDePuesto;
-	private JLabel labelPesoTipoDePuesto;
-	private JPanel panelRangoEtario;
-	private JComboBox comboBoxRangoEtario;
-	private JTextField textFieldPesoRangoEtario;
-	private JLabel labelPesoRangoEtario;
-	private JPanel panelExperienciaPrevia;
-	private JComboBox comboBoxExperienciaPrevia;
-	private JTextField textFieldPesoExperienciaPrevia;
-	private JLabel labelPesoExperienciaPrevia;
-	private JPanel panelEstudiosCursados;
-	private JComboBox comboBoxEstudiosCursados;
-	private JTextField textFieldPesoEstudiosCursados;
-	private JLabel labelPesoEstudiosCursados;
-	private JPanel panelConfirmacionCreacionTicket;
-	private JButton btnConfirmacionCreacionTicket;
-	private JPanel panelRondaElecciones;
-	private JPanel panelBolsaTrabajo;
-	private JList listRondaEleccionesEmpleado;
-	private JButton btnConfirmacionEleccionEmpleado;
-	private JPanel panelEmpleadoRequisitosBolsa;
-	private JComboBox comboBoxBolsaTipoTrabajo;
-	private JComboBox comboBoxBolsaLocacion;
-	private JLabel lblBolsaTipoTrabajo;
-	private JLabel lblBolsaLocacion;
-	private JPanel panelPantallaBolsa;
-	private JList listTicketSimpActual;
-	private JButton btnBolsaAceptar;
-	private JButton btnBolsaRechazar;
-	private JButton btnInicioBolsa;
-	private JList list;
+	protected JPanel contentPane;
+	protected JPanel panelEmpleado;
+	protected JPanel panelLoginCreacion;
+	protected JPanel panelTicket;
+	protected JPanel panelEleccionYBolsa;
+	protected JPanel panelLogin;
+	protected JPanel panelUsuario;
+	protected JPanel panelContrasenia;
+	protected JPanel panelConfirmarLogin;
+	protected JLabel lblUsuario;
+	protected JTextField textFieldUsuario;
+	protected JLabel lblContrasenia;
+	protected JTextField textFieldContrasenia;
+	protected JButton btnConfirmarLogin;
+	protected JPanel panelCreacionEmpleado;
+	protected JPanel panelCreacionUsuario;
+	protected JLabel lblCreacionUsuario;
+	protected JTextField textFieldCreacionUsuario;
+	protected JPanel panelCreacionContrasenia;
+	protected JLabel lblCreacionContrasenia;
+	protected JTextField textFieldCreacionContrasenia;
+	protected JPanel panelCreacionNyA;
+	protected JLabel lblCreacionNyA;
+	protected JTextField textFieldCreacionNyA;
+	protected JPanel panelDNI;
+	protected JLabel lblDNI;
+	protected JTextField textFieldDNI;
+	protected JPanel panelTelefono;
+	protected JLabel lblTelefono;
+	protected JTextField textFieldTelefono;
+	protected JPanel panelEdad;
+	protected JLabel lblEdad;
+	protected JTextField textFieldEdad;
+	protected JPanel panelCiudad;
+	protected JLabel lblCiudad;
+	protected JTextField textFieldCiudad;
+	protected JPanel panelConfirmacionCreacionUsuario;
+	protected JButton btnConfirmacionCreacionUsuario;
+	protected JPanel panelCreacionTicket;
+	protected JPanel panelLocacion;
+	protected JComboBox comboBoxLocacion;
+	protected JTextField textFieldPesoLocacion;
+	protected JLabel labelPesoLocacion;
+	protected JPanel panelRemuneracion;
+	protected JComboBox comboBoxRemuneracion;
+	protected JTextField textFieldPesoRemuneracion;
+	protected JLabel labelPesoRemuneracion;
+	protected JPanel panelCargaHoraria;
+	protected JComboBox comboBoxCargaHoraria;
+	protected JTextField textFieldPesoCargaHoraria;
+	protected JLabel labelPesoCargaHoraria;
+	protected JPanel panelTipoDePuesto;
+	protected JComboBox comboBoxTipoDePuesto;
+	protected JTextField textFieldPesoTipoDePuesto;
+	protected JLabel labelPesoTipoDePuesto;
+	protected JPanel panelRangoEtario;
+	protected JComboBox comboBoxRangoEtario;
+	protected JTextField textFieldPesoRangoEtario;
+	protected JLabel labelPesoRangoEtario;
+	protected JPanel panelExperienciaPrevia;
+	protected JComboBox comboBoxExperienciaPrevia;
+	protected JTextField textFieldPesoExperienciaPrevia;
+	protected JLabel labelPesoExperienciaPrevia;
+	protected JPanel panelEstudiosCursados;
+	protected JComboBox comboBoxEstudiosCursados;
+	protected JTextField textFieldPesoEstudiosCursados;
+	protected JLabel labelPesoEstudiosCursados;
+	protected JPanel panelConfirmacionCreacionTicket;
+	protected JButton btnConfirmacionCreacionTicket;
+	protected JPanel panelRondaElecciones;
+	protected JPanel panelBolsaTrabajo;
+	protected JList listRondaEleccionesEmpleado;
+	protected JButton btnConfirmacionEleccionEmpleado;
+	protected JPanel panelEmpleadoRequisitosBolsa;
+	protected JComboBox comboBoxBolsaTipoTrabajo;
+	protected JComboBox comboBoxBolsaLocacion;
+	protected JLabel lblBolsaTipoTrabajo;
+	protected JLabel lblBolsaLocacion;
+	protected JPanel panelPantallaBolsa;
+	protected JList listTicketSimpActual;
+	protected JButton btnBolsaAceptar;
+	protected JButton btnBolsaRechazar;
+	protected JButton btnInicioBolsa;
+	protected JList list;
 
 	/**
 	 * Launch the application.
@@ -504,5 +513,131 @@ public class VentanaRealEmpleado extends JFrame {
 		this.btnInicioBolsa = new JButton("Arrancar");
 		this.btnInicioBolsa.setBounds(162, 286, 89, 23);
 		this.panelBolsaTrabajo.add(this.btnInicioBolsa);
+		
+		
+		
+		
+		// Seteo de los botones en false para que aparezcan en gris
+		
+		this.btnConfirmarLogin.setEnabled(false);
+		this.btnConfirmacionCreacionUsuario.setEnabled(false);
+		this.btnConfirmacionCreacionTicket.setEnabled(false);
+		this.btnConfirmacionEleccionEmpleado.setEnabled(false);
+		this.btnBolsaAceptar.setEnabled(false);
+		this.btnBolsaRechazar.setEnabled(false);
+		this.btnInicioBolsa.setEnabled(false);
+		
+		// Funcionalidad de los botones
+		
+		this.btnConfirmarLogin.addActionListener(new ActionEmpleadoLogin(this));
+		this.btnConfirmacionCreacionUsuario.setEnabled(false);
+		this.btnConfirmacionCreacionTicket.setEnabled(false);
+		this.btnConfirmacionEleccionEmpleado.setEnabled(false);
+		this.btnBolsaAceptar.setEnabled(false);
+		this.btnBolsaRechazar.setEnabled(false);
+		this.btnInicioBolsa.setEnabled(false);
+		
+		// Asigno a los textfield para que escuchen el texto ingresado por teclado (LOGIN)
+		
+		this.textFieldUsuario.addKeyListener(new DosKeyListener(this));
+		this.textFieldContrasenia.addKeyListener(new DosKeyListener(this));
+		
+		
+		//  Asigno a los textfield para que escuchen el texto ingresado por teclado (CREACION DE TECLADO)
+		
+		this.textFieldCreacionUsuario.addKeyListener(new DosKeyListener(this));
+		this.textFieldCreacionContrasenia.addKeyListener(new DosKeyListener(this));
+		this.textFieldCreacionNyA.addKeyListener(new DosKeyListener(this));
+		this.textFieldDNI.addKeyListener(new DosKeyListener(this));
+		this.textFieldTelefono.addKeyListener(new DosKeyListener(this));
+		this.textFieldEdad.addKeyListener(new DosKeyListener(this));
+		this.textFieldCiudad.addKeyListener(new DosKeyListener(this));
+		
+		// Asigno a 
+		
+		this.textFieldPesoCargaHoraria.addKeyListener(new DosKeyListener(this));
+		this.textFieldPesoEstudiosCursados.addKeyListener(new DosKeyListener(this));
+		this.textFieldPesoExperienciaPrevia.addKeyListener(new UnKeyListener(this));
+		this.textFieldPesoLocacion.addKeyListener(new UnKeyListener(this));
+		this.textFieldPesoRangoEtario.addKeyListener(new UnKeyListener(this));
+		this.textFieldPesoRemuneracion.addKeyListener(new UnKeyListener(this));
+		this.textFieldPesoTipoDePuesto.addKeyListener(new UnKeyListener(this));
+		
+		this.btnConfirmarLogin.addMouseListener(new DosMouseListener(this));
+		this.btnConfirmacionCreacionUsuario.addMouseListener(new DosMouseListener(this));
+		this.btnConfirmacionCreacionTicket.addMouseListener(new DosMouseListener(this));
+		this.btnConfirmacionEleccionEmpleado.addMouseListener(new DosMouseListener(this));
+		this.btnBolsaAceptar.addMouseListener(new DosMouseListener(this));
+		this.btnBolsaRechazar.addMouseListener(new DosMouseListener(this));
+		this.btnInicioBolsa.addMouseListener(new DosMouseListener(this));
+		
+		
+	}
+		public void setBotonConfirmarLogin(boolean hab) {
+			this.btnConfirmarLogin.setEnabled(hab);
+		}
+		
+		public void setBotonConfirmacionCreacionUsuario(boolean hab) {
+			this.btnConfirmacionCreacionUsuario.setEnabled(hab);
+	}
+
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
