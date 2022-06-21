@@ -4,14 +4,17 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class UnMouseListener implements MouseListener {
-	ventanaEmpleado v;
+	VentanaFinal v;
 	
-	public UnMouseListener(ventanaEmpleado v) {
+	public UnMouseListener(VentanaFinal v) {
 		this.v = v;
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		
+		//chequear tambien si la agencia se creo, si no, imposible hacer un tipo de ticket
+		
 		boolean hab1 = v.botonSalud.isSelected() || v.botonComercioLocal.isSelected() || v.botonComercioInternacional.isSelected();
 		boolean hab2 = v.botonJunior.isSelected() || v.botonSenior.isSelected() || v.botonManagement.isSelected();
 		boolean hab3 = v.botonMenosV1.isSelected() || v.botonEntreV1yV2.isSelected() || v.botonMasV2.isSelected();

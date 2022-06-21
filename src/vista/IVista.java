@@ -4,11 +4,11 @@ import java.awt.event.ActionListener;
 
 public interface IVista {
 	
-	//public void setControlador(Controlador c);
-	public void addActionListener(ActionListener listener);
-	static final String aniadeEmpleado = "Agregar nuevo empleado";
-	static final String aniadeEmpleador = "Agregar nuevo empleador";
-	static final String aniadeAgencia = "Agregar nueva agencia"; // esto es un singleton
-	static final String eligeTicket = "Elegir ticket";
-	static final String siguienteTicket = "Siguiente ticket";
+	//ventana arranca directamente desde main de ventana
+	
+	static final String confirmaTicket = ("Confirmar tipos de tickets");
+	static final String confirmaCreacionAgencia = ("Confirmar creacion de agencia");
+	
+	static final String confirmaLoginUsuario = ("Confirma login de usuario");
+	static final String confirma
 }
