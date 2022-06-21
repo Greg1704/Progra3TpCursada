@@ -6,8 +6,12 @@ public interface IVista {
 	
 	//ventana arranca directamente desde main de ventana
 	
+	// botones de ventana agencia
+	
 	static final String confirmaTicket = "Confirmar tipos de tickets";
 	static final String confirmaCreacionAgencia = "Confirmar creacion de agencia";
+	
+	// botones de ventana empleado
 	
 	static final String confirmaLoginUsuario = "Confirma login de usuario";
 	static final String confirmaCreacionUsuario = "Confirma creacion de usuario";
@@ -17,4 +21,8 @@ public interface IVista {
 	static final String confirmaAceptacionTicket = "Confirma aceptacion de un TS";
 	static final String confirmaRechazoTicket = "Confirma rechazo de un TS";
 	static final String confirmaArranqueBDT = "Confirma arranque de BDT";
+	
+	// botones de ventana empleador
+	
+	
 }
