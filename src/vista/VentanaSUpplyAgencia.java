@@ -40,7 +40,7 @@ public class VentanaSUpplyAgencia extends JFrame implements KeyListener, MouseLi
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ventanaAgencia2 frame = new ventanaAgencia2();
+					VentanaSUpplyAgencia frame = new VentanaSUpplyAgencia();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
