@@ -33,7 +33,7 @@ public class IntentoDeVentana74 extends JFrame {
 	private JRadioButton botonSalud;
 	private JRadioButton botonComercioLocal;
 	private JRadioButton botonComercioInternacional;
-	private JPanel panelTipoDePuesto;
+	private JPanel panelTipoDePuestoAgencia;
 	private JRadioButton botonJunior;
 	private JRadioButton botonSenior;
 	private JRadioButton botonManagement;
@@ -113,7 +113,7 @@ public class IntentoDeVentana74 extends JFrame {
 	private JComboBox comboBoxCargaHoraria;
 	private JTextField textFieldPesoCargaHoraria;
 	private JLabel labelPesoCargaHoraria;
-	private JPanel panelTipoDePuesto_1;
+	private JPanel panelTipoDePuesto;
 	private JComboBox comboBoxTipoDePuesto;
 	private JTextField textFieldPesoTipoDePuesto;
 	private JLabel labelPesoTipoDePuesto;
@@ -176,6 +176,38 @@ public class IntentoDeVentana74 extends JFrame {
 	private JButton btnConfirmacionCreacionUsuario_1;
 	private JComboBox comboBoxTipoPersonaEmpleador;
 	private JComboBox comboBoxRubroEmpleador;
+	private JPanel panelTicketEmpleador;
+	private JPanel panelCreacionTicketEmpleador;
+	private JPanel panelLocacionEmpleador;
+	private JComboBox comboBoxLocacionEmpleador;
+	private JTextField textFieldPesoLocacionEmpleador;
+	private JLabel labelPesoLocacionEmpleador;
+	private JPanel panelRemuneracionEmpleador;
+	private JComboBox comboBoxRemuneracionEmpleador;
+	private JTextField textFieldPesoRemuneracionEmpleador;
+	private JLabel labelPesoRemuneracionEmpleador;
+	private JPanel panelCargaHorariaEmpleador;
+	private JComboBox comboBoxCargaHorariaEmpleador;
+	private JTextField textFieldPesoCargaHorariaEmpleador;
+	private JLabel labelPesoCargaHorariaEmpleador;
+	private JPanel panelTipoDePuestoEmpleador;
+	private JComboBox comboBoxTipoDePuestoEmpleador;
+	private JTextField textFieldPesoTipoDePuestoEmpleador;
+	private JLabel labelPesoTipoDePuestoEmpleador;
+	private JPanel panelRangoEtarioEmpleador;
+	private JComboBox comboBoxRangoEtarioEmpleador;
+	private JTextField textFieldPesoRangoEtarioEmpleador;
+	private JLabel labelPesoRangoEtarioEmpleador;
+	private JPanel panelExperienciaPreviaEmpleador;
+	private JComboBox comboBoxExperienciaPreviaEmpleador;
+	private JTextField textFieldPesoExpPreviaEmpleador;
+	private JLabel labelPesoExpPreviaEmpleador;
+	private JPanel panelEstudiosCursadosEmpleador;
+	private JComboBox comboBoxEstudiosCursadosEmpleador;
+	private JTextField textFieldPesoEstudiosCursadosEmpleador;
+	private JLabel labelPesoEstudiosCursadosEmpleador;
+	private JPanel panelConfirmacionCreacionTicketEmpleador;
+	private JButton btnConfirmacionCreacionTicket_1;
 
 	/**
 	 * Launch the application.
@@ -239,19 +271,19 @@ public class IntentoDeVentana74 extends JFrame {
 		this.botonComercioInternacional = new JRadioButton("Comercio Int.");
 		this.panelTiposTrabajo.add(this.botonComercioInternacional);
 		
-		this.panelTipoDePuesto = new JPanel();
-		this.panelTipoDePuesto.setBorder(new TitledBorder(null, "Tipos de puesto", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelDatosTickets.add(this.panelTipoDePuesto);
-		this.panelTipoDePuesto.setLayout(new GridLayout(0, 3, 0, 0));
+		this.panelTipoDePuestoAgencia = new JPanel();
+		this.panelTipoDePuestoAgencia.setBorder(new TitledBorder(null, "Tipos de puesto", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelDatosTickets.add(this.panelTipoDePuestoAgencia);
+		this.panelTipoDePuestoAgencia.setLayout(new GridLayout(0, 3, 0, 0));
 		
 		this.botonJunior = new JRadioButton("Junior");
-		this.panelTipoDePuesto.add(this.botonJunior);
+		this.panelTipoDePuestoAgencia.add(this.botonJunior);
 		
 		this.botonSenior = new JRadioButton("Senior");
-		this.panelTipoDePuesto.add(this.botonSenior);
+		this.panelTipoDePuestoAgencia.add(this.botonSenior);
 		
 		this.botonManagement = new JRadioButton("Management");
-		this.panelTipoDePuesto.add(this.botonManagement);
+		this.panelTipoDePuestoAgencia.add(this.botonManagement);
 		
 		this.panelRangoLaboral = new JPanel();
 		this.panelRangoLaboral.setBorder(new TitledBorder(null, "Rango Laboral", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -574,23 +606,23 @@ public class IntentoDeVentana74 extends JFrame {
 		this.labelPesoCargaHoraria.setBounds(241, 30, 63, 14);
 		this.panelCargaHoraria.add(this.labelPesoCargaHoraria);
 		
-		this.panelTipoDePuesto_1 = new JPanel();
-		this.panelTipoDePuesto_1.setLayout(null);
-		this.panelTipoDePuesto_1.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Tipo de Puesto", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		this.panelCreacionTicket.add(this.panelTipoDePuesto_1);
+		this.panelTipoDePuesto = new JPanel();
+		this.panelTipoDePuesto.setLayout(null);
+		this.panelTipoDePuesto.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Tipo de Puesto", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.panelCreacionTicket.add(this.panelTipoDePuesto);
 		
 		this.comboBoxTipoDePuesto = new JComboBox();
 		this.comboBoxTipoDePuesto.setBounds(23, 26, 167, 22);
-		this.panelTipoDePuesto_1.add(this.comboBoxTipoDePuesto);
+		this.panelTipoDePuesto.add(this.comboBoxTipoDePuesto);
 		
 		this.textFieldPesoTipoDePuesto = new JTextField();
 		this.textFieldPesoTipoDePuesto.setColumns(10);
 		this.textFieldPesoTipoDePuesto.setBounds(314, 27, 35, 20);
-		this.panelTipoDePuesto_1.add(this.textFieldPesoTipoDePuesto);
+		this.panelTipoDePuesto.add(this.textFieldPesoTipoDePuesto);
 		
 		this.labelPesoTipoDePuesto = new JLabel("Ponderación:");
 		this.labelPesoTipoDePuesto.setBounds(241, 30, 63, 14);
-		this.panelTipoDePuesto_1.add(this.labelPesoTipoDePuesto);
+		this.panelTipoDePuesto.add(this.labelPesoTipoDePuesto);
 		
 		this.panelRangoEtario = new JPanel();
 		this.panelRangoEtario.setLayout(null);
@@ -851,6 +883,148 @@ public class IntentoDeVentana74 extends JFrame {
 		
 		this.btnConfirmacionCreacionUsuario_1 = new JButton("Confirmar");
 		this.panelConfirmacionCreacionUsuario_1.add(this.btnConfirmacionCreacionUsuario_1);
+		
+		this.panelTicketEmpleador = new JPanel();
+		this.panelGeneralEmpleador.add(this.panelTicketEmpleador);
+		this.panelTicketEmpleador.setLayout(null);
+		
+		this.panelCreacionTicketEmpleador = new JPanel();
+		this.panelCreacionTicketEmpleador.setBorder(new TitledBorder(null, "Crear Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelCreacionTicketEmpleador.setBounds(10, 11, 389, 556);
+		this.panelTicketEmpleador.add(this.panelCreacionTicketEmpleador);
+		this.panelCreacionTicketEmpleador.setLayout(new GridLayout(8, 0, 0, 0));
+		
+		this.panelLocacionEmpleador = new JPanel();
+		this.panelLocacionEmpleador.setLayout(null);
+		this.panelLocacionEmpleador.setBorder(new TitledBorder(null, "Locaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelCreacionTicketEmpleador.add(this.panelLocacionEmpleador);
+		
+		this.comboBoxLocacionEmpleador = new JComboBox();
+		this.comboBoxLocacionEmpleador.setBounds(23, 26, 167, 22);
+		this.panelLocacionEmpleador.add(this.comboBoxLocacionEmpleador);
+		
+		this.textFieldPesoLocacionEmpleador = new JTextField();
+		this.textFieldPesoLocacionEmpleador.setColumns(10);
+		this.textFieldPesoLocacionEmpleador.setBounds(314, 27, 35, 20);
+		this.panelLocacionEmpleador.add(this.textFieldPesoLocacionEmpleador);
+		
+		this.labelPesoLocacionEmpleador = new JLabel("Ponderación:");
+		this.labelPesoLocacionEmpleador.setBounds(241, 30, 63, 14);
+		this.panelLocacionEmpleador.add(this.labelPesoLocacionEmpleador);
+		
+		this.panelRemuneracionEmpleador = new JPanel();
+		this.panelRemuneracionEmpleador.setLayout(null);
+		this.panelRemuneracionEmpleador.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Remuneraci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.panelCreacionTicketEmpleador.add(this.panelRemuneracionEmpleador);
+		
+		this.comboBoxRemuneracionEmpleador = new JComboBox();
+		this.comboBoxRemuneracionEmpleador.setBounds(23, 26, 167, 22);
+		this.panelRemuneracionEmpleador.add(this.comboBoxRemuneracionEmpleador);
+		
+		this.textFieldPesoRemuneracionEmpleador = new JTextField();
+		this.textFieldPesoRemuneracionEmpleador.setColumns(10);
+		this.textFieldPesoRemuneracionEmpleador.setBounds(314, 27, 35, 20);
+		this.panelRemuneracionEmpleador.add(this.textFieldPesoRemuneracionEmpleador);
+		
+		this.labelPesoRemuneracionEmpleador = new JLabel("Ponderación:");
+		this.labelPesoRemuneracionEmpleador.setBounds(241, 30, 63, 14);
+		this.panelRemuneracionEmpleador.add(this.labelPesoRemuneracionEmpleador);
+		
+		this.panelCargaHorariaEmpleador = new JPanel();
+		this.panelCargaHorariaEmpleador.setLayout(null);
+		this.panelCargaHorariaEmpleador.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Carga Horaria", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.panelCreacionTicketEmpleador.add(this.panelCargaHorariaEmpleador);
+		
+		this.comboBoxCargaHorariaEmpleador = new JComboBox();
+		this.comboBoxCargaHorariaEmpleador.setBounds(23, 26, 167, 22);
+		this.panelCargaHorariaEmpleador.add(this.comboBoxCargaHorariaEmpleador);
+		
+		this.textFieldPesoCargaHorariaEmpleador = new JTextField();
+		this.textFieldPesoCargaHorariaEmpleador.setColumns(10);
+		this.textFieldPesoCargaHorariaEmpleador.setBounds(314, 27, 35, 20);
+		this.panelCargaHorariaEmpleador.add(this.textFieldPesoCargaHorariaEmpleador);
+		
+		this.labelPesoCargaHorariaEmpleador = new JLabel("Ponderación:");
+		this.labelPesoCargaHorariaEmpleador.setBounds(241, 30, 63, 14);
+		this.panelCargaHorariaEmpleador.add(this.labelPesoCargaHorariaEmpleador);
+		
+		this.panelTipoDePuestoEmpleador = new JPanel();
+		this.panelTipoDePuestoEmpleador.setLayout(null);
+		this.panelTipoDePuestoEmpleador.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Tipo de Puesto", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.panelCreacionTicketEmpleador.add(this.panelTipoDePuestoEmpleador);
+		
+		this.comboBoxTipoDePuestoEmpleador = new JComboBox();
+		this.comboBoxTipoDePuestoEmpleador.setBounds(23, 26, 167, 22);
+		this.panelTipoDePuestoEmpleador.add(this.comboBoxTipoDePuestoEmpleador);
+		
+		this.textFieldPesoTipoDePuestoEmpleador = new JTextField();
+		this.textFieldPesoTipoDePuestoEmpleador.setColumns(10);
+		this.textFieldPesoTipoDePuestoEmpleador.setBounds(314, 27, 35, 20);
+		this.panelTipoDePuestoEmpleador.add(this.textFieldPesoTipoDePuestoEmpleador);
+		
+		this.labelPesoTipoDePuestoEmpleador = new JLabel("Ponderación:");
+		this.labelPesoTipoDePuestoEmpleador.setBounds(241, 30, 63, 14);
+		this.panelTipoDePuestoEmpleador.add(this.labelPesoTipoDePuestoEmpleador);
+		
+		this.panelRangoEtarioEmpleador = new JPanel();
+		this.panelRangoEtarioEmpleador.setLayout(null);
+		this.panelRangoEtarioEmpleador.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Rango Etario", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.panelCreacionTicketEmpleador.add(this.panelRangoEtarioEmpleador);
+		
+		this.comboBoxRangoEtarioEmpleador = new JComboBox();
+		this.comboBoxRangoEtarioEmpleador.setBounds(23, 26, 167, 22);
+		this.panelRangoEtarioEmpleador.add(this.comboBoxRangoEtarioEmpleador);
+		
+		this.textFieldPesoRangoEtarioEmpleador = new JTextField();
+		this.textFieldPesoRangoEtarioEmpleador.setColumns(10);
+		this.textFieldPesoRangoEtarioEmpleador.setBounds(314, 27, 35, 20);
+		this.panelRangoEtarioEmpleador.add(this.textFieldPesoRangoEtarioEmpleador);
+		
+		this.labelPesoRangoEtarioEmpleador = new JLabel("Ponderación:");
+		this.labelPesoRangoEtarioEmpleador.setBounds(241, 30, 63, 14);
+		this.panelRangoEtarioEmpleador.add(this.labelPesoRangoEtarioEmpleador);
+		
+		this.panelExperienciaPreviaEmpleador = new JPanel();
+		this.panelExperienciaPreviaEmpleador.setLayout(null);
+		this.panelExperienciaPreviaEmpleador.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Experiencia Previa", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.panelCreacionTicketEmpleador.add(this.panelExperienciaPreviaEmpleador);
+		
+		this.comboBoxExperienciaPreviaEmpleador = new JComboBox();
+		this.comboBoxExperienciaPreviaEmpleador.setBounds(23, 26, 167, 22);
+		this.panelExperienciaPreviaEmpleador.add(this.comboBoxExperienciaPreviaEmpleador);
+		
+		this.textFieldPesoExpPreviaEmpleador = new JTextField();
+		this.textFieldPesoExpPreviaEmpleador.setColumns(10);
+		this.textFieldPesoExpPreviaEmpleador.setBounds(314, 27, 35, 20);
+		this.panelExperienciaPreviaEmpleador.add(this.textFieldPesoExpPreviaEmpleador);
+		
+		this.labelPesoExpPreviaEmpleador = new JLabel("Ponderación:");
+		this.labelPesoExpPreviaEmpleador.setBounds(241, 30, 63, 14);
+		this.panelExperienciaPreviaEmpleador.add(this.labelPesoExpPreviaEmpleador);
+		
+		this.panelEstudiosCursadosEmpleador = new JPanel();
+		this.panelEstudiosCursadosEmpleador.setLayout(null);
+		this.panelEstudiosCursadosEmpleador.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Estudios Cursados", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.panelCreacionTicketEmpleador.add(this.panelEstudiosCursadosEmpleador);
+		
+		this.comboBoxEstudiosCursadosEmpleador = new JComboBox();
+		this.comboBoxEstudiosCursadosEmpleador.setBounds(24, 26, 167, 22);
+		this.panelEstudiosCursadosEmpleador.add(this.comboBoxEstudiosCursadosEmpleador);
+		
+		this.textFieldPesoEstudiosCursadosEmpleador = new JTextField();
+		this.textFieldPesoEstudiosCursadosEmpleador.setColumns(10);
+		this.textFieldPesoEstudiosCursadosEmpleador.setBounds(314, 27, 35, 20);
+		this.panelEstudiosCursadosEmpleador.add(this.textFieldPesoEstudiosCursadosEmpleador);
+		
+		this.labelPesoEstudiosCursadosEmpleador = new JLabel("Ponderación:");
+		this.labelPesoEstudiosCursadosEmpleador.setBounds(241, 30, 63, 14);
+		this.panelEstudiosCursadosEmpleador.add(this.labelPesoEstudiosCursadosEmpleador);
+		
+		this.panelConfirmacionCreacionTicketEmpleador = new JPanel();
+		this.panelCreacionTicketEmpleador.add(this.panelConfirmacionCreacionTicketEmpleador);
+		
+		this.btnConfirmacionCreacionTicket_1 = new JButton("Confirmar");
+		this.panelConfirmacionCreacionTicketEmpleador.add(this.btnConfirmacionCreacionTicket_1);
 	}
 
 }
