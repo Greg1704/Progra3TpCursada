@@ -65,7 +65,7 @@ public class IntentoDeVentana74 extends JFrame {
 	private JList listEmpleadores;
 	private JList listTicketEmpleadores;
 	private JPanel panelGeneralEmpleado;
-	private JPanel panelLoginCreacion;
+	private JPanel panelLoginCreacionEmpleado;
 	private JPanel panelLogin;
 	private JPanel panelUsuario;
 	private JLabel lblUsuario;
@@ -147,6 +147,35 @@ public class IntentoDeVentana74 extends JFrame {
 	private JButton btnBolsaAceptar;
 	private JButton btnBolsaRechazar;
 	private JButton btnInicioBolsa;
+	private JPanel panelGeneralEmpleador;
+	private JPanel panelLoginCreacionEmpleador;
+	private JPanel panelLoginEmpleador;
+	private JPanel panelUsuarioEmpleador;
+	private JLabel lblUsuarioEmpleador;
+	private JTextField textFieldUsuarioEmpleador;
+	private JPanel panelContraseniaEmpleador;
+	private JLabel lblContraseniaEmpleador;
+	private JTextField textFieldEmpleador;
+	private JPanel panelConfirmarLoginEmpleador;
+	private JButton btnConfirmarLoginEmpleador;
+	private JPanel panelCreacionEmpleador;
+	private JPanel panelCreacionUsuarioEmpleador;
+	private JLabel lblCreacionUsuarioEmpleador;
+	private JTextField textFieldCreacionUsuarioEmpleador;
+	private JPanel panelCreacionContraseniaEmpleador;
+	private JLabel lblCreacionContraseniaEmpleador;
+	private JTextField textFieldCreacionContraseniaEmpleador;
+	private JPanel panelCreacionNombreEmpleador;
+	private JLabel lblCreacionNombreEmpleador;
+	private JTextField textFieldCreacionNombreEmpleador;
+	private JPanel panelTipoPersonaEmpleador;
+	private JLabel lblTipoPersonaEmpleador;
+	private JPanel panelRubroEmpleador;
+	private JLabel lblRubroEmpleador;
+	private JPanel panelConfirmacionCreacionUsuario_1;
+	private JButton btnConfirmacionCreacionUsuario_1;
+	private JComboBox comboBoxTipoPersonaEmpleador;
+	private JComboBox comboBoxRubroEmpleador;
 
 	/**
 	 * Launch the application.
@@ -334,14 +363,14 @@ public class IntentoDeVentana74 extends JFrame {
 		this.panelEmpleado.add(this.panelGeneralEmpleado, BorderLayout.CENTER);
 		this.panelGeneralEmpleado.setLayout(new GridLayout(0, 3, 0, 0));
 		
-		this.panelLoginCreacion = new JPanel();
-		this.panelLoginCreacion.setLayout(null);
-		this.panelGeneralEmpleado.add(this.panelLoginCreacion);
+		this.panelLoginCreacionEmpleado = new JPanel();
+		this.panelLoginCreacionEmpleado.setLayout(null);
+		this.panelGeneralEmpleado.add(this.panelLoginCreacionEmpleado);
 		
 		this.panelLogin = new JPanel();
 		this.panelLogin.setBorder(new TitledBorder(null, "Login", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.panelLogin.setBounds(10, 11, 389, 202);
-		this.panelLoginCreacion.add(this.panelLogin);
+		this.panelLoginCreacionEmpleado.add(this.panelLogin);
 		this.panelLogin.setLayout(new GridLayout(3, 1, 0, 0));
 		
 		this.panelUsuario = new JPanel();
@@ -381,7 +410,7 @@ public class IntentoDeVentana74 extends JFrame {
 		this.panelCreacionEmpleado = new JPanel();
 		this.panelCreacionEmpleado.setBorder(new TitledBorder(null, "Crear Empleado", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.panelCreacionEmpleado.setBounds(10, 214, 389, 448);
-		this.panelLoginCreacion.add(this.panelCreacionEmpleado);
+		this.panelLoginCreacionEmpleado.add(this.panelCreacionEmpleado);
 		this.panelCreacionEmpleado.setLayout(new GridLayout(8, 0, 0, 0));
 		
 		this.panelCreacionUsuario = new JPanel();
@@ -698,6 +727,130 @@ public class IntentoDeVentana74 extends JFrame {
 		
 		this.panelEmpleador = new JPanel();
 		this.tabbedPane.addTab("Empleador", null, this.panelEmpleador, null);
+		this.panelEmpleador.setLayout(new BorderLayout(0, 0));
+		
+		this.panelGeneralEmpleador = new JPanel();
+		this.panelEmpleador.add(this.panelGeneralEmpleador, BorderLayout.CENTER);
+		this.panelGeneralEmpleador.setLayout(new GridLayout(0, 3, 0, 0));
+		
+		this.panelLoginCreacionEmpleador = new JPanel();
+		this.panelLoginCreacionEmpleador.setLayout(null);
+		this.panelGeneralEmpleador.add(this.panelLoginCreacionEmpleador);
+		
+		this.panelLoginEmpleador = new JPanel();
+		this.panelLoginEmpleador.setBorder(new TitledBorder(null, "Login", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelLoginEmpleador.setBounds(10, 11, 389, 202);
+		this.panelLoginCreacionEmpleador.add(this.panelLoginEmpleador);
+		this.panelLoginEmpleador.setLayout(new GridLayout(3, 1, 0, 0));
+		
+		this.panelUsuarioEmpleador = new JPanel();
+		this.panelUsuarioEmpleador.setLayout(null);
+		this.panelLoginEmpleador.add(this.panelUsuarioEmpleador);
+		
+		this.lblUsuarioEmpleador = new JLabel("Usuario:");
+		this.lblUsuarioEmpleador.setBounds(70, 22, 46, 14);
+		this.panelUsuarioEmpleador.add(this.lblUsuarioEmpleador);
+		
+		this.textFieldUsuarioEmpleador = new JTextField();
+		this.textFieldUsuarioEmpleador.setColumns(10);
+		this.textFieldUsuarioEmpleador.setBounds(172, 19, 176, 20);
+		this.panelUsuarioEmpleador.add(this.textFieldUsuarioEmpleador);
+		
+		this.panelContraseniaEmpleador = new JPanel();
+		this.panelContraseniaEmpleador.setLayout(null);
+		this.panelLoginEmpleador.add(this.panelContraseniaEmpleador);
+		
+		this.lblContraseniaEmpleador = new JLabel("Contraseña:");
+		this.lblContraseniaEmpleador.setBounds(61, 22, 60, 14);
+		this.panelContraseniaEmpleador.add(this.lblContraseniaEmpleador);
+		
+		this.textFieldEmpleador = new JTextField();
+		this.textFieldEmpleador.setColumns(10);
+		this.textFieldEmpleador.setBounds(172, 19, 176, 20);
+		this.panelContraseniaEmpleador.add(this.textFieldEmpleador);
+		
+		this.panelConfirmarLoginEmpleador = new JPanel();
+		this.panelConfirmarLoginEmpleador.setLayout(null);
+		this.panelLoginEmpleador.add(this.panelConfirmarLoginEmpleador);
+		
+		this.btnConfirmarLoginEmpleador = new JButton("Confirmar");
+		this.btnConfirmarLoginEmpleador.setBounds(135, 26, 89, 23);
+		this.panelConfirmarLoginEmpleador.add(this.btnConfirmarLoginEmpleador);
+		
+		this.panelCreacionEmpleador = new JPanel();
+		this.panelCreacionEmpleador.setBorder(new TitledBorder(null, "Crear Empleado", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelCreacionEmpleador.setBounds(10, 214, 389, 448);
+		this.panelLoginCreacionEmpleador.add(this.panelCreacionEmpleador);
+		this.panelCreacionEmpleador.setLayout(new GridLayout(8, 0, 0, 0));
+		
+		this.panelCreacionUsuarioEmpleador = new JPanel();
+		this.panelCreacionUsuarioEmpleador.setLayout(null);
+		this.panelCreacionEmpleador.add(this.panelCreacionUsuarioEmpleador);
+		
+		this.lblCreacionUsuarioEmpleador = new JLabel("Usuario:");
+		this.lblCreacionUsuarioEmpleador.setBounds(70, 22, 46, 14);
+		this.panelCreacionUsuarioEmpleador.add(this.lblCreacionUsuarioEmpleador);
+		
+		this.textFieldCreacionUsuarioEmpleador = new JTextField();
+		this.textFieldCreacionUsuarioEmpleador.setColumns(10);
+		this.textFieldCreacionUsuarioEmpleador.setBounds(172, 19, 176, 20);
+		this.panelCreacionUsuarioEmpleador.add(this.textFieldCreacionUsuarioEmpleador);
+		
+		this.panelCreacionContraseniaEmpleador = new JPanel();
+		this.panelCreacionContraseniaEmpleador.setLayout(null);
+		this.panelCreacionEmpleador.add(this.panelCreacionContraseniaEmpleador);
+		
+		this.lblCreacionContraseniaEmpleador = new JLabel("Contraseña:");
+		this.lblCreacionContraseniaEmpleador.setBounds(61, 22, 60, 14);
+		this.panelCreacionContraseniaEmpleador.add(this.lblCreacionContraseniaEmpleador);
+		
+		this.textFieldCreacionContraseniaEmpleador = new JTextField();
+		this.textFieldCreacionContraseniaEmpleador.setColumns(10);
+		this.textFieldCreacionContraseniaEmpleador.setBounds(172, 19, 176, 20);
+		this.panelCreacionContraseniaEmpleador.add(this.textFieldCreacionContraseniaEmpleador);
+		
+		this.panelCreacionNombreEmpleador = new JPanel();
+		this.panelCreacionNombreEmpleador.setLayout(null);
+		this.panelCreacionEmpleador.add(this.panelCreacionNombreEmpleador);
+		
+		this.lblCreacionNombreEmpleador = new JLabel("Nombre:");
+		this.lblCreacionNombreEmpleador.setBounds(74, 22, 68, 14);
+		this.panelCreacionNombreEmpleador.add(this.lblCreacionNombreEmpleador);
+		
+		this.textFieldCreacionNombreEmpleador = new JTextField();
+		this.textFieldCreacionNombreEmpleador.setColumns(10);
+		this.textFieldCreacionNombreEmpleador.setBounds(172, 19, 176, 20);
+		this.panelCreacionNombreEmpleador.add(this.textFieldCreacionNombreEmpleador);
+		
+		this.panelTipoPersonaEmpleador = new JPanel();
+		this.panelTipoPersonaEmpleador.setLayout(null);
+		this.panelCreacionEmpleador.add(this.panelTipoPersonaEmpleador);
+		
+		this.lblTipoPersonaEmpleador = new JLabel("Tipo persona:");
+		this.lblTipoPersonaEmpleador.setBounds(55, 22, 76, 14);
+		this.panelTipoPersonaEmpleador.add(this.lblTipoPersonaEmpleador);
+		
+		this.comboBoxTipoPersonaEmpleador = new JComboBox();
+		this.comboBoxTipoPersonaEmpleador.setBounds(172, 18, 176, 22);
+		this.panelTipoPersonaEmpleador.add(this.comboBoxTipoPersonaEmpleador);
+		
+		this.panelRubroEmpleador = new JPanel();
+		this.panelRubroEmpleador.setLayout(null);
+		this.panelCreacionEmpleador.add(this.panelRubroEmpleador);
+		
+		this.lblRubroEmpleador = new JLabel("Rubro:");
+		this.lblRubroEmpleador.setBounds(77, 22, 44, 14);
+		this.panelRubroEmpleador.add(this.lblRubroEmpleador);
+		
+		this.comboBoxRubroEmpleador = new JComboBox();
+		this.comboBoxRubroEmpleador.setBounds(171, 18, 176, 22);
+		this.panelRubroEmpleador.add(this.comboBoxRubroEmpleador);
+		
+		this.panelConfirmacionCreacionUsuario_1 = new JPanel();
+		this.panelCreacionEmpleador.add(this.panelConfirmacionCreacionUsuario_1);
+		
+		this.btnConfirmacionCreacionUsuario_1 = new JButton("Confirmar");
+		this.panelConfirmacionCreacionUsuario_1.add(this.btnConfirmacionCreacionUsuario_1);
 	}
 
 }
