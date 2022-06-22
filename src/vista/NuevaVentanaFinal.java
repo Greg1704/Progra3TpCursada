@@ -1538,13 +1538,31 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 		@Override
 		public void itemStateChanged(ItemEvent e) {
-			// TODO Auto-generated method stub
+			boolean hab = !(listRondaEleccionesEmpleado.isSelectionEmpty());
+			setBotonConfirmacionEleccionEmpleado(hab);
+			
+	/*	boolean hab1 = !(listTicketSimpActual.isSelectionEmpty());
+			setBotonAceptarYRechazarTicketSimplificado(hab);
+			*/
+		boolean hab2 = !listRondaEleccionesEmpleador.isSelectionEmpty();
+			setBotonConfirmacionEleccionEmpleador(hab2);
 			
 		}
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			// TODO Auto-generated method stub
+			
+			if ((rdbtnActivo.isSelected() && !rdbtnSuspendido.isSelected() && !rdbtnCancelar.isSelected()) || (!rdbtnActivo.isSelected() && rdbtnSuspendido.isSelected() && !rdbtnCancelar.isSelected())
+					|| (!rdbtnActivo.isSelected() && !rdbtnSuspendido.isSelected() && rdbtnCancelar.isSelected())) {
+					setCambiarEstadoTicketEmpleado(true);
+				} else
+					setCambiarEstadoTicketEmpleado(false);
+				
+				if ((rdbtnActivoEmpleador.isSelected() && !rdbtnSuspendidoEmpleador.isSelected() && !rdbtnCancelarEmpleador.isSelected()) || (!rdbtnActivoEmpleador.isSelected() && rdbtnSuspendidoEmpleador.isSelected() && !rdbtnCancelarEmpleador.isSelected())
+						|| (!rdbtnActivoEmpleador.isSelected() && !rdbtnSuspendidoEmpleador.isSelected() && rdbtnCancelarEmpleador.isSelected())) {
+						setCambiarEstadoTicketEmpleador(true);
+					} else
+						setCambiarEstadoTicketEmpleador(false);
 			
 		}
 
