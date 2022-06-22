@@ -1306,12 +1306,18 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		}
 		
 		public void setBotonConfirmacionEleccionEmpleado(boolean hab) {
-			this.btnConfirmacionEleccionEmpleado.setEnabled(hab);;
+			this.btnConfirmacionEleccionEmpleado.setEnabled(hab);
 		}
 		
-		public void setBotonAceptarYRechazarTicketSimplificado(boolean hab) {
-			this.btnBolsaAceptar.setEnabled(hab);
-			this.btnBolsaAceptar.setEnabled(hab); // seteo los dos botones de una porque esto es solo para verificar si seleccione el ticket simplificado
+		public void setBotonConfirmacionEleccionEmpleador(boolean hab) {
+			this.btnConfirmacionEleccionEmpleador.setEnabled(hab);
+		
+		}
+		
+		public void setBotonAceptarYRechazarTicketSimplificado(boolean hab, boolean hab2) {
+			boolean habFinal = hab && hab2;
+			this.btnBolsaAceptar.setEnabled(habFinal);
+			this.btnBolsaRechazar.setEnabled(habFinal); // seteo los dos botones de una porque esto es solo para verificar si seleccione el ticket simplificado
 		}
 
 		@Override

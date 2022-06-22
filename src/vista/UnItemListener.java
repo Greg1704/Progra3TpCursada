@@ -13,6 +13,9 @@ public class UnItemListener implements ItemListener{
 
 		@Override
 		public void itemStateChanged(ItemEvent e) {
+
+			v.comboBoxBolsaLocacion.is
+			
 			String s1 = (String) v.comboBoxBolsaLocacion.getSelectedItem();
 			String s2 = (String) v.comboBoxBolsaTipoTrabajo.getSelectedItem();
 			String s3 = (String) v.comboBoxCargaHoraria.getSelectedItem();

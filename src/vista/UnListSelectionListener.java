@@ -14,8 +14,12 @@ public class UnListSelectionListener implements ListSelectionListener {
 	public void valueChanged(ListSelectionEvent e) {
 		boolean hab = !(v.listRondaEleccionesEmpleado.isSelectionEmpty());
 			v.setBotonConfirmacionEleccionEmpleado(hab);
-		boolean hab1 = !(v.listTicketSimpActual.isSelectionEmpty());
+			
+	/*	boolean hab1 = !(v.listTicketSimpActual.isSelectionEmpty());
 			v.setBotonAceptarYRechazarTicketSimplificado(hab);
+			*/
+		boolean hab2 = !(v.listRondaEleccionesEmpleador.isSelectionEmpty());
+			v.setBotonConfirmacionEleccionEmpleador(hab2);
 	}
 
 }
