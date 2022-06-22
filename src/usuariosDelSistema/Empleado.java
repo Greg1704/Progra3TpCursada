@@ -92,17 +92,9 @@ public class Empleado extends Usuario implements Observer {
 		this.empleadorSeleccionado = empleadorSeleccionado;
 	}
 	
-	public void Login(String usuario, String contrasenia){
+	public void Login(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException{
 
-		try {
 			buscaEmpleado(usuario,contrasenia);
-			System.out.println("Login completado.");
-		}catch (ContraseniaIncorrectaException e) {
-			System.out.println(e.getMessage());
-		}
-		catch(UsuarioIncorrectoException e) {
-			System.out.println(e.getMessage());
-		}
 	}
 	
 	public Empleado buscaEmpleado(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {

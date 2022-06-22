@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import excepciones.ContraseniaIncorrectaException;
+import excepciones.UsuarioIncorrectoException;
 import usuariosDelSistema.*;
 
 public class ActionPerformedBotones implements ActionListener {
@@ -28,27 +30,37 @@ public class ActionPerformedBotones implements ActionListener {
 			
 		} else
 			if (e.getActionCommand().equals(IVista.confirmaTipoTicket)) {
+				//Ta jodido el asunto
 				
 				
 				
-				
-			} else // ventana Empleado
+			} else { // ventana Empleado
 				
 				
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
 					
-					
+					try {
+						empleado.Login(v.textFieldCreacionUsuario.getText(), v.textFieldCreacionUsuarioEmpleador.getText());
+						//caso logueo exitoso, podemos tirar mensaje en pantalla o no AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+						JOptionPane.showMessageDialog(null, "Login Correcto");
+						//Hacer lo que haya que hacer para que se desbloquee el resto de la ventana
+					}catch (ContraseniaIncorrectaException ex) {
+						JOptionPane.showMessageDialog(null, ex.getMessage());
+
+					}
+					catch(UsuarioIncorrectoException ex) {
+						JOptionPane.showMessageDialog(null, ex.getMessage());
+
+					}
 					v.textFieldUsuario.setText("");
 					v.textFieldContrasenia.setText("");
 					v.btnConfirmarLogin.setEnabled(false);
-					//if logeo exitoso : JOptionPane.showMessageDialog(null, "No se q poner aca");
-					
-					
+						
 					
 				} else
 					if (e.getActionCommand().equals(IVista.confirmaCreacionUsuario)) {
 						
-						// cuando se cree usuario, buscar en la lista si el usuario ya existe (sólo buscar por campo de usuario estaría bien). si no existe, hacer un new empleado
+						// cuando se cree usuario, buscar en la lista si el usuario ya existe (sï¿½lo buscar por campo de usuario estarï¿½a bien). si no existe, hacer un new empleado
 						
 						Empleado empleado1 = new Empleado(v.textFieldCreacionUsuario.getText(), v.textFieldCreacionContrasenia.getText(), v.textFieldCreacionNyA.getText(), Integer.parseInt(v.textFieldDNI.getText()), 
 								  Integer.parseInt(v.textFieldTelefono.getText()), Integer.parseInt(v.textFieldEdad.getText()), v.textFieldCiudad.getText());
@@ -70,6 +82,7 @@ public class ActionPerformedBotones implements ActionListener {
 						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) {
 							v.comboBoxBolsaLocacion.setEnabled(false);
 					}
+			} 
 	}
 }
 		
