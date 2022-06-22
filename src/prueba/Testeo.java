@@ -83,9 +83,6 @@ public class Testeo {
 		System.out.println("***********************");
 		System.out.println("***********************");
 		
-		e1.Login("Juanu", "contrasenia");
-		System.out.println("***********************");
-		em1.Login("CocaCola Inc", "PepsiNoExistis");
 		
 	}
 

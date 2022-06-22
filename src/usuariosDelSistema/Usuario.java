@@ -57,6 +57,6 @@ public abstract class Usuario{
 
 	public abstract void CancelaTicket();
 
-	public abstract void Login(String usuario, String contrasenia);
+	public abstract void Login(String usuario, String contrasenia) throws UsuarioIncorrectoException, ContraseniaIncorrectaException;
 
 }
