@@ -32,198 +32,198 @@ import javax.swing.JComboBox;
 
 public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, ListSelectionListener, IVista{
 
-	protected JPanel contentPane;
-	protected JTabbedPane tabbedPane;
-	protected JPanel panelAgencia;
-	protected JPanel panelEmpleado;
-	protected JPanel panelEmpleador;
-	protected JPanel PanelGeneralAgencia;
-	protected JPanel PanelFuncionalidades;
-	protected JPanel panelCreacionAgencia;
-	protected JPanel panelNombreAgencia;
-	protected JPanel panel;
-	protected JLabel labelNombreAgencia;
-	protected JPanel panel_1;
-	protected JTextField textFieldCrearAgencia;
-	protected JPanel panelConfirmarNombreAgencia;
-	protected JButton botonConfirmarNombreAgencia;
-	protected JPanel panelRondaEncCont;
-	protected JPanel panel_2;
-	protected JPanel panel_3;
-	protected JButton botonRondaEncuentro;
-	protected JPanel panel_4;
-	protected JButton botonRondaContraciones;
-	protected JPanel panel_5;
-	protected JList listComisiones;
-	protected JPanel PanelListas;
-	protected JList listEmpleados;
-	protected JList listTicketEmpleados;
-	protected JList listEmpleadores;
-	protected JList listTicketEmpleadores;
-	protected JPanel panelGeneralEmpleado;
-	protected JPanel panelLoginCreacionEmpleado;
-	protected JPanel panelLogin;
-	protected JPanel panelUsuario;
-	protected JLabel lblUsuario;
-	protected JTextField textFieldUsuario;
-	protected JPanel panelContrasenia;
-	protected JLabel lblContrasenia;
-	protected JTextField textFieldContrasenia;
-	protected JPanel panelConfirmarLogin;
-	protected JButton btnConfirmarLogin;
-	protected JPanel panelCreacionEmpleado;
-	protected JPanel panelCreacionUsuario;
-	protected JLabel lblCreacionUsuario;
-	protected JTextField textFieldCreacionUsuario;
-	protected JPanel panelCreacionContrasenia;
-	protected JLabel lblCreacionContrasenia;
-	protected JTextField textFieldCreacionContrasenia;
-	protected JPanel panelCreacionNyA;
-	protected JLabel lblCreacionNyA;
-	protected JTextField textFieldCreacionNyA;
-	protected JPanel panelDNI;
-	protected JLabel lblDNI;
-	protected JTextField textFieldDNI;
-	protected JPanel panelTelefono;
-	protected JLabel lblTelefono;
-	protected JTextField textFieldTelefono;
-	protected JPanel panelEdad;
-	protected JLabel lblEdad;
-	protected JTextField textFieldEdad;
-	protected JPanel panelCiudad;
-	protected JLabel lblCiudad;
-	protected JTextField textFieldCiudad;
-	protected JPanel panelConfirmacionCreacionUsuario;
-	protected JButton btnConfirmacionCreacionUsuario;
-	protected JPanel panelTicket;
-	protected JPanel panelCreacionTicket;
-	protected JPanel panelLocacion;
-	protected JComboBox comboBoxLocacion;
-	protected JTextField textFieldPesoLocacion;
-	protected JLabel labelPesoLocacion;
-	protected JPanel panelRemuneracion;
-	protected JComboBox comboBoxRemuneracion;
-	protected JTextField textFieldPesoRemuneracion;
-	protected JLabel labelPesoRemuneracion;
-	protected JPanel panelCargaHoraria;
-	protected JComboBox comboBoxCargaHoraria;
-	protected JTextField textFieldPesoCargaHoraria;
-	protected JLabel labelPesoCargaHoraria;
-	protected JPanel panelTipoDePuesto;
-	protected JComboBox comboBoxTipoDePuesto;
-	protected JTextField textFieldPesoTipoDePuesto;
-	protected JLabel labelPesoTipoDePuesto;
-	protected JPanel panelRangoEtario;
-	protected JComboBox comboBoxRangoEtario;
-	protected JLabel labelPesoRangoEtario;
-	protected JPanel panelExperienciaPrevia;
-	protected JComboBox comboBoxExperienciaPrevia;
-	protected JLabel labelPesoExperienciaPrevia;
-	protected JPanel panelEstudiosCursados;
-	protected JComboBox comboBoxEstudiosCursados;
-	protected JLabel labelPesoEstudiosCursados;
-	protected JPanel panelConfirmacionCreacionTicket;
-	protected JButton btnConfirmacionCreacionTicket;
-	protected JList listTicketActual;
-	protected JPanel panelEleccionYBolsa;
-	protected JPanel panelRondaElecciones;
-	protected JList listRondaEleccionesEmpleado;
-	protected JButton btnConfirmacionEleccionEmpleado;
-	protected JPanel panelBolsaTrabajo;
-	protected JPanel panelEmpleadoRequisitosBolsa;
-	protected JComboBox comboBoxBolsaTipoTrabajo;
-	protected JComboBox comboBoxBolsaLocacion;
-	protected JLabel lblBolsaTipoTrabajo;
-	protected JLabel lblBolsaLocacion;
-	protected JPanel panelPantallaBolsa;
-	protected JList listTicketSimpActual;
-	protected JButton btnBolsaAceptar;
-	protected JButton btnBolsaRechazar;
-	protected JButton btnInicioBolsa;
-	protected JPanel panelGeneralEmpleador;
-	protected JPanel panelLoginCreacionEmpleador;
-	protected JPanel panelLoginEmpleador;
-	protected JPanel panelUsuarioEmpleador;
-	protected JLabel lblUsuarioEmpleador;
-	protected JTextField textFieldUsuarioEmpleador;
-	protected JPanel panelContraseniaEmpleador;
-	protected JLabel lblContraseniaEmpleador;
-	protected JTextField textFieldContraseniaEmpleador;
-	protected JPanel panelConfirmarLoginEmpleador;
-	protected JButton btnConfirmarLoginEmpleador;
-	protected JPanel panelCreacionEmpleador;
-	protected JPanel panelCreacionUsuarioEmpleador;
-	protected JLabel lblCreacionUsuarioEmpleador;
-	protected JTextField textFieldCreacionUsuarioEmpleador;
-	protected JPanel panelCreacionContraseniaEmpleador;
-	protected JLabel lblCreacionContraseniaEmpleador;
-	protected JTextField textFieldCreacionContraseniaEmpleador;
-	protected JPanel panelCreacionNombreEmpleador;
-	protected JLabel lblCreacionNombreEmpleador;
-	protected JTextField textFieldCreacionNombreEmpleador;
-	protected JPanel panelTipoPersonaEmpleador;
-	protected JLabel lblTipoPersonaEmpleador;
-	protected JPanel panelRubroEmpleador;
-	protected JLabel lblRubroEmpleador;
-	protected JPanel panelConfirmacionCreacionUsuario_1;
-	protected JButton btnConfirmacionCreacionUsuario_1;
-	protected JComboBox comboBoxTipoPersonaEmpleador;
-	protected JComboBox comboBoxRubroEmpleador;
-	protected JPanel panelTicketEmpleador;
-	protected JPanel panelCreacionTicketEmpleador;
-	protected JPanel panelLocacionEmpleador;
-	protected JComboBox comboBoxLocacionEmpleador;
-	protected JTextField textFieldPesoLocacionEmpleador;
-	protected JLabel labelPesoLocacionEmpleador;
-	protected JPanel panelRemuneracionEmpleador;
-	protected JComboBox comboBoxRemuneracionEmpleador;
-	protected JTextField textFieldPesoRemuneracionEmpleador;
-	protected JLabel labelPesoRemuneracionEmpleador;
-	protected JPanel panelCargaHorariaEmpleador;
-	protected JComboBox comboBoxCargaHorariaEmpleador;
-	protected JTextField textFieldPesoCargaHorariaEmpleador;
-	protected JLabel labelPesoCargaHorariaEmpleador;
-	protected JPanel panelTipoDePuestoEmpleador;
-	protected JComboBox comboBoxTipoDePuestoEmpleador;
-	protected JTextField textFieldPesoTipoDePuestoEmpleador;
-	protected JLabel labelPesoTipoDePuestoEmpleador;
-	protected JPanel panelRangoEtarioEmpleador;
-	protected JComboBox comboBoxRangoEtarioEmpleador;
-	protected JTextField textFieldPesoRangoEtarioEmpleador;
-	protected JLabel labelPesoRangoEtarioEmpleador;
-	protected JPanel panelExperienciaPreviaEmpleador;
-	protected JComboBox comboBoxExperienciaPreviaEmpleador;
-	protected JTextField textFieldPesoExpPreviaEmpleador;
-	protected JLabel labelPesoExpPreviaEmpleador;
-	protected JPanel panelEstudiosCursadosEmpleador;
-	protected JComboBox comboBoxEstudiosCursadosEmpleador;
-	protected JTextField textFieldPesoEstudiosCursadosEmpleador;
-	protected JLabel labelPesoEstudiosCursadosEmpleador;
-	protected JPanel panelConfirmacionCreacionTicketEmpleador;
-	protected JButton btnConfirmacionCreacionTicket_1;
-	protected JList listTicketActualEmpleador;
-	protected JPanel panelRondaDeEleccionEmpleador;
-	protected JPanel panelRondaEleccionesEmpleador;
-	protected JList listRondaEleccionesEmpleador;
-	protected JButton btnConfirmacionEleccionEmpleador;
-	protected JPanel panelTicketSimplificado;
-	protected JPanel panelEmpleadorRequisitosTicketSimp;
-	protected JComboBox comboBoxBolsaTipoTrabajo_1;
-	protected JComboBox comboBoxBolsaLocacion_1;
-	protected JLabel lblBolsaTipoTrabajo_1;
-	protected JLabel lblBolsaLocacion_1;
-	protected JButton btnCrearTicketSimplificado;
-	protected JPanel panel_6;
-	protected JRadioButton rdbtnActivo;
-	protected JRadioButton rdbtnSuspendido;
-	protected JRadioButton rdbtnCancelar;
-	protected JButton btnCambiarEstado;
-	protected JPanel panelEstadoTicketEmpleador;
-	protected JRadioButton rdbtnActivoEmpleador;
-	protected JRadioButton rdbtnSuspendidoEmpleador;
-	protected JRadioButton rdbtnCancelarEmpleador;
-	protected JButton btnCambiarEstadoEmpleador;
-	protected JList listTicketSimplificadosEmpleador;
+	private JPanel contentPane;
+	private JTabbedPane tabbedPane;
+	private JPanel panelAgencia;
+	private JPanel panelEmpleado;
+	private JPanel panelEmpleador;
+	private JPanel PanelGeneralAgencia;
+	private JPanel PanelFuncionalidades;
+	private JPanel panelCreacionAgencia;
+	private JPanel panelNombreAgencia;
+	private JPanel panel;
+	private JLabel labelNombreAgencia;
+	private JPanel panel_1;
+	private JTextField textFieldCrearAgencia;
+	private JPanel panelConfirmarNombreAgencia;
+	private JButton botonConfirmarNombreAgencia;
+	private JPanel panelRondaEncCont;
+	private JPanel panel_2;
+	private JPanel panel_3;
+	private JButton botonRondaEncuentro;
+	private JPanel panel_4;
+	private JButton botonRondaContraciones;
+	private JPanel panel_5;
+	private JList listComisiones;
+	private JPanel PanelListas;
+	private JList listEmpleados;
+	private JList listTicketEmpleados;
+	private JList listEmpleadores;
+	private JList listTicketEmpleadores;
+	private JPanel panelGeneralEmpleado;
+	private JPanel panelLoginCreacionEmpleado;
+	private JPanel panelLogin;
+	private JPanel panelUsuario;
+	private JLabel lblUsuario;
+	private JTextField textFieldUsuario;
+	private JPanel panelContrasenia;
+	private JLabel lblContrasenia;
+	private JTextField textFieldContrasenia;
+	private JPanel panelConfirmarLogin;
+	private JButton btnConfirmarLogin;
+	private JPanel panelCreacionEmpleado;
+	private JPanel panelCreacionUsuario;
+	private JLabel lblCreacionUsuario;
+	private JTextField textFieldCreacionUsuario;
+	private JPanel panelCreacionContrasenia;
+	private JLabel lblCreacionContrasenia;
+	private JTextField textFieldCreacionContrasenia;
+	private JPanel panelCreacionNyA;
+	private JLabel lblCreacionNyA;
+	private JTextField textFieldCreacionNyA;
+	private JPanel panelDNI;
+	private JLabel lblDNI;
+	private JTextField textFieldDNI;
+	private JPanel panelTelefono;
+	private JLabel lblTelefono;
+	private JTextField textFieldTelefono;
+	private JPanel panelEdad;
+	private JLabel lblEdad;
+	private JTextField textFieldEdad;
+	private JPanel panelCiudad;
+	private JLabel lblCiudad;
+	private JTextField textFieldCiudad;
+	private JPanel panelConfirmacionCreacionUsuario;
+	private JButton btnConfirmacionCreacionUsuario;
+	private JPanel panelTicket;
+	private JPanel panelCreacionTicket;
+	private JPanel panelLocacion;
+	private JComboBox comboBoxLocacion;
+	private JTextField textFieldPesoLocacion;
+	private JLabel labelPesoLocacion;
+	private JPanel panelRemuneracion;
+	private JComboBox comboBoxRemuneracion;
+	private JTextField textFieldPesoRemuneracion;
+	private JLabel labelPesoRemuneracion;
+	private JPanel panelCargaHoraria;
+	private JComboBox comboBoxCargaHoraria;
+	private JTextField textFieldPesoCargaHoraria;
+	private JLabel labelPesoCargaHoraria;
+	private JPanel panelTipoDePuesto;
+	private JComboBox comboBoxTipoDePuesto;
+	private JTextField textFieldPesoTipoDePuesto;
+	private JLabel labelPesoTipoDePuesto;
+	private JPanel panelRangoEtario;
+	private JComboBox comboBoxRangoEtario;
+	private JLabel labelPesoRangoEtario;
+	private JPanel panelExperienciaPrevia;
+	private JComboBox comboBoxExperienciaPrevia;
+	private JLabel labelPesoExperienciaPrevia;
+	private JPanel panelEstudiosCursados;
+	private JComboBox comboBoxEstudiosCursados;
+	private JLabel labelPesoEstudiosCursados;
+	private JPanel panelConfirmacionCreacionTicket;
+	private JButton btnConfirmacionCreacionTicket;
+	private JList listTicketActual;
+	private JPanel panelEleccionYBolsa;
+	private JPanel panelRondaElecciones;
+	private JList listRondaEleccionesEmpleado;
+	private JButton btnConfirmacionEleccionEmpleado;
+	private JPanel panelBolsaTrabajo;
+	private JPanel panelEmpleadoRequisitosBolsa;
+	private JComboBox comboBoxBolsaTipoTrabajo;
+	private JComboBox comboBoxBolsaLocacion;
+	private JLabel lblBolsaTipoTrabajo;
+	private JLabel lblBolsaLocacion;
+	private JPanel panelPantallaBolsa;
+	private JList listTicketSimpActual;
+	private JButton btnBolsaAceptar;
+	private JButton btnBolsaRechazar;
+	private JButton btnInicioBolsa;
+	private JPanel panelGeneralEmpleador;
+	private JPanel panelLoginCreacionEmpleador;
+	private JPanel panelLoginEmpleador;
+	private JPanel panelUsuarioEmpleador;
+	private JLabel lblUsuarioEmpleador;
+	private JTextField textFieldUsuarioEmpleador;
+	private JPanel panelContraseniaEmpleador;
+	private JLabel lblContraseniaEmpleador;
+	private JTextField textFieldContraseniaEmpleador;
+	private JPanel panelConfirmarLoginEmpleador;
+	private JButton btnConfirmarLoginEmpleador;
+	private JPanel panelCreacionEmpleador;
+	private JPanel panelCreacionUsuarioEmpleador;
+	private JLabel lblCreacionUsuarioEmpleador;
+	private JTextField textFieldCreacionUsuarioEmpleador;
+	private JPanel panelCreacionContraseniaEmpleador;
+	private JLabel lblCreacionContraseniaEmpleador;
+	private JTextField textFieldCreacionContraseniaEmpleador;
+	private JPanel panelCreacionNombreEmpleador;
+	private JLabel lblCreacionNombreEmpleador;
+	private JTextField textFieldCreacionNombreEmpleador;
+	private JPanel panelTipoPersonaEmpleador;
+	private JLabel lblTipoPersonaEmpleador;
+	private JPanel panelRubroEmpleador;
+	private JLabel lblRubroEmpleador;
+	private JPanel panelConfirmacionCreacionUsuario_1;
+	private JButton btnConfirmacionCreacionUsuario_1;
+	private JComboBox comboBoxTipoPersonaEmpleador;
+	private JComboBox comboBoxRubroEmpleador;
+	private JPanel panelTicketEmpleador;
+	private JPanel panelCreacionTicketEmpleador;
+	private JPanel panelLocacionEmpleador;
+	private JComboBox comboBoxLocacionEmpleador;
+	private JTextField textFieldPesoLocacionEmpleador;
+	private JLabel labelPesoLocacionEmpleador;
+	private JPanel panelRemuneracionEmpleador;
+	private JComboBox comboBoxRemuneracionEmpleador;
+	private JTextField textFieldPesoRemuneracionEmpleador;
+	private JLabel labelPesoRemuneracionEmpleador;
+	private JPanel panelCargaHorariaEmpleador;
+	private JComboBox comboBoxCargaHorariaEmpleador;
+	private JTextField textFieldPesoCargaHorariaEmpleador;
+	private JLabel labelPesoCargaHorariaEmpleador;
+	private JPanel panelTipoDePuestoEmpleador;
+	private JComboBox comboBoxTipoDePuestoEmpleador;
+	private JTextField textFieldPesoTipoDePuestoEmpleador;
+	private JLabel labelPesoTipoDePuestoEmpleador;
+	private JPanel panelRangoEtarioEmpleador;
+	private JComboBox comboBoxRangoEtarioEmpleador;
+	private JTextField textFieldPesoRangoEtarioEmpleador;
+	private JLabel labelPesoRangoEtarioEmpleador;
+	private JPanel panelExperienciaPreviaEmpleador;
+	private JComboBox comboBoxExperienciaPreviaEmpleador;
+	private JTextField textFieldPesoExpPreviaEmpleador;
+	private JLabel labelPesoExpPreviaEmpleador;
+	private JPanel panelEstudiosCursadosEmpleador;
+	private JComboBox comboBoxEstudiosCursadosEmpleador;
+	private JTextField textFieldPesoEstudiosCursadosEmpleador;
+	private JLabel labelPesoEstudiosCursadosEmpleador;
+	private JPanel panelConfirmacionCreacionTicketEmpleador;
+	private JButton btnConfirmacionCreacionTicket_1;
+	private JList listTicketActualEmpleador;
+	private JPanel panelRondaDeEleccionEmpleador;
+	private JPanel panelRondaEleccionesEmpleador;
+	private JList listRondaEleccionesEmpleador;
+	private JButton btnConfirmacionEleccionEmpleador;
+	private JPanel panelTicketSimplificado;
+	private JPanel panelEmpleadorRequisitosTicketSimp;
+	private JComboBox comboBoxBolsaTipoTrabajo_1;
+	private JComboBox comboBoxBolsaLocacion_1;
+	private JLabel lblBolsaTipoTrabajo_1;
+	private JLabel lblBolsaLocacion_1;
+	private JButton btnCrearTicketSimplificado;
+	private JPanel panel_6;
+	private JRadioButton rdbtnActivo;
+	private JRadioButton rdbtnSuspendido;
+	private JRadioButton rdbtnCancelar;
+	private JButton btnCambiarEstado;
+	private JPanel panelEstadoTicketEmpleador;
+	private JRadioButton rdbtnActivoEmpleador;
+	private JRadioButton rdbtnSuspendidoEmpleador;
+	private JRadioButton rdbtnCancelarEmpleador;
+	private JButton btnCambiarEstadoEmpleador;
+	private JList listTicketSimplificadosEmpleador;
 	private JList listContrataciones;
 
 	/**
@@ -1193,14 +1193,268 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			
 			
 		}
+	
 	       		
+	public String getTextFieldCrearAgencia() {
+		return textFieldCrearAgencia.getText();
+	}
+
+	
+	public String getListComisiones() {
+		return listComisiones;
+	}
+
+	public String getListEmpleados() {
+		return listEmpleados;
+	}
+
+	public String getListTicketEmpleados() {
+		return listTicketEmpleados;
+	}
+
+	public String getListEmpleadores() {
+		return listEmpleadores;
+	}
+
+	public String getListTicketEmpleadores() {
+		return listTicketEmpleadores;
+	}
+
+	public String getTextFieldUsuario() {
+		return textFieldUsuario.getText();
+	}
+
+	public String getTextFieldContrasenia() {
+		return textFieldContrasenia.getText();
+	}
+
+	public String getTextFieldCreacionUsuario() {
+		return textFieldCreacionUsuario.getText();
+	}
+
+	public String getTextFieldCreacionContrasenia() {
+		return textFieldCreacionContrasenia.getText();
+	}
+
+	public String getTextFieldCreacionNyA() {
+		return textFieldCreacionNyA.getText();
+	}
+
+	public String getTextFieldDNI() {
+		return textFieldDNI.getText();
+	}
+
+	public String getTextFieldTelefono() {
+		return textFieldTelefono.getText();
+	}
+
+	public String getTextFieldEdad() {
+		return textFieldEdad.getText();
+	}
+
+	public String getTextFieldCiudad() {
+		return textFieldCiudad.getText();
+	}
+
+	public String getComboBoxLocacion() {
+		return (String) comboBoxLocacion.getSelectedItem();
+	}
+
+	public String getTextFieldPesoLocacion() {
+		return textFieldPesoLocacion.getText();
+	}
+
+	public String getComboBoxRemuneracion() {
+		return (String) comboBoxRemuneracion.getSelectedItem();
+	}
+
+	public String getTextFieldPesoRemuneracion() {
+		return textFieldPesoRemuneracion.getText();
+	}
+
+	public String getComboBoxCargaHoraria() {
+		return (String) comboBoxCargaHoraria.getSelectedItem();
+	}
+
+	public String getTextFieldPesoCargaHoraria() {
+		return textFieldPesoCargaHoraria.getText();
+	}
+
+	public String getComboBoxTipoDePuesto() {
+		return (String) comboBoxTipoDePuesto.getSelectedItem();
+	}
+
+	public String getTextFieldPesoTipoDePuesto() {
+		return textFieldPesoTipoDePuesto.getText();
+	}
+
+	public String getComboBoxRangoEtario() {
+		return (String) comboBoxRangoEtario.getSelectedItem();
+	}
+
+	public String getComboBoxExperienciaPrevia() {
+		return (String)comboBoxExperienciaPrevia.getSelectedItem();
+	}
+
+	public String getComboBoxEstudiosCursados() {
+		return (String) comboBoxEstudiosCursados.getSelectedItem();
+	}
+
+	public String getListTicketActual() {
+		return listTicketActual;
+	}
+
+	public String getListRondaEleccionesEmpleado() {
+		return listRondaEleccionesEmpleado;
+	}
+
+	public String getComboBoxBolsaTipoTrabajo() {
+		return (String) comboBoxBolsaTipoTrabajo.getSelectedItem();
+	}
+
+	public String getComboBoxBolsaLocacion() {
+		return (String) comboBoxBolsaLocacion.getSelectedItem();
+	}
+
+	public String getListTicketSimpActual() {
+		return listTicketSimpActual;
+	}
+
+	public String getTextFieldUsuarioEmpleador() {
+		return textFieldUsuarioEmpleador.getText();
+	}
+
+	public String getTextFieldContraseniaEmpleador() {
+		return textFieldContraseniaEmpleador.getText();
+	}
+
+	public String getTextFieldCreacionUsuarioEmpleador() {
+		return textFieldCreacionUsuarioEmpleador.getText();
+	}
+
+	public String getTextFieldCreacionContraseniaEmpleador() {
+		return textFieldCreacionContraseniaEmpleador.getText();
+	}
+
+	public String getTextFieldCreacionNombreEmpleador() {
+		return textFieldCreacionNombreEmpleador.getText();
+	}
+
+	public String getComboBoxTipoPersonaEmpleador() {
+		return (String) comboBoxTipoPersonaEmpleador.getSelectedItem();
+	}
+
+	public String getComboBoxRubroEmpleador() {
+		return (String) comboBoxRubroEmpleador.getSelectedItem();
+	}
+
+	public String getComboBoxLocacionEmpleador() {
+		return (String) comboBoxLocacionEmpleador.getSelectedItem();
+	}
+
+	public String getTextFieldPesoLocacionEmpleador() {
+		return textFieldPesoLocacionEmpleador.getText();
+	}
+
+	public String getComboBoxRemuneracionEmpleador() {
+		return (String) comboBoxRemuneracionEmpleador.getSelectedItem();
+	}
+
+	public String getTextFieldPesoRemuneracionEmpleador() {
+		return textFieldPesoRemuneracionEmpleador.getText();
+	}
+
+	public String getComboBoxCargaHorariaEmpleador() {
+		return (String) comboBoxCargaHorariaEmpleador.getSelectedItem();
+	}
+
+	public String getTextFieldPesoCargaHorariaEmpleador() {
+		return textFieldPesoCargaHorariaEmpleador.getText();
+	}
+
+	public String getComboBoxTipoDePuestoEmpleador() {
+		return (String) comboBoxTipoDePuestoEmpleador.getSelectedItem();
+	}
+
+	public String getTextFieldPesoTipoDePuestoEmpleador() {
+		return textFieldPesoTipoDePuestoEmpleador.getText();
+	}
+
+	public String getComboBoxRangoEtarioEmpleador() {
+		return (String) comboBoxRangoEtarioEmpleador.getSelectedItem();
+	}
+
+	public String getTextFieldPesoRangoEtarioEmpleador() {
+		return textFieldPesoRangoEtarioEmpleador.getText();
+	}
+
+	public String getComboBoxExperienciaPreviaEmpleador() {
+		return (String) comboBoxExperienciaPreviaEmpleador.getSelectedItem();
+	}
+
+	public String getTextFieldPesoExpPreviaEmpleador() {
+		return textFieldPesoExpPreviaEmpleador.getText();
+	}
+
+	public String getComboBoxEstudiosCursadosEmpleador() {
+		return (String) comboBoxEstudiosCursadosEmpleador.getSelectedItem();
+	}
+
+	public String getTextFieldPesoEstudiosCursadosEmpleador() {
+		return textFieldPesoEstudiosCursadosEmpleador.getText();
+	}
+
+	public String getListTicketActualEmpleador() {
+		return listTicketActualEmpleador;
+	}
+
+	public String getListRondaEleccionesEmpleador() {
+		return listRondaEleccionesEmpleador;
+	}
+
+	public String getComboBoxBolsaTipoTrabajo_1() {
+		return (String) comboBoxBolsaTipoTrabajo_1.getSelectedItem();
+	}
+
+	public String getComboBoxBolsaLocacion_1() {
+		return (String) comboBoxBolsaLocacion_1.getSelectedItem();
+	}
+
+	public String getRdbtnActivo() {
+		return rdbtnActivo.getText();
+	}
+
+	public String getRdbtnSuspendido() {
+		return rdbtnSuspendido.getText();
+	}
+
+	public String getRdbtnCancelar() {
+		return rdbtnCancelar.getText();
+	}
+
+	public String getRdbtnActivoEmpleador() {
+		return rdbtnActivoEmpleador.getText();
+	}
+
+	public String getRdbtnSuspendidoEmpleador() {
+		return rdbtnSuspendidoEmpleador.getText();
+	}
+
+	public String getRdbtnCancelarEmpleador() {
+		return rdbtnCancelarEmpleador.getText();
+	}
+
+	public String getListTicketSimplificadosEmpleador() {
+		return listTicketSimplificadosEmpleador;
+	}
+
+	public String getListContrataciones() {
+		return listContrataciones;
+	}
+
 		public void setBotonConfirmarNombreAgencia(boolean hab) {
 	        this.botonConfirmarNombreAgencia.setEnabled(hab);
 	    }
-
-		public void setBotonConfirmarTipoTickets(boolean hab) {
-			this.botonConfirmarTiposTickets.setEnabled(hab);
-		}
 		
 		public void setBotonConfirmarLogin(boolean hab) {
 			this.btnConfirmarLogin.setEnabled(hab);
