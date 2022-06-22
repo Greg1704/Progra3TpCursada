@@ -8,7 +8,7 @@ public interface IVista {
 	
 	// botones de ventana agencia
 	
-	static final String confirmaTicket = "Confirmar tipos de tickets";
+	static final String confirmaTipoTicket = "Confirmar tipos de tickets";
 	static final String confirmaCreacionAgencia = "Confirmar creacion de agencia";
 	
 	// botones de ventana empleado

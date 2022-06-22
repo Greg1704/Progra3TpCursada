@@ -27,7 +27,7 @@ public class ActionPerformedBotones implements ActionListener {
 			v.setBotonConfirmarNombreAgencia(false);
 			
 		} else
-			if (e.getActionCommand().equals(IVista.confirmaTicket)) {
+			if (e.getActionCommand().equals(IVista.confirmaTipoTicket)) {
 				
 				
 				

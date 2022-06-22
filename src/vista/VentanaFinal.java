@@ -1167,7 +1167,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 	       this.botonMasV2.addMouseListener(new UnMouseListener(this));
 	       
 	       this.botonConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
-	       this.botonConfirmarTiposTickets.setActionCommand(confirmaTicket);
+	       this.botonConfirmarTiposTickets.setActionCommand(confirmaTipoTicket);
 	       
 	       this.botonConfirmarNombreAgencia.addActionListener(new ActionPerformedBotones(this));
 	       this.botonConfirmarTiposTickets.addActionListener(new ActionPerformedBotones(this));
