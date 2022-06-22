@@ -80,17 +80,10 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		this.ticketEmpleador.suspende();
 	}
 	
-	public void Login(String usuario, String contrasenia){
+	public void Login(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException{
 
-		try {
 			buscaEmpleador(usuario,contrasenia);
-			System.out.println("Login completado.");
-		}catch (ContraseniaIncorrectaException e) {
-			System.out.println(e.getMessage());
-		}
-		catch(UsuarioIncorrectoException e) {
-			System.out.println(e.getMessage());
-		}
+
 	}
 	
 	public Empleador buscaEmpleador(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
