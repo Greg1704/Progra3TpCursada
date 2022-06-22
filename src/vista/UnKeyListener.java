@@ -4,9 +4,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class UnKeyListener implements KeyListener{
-		VentanaFinal v;
+		NuevaVentanaFinal v;
 		
-		public UnKeyListener (VentanaFinal v) {
+		public UnKeyListener (NuevaVentanaFinal v) {
 			this.v = v;
 		}
 
@@ -35,7 +35,7 @@ public class UnKeyListener implements KeyListener{
 			
 			boolean hab3 = !(v.textFieldPesoCargaHoraria.getText().isEmpty() || v.textFieldPesoLocacion.getText().isEmpty() || v.textFieldPesoRemuneracion.getText().isEmpty() || v.textFieldPesoTipoDePuesto.getText().isEmpty());
 			
-			// acá viene una referencia del modelo que dice si el usuario está logueado, entonces haría un AND con hab3 para asi se 
+			// acï¿½ viene una referencia del modelo que dice si el usuario estï¿½ logueado, entonces harï¿½a un AND con hab3 para asi se 
 			
 			boolean hab4 = !(v.textFieldUsuarioEmpleador.getText().isEmpty() || v.textFieldContraseniaEmpleador.getText().isEmpty());
 			v.setBotonConfirmarLoginEmpleador(hab4);

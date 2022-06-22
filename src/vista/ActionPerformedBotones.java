@@ -10,10 +10,10 @@ import excepciones.UsuarioIncorrectoException;
 import usuariosDelSistema.*;
 
 public class ActionPerformedBotones implements ActionListener {
-		VentanaFinal v;
+		NuevaVentanaFinal v;
 		Empleado empleado;
 	
-	public ActionPerformedBotones(VentanaFinal v) {
+	public ActionPerformedBotones(NuevaVentanaFinal v) {
 		this.v = v;
 	}
 
@@ -80,7 +80,10 @@ public class ActionPerformedBotones implements ActionListener {
 						
 					} else
 						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) {
-							v.comboBoxBolsaLocacion.setEnabled(false);
+							String comboBoxOpcion=(String) v.comboBoxBolsaLocacion.getSelectedItem();
+							//CASE Y METER PONDERACION
+							//CASE Y METER PONDERACION
+							
 					}
 			} 
 	}

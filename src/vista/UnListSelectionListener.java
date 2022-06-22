@@ -4,9 +4,9 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class UnListSelectionListener implements ListSelectionListener {
-		VentanaFinal v;
+		NuevaVentanaFinal v;
 	
-	public UnListSelectionListener(VentanaFinal v) {
+	public UnListSelectionListener(NuevaVentanaFinal v) {
 		this.v = v;
 	}
 	

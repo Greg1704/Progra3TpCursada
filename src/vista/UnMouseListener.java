@@ -4,9 +4,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class UnMouseListener implements MouseListener {
-	VentanaFinal v;
+	NuevaVentanaFinal v;
 	
-	public UnMouseListener(VentanaFinal v) {
+	public UnMouseListener(NuevaVentanaFinal v) {
 		this.v = v;
 	}
 

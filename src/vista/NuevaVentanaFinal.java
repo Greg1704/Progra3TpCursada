@@ -30,7 +30,7 @@ import javax.swing.JList;
 import java.awt.Color;
 import javax.swing.JComboBox;
 
-public class VentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, ListSelectionListener, IVista{
+public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, ListSelectionListener, IVista{
 
 	protected JPanel contentPane;
 	protected JTabbedPane tabbedPane;
@@ -39,21 +39,6 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 	protected JPanel panelEmpleador;
 	protected JPanel PanelGeneralAgencia;
 	protected JPanel PanelFuncionalidades;
-	protected JPanel panelDatosTickets;
-	protected JPanel panelTiposTrabajo;
-	protected JRadioButton botonSalud;
-	protected JRadioButton botonComercioLocal;
-	protected JRadioButton botonComercioInternacional;
-	protected JPanel panelTipoDePuestoAgencia;
-	protected JRadioButton botonJunior;
-	protected JRadioButton botonSenior;
-	protected JRadioButton botonManagement;
-	protected JPanel panelRangoLaboral;
-	protected JRadioButton botonMenosV1;
-	protected JRadioButton botonEntreV1yV2;
-	protected JRadioButton botonMasV2;
-	protected JPanel panelConfirmacion;
-	protected JButton botonConfirmarTiposTickets;
 	protected JPanel panelCreacionAgencia;
 	protected JPanel panelNombreAgencia;
 	protected JPanel panel;
@@ -239,6 +224,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 	protected JRadioButton rdbtnCancelarEmpleador;
 	protected JButton btnCambiarEstadoEmpleador;
 	protected JList listTicketSimplificadosEmpleador;
+	private JList listContrataciones;
 
 	/**
 	 * Launch the application.
@@ -247,7 +233,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaFinal frame = new VentanaFinal();
+					NuevaVentanaFinal frame = new NuevaVentanaFinal();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -259,7 +245,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 	/**
 	 * Create the frame.
 	 */
-	public VentanaFinal() {
+	public NuevaVentanaFinal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1254, 722);
 		this.contentPane = new JPanel();
@@ -282,60 +268,6 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.PanelFuncionalidades.setBorder(new CompoundBorder());
 		this.PanelGeneralAgencia.add(this.PanelFuncionalidades);
 		this.PanelFuncionalidades.setLayout(new GridLayout(4, 0, 0, 0));
-		
-		this.panelDatosTickets = new JPanel();
-		this.panelDatosTickets.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		this.PanelFuncionalidades.add(this.panelDatosTickets);
-		this.panelDatosTickets.setLayout(new GridLayout(4, 0, 0, 0));
-		
-		this.panelTiposTrabajo = new JPanel();
-		this.panelTiposTrabajo.setBorder(new TitledBorder(null, "Tipos de Trabajo", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelDatosTickets.add(this.panelTiposTrabajo);
-		this.panelTiposTrabajo.setLayout(new GridLayout(0, 3, 0, 0));
-		
-		this.botonSalud = new JRadioButton("Salud");
-		this.panelTiposTrabajo.add(this.botonSalud);
-		
-		this.botonComercioLocal = new JRadioButton("Comercio Local");
-		this.panelTiposTrabajo.add(this.botonComercioLocal);
-		
-		this.botonComercioInternacional = new JRadioButton("Comercio Int.");
-		this.panelTiposTrabajo.add(this.botonComercioInternacional);
-		
-		this.panelTipoDePuestoAgencia = new JPanel();
-		this.panelTipoDePuestoAgencia.setBorder(new TitledBorder(null, "Tipos de puesto", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelDatosTickets.add(this.panelTipoDePuestoAgencia);
-		this.panelTipoDePuestoAgencia.setLayout(new GridLayout(0, 3, 0, 0));
-		
-		this.botonJunior = new JRadioButton("Junior");
-		this.panelTipoDePuestoAgencia.add(this.botonJunior);
-		
-		this.botonSenior = new JRadioButton("Senior");
-		this.panelTipoDePuestoAgencia.add(this.botonSenior);
-		
-		this.botonManagement = new JRadioButton("Management");
-		this.panelTipoDePuestoAgencia.add(this.botonManagement);
-		
-		this.panelRangoLaboral = new JPanel();
-		this.panelRangoLaboral.setBorder(new TitledBorder(null, "Rango Laboral", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelDatosTickets.add(this.panelRangoLaboral);
-		this.panelRangoLaboral.setLayout(new GridLayout(0, 3, 0, 0));
-		
-		this.botonMenosV1 = new JRadioButton("Menor a 60 mil");
-		this.panelRangoLaboral.add(this.botonMenosV1);
-		
-		this.botonEntreV1yV2 = new JRadioButton("Entre 60 mil y 120 mil");
-		this.panelRangoLaboral.add(this.botonEntreV1yV2);
-		
-		this.botonMasV2 = new JRadioButton("Mas de 120 mil");
-		this.panelRangoLaboral.add(this.botonMasV2);
-		
-		this.panelConfirmacion = new JPanel();
-		this.panelDatosTickets.add(this.panelConfirmacion);
-		
-		this.botonConfirmarTiposTickets = new JButton("Confirmar");
-		this.botonConfirmarTiposTickets.setEnabled(false);
-		this.panelConfirmacion.add(this.botonConfirmarTiposTickets);
 		
 		this.panelCreacionAgencia = new JPanel();
 		this.panelCreacionAgencia.setBorder(new TitledBorder(null, "Crear Agencia", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -392,6 +324,10 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		
 		this.panel_5 = new JPanel();
 		this.panelRondaEncCont.add(this.panel_5);
+		
+		this.listContrataciones = new JList();
+		this.listContrataciones.setBorder(new TitledBorder(null, "Contrataciones", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.PanelFuncionalidades.add(this.listContrataciones);
 		
 		this.listComisiones = new JList();
 		this.listComisiones.setBorder(new TitledBorder(null, "Comisiones", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1153,24 +1089,10 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		// ventana Agencia
 		
 	    this.textFieldCrearAgencia.addKeyListener(new UnKeyListener(this));
-
-	       this.botonSalud.addMouseListener(new UnMouseListener(this));
-	       this.botonComercioLocal.addMouseListener(new UnMouseListener(this));
-	       this.botonComercioInternacional.addMouseListener(new UnMouseListener(this));
-	       
-	       this.botonJunior.addMouseListener(new UnMouseListener(this));
-	       this.botonSenior.addMouseListener(new UnMouseListener(this));
-	       this.botonManagement.addMouseListener(new UnMouseListener(this));
-	       
-	       this.botonMenosV1.addMouseListener(new UnMouseListener(this));
-	       this.botonEntreV1yV2.addMouseListener(new UnMouseListener(this));
-	       this.botonMasV2.addMouseListener(new UnMouseListener(this));
 	       
 	       this.botonConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
-	       this.botonConfirmarTiposTickets.setActionCommand(confirmaTipoTicket);
 	       
 	       this.botonConfirmarNombreAgencia.addActionListener(new ActionPerformedBotones(this));
-	       this.botonConfirmarTiposTickets.addActionListener(new ActionPerformedBotones(this));
 	       
 	       /* if (hayRondaContrataciones) {
 	       		this.botonRondaContrataciones.setEnabled(true);
