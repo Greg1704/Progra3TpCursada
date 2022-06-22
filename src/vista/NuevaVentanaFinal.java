@@ -31,7 +31,7 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 
 public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, ListSelectionListener, IVista{
-
+	
 	private JPanel contentPane;
 	private JTabbedPane tabbedPane;
 	private JPanel panelAgencia;
@@ -1088,7 +1088,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		// ventana Agencia
 		
-	    this.textFieldCrearAgencia.addKeyListener(new UnKeyListener(this));
+	    this.textFieldCrearAgencia.addKeyListener(this);
 	       
 	       this.botonConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
 	       
@@ -1138,28 +1138,28 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			
 			// Asigno a los textfield para que escuchen el texto ingresado por teclado (LOGIN)
 			
-			this.textFieldUsuario.addKeyListener(new UnKeyListener(this));
-			this.textFieldContrasenia.addKeyListener(new UnKeyListener(this));
+			this.textFieldUsuario.addKeyListener(this);
+			this.textFieldContrasenia.addKeyListener(this);
 			
 			
 			//  Asigno a los textfield para que escuchen el texto ingresado por teclado (CREACION DE TECLADO)
 			
-			this.textFieldCreacionUsuario.addKeyListener(new UnKeyListener(this));
-			this.textFieldCreacionContrasenia.addKeyListener(new UnKeyListener(this));
-			this.textFieldCreacionNyA.addKeyListener(new UnKeyListener(this));
-			this.textFieldDNI.addKeyListener(new UnKeyListener(this));
-			this.textFieldTelefono.addKeyListener(new UnKeyListener(this));
-			this.textFieldEdad.addKeyListener(new UnKeyListener(this));
-			this.textFieldCiudad.addKeyListener(new UnKeyListener(this));
+			this.textFieldCreacionUsuario.addKeyListener(this);
+			this.textFieldCreacionContrasenia.addKeyListener(this);
+			this.textFieldCreacionNyA.addKeyListener(this);
+			this.textFieldDNI.addKeyListener(this);
+			this.textFieldTelefono.addKeyListener(this);
+			this.textFieldEdad.addKeyListener(this);
+			this.textFieldCiudad.addKeyListener(this);
 			
-			this.textFieldPesoCargaHoraria.addKeyListener(new UnKeyListener(this));
-			this.textFieldPesoLocacion.addKeyListener(new UnKeyListener(this));
-			this.textFieldPesoRemuneracion.addKeyListener(new UnKeyListener(this));
-			this.textFieldPesoTipoDePuesto.addKeyListener(new UnKeyListener(this));
+			this.textFieldPesoCargaHoraria.addKeyListener(this);
+			this.textFieldPesoLocacion.addKeyListener(this);
+			this.textFieldPesoRemuneracion.addKeyListener(this);
+			this.textFieldPesoTipoDePuesto.addKeyListener(this);
 			
-			this.rdbtnActivo.addMouseListener(new UnMouseListener(this));
-			this.rdbtnSuspendido.addMouseListener(new UnMouseListener(this));
-			this.rdbtnCancelar.addMouseListener(new UnMouseListener(this));
+			this.rdbtnActivo.addMouseListener(this);
+			this.rdbtnSuspendido.addMouseListener(this);
+			this.rdbtnCancelar.addMouseListener(this);
 			
 			
 			// ventana Empleador
@@ -1179,17 +1179,17 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			this.btnConfirmacionEleccionEmpleador.setActionCommand(confirmacionEleccionEmpleador);
 			this.btnCrearTicketSimplificado.setActionCommand(confirmaCracionTicketSimplificado);
 			
-			this.rdbtnActivoEmpleador.addMouseListener(new UnMouseListener(this));
-			this.rdbtnCancelarEmpleador.addMouseListener(new UnMouseListener(this));
-			this.rdbtnSuspendidoEmpleador.addMouseListener(new UnMouseListener(this));
+			this.rdbtnActivoEmpleador.addMouseListener(this);
+			this.rdbtnCancelarEmpleador.addMouseListener(this);
+			this.rdbtnSuspendidoEmpleador.addMouseListener(this);
 			
-			this.textFieldUsuarioEmpleador.addKeyListener(new UnKeyListener(this));
-			this.textFieldContraseniaEmpleador.addKeyListener(new UnKeyListener(this));
+			this.textFieldUsuarioEmpleador.addKeyListener(this);
+			this.textFieldContraseniaEmpleador.addKeyListener(this);
 			
 			
-			this.textFieldCreacionUsuarioEmpleador.addKeyListener(new UnKeyListener(this));
-			this.textFieldCreacionContraseniaEmpleador.addKeyListener(new UnKeyListener(this));
-			this.textFieldCreacionNombreEmpleador.addKeyListener(new UnKeyListener(this));
+			this.textFieldCreacionUsuarioEmpleador.addKeyListener(this);
+			this.textFieldCreacionContraseniaEmpleador.addKeyListener(this);
+			this.textFieldCreacionNombreEmpleador.addKeyListener(this);
 			
 			
 		}
@@ -1510,7 +1510,23 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 		@Override
 		public void keyReleased(KeyEvent e) {
-			// TODO Auto-generated method stub
+			
+			boolean hab = !(textFieldCrearAgencia.getText().isEmpty());
+			setBotonConfirmarNombreAgencia(hab);
+			
+			boolean hab1 = !(textFieldUsuario.getText().isEmpty() || textFieldContrasenia.getText().isEmpty());
+			setBotonConfirmarLogin(hab1);
+			
+			boolean hab2 = !(textFieldCreacionUsuario.getText().isEmpty() || textFieldCreacionContrasenia.getText().isEmpty() || textFieldCreacionNyA.getText().isEmpty() || textFieldDNI.getText()
+					.isEmpty() || textFieldTelefono.getText().isEmpty() || textFieldEdad.getText().isEmpty() || textFieldCiudad.getText().isEmpty());
+			setBotonConfirmacionCreacionUsuario(hab2);
+			
+			boolean hab3 = !(textFieldPesoCargaHoraria.getText().isEmpty() || textFieldPesoLocacion.getText().isEmpty() || textFieldPesoRemuneracion.getText().isEmpty() || textFieldPesoTipoDePuesto.getText().isEmpty());
+			
+			// ac� viene una referencia del modelo que dice si el usuario est� logueado, entonces har�a un AND con hab3 para asi se 
+			
+			boolean hab4 = !(textFieldUsuarioEmpleador.getText().isEmpty() || textFieldContraseniaEmpleador.getText().isEmpty());
+			setBotonConfirmarLoginEmpleador(hab4);
 			
 		}
 

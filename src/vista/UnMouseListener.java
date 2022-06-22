@@ -15,12 +15,6 @@ public class UnMouseListener implements MouseListener {
 		
 		//chequear tambien si la agencia se creo, si no, imposible hacer un tipo de ticket
 		
-		boolean hab1 = v.botonSalud.isSelected() || v.botonComercioLocal.isSelected() || v.botonComercioInternacional.isSelected();
-		boolean hab2 = v.botonJunior.isSelected() || v.botonSenior.isSelected() || v.botonManagement.isSelected();
-		boolean hab3 = v.botonMenosV1.isSelected() || v.botonEntreV1yV2.isSelected() || v.botonMasV2.isSelected();
-		boolean hab = hab1 && hab2 && hab3;
-		v.setBotonConfirmarTipoTickets(hab);
-		
 		if ((v.rdbtnActivo.isSelected() && !v.rdbtnSuspendido.isSelected() && !v.rdbtnCancelar.isSelected()) || (!v.rdbtnActivo.isSelected() && v.rdbtnSuspendido.isSelected() && !v.rdbtnCancelar.isSelected())
 			|| (!v.rdbtnActivo.isSelected() && !v.rdbtnSuspendido.isSelected() && v.rdbtnCancelar.isSelected())) {
 			v.setCambiarEstadoTicketEmpleado(true);

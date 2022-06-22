@@ -23,6 +23,7 @@ public class UnKeyListener implements KeyListener{
 
 		@Override
 		public void keyReleased(KeyEvent e) {
+			
 			boolean hab = !(v.textFieldCrearAgencia.getText().isEmpty());
 			v.setBotonConfirmarNombreAgencia(hab);
 			
