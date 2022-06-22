@@ -585,7 +585,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		
 		this.panelLocacion = new JPanel();
 		this.panelLocacion.setLayout(null);
-		this.panelLocacion.setBorder(new TitledBorder(null, "Locaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelLocacion.setBorder(new TitledBorder(null, "Locacion", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.panelCreacionTicket.add(this.panelLocacion);
 		
 		this.comboBoxLocacion = new JComboBox();
@@ -597,7 +597,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoLocacion.setBounds(314, 27, 35, 20);
 		this.panelLocacion.add(this.textFieldPesoLocacion);
 		
-		this.labelPesoLocacion = new JLabel("Ponderación:");
+		this.labelPesoLocacion = new JLabel("Ponderacion:");
 		this.labelPesoLocacion.setBounds(241, 30, 63, 14);
 		this.panelLocacion.add(this.labelPesoLocacion);
 		
@@ -615,7 +615,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoRemuneracion.setBounds(314, 27, 35, 20);
 		this.panelRemuneracion.add(this.textFieldPesoRemuneracion);
 		
-		this.labelPesoRemuneracion = new JLabel("Ponderación:");
+		this.labelPesoRemuneracion = new JLabel("Ponderacion:");
 		this.labelPesoRemuneracion.setBounds(241, 30, 63, 14);
 		this.panelRemuneracion.add(this.labelPesoRemuneracion);
 		
@@ -633,7 +633,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoCargaHoraria.setBounds(314, 27, 35, 20);
 		this.panelCargaHoraria.add(this.textFieldPesoCargaHoraria);
 		
-		this.labelPesoCargaHoraria = new JLabel("Ponderación:");
+		this.labelPesoCargaHoraria = new JLabel("Ponderacion:");
 		this.labelPesoCargaHoraria.setBounds(241, 30, 63, 14);
 		this.panelCargaHoraria.add(this.labelPesoCargaHoraria);
 		
@@ -651,7 +651,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoTipoDePuesto.setBounds(314, 27, 35, 20);
 		this.panelTipoDePuesto.add(this.textFieldPesoTipoDePuesto);
 		
-		this.labelPesoTipoDePuesto = new JLabel("Ponderación:");
+		this.labelPesoTipoDePuesto = new JLabel("Ponderacion:");
 		this.labelPesoTipoDePuesto.setBounds(241, 30, 63, 14);
 		this.panelTipoDePuesto.add(this.labelPesoTipoDePuesto);
 		
@@ -664,7 +664,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.comboBoxRangoEtario.setBounds(23, 26, 167, 22);
 		this.panelRangoEtario.add(this.comboBoxRangoEtario);
 		
-		this.labelPesoRangoEtario = new JLabel("Ponderación:  1");
+		this.labelPesoRangoEtario = new JLabel("Ponderacion: 1");
 		this.labelPesoRangoEtario.setBounds(241, 30, 90, 14);
 		this.panelRangoEtario.add(this.labelPesoRangoEtario);
 		
@@ -677,8 +677,8 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.comboBoxExperienciaPrevia.setBounds(23, 26, 167, 22);
 		this.panelExperienciaPrevia.add(this.comboBoxExperienciaPrevia);
 		
-		this.labelPesoExperienciaPrevia = new JLabel("Ponderación:  1");
-		this.labelPesoExperienciaPrevia.setBounds(241, 30, 83, 14);
+		this.labelPesoExperienciaPrevia = new JLabel("Ponderacion: 1");
+		this.labelPesoExperienciaPrevia.setBounds(241, 30, 90, 14);
 		this.panelExperienciaPrevia.add(this.labelPesoExperienciaPrevia);
 		
 		this.panelEstudiosCursados = new JPanel();
@@ -690,8 +690,8 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.comboBoxEstudiosCursados.setBounds(23, 26, 167, 22);
 		this.panelEstudiosCursados.add(this.comboBoxEstudiosCursados);
 		
-		this.labelPesoEstudiosCursados = new JLabel("Ponderación:  1");
-		this.labelPesoEstudiosCursados.setBounds(241, 30, 86, 14);
+		this.labelPesoEstudiosCursados = new JLabel("Ponderacion: 1");
+		this.labelPesoEstudiosCursados.setBounds(241, 30, 90, 14);
 		this.panelEstudiosCursados.add(this.labelPesoEstudiosCursados);
 		
 		this.panelConfirmacionCreacionTicket = new JPanel();
@@ -730,7 +730,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.panel_6.add(this.btnCambiarEstado);
 		
 		this.panelEleccionYBolsa = new JPanel();
-		this.panelEleccionYBolsa.setBorder(new TitledBorder(null, "Ronda de Elecci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelEleccionYBolsa.setBorder(new TitledBorder(null, "Ronda de Eleccion", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.panelGeneralEmpleado.add(this.panelEleccionYBolsa);
 		this.panelEleccionYBolsa.setLayout(new GridLayout(2, 0, 0, 0));
 		
@@ -770,13 +770,13 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.lblBolsaTipoTrabajo.setBounds(53, 11, 81, 14);
 		this.panelEmpleadoRequisitosBolsa.add(this.lblBolsaTipoTrabajo);
 		
-		this.lblBolsaLocacion = new JLabel("Locación:");
+		this.lblBolsaLocacion = new JLabel("Locacion:");
 		this.lblBolsaLocacion.setBounds(247, 11, 58, 14);
 		this.panelEmpleadoRequisitosBolsa.add(this.lblBolsaLocacion);
 		
 		this.panelPantallaBolsa = new JPanel();
 		this.panelPantallaBolsa.setLayout(null);
-		this.panelPantallaBolsa.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Elecci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.panelPantallaBolsa.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Eleccion", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		this.panelPantallaBolsa.setBounds(21, 93, 366, 182);
 		this.panelBolsaTrabajo.add(this.panelPantallaBolsa);
 		
@@ -958,7 +958,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		
 		this.panelLocacionEmpleador = new JPanel();
 		this.panelLocacionEmpleador.setLayout(null);
-		this.panelLocacionEmpleador.setBorder(new TitledBorder(null, "Locaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelLocacionEmpleador.setBorder(new TitledBorder(null, "Locacion", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.panelCreacionTicketEmpleador.add(this.panelLocacionEmpleador);
 		
 		this.comboBoxLocacionEmpleador = new JComboBox();
@@ -970,7 +970,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoLocacionEmpleador.setBounds(314, 27, 35, 20);
 		this.panelLocacionEmpleador.add(this.textFieldPesoLocacionEmpleador);
 		
-		this.labelPesoLocacionEmpleador = new JLabel("Ponderación:");
+		this.labelPesoLocacionEmpleador = new JLabel("Ponderacion:");
 		this.labelPesoLocacionEmpleador.setBounds(241, 30, 63, 14);
 		this.panelLocacionEmpleador.add(this.labelPesoLocacionEmpleador);
 		
@@ -988,7 +988,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoRemuneracionEmpleador.setBounds(314, 27, 35, 20);
 		this.panelRemuneracionEmpleador.add(this.textFieldPesoRemuneracionEmpleador);
 		
-		this.labelPesoRemuneracionEmpleador = new JLabel("Ponderación:");
+		this.labelPesoRemuneracionEmpleador = new JLabel("Ponderacion:");
 		this.labelPesoRemuneracionEmpleador.setBounds(241, 30, 63, 14);
 		this.panelRemuneracionEmpleador.add(this.labelPesoRemuneracionEmpleador);
 		
@@ -1006,7 +1006,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoCargaHorariaEmpleador.setBounds(314, 27, 35, 20);
 		this.panelCargaHorariaEmpleador.add(this.textFieldPesoCargaHorariaEmpleador);
 		
-		this.labelPesoCargaHorariaEmpleador = new JLabel("Ponderación:");
+		this.labelPesoCargaHorariaEmpleador = new JLabel("Ponderacion:");
 		this.labelPesoCargaHorariaEmpleador.setBounds(241, 30, 63, 14);
 		this.panelCargaHorariaEmpleador.add(this.labelPesoCargaHorariaEmpleador);
 		
@@ -1024,7 +1024,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoTipoDePuestoEmpleador.setBounds(314, 27, 35, 20);
 		this.panelTipoDePuestoEmpleador.add(this.textFieldPesoTipoDePuestoEmpleador);
 		
-		this.labelPesoTipoDePuestoEmpleador = new JLabel("Ponderación:");
+		this.labelPesoTipoDePuestoEmpleador = new JLabel("Ponderacion:");
 		this.labelPesoTipoDePuestoEmpleador.setBounds(241, 30, 63, 14);
 		this.panelTipoDePuestoEmpleador.add(this.labelPesoTipoDePuestoEmpleador);
 		
@@ -1042,7 +1042,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoRangoEtarioEmpleador.setBounds(314, 27, 35, 20);
 		this.panelRangoEtarioEmpleador.add(this.textFieldPesoRangoEtarioEmpleador);
 		
-		this.labelPesoRangoEtarioEmpleador = new JLabel("Ponderación:");
+		this.labelPesoRangoEtarioEmpleador = new JLabel("Ponderacion:");
 		this.labelPesoRangoEtarioEmpleador.setBounds(241, 30, 63, 14);
 		this.panelRangoEtarioEmpleador.add(this.labelPesoRangoEtarioEmpleador);
 		
@@ -1060,7 +1060,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoExpPreviaEmpleador.setBounds(314, 27, 35, 20);
 		this.panelExperienciaPreviaEmpleador.add(this.textFieldPesoExpPreviaEmpleador);
 		
-		this.labelPesoExpPreviaEmpleador = new JLabel("Ponderación:");
+		this.labelPesoExpPreviaEmpleador = new JLabel("Ponderacion:");
 		this.labelPesoExpPreviaEmpleador.setBounds(241, 30, 63, 14);
 		this.panelExperienciaPreviaEmpleador.add(this.labelPesoExpPreviaEmpleador);
 		
@@ -1078,7 +1078,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.textFieldPesoEstudiosCursadosEmpleador.setBounds(314, 27, 35, 20);
 		this.panelEstudiosCursadosEmpleador.add(this.textFieldPesoEstudiosCursadosEmpleador);
 		
-		this.labelPesoEstudiosCursadosEmpleador = new JLabel("Ponderación:");
+		this.labelPesoEstudiosCursadosEmpleador = new JLabel("Ponderacion:");
 		this.labelPesoEstudiosCursadosEmpleador.setBounds(241, 30, 63, 14);
 		this.panelEstudiosCursadosEmpleador.add(this.labelPesoEstudiosCursadosEmpleador);
 		
@@ -1175,11 +1175,11 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 	       /* if (hayRondaContrataciones) {
 	       		this.botonRondaContrataciones.setEnabled(true);
 	       	  else
-	       	  	this.botonRondaContrataciones.setEnabled(false); //(esto viene por default en realidad pero no est� de m�s)
+	       	  	this.botonRondaContrataciones.setEnabled(false); //(esto viene por default en realidad pero no est� de m�s)
 	       	  if (hayRondaContrataciones & hayRondaEncuentro) {
 	       		this.botonRondaEncuentro.setEnabled(true);
 	       	  else
-	       	  	this.botonRondaEncuentro.setEnabled(false); //(esto viene por default en realidad pero no est� de m�s)
+	       	  	this.botonRondaEncuentro.setEnabled(false); //(esto viene por default en realidad pero no est� de m�s)
 	       
 	       */
 	       
