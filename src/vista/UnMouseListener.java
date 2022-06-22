@@ -23,9 +23,17 @@ public class UnMouseListener implements MouseListener {
 		
 		if ((v.rdbtnActivo.isSelected() && !v.rdbtnSuspendido.isSelected() && !v.rdbtnCancelar.isSelected()) || (!v.rdbtnActivo.isSelected() && v.rdbtnSuspendido.isSelected() && !v.rdbtnCancelar.isSelected())
 			|| (!v.rdbtnActivo.isSelected() && !v.rdbtnSuspendido.isSelected() && v.rdbtnCancelar.isSelected())) {
-			v.btnCambiarEstado.setEnabled(true);
+			v.setCambiarEstadoTicketEmpleado(true);
 		} else
-			v.btnCambiarEstado.setEnabled(false);
+			v.setCambiarEstadoTicketEmpleado(false);
+		
+		if ((v.rdbtnActivoEmpleador.isSelected() && !v.rdbtnSuspendidoEmpleador.isSelected() && !v.rdbtnCancelarEmpleador.isSelected()) || (!v.rdbtnActivoEmpleador.isSelected() && v.rdbtnSuspendidoEmpleador.isSelected() && !v.rdbtnCancelarEmpleador.isSelected())
+				|| (!v.rdbtnActivoEmpleador.isSelected() && !v.rdbtnSuspendidoEmpleador.isSelected() && v.rdbtnCancelarEmpleador.isSelected())) {
+				v.setCambiarEstadoTicketEmpleador(true);
+			} else
+				v.setCambiarEstadoTicketEmpleador(false);
+		
+		
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {

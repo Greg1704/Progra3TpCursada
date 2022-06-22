@@ -161,7 +161,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 	protected JTextField textFieldUsuarioEmpleador;
 	protected JPanel panelContraseniaEmpleador;
 	protected JLabel lblContraseniaEmpleador;
-	protected JTextField textFieldEmpleador;
+	protected JTextField textFieldContraseniaEmpleador;
 	protected JPanel panelConfirmarLoginEmpleador;
 	protected JButton btnConfirmarLoginEmpleador;
 	protected JPanel panelCreacionEmpleador;
@@ -834,10 +834,10 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 		this.lblContraseniaEmpleador.setBounds(61, 22, 60, 14);
 		this.panelContraseniaEmpleador.add(this.lblContraseniaEmpleador);
 		
-		this.textFieldEmpleador = new JTextField();
-		this.textFieldEmpleador.setColumns(10);
-		this.textFieldEmpleador.setBounds(172, 19, 176, 20);
-		this.panelContraseniaEmpleador.add(this.textFieldEmpleador);
+		this.textFieldContraseniaEmpleador = new JTextField();
+		this.textFieldContraseniaEmpleador.setColumns(10);
+		this.textFieldContraseniaEmpleador.setBounds(172, 19, 176, 20);
+		this.panelContraseniaEmpleador.add(this.textFieldContraseniaEmpleador);
 		
 		this.panelConfirmarLoginEmpleador = new JPanel();
 		this.panelConfirmarLoginEmpleador.setLayout(null);
@@ -1199,7 +1199,7 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 			this.btnConfirmarLogin.setActionCommand(confirmaLoginUsuario);
 			this.btnConfirmacionCreacionUsuario.setActionCommand(confirmaCreacionUsuario);
 			this.btnConfirmacionCreacionTicket.setActionCommand(confirmaCreacionTicket);
-			this.btnConfirmacionEleccionEmpleado.setActionCommand(confirmaEleccionEmpleador);
+			this.btnConfirmacionEleccionEmpleado.setActionCommand(confirmaEleccionEmpleado);
 			this.btnBolsaAceptar.setActionCommand(confirmaAceptacionTicket);
 			this.btnBolsaRechazar.setActionCommand(confirmaRechazoTicket);
 			this.btnInicioBolsa.setActionCommand(confirmaArranqueBDT);
@@ -1237,6 +1237,37 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 			this.rdbtnSuspendido.addMouseListener(new UnMouseListener(this));
 			this.rdbtnCancelar.addMouseListener(new UnMouseListener(this));
 			
+			
+			// ventana Empleador
+			
+			this.btnConfirmarLoginEmpleador.setEnabled(false);
+			this.btnConfirmacionCreacionUsuario_1.setEnabled(false);
+			this.btnConfirmacionCreacionTicket_1.setEnabled(false);
+			this.btnCambiarEstadoEmpleador.setEnabled(false);
+			this.btnConfirmacionEleccionEmpleador.setEnabled(false);
+			this.btnCrearTicketSimplificado.setEnabled(false);
+			this.btnInicioBolsa.setEnabled(false);
+			
+			this.btnConfirmarLoginEmpleador.setActionCommand(confirmarLoginEmpleador);
+			this.btnConfirmacionCreacionUsuario_1.setActionCommand(confirmacionCreacionUsuario_1);
+			this.btnConfirmacionCreacionTicket_1.setActionCommand(confirmacionCreacionTicket_1);
+			this.btnCambiarEstadoEmpleador.setActionCommand(confirmaCambiorEstadoEmpleador);
+			this.btnConfirmacionEleccionEmpleador.setActionCommand(confirmacionEleccionEmpleador);
+			this.btnCrearTicketSimplificado.setActionCommand(confirmaCracionTicketSimplificado);
+			
+			this.rdbtnActivoEmpleador.addMouseListener(new UnMouseListener(this));
+			this.rdbtnCancelarEmpleador.addMouseListener(new UnMouseListener(this));
+			this.rdbtnSuspendidoEmpleador.addMouseListener(new UnMouseListener(this));
+			
+			this.textFieldUsuarioEmpleador.addKeyListener(new UnKeyListener(this));
+			this.textFieldContraseniaEmpleador.addKeyListener(new UnKeyListener(this));
+			
+			
+			this.textFieldCreacionUsuarioEmpleador.addKeyListener(new UnKeyListener(this));
+			this.textFieldCreacionContraseniaEmpleador.addKeyListener(new UnKeyListener(this));
+			this.textFieldCreacionNombreEmpleador.addKeyListener(new UnKeyListener(this));
+			
+			
 		}
 	       		
 		public void setBotonConfirmarNombreAgencia(boolean hab) {
@@ -1260,6 +1291,17 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 			this.btnConfirmacionCreacionTicket.setEnabled(hab);
 		}
 		
+		public void setCambiarEstadoTicketEmpleado(boolean hab) {
+			this.btnCambiarEstado.setEnabled(hab);
+		}
+		
+		public void setBotonConfirmarLoginEmpleador(boolean hab) {
+			this.btnConfirmarLoginEmpleador.setEnabled(hab);
+		}
+		
+		public void setCambiarEstadoTicketEmpleador(boolean hab) {
+			this.btnCambiarEstadoEmpleador.setEnabled(hab);
+		}
 
 		@Override
 		public void keyTyped(KeyEvent e) {

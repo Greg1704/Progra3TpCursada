@@ -17,12 +17,18 @@ public interface IVista {
 	static final String confirmaCreacionUsuario = "Confirma creacion de usuario";
 	static final String confirmaCreacionTicket = "Confirma creacion de ticket";
 	static final String confirmaEstadoTicket = "Confirma estado de ticket";
-	static final String confirmaEleccionEmpleador = "Confirma eleccion empleador";
+	static final String confirmaEleccionEmpleado = "Confirma eleccion del empleado";
 	static final String confirmaAceptacionTicket = "Confirma aceptacion de un TS";
 	static final String confirmaRechazoTicket = "Confirma rechazo de un TS";
 	static final String confirmaArranqueBDT = "Confirma arranque de BDT";
 	
 	// botones de ventana empleador
 	
+	static final String confirmarLoginEmpleador = "confirma login de empleador";
+	static final String confirmacionCreacionUsuario_1 = "confirma creacion de empleador";
+	static final String confirmacionCreacionTicket_1 = "confirma creacion de ticket de empleador";
+	static final String confirmaCambiorEstadoEmpleador = "Confirma cambio de estado de ticket de empleador";
+	static final String confirmacionEleccionEmpleador = "Confirma eleccion del empleador";
+	static final String confirmaCracionTicketSimplificado = "Confirma la creacion de un TS";
 	
 }

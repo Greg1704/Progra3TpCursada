@@ -37,6 +37,9 @@ public class UnKeyListener implements KeyListener{
 			
 			// acá viene una referencia del modelo que dice si el usuario está logueado, entonces haría un AND con hab3 para asi se 
 			
+			boolean hab4 = !(v.textFieldUsuarioEmpleador.getText().isEmpty() || v.textFieldContraseniaEmpleador.getText().isEmpty());
+			v.setBotonConfirmarLoginEmpleador(hab4);
+			
 			
  		}
 		
