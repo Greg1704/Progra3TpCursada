@@ -20,6 +20,8 @@ import java.awt.event.MouseListener;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -28,7 +30,7 @@ import javax.swing.JList;
 import java.awt.Color;
 import javax.swing.JComboBox;
 
-public class VentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, IVista{
+public class VentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, ListSelectionListener, IVista{
 
 	protected JPanel contentPane;
 	protected JTabbedPane tabbedPane;
@@ -1359,6 +1361,12 @@ public class VentanaFinal extends JFrame implements KeyListener, MouseListener, 
 
 		@Override
 		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void valueChanged(ListSelectionEvent e) {
 			// TODO Auto-generated method stub
 			
 		}
