@@ -1232,8 +1232,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return textFieldCreacionTelefono.getText();
 	}
 
-	public String getTextFieldCreacionEdad() {
-		return textFieldCreacionEdad.getText();
+	public int getTextFieldCreacionEdad() {
+		return Integer.parseInt((String) textFieldCreacionEdad.getText());
 	}
 
 	public String getTextFieldCreacionCiudad() {
@@ -1268,8 +1268,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return (String) comboBoxTipoDePuesto.getSelectedItem();
 	}
 
-	public String getTextFieldPesoTipoDePuesto() {
-		return textFieldPesoTipoDePuesto.getText();
+	public int getTextFieldPesoTipoDePuesto() {
+		return Integer.parseInt((String) textFieldPesoTipoDePuesto.getText());
 	}
 
 	public String getComboBoxExperienciaPrevia() {

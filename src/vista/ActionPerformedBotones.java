@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 import javax.swing.JOptionPane;
 
+import armaTickets.FormularioDeBusqueda;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.UsuarioIncorrectoException;
 import usuariosDelSistema.*;
@@ -93,11 +94,14 @@ public class ActionPerformedBotones implements ActionListener {
 							//comboBoxOpcion = v.getComboBoxRemuneracion();
 							//crear el ticket LocalDateTime.now()
 							
-							/*(remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
-									 tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
-									 estudiosCursados, pesoEstudiosCursados)*/
-							
-							//empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPeso, comboBoxOpcion, 0, comboBoxOpcion, 0, 0, 0, comboBoxOpcion, 0, comboBoxOpcion, 0);
+							/*FormularioDeBusqueda(locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
+			 tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
+			 estudiosCursados, pesoEstudiosCursados);
+			 												 v.getTextFieldCreacionEdad()
+							 * */
+							empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPesoRemuneracion(), 
+									v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , v.getTextFieldCreacionEdad(), 1, 
+									v.getComboBoxExperienciaPrevia(), 1, v.getComboBoxEstudiosCursados(), 1);
 							
 					}else
 						if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
