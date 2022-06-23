@@ -91,5 +91,17 @@ public class ActionPerformedBotones implements ActionListener {
 						}
 			} 
 	}
+
+	//void que enlace el empleador seleccionado por el empleado
+	//el empleador me lo manda empleadorSeleccionado en ventanaNueva
+	//Preguntar a los vatos si esta bien llamar desde el controlador a la vista por las dudas 
+    void seleccinarEmpleador(Empleado e) { //le paso como referencia el empleado loggeado
+    	Empleador empleador;
+    	empleador=this.v.empleadorSeleccionado();
+    	e.setEmpleadorSeleccionado(empleador);
+    	//ver si se tiene que inhabilitar la seccion de la ventana para que no haya eleccion a otro empleador adicional...
+    			
 }
-		
+
+
+}
