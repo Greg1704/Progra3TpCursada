@@ -131,7 +131,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	}
 	
 
-	public void rondaElecciones() {
+	/*public void rondaElecciones() {
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
 		int i = 0;
 
@@ -140,6 +140,22 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		
 		while(i < super.getLista().getOrdenados().size() && i < cuposTotal) {
 			this.empleadosSeleccionados.add((Empleado) super.getLista().getOrdenados().get(i).getUsuario());
+			i++;
+		}
+		
+		this.cantidadEmpleadosSeleccionados = i;
+
+	}*/
+	
+	public void rondaElecciones(ArrayList<Empleado> elegidos) {
+		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
+		int i = 0;
+
+		super.getLista().getOrdenados().get(0).getUsuario().setPuntaje(super.getLista().getOrdenados().get(0).getUsuario().getPuntaje() + 5);
+		//Suma 5 puntos por estar primero en la lista
+		
+		while(i < super.getLista().getOrdenados().size() && i < cuposTotal) {
+			this.empleadosSeleccionados.add(elegidos.get(i));
 			i++;
 		}
 		

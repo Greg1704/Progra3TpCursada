@@ -1,6 +1,6 @@
 package usuariosDelSistema;
 
-public class TipoTrabajoFactory {
+public class TipoTrabajoFactory { //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA NO SIRVE CREO
     public I_TipoTrabajo getTipoTrabajo(String tipoTrabajo, Empleador empleador){
         if(tipoTrabajo.equalsIgnoreCase("Salud"))
             return (Salud) new Salud(empleador);

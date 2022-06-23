@@ -52,7 +52,7 @@ public abstract class Usuario implements Serializable{
 		this.contrasenia = contrasenia;
 	}
 
-	public abstract void rondaElecciones(Usuario elegido);
+	//public abstract void rondaElecciones(); PUEDE SER MEDIO AL DOPE YA QUE EL EMPLEADO Y EMPLEADOR VANA A TENER DISTINTOS PARAMETROS DE ENTRADA
 
 	public abstract void muestraUsuarios();
 
