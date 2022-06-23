@@ -1,10 +1,12 @@
 package usuariosDelSistema;
 
+import java.io.Serializable;
+
 import encuentro.ListaAsignaciones;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.UsuarioIncorrectoException;
 
-public abstract class Usuario{
+public abstract class Usuario implements Serializable{
 	protected String usuario;
 	protected String contrasenia;
 	protected int puntaje = 0;
@@ -40,6 +42,14 @@ public abstract class Usuario{
 
 	public void setLista(ListaAsignaciones lista) {
 		this.lista = lista;
+	}
+
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
 	}
 
 	public abstract void rondaElecciones();

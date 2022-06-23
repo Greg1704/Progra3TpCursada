@@ -1,5 +1,6 @@
 package usuariosDelSistema;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Observable;

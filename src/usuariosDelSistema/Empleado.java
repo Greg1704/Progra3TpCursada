@@ -8,6 +8,7 @@ import excepciones.LoginIncorrectoException;
 import excepciones.UsuarioIncorrectoException;
 import ticketSimplificado.TicketSimplificado;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList.*;
 import java.util.Observable;
@@ -91,7 +92,31 @@ public class Empleado extends Usuario implements Observer {
 	public void setEmpleadorSeleccionado(Empleador empleadorSeleccionado) {
 		this.empleadorSeleccionado = empleadorSeleccionado;
 	}
-	
+
+	public TicketSimplificado getTicketSimpElegido() {
+		return ticketSimpElegido;
+	}
+
+	public void setTicketSimpElegido(TicketSimplificado ticketSimpElegido) {
+		this.ticketSimpElegido = ticketSimpElegido;
+	}
+
+	public int getPasadas() {
+		return pasadas;
+	}
+
+	public void setPasadas(int pasadas) {
+		this.pasadas = pasadas;
+	}
+
+	public BolsaDeTrabajo getBolsa() {
+		return bolsa;
+	}
+
+	public void setBolsa(BolsaDeTrabajo bolsa) {
+		this.bolsa = bolsa;
+	}
+
 	public void Login(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException{
 
 			buscaEmpleado(usuario,contrasenia);

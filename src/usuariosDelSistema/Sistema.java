@@ -1,5 +1,6 @@
 package usuariosDelSistema;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import encuentro.RondaEncuentros;
 import excepciones.ListaVaciaException;
@@ -14,7 +15,7 @@ import ticketSimplificado.TicketSimplificado;
  *         puede haber m�s de un <b> Sistema </b>.
  */
 
-public class Sistema {
+public class Sistema implements Serializable{
 	private String nombre;
 	private static Sistema instancia = null;
 	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
