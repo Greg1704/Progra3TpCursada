@@ -28,7 +28,7 @@ public class ActionPerformedBotones implements ActionListener {
 			//chequear si ya existe la agencia o no
 			
 			v.setTextFieldCrearAgencia("");
-			v.setBotonConfirmarNombreAgencia(false);
+			v.setBtnConfirmarNombreAgencia(false);
 			
 		} else
 			if (e.getActionCommand().equals(IVista.confirmaTipoTicket)) {
@@ -56,7 +56,7 @@ public class ActionPerformedBotones implements ActionListener {
 					}
 					v.setTextFieldCreacionUsuario("");
 					v.setTextFieldCreacionContrasenia("");
-					v.setBotonConfirmarLogin(false);
+					v.setBtnConfirmarLogin(false);
 						
 					
 				} else
@@ -76,7 +76,7 @@ public class ActionPerformedBotones implements ActionListener {
 						v.setTextFieldCreacionTelefono("");
 						v.setTextFieldCreacionEdad("");
 						v.setTextFieldCreacionCiudad("");
-						v.setBotonConfirmacionCreacionUsuario(false);
+						v.setBtnConfirmacionCreacionUsuario(false); 
 						
 					} else
 						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) { //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -84,10 +84,21 @@ public class ActionPerformedBotones implements ActionListener {
 							empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPesoRemuneracion(), 
 									v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , v.getTextFieldCreacionEdad(), 1, 
 									v.getComboBoxExperienciaPrevia(), 1, v.getComboBoxEstudiosCursados(), 1);
+									
+							//setear todo a vacio
+							//tirar setDelBoton
+									//Activar boton CambioEstadoTicket
 							
 					}else
 						if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
-							//Mierda
+							if(v.getRdbtnActivo()) 
+								JOptionPane.showMessageDialog(null,empleado.getTicket().activa());
+							else if(v.getRdbtnSuspendido())
+								JOptionPane.showMessageDialog(null,empleado.getTicket().suspende());
+							else if(v.getRdbtnCancelar()) 
+								JOptionPane.showMessageDialog(null,empleado.getTicket().cancela());
+							
+							//Creo que nada mas
 						}
 			} 
 	}
