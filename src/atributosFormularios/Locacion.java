@@ -1,10 +1,12 @@
 package atributosFormularios;
 
+import java.io.Serializable;
+
 import calculosAspectosLaborales.I_Locacion;
 import calculosAspectosLaborales.LocacionFactory;
 import excepciones.AtributoInvalidoException;
 
-public class Locacion {
+public class Locacion implements Serializable{
 	private String locacion;
 	private int peso;
 	private I_Locacion instanciaLocacion;

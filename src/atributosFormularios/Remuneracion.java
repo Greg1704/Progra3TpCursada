@@ -1,10 +1,12 @@
 package atributosFormularios;
 
+import java.io.Serializable;
+
 import calculosAspectosLaborales.I_Remuneracion;
 import calculosAspectosLaborales.RemuneracionFactory;
 import excepciones.AtributoInvalidoException;
 
-public class Remuneracion {
+public class Remuneracion implements Serializable{
 	private double monto; // cambio de nombre para cambiar el nombre del get asi no se superpone con el get de la clase
 	private int peso;
 	private I_Remuneracion instanciaRemuneracion;

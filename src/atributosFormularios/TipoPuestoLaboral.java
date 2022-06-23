@@ -1,11 +1,13 @@
 package atributosFormularios;
 
 
+import java.io.Serializable;
+
 import calculosAspectosLaborales.I_TipoDePuesto;
 import calculosAspectosLaborales.TipoDePuestoFactory;
 import excepciones.AtributoInvalidoException;
 
-public class TipoPuestoLaboral {
+public class TipoPuestoLaboral implements Serializable{
 	private String tipoPuestoLaboral;
 	private int peso;
 	private I_TipoDePuesto instanciaLaboral;

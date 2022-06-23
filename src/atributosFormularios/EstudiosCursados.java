@@ -1,10 +1,12 @@
 package atributosFormularios;
 
+import java.io.Serializable;
+
 import calculosAspectosLaborales.EstudiosCursadosFactory;
 import calculosAspectosLaborales.I_EstudiosCursados;
 import excepciones.AtributoInvalidoException;
 
-public class EstudiosCursados {
+public class EstudiosCursados implements Serializable{
 	private I_EstudiosCursados instanciaEstudios;
 	private String estudiosCursados;
 	private int peso;

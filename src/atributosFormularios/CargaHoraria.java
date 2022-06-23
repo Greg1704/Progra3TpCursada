@@ -1,10 +1,12 @@
 package atributosFormularios;
 
+import java.io.Serializable;
+
 import calculosAspectosLaborales.CargaHorariaFactory;
 import calculosAspectosLaborales.I_CargaHoraria;
 import excepciones.AtributoInvalidoException;
 
-public class CargaHoraria {
+public class CargaHoraria implements Serializable{
 	private String cargaHoraria;
 	private int peso;
 	private I_CargaHoraria instanciaHorario;

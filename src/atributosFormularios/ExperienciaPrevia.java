@@ -1,10 +1,12 @@
 package atributosFormularios;
 
+import java.io.Serializable;
+
 import calculosAspectosLaborales.ExperienciaPreviaFactory;
 import calculosAspectosLaborales.I_ExperienciaPrevia;
 import excepciones.AtributoInvalidoException;
 
-public class ExperienciaPrevia {
+public class ExperienciaPrevia implements Serializable{
 	private String experienciaPrevia;
 	private int peso;
 	private I_ExperienciaPrevia instanciaExperiencia;
