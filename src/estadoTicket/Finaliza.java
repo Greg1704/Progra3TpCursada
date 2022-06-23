@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import armaTickets.TicketDeBusqueda;
 
-public class Finaliza implements I_EstadoTicket,Serializable {
+public class Finaliza implements I_EstadoTicket {
 	private TicketDeBusqueda ticket;
 
 	public Finaliza(TicketDeBusqueda ticket) {

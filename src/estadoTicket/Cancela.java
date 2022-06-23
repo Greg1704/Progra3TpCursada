@@ -1,10 +1,8 @@
 package estadoTicket;
 
-import java.io.Serializable;
-
 import armaTickets.TicketDeBusqueda;
 
-public class Cancela implements I_EstadoTicket,Serializable {
+public class Cancela implements I_EstadoTicket {
 	private TicketDeBusqueda ticket;
 	
 	public Cancela(TicketDeBusqueda ticket) {
@@ -23,12 +21,12 @@ public class Cancela implements I_EstadoTicket,Serializable {
 
 	@Override
 	public String cancela() {
-		return "El ticket ya se encuentra finalizado.";
+		return "El ticket ya se encuentra cancelado.";
 	}
 
 	@Override
 	public String finaliza() {
-		return "El ticket se encuentra cancelado.";
+		return "El ticket se encuentra finalizado.";
 	}
 
 }
