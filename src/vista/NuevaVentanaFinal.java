@@ -208,8 +208,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JButton btnConfirmacionEleccionEmpleador;
 	private JPanel panelTicketSimplificado;
 	private JPanel panelEmpleadorRequisitosTicketSimp;
-	private JComboBox comboBoxBolsaTipoTrabajo_1;
-	private JComboBox comboBoxBolsaLocacion_1;
+	private JComboBox comboBoxBolsaTipoTrabajoEmpleador;
+	private JComboBox comboBoxBolsaLocacionEmpleador;
 	private JLabel lblBolsaTipoTrabajo_1;
 	private JLabel lblBolsaLocacion_1;
 	private JButton btnCrearTicketSimplificado;
@@ -1060,13 +1060,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelEmpleadorRequisitosTicketSimp.setBounds(10, 23, 366, 75);
 		this.panelTicketSimplificado.add(this.panelEmpleadorRequisitosTicketSimp);
 		
-		this.comboBoxBolsaTipoTrabajo_1 = new JComboBox();
-		this.comboBoxBolsaTipoTrabajo_1.setBounds(23, 26, 138, 22);
-		this.panelEmpleadorRequisitosTicketSimp.add(this.comboBoxBolsaTipoTrabajo_1);
+		this.comboBoxBolsaTipoTrabajoEmpleador = new JComboBox();
+		this.comboBoxBolsaTipoTrabajoEmpleador.setBounds(23, 26, 138, 22);
+		this.panelEmpleadorRequisitosTicketSimp.add(this.comboBoxBolsaTipoTrabajoEmpleador);
 		
-		this.comboBoxBolsaLocacion_1 = new JComboBox();
-		this.comboBoxBolsaLocacion_1.setBounds(195, 26, 138, 22);
-		this.panelEmpleadorRequisitosTicketSimp.add(this.comboBoxBolsaLocacion_1);
+		this.comboBoxBolsaLocacionEmpleador = new JComboBox();
+		this.comboBoxBolsaLocacionEmpleador.setBounds(195, 26, 138, 22);
+		this.panelEmpleadorRequisitosTicketSimp.add(this.comboBoxBolsaLocacionEmpleador);
 		
 		this.lblBolsaTipoTrabajo_1 = new JLabel("Tipo de trabajo");
 		this.lblBolsaTipoTrabajo_1.setBounds(53, 11, 81, 14);
@@ -1412,12 +1412,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return listRondaEleccionesEmpleador;
 	}
 
-	public String getComboBoxBolsaTipoTrabajo_1() {
-		return (String) comboBoxBolsaTipoTrabajo_1.getSelectedItem();
+	public String getComboBoxBolsaTipoTrabajoEmpleador() {
+		return (String) comboBoxBolsaTipoTrabajoEmpleador.getSelectedItem();
 	}
 
-	public String getComboBoxBolsaLocacion_1() {
-		return (String) comboBoxBolsaLocacion_1.getSelectedItem();
+	public String getComboBoxBolsaLocacionEmpleador() {
+		return (String) comboBoxBolsaLocacionEmpleador.getSelectedItem();
 	}
 
 	public String getRdbtnActivo() {

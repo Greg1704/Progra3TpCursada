@@ -80,9 +80,19 @@ public class ActionPerformedBotones implements ActionListener {
 						
 					} else
 						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) {
-							String comboBoxOpcion=(String) v.comboBoxBolsaLocacion.getSelectedItem();
+							String comboBoxOpcion =  v.getComboBoxLocacion();
 							//CASE Y METER PONDERACION
-							//CASE Y METER PONDERACION
+							comboBoxOpcion = v.getComboBoxBolsaTipoTrabajo();
+							
+							comboBoxOpcion = v.getComboBoxCargaHoraria();
+							
+							comboBoxOpcion = v.getComboBoxEstudiosCursados();
+							
+							comboBoxOpcion = v.getComboBoxExperienciaPrevia();
+							
+							comboBoxOpcion = v.getComboBoxRangoEtario();
+							
+							comboBoxOpcion = v.getComboBoxRemuneracion();
 							
 					}
 			} 
