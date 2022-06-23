@@ -31,8 +31,12 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import armaTickets.TicketEmpleado;
+import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
+
+
 
 public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, ListSelectionListener, IVista { 
 	
@@ -1469,8 +1473,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return (String) comboBoxEstudiosCursados.getSelectedItem();
 	}
 
-	public String getListTicketActual() {
-		return listTicketActual;
+	public TicketEmpleado getListTicketActual() {
+		return (TicketEmpleado)listTicketActual.getSelectedValue();
 	}
 
 	public Empleador getListRondaEleccionesEmpleado() { // public Empleador
@@ -1613,8 +1617,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return rdbtnCancelarEmpleador.isSelected();
 	}
 
-	public String getListTicketSimplificadosEmpleador() {
-		return listTicketSimplificadosEmpleador;
+	public TicketSimplificado getListTicketSimplificadosEmpleador() {
+		return (TicketSimplificado)listTicketSimplificadosEmpleador.getSelectedValue();
 	}
 
 	public String getListContrataciones() {
