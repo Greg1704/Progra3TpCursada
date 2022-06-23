@@ -1,12 +1,8 @@
 package vista;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTabbedPane;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,23 +12,27 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
 import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
-
-import javax.swing.JRadioButton;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JList;
-import java.awt.Color;
-import javax.swing.JComboBox;
-import javax.swing.ButtonGroup;
 
 public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, ListSelectionListener, IVista { 
 	
@@ -1574,8 +1574,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return listTicketActualEmpleador;
 	}
 
-	public String getListRondaEleccionesEmpleador() {
-		return listRondaEleccionesEmpleador;
+	public ArrayList<Empleado> getListRondaEleccionesEmpleador() {
+		return (ArrayList)listRondaEleccionesEmpleador.getSelectedValuesList(); 
 	}
 
 	public String getComboBoxBolsaTipoTrabajoEmpleador() {
