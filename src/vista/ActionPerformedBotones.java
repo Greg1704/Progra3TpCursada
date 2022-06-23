@@ -87,7 +87,7 @@ public class ActionPerformedBotones implements ActionListener {
 							//Creo que nada mas
 						}else
 							if(e.getActionCommand().equals(IVista.confirmaEleccionEmpleado)) {
-								empleado.setEmpleadorSeleccionado(v.getListRondaEleccionesEmpleado());
+								empleado.rondaElecciones(v.getListRondaEleccionesEmpleado());
 							}
 			} 
 	}
