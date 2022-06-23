@@ -1172,7 +1172,29 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnBolsaAceptar.setEnabled(false);
 		this.btnBolsaRechazar.setEnabled(false);
 		this.btnInicioBolsa.setEnabled(false);
-
+		
+		// Seteo comboBox
+		
+		comboBoxLocacion.addItem("HomeOffice");
+		comboBoxLocacion.addItem("Presencial");
+		comboBoxLocacion.addItem("Indistinto");
+		
+		comboBoxCargaHoraria.addItem("Media");
+		comboBoxCargaHoraria.addItem("Completa");
+		comboBoxCargaHoraria.addItem("Extendida");
+		
+		comboBoxTipoDePuesto.addItem("Junior");
+		comboBoxTipoDePuesto.addItem("Senior");
+		comboBoxTipoDePuesto.addItem("Managment");
+		
+		comboBoxExperienciaPrevia.addItem("Nada");
+		comboBoxExperienciaPrevia.addItem("Media");
+		comboBoxExperienciaPrevia.addItem("Mucha");
+		
+		comboBoxEstudiosCursados.addItem("Primario");
+		comboBoxEstudiosCursados.addItem("Secundario");
+		comboBoxEstudiosCursados.addItem("Terciario");
+		
 		// Funcionalidad de los botones
 
 		this.btnConfirmarLogin.setActionCommand(confirmaLoginUsuario);
@@ -1233,6 +1255,34 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionEleccionEmpleador.setEnabled(false);
 		this.btnCrearTicketSimplificado.setEnabled(false);
 		this.btnInicioBolsa.setEnabled(false);
+		
+		// Seteo ComboBox
+		
+		comboBoxLocacionEmpleador.addItem("HomeOffice");
+		comboBoxLocacionEmpleador.addItem("Presencial");
+		comboBoxLocacionEmpleador.addItem("Indistinto");
+		
+		comboBoxCargaHorariaEmpleador.addItem("Media");
+		comboBoxCargaHorariaEmpleador.addItem("Completa");
+		comboBoxCargaHorariaEmpleador.addItem("Extendida");
+		
+		comboBoxTipoDePuestoEmpleador.addItem("Junior");
+		comboBoxTipoDePuestoEmpleador.addItem("Senior");
+		comboBoxTipoDePuestoEmpleador.addItem("Managment");
+		
+		comboBoxExperienciaPreviaEmpleador.addItem("Nada");
+		comboBoxExperienciaPreviaEmpleador.addItem("Media");
+		comboBoxExperienciaPreviaEmpleador.addItem("Mucha");
+		
+		comboBoxEstudiosCursadosEmpleador.addItem("Primario");
+		comboBoxEstudiosCursadosEmpleador.addItem("Secundario");
+		comboBoxEstudiosCursadosEmpleador.addItem("Terciario");
+		
+		comboBoxRangoEtarioEmpleador.addItem("Menos de 40");
+		comboBoxRangoEtarioEmpleador.addItem("Entre 40 y 50");
+		comboBoxRangoEtarioEmpleador.addItem("Mas de 50");
+		
+		//
 
 		this.btnConfirmarLoginEmpleador.setActionCommand(confirmarLoginEmpleador);
 		this.btnConfirmacionCreacionUsuarioEmpleador.setActionCommand(confirmacionCreacionUsuario_1);
