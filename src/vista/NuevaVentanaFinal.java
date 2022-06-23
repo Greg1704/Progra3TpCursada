@@ -1455,28 +1455,28 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return (String) comboBoxBolsaLocacionEmpleador.getSelectedItem();
 	}
 
-	public String getRdbtnActivo() {
-		return rdbtnActivo.getText();
+	public boolean getRdbtnActivo() {
+		return rdbtnActivo.isSelected();
 	}
 
-	public String getRdbtnSuspendido() {
-		return rdbtnSuspendido.getText();
+	public boolean getRdbtnSuspendido() {
+		return rdbtnSuspendido.isSelected();
 	}
 
-	public String getRdbtnCancelar() {
-		return rdbtnCancelar.getText();
+	public boolean getRdbtnCancelar() {
+		return rdbtnCancelar.isSelected();
 	}
 
-	public String getRdbtnActivoEmpleador() {
-		return rdbtnActivoEmpleador.getText();
+	public boolean getRdbtnActivoEmpleador() {
+		return rdbtnActivoEmpleador.isSelected();
 	}
 
-	public String getRdbtnSuspendidoEmpleador() {
-		return rdbtnSuspendidoEmpleador.getText();
+	public boolean getRdbtnSuspendidoEmpleador() {
+		return rdbtnSuspendidoEmpleador.isSelected();
 	}
 
-	public String getRdbtnCancelarEmpleador() {
-		return rdbtnCancelarEmpleador.getText();
+	public boolean getRdbtnCancelarEmpleador() {
+		return rdbtnCancelarEmpleador.isSelected();
 	}
 
 	public String getListTicketSimplificadosEmpleador() {
