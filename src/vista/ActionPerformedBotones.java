@@ -54,9 +54,7 @@ public class ActionPerformedBotones implements ActionListener {
 						JOptionPane.showMessageDialog(null, ex.getMessage());
 
 					}
-					v.setTextFieldCreacionUsuario("");
-					v.setTextFieldCreacionContrasenia("");
-					v.setBtnConfirmarLogin(false);
+
 						
 					
 				} else
@@ -68,15 +66,7 @@ public class ActionPerformedBotones implements ActionListener {
 								  Integer.parseInt(v.getTextFieldCreacionTelefono()), v.getTextFieldCreacionEdad(), v.getTextFieldCreacionCiudad());
 						
 						Sistema.getInstancia().agregaEmpleado(empleado1);
-					
-						v.setTextFieldCreacionUsuario("");
-						v.setTextFieldCreacionContrasenia("");
-						v.setTextFieldCreacionNyA("");
-						v.setTextFieldCreacionDNI("");
-						v.setTextFieldCreacionTelefono("");
-						v.setTextFieldCreacionEdad("");
-						v.setTextFieldCreacionCiudad("");
-						v.setBtnConfirmacionCreacionUsuario(false); 
+					 
 						
 					} else
 						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) { //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -84,10 +74,6 @@ public class ActionPerformedBotones implements ActionListener {
 							empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPesoRemuneracion(), 
 									v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , v.getTextFieldCreacionEdad(), 1, 
 									v.getComboBoxExperienciaPrevia(), 1, v.getComboBoxEstudiosCursados(), 1);
-									
-							//setear todo a vacio
-							//tirar setDelBoton
-									//Activar boton CambioEstadoTicket
 							
 					}else
 						if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
@@ -99,7 +85,10 @@ public class ActionPerformedBotones implements ActionListener {
 								JOptionPane.showMessageDialog(null,empleado.getTicket().cancela());
 							
 							//Creo que nada mas
-						}
+						}else
+							if(e.getActionCommand().equals(IVista.confirmaEleccionEmpleado)) {
+								empleado.setEmpleadorSeleccionado(v.getListRondaEleccionesEmpleado());
+							}
 			} 
 	}
 

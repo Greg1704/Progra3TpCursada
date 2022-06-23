@@ -1287,7 +1287,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	}
 
 	public String getListEmpleados() {
-		return listEmpleados;
+		return listEmpleados.getSe;
 	}
 
 	public String getListTicketEmpleados() {
@@ -1382,8 +1382,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return listTicketActual;
 	}
 
-	public String getListRondaEleccionesEmpleado() { // ASDIOJJSDLKASJLKJ
-		return listRondaEleccionesEmpleado;
+	public Empleador getListRondaEleccionesEmpleado() { // public Empleador
+		return (Empleador)listRondaEleccionesEmpleado.getSelectedValue();
 	}
 
 	public String getComboBoxBolsaTipoTrabajo() {
@@ -1688,10 +1688,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.textFieldCreacionCiudad.setText(textFieldCreacionCiudad);
 	}
 
-	public void setTextFieldCrearAgencia(String textFieldCrearAgencia) {
-		this.textFieldCrearAgencia.setText(textFieldCrearAgencia);
-	}
-
 	public void setBtnAceptarYRechazarTicketSimplificado(boolean hab, boolean hab2) {
 		boolean habFinal = hab && hab2;
 		this.btnBolsaAceptar.setEnabled(habFinal);
@@ -1768,11 +1764,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 	public void setComboBoxBolsaLocacionEmpleador() {
 		this.comboBoxBolsaLocacionEmpleador.setSelectedIndex(0);
-	}
-
-	public Empleador empleadorSeleccionado() {   //el empleado selecciona un empleador con el mouse (capaz que va en controlador, discutiL)
-	 return (Empleador)this.listRondaEleccionesEmpleado.getSelectedValue(); //Si va en controlador se pide la lista por getter y listo, es cambiar esta linea
-	 
 	}
 	
 	
