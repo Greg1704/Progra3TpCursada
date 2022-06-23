@@ -231,6 +231,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private final ButtonGroup buttonGroupEstadosEmpleador = new ButtonGroup();
 	private JPanel panelCantEmpleadosBuscados;
 	private JTextField textFieldCantEmpleadosBuscados;
+	private JList listTicketSimpObtenido;
 	
 
 	/**
@@ -655,11 +656,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelConfirmacionCreacionTicket.add(this.btnConfirmacionCreacionTicket);
 
 		this.listTicketActual = new JList();
-		this.listTicketActual.setBorder(new TitledBorder(
-				new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)),
-				"Ticket de Busqueda y Ticket Simplificado Actual", TitledBorder.LEADING, TitledBorder.TOP, null,
-				new Color(0, 0, 0)));
-		this.listTicketActual.setBounds(10, 531, 389, 103);
+		this.listTicketActual.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Ticket de Busqueda Actual", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.listTicketActual.setBounds(10, 524, 389, 57);
 		this.panelTicket.add(this.listTicketActual);
 
 		this.panel_6 = new JPanel();
@@ -1220,6 +1218,11 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmarLogin.setActionCommand(confirmaLoginUsuario);
 		this.btnConfirmacionCreacionUsuario.setActionCommand(confirmaCreacionUsuario);
 		this.btnConfirmacionCreacionTicket.setActionCommand(confirmaCreacionTicket);
+		
+		this.listTicketSimpObtenido = new JList();
+		this.listTicketSimpObtenido.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Ticket Simplificado Obtenido", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.listTicketSimpObtenido.setBounds(10, 588, 389, 57);
+		this.panelTicket.add(this.listTicketSimpObtenido);
 		this.btnConfirmacionEleccionEmpleado.setActionCommand(confirmaEleccionEmpleado);
 		this.btnBolsaAceptar.setActionCommand(confirmaAceptacionTicket);
 		this.btnBolsaRechazar.setActionCommand(confirmaRechazoTicket);
@@ -1282,8 +1285,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxRubroEmpleador.addItem("ComercioLocal");
 		comboBoxRubroEmpleador.addItem("ComercioInternacional");
 		
-		comboBoxTipoPersonaEmpleador.addItem("Físico");
-		comboBoxTipoPersonaEmpleador.addItem("Jurídico");
+		comboBoxTipoPersonaEmpleador.addItem("Fï¿½sico");
+		comboBoxTipoPersonaEmpleador.addItem("Jurï¿½dico");
 		
 		comboBoxLocacionEmpleador.addItem("HomeOffice");
 		comboBoxLocacionEmpleador.addItem("Presencial");
