@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import estadoTicket.Activo;
 import estadoTicket.I_EstadoTicket;
 
-public abstract class TicketDeBusqueda implements Serializable{
+public abstract class TicketDeBusqueda {
 	private LocalDateTime fechaAlta;
 	private FormularioDeBusqueda formulario;
 	private I_EstadoTicket estado;
