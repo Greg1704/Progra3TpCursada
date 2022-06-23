@@ -159,7 +159,6 @@ public class Empleado extends Usuario implements Observer {
 	@Override
 	public void CancelaTicket() {
 		this.ticket.cancela();
-		this.ticket = null;
 		this.setPuntaje(this.getPuntaje() - 1);
 		//Se le resta un punto al Empleado por cancelar el ticket
 	}
