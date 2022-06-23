@@ -15,7 +15,7 @@ import ticketSimplificado.TicketSimplificado;
  *         puede haber m�s de un <b> Sistema </b>.
  */
 
-public class Sistema implements Serializable{
+public class Sistema{
 	private String nombre;
 	private static Sistema instancia = null;
 	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
@@ -34,10 +34,7 @@ public class Sistema implements Serializable{
 		return instancia;
 	}
 	
-	protected Sistema readResolve(){ //NO SE SI ESTA BIEN
-        return this;
-    }
-
+	
 	/**
 	 * el m�todo <b> agregaEmpleado </b> agrega un empleado a la lista de
 	 * empleados del <b> Sistema </b> <br>
