@@ -1518,8 +1518,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			this.textFieldCreacionCiudad.setText(textFieldCreacionCiudad);
 		}
 		
-		
-
 		public void setTextFieldCrearAgencia(String textFieldCrearAgencia) {
 			this.textFieldCrearAgencia.setText(textFieldCrearAgencia); 
 		}
