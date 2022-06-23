@@ -78,25 +78,31 @@ public class ActionPerformedBotones implements ActionListener {
 						v.setBotonConfirmacionCreacionUsuario(false);
 						
 					} else
-						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) {
-							String comboBoxOpcion =  v.getComboBoxLocacion();
+						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) { //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 							
-							comboBoxOpcion = v.getComboBoxBolsaTipoTrabajo();
+							//comboBoxOpcion = v.getComboBoxBolsaTipoTrabajo();
 							
-							comboBoxOpcion = v.getComboBoxCargaHoraria();
+							//comboBoxOpcion = v.getComboBoxCargaHoraria();
 							
-							comboBoxOpcion = v.getComboBoxEstudiosCursados();
+							//comboBoxOpcion = v.getComboBoxEstudiosCursados();
 							
-							comboBoxOpcion = v.getComboBoxExperienciaPrevia();
+							//comboBoxOpcion = v.getComboBoxExperienciaPrevia();
 							
 							//comboBoxOpcion = v.getComboBoxRangoEtario();
 							
 							//comboBoxOpcion = v.getComboBoxRemuneracion();
 							//crear el ticket LocalDateTime.now()
 							
-							empleado.crearTicket(comboBoxOpcion, 0, 0, 0, comboBoxOpcion, 0, comboBoxOpcion, 0, 0, 0, comboBoxOpcion, 0, comboBoxOpcion, 0);
+							/*(remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
+									 tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
+									 estudiosCursados, pesoEstudiosCursados)*/
 							
-					}
+							//empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPeso, comboBoxOpcion, 0, comboBoxOpcion, 0, 0, 0, comboBoxOpcion, 0, comboBoxOpcion, 0);
+							
+					}else
+						if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
+							//Mierda
+						}
 			} 
 	}
 }
