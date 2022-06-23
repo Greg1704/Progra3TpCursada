@@ -1265,6 +1265,16 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.textFieldCreacionUsuarioEmpleador.addKeyListener(this);
 		this.textFieldCreacionContraseniaEmpleador.addKeyListener(this);
 		this.textFieldCreacionNombreEmpleador.addKeyListener(this);
+		
+		this.textFieldPesoCargaHorariaEmpleador.addKeyListener(this);
+		this.textFieldPesoEstudiosCursadosEmpleador.addKeyListener(this);
+		this.textFieldPesoExpPreviaEmpleador.addKeyListener(this);
+		this.textFieldPesoLocacionEmpleador.addKeyListener(this);
+		this.textFieldPesoRangoEtarioEmpleador.addKeyListener(this);
+		this.textFieldPesoRemuneracionEmpleador.addKeyListener(this);
+		this.textFieldPesoTipoDePuestoEmpleador.addKeyListener(this);
+		this.textFieldRemuneracionEmpleador.addKeyListener(this);
+		
 
 	}
 
@@ -1548,6 +1558,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmarLoginEmpleador.setEnabled(hab);
 	}
 
+	public void setBtnConfirmacionCreacionUsuarioEmpleador(boolean hab) {
+		this.btnConfirmacionCreacionUsuarioEmpleador.setEnabled(hab);
+	}
+
 	public void setCambiarEstadoTicketEmpleador(boolean hab) {
 		this.btnCambiarEstadoEmpleador.setEnabled(hab);
 	}
@@ -1811,7 +1825,11 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				|| textFieldPesoExpPreviaEmpleador.getText().isEmpty() || textFieldPesoLocacionEmpleador.getText().isEmpty() || textFieldPesoRangoEtarioEmpleador.getText().isEmpty() || textFieldPesoRemuneracionEmpleador.getText().isEmpty() || 
 				textFieldPesoTipoDePuestoEmpleador.getText().isEmpty());
 		setBtnConfirmarCreacionTicketEmpleador(hab6);
-	}
+		
+		boolean hab7 = !(textFieldCreacionUsuarioEmpleador.getText().isEmpty() || textFieldCreacionContraseniaEmpleador.getText().isEmpty() || textFieldCreacionNombreEmpleador.getText().isEmpty());
+		setBtnConfirmacionCreacionUsuarioEmpleador(hab7);
+	
+		}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -1831,10 +1849,51 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			setBtnConfirmarNombreAgencia(false);
 		} else
 			if (e.getSource()==btnConfirmarLogin) {
-				textField("");
-				setTextFieldCreacionContrasenia("");
+				setTextFieldUsuario("");
+				setTextFieldContrasenia("");
 				setBtnConfirmarLogin(false);
-			}
+			} else
+				if (e.getSource()==btnConfirmacionCreacionUsuario) {
+					setTextFieldCreacionUsuario("");
+					setTextFieldCreacionContrasenia("");
+					setTextFieldCreacionNyA("");
+					setTextFieldCreacionDNI("");
+					setTextFieldCreacionTelefono("");
+					setTextFieldCreacionEdad("");
+					setTextFieldCreacionCiudad("");
+					setBtnConfirmacionCreacionUsuario(false); 
+				} else
+					if (e.getSource()==btnConfirmacionCreacionTicket) {
+						setTextFieldPesoCargaHoraria("");
+						setTextFieldPesoLocacion("");
+						setTextFieldPesoRemuneracion("");
+						setTextFieldPesoTipoDePuesto("");
+						setTextFieldRemuneracion("");
+						setBtnConfirmarCreacionTicket(false);
+					} else
+						if (e.getSource()==btnConfirmarLoginEmpleador) {
+							setTextFieldUsuarioEmpleador("");
+							setTextFieldContraseniaEmpleador("");
+							setBtnConfirmarLoginEmpleador(false);
+						} else
+							if (e.getSource()==btnConfirmacionCreacionUsuarioEmpleador) {
+								setTextFieldCreacionUsuarioEmpleador("");
+								setTextFieldCreacionContraseniaEmpleador("");
+								setTextFieldCreacionNombreEmpleador("");
+								setBtnConfirmacionCreacionUsuarioEmpleador(false);
+							} else
+								if (e.getSource()==btnConfirmacionCreacionTicketEmpleador) {
+									setTextFieldPesoCargaHorariaEmpleador("");
+									setTextFieldPesoEstudiosCursadosEmpleador("");
+									setTextFieldPesoExpPreviaEmpleador("");
+									setTextFieldPesoLocacionEmpleador("");
+									setTextFieldPesoRangoEtarioEmpleador("");
+									setTextFieldPesoRemuneracionEmpleador("");
+									setTextFieldPesoTipoDePuestoEmpleador("");
+									setTextFieldRemuneracionEmpleador("");
+									setBtnConfirmarCreacionTicketEmpleador(false);
+								}
+					
 	}
 
 	@Override
