@@ -1260,7 +1260,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return (String) comboBoxCargaHoraria.getSelectedItem();
 	}
 
-	public String getTextFieldPesoCargaHoraria() {
+	public int getTextFieldPesoCargaHoraria() {
 		return Integer.parseInt((String) textFieldPesoCargaHoraria.getText());
 	}
 
@@ -1332,8 +1332,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return (String) comboBoxLocacionEmpleador.getSelectedItem();
 	}
 
-	public String getTextFieldPesoLocacionEmpleador() {
-		return textFieldPesoLocacionEmpleador.getText();
+	public int getTextFieldPesoLocacionEmpleador() {
+		return Integer.parseInt((String) textFieldPesoLocacionEmpleador.getText());
 	}
 
 	public int getTextFieldRemuneracionEmpleador() {
@@ -1348,40 +1348,40 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return (String) comboBoxCargaHorariaEmpleador.getSelectedItem();
 	}
 
-	public String getTextFieldPesoCargaHorariaEmpleador() {
-		return textFieldPesoCargaHorariaEmpleador.getText();
+	public int getTextFieldPesoCargaHorariaEmpleador() {
+		return  Integer.parseInt((String) textFieldPesoCargaHorariaEmpleador.getText());
 	}
 
 	public String getComboBoxTipoDePuestoEmpleador() {
 		return (String) comboBoxTipoDePuestoEmpleador.getSelectedItem();
 	}
 
-	public String getTextFieldPesoTipoDePuestoEmpleador() {
-		return textFieldPesoTipoDePuestoEmpleador.getText();
+	public int getTextFieldPesoTipoDePuestoEmpleador() {
+		return Integer.parseInt((String) textFieldPesoTipoDePuestoEmpleador.getText());
 	}
 
 	public String getComboBoxRangoEtarioEmpleador() {
 		return (String) comboBoxRangoEtarioEmpleador.getSelectedItem();
 	}
 
-	public String getTextFieldPesoRangoEtarioEmpleador() {
-		return textFieldPesoRangoEtarioEmpleador.getText();
+	public int getTextFieldPesoRangoEtarioEmpleador() {
+		return Integer.parseInt((String) textFieldPesoRangoEtarioEmpleador.getText());
 	}
 
 	public String getComboBoxExperienciaPreviaEmpleador() {
 		return (String) comboBoxExperienciaPreviaEmpleador.getSelectedItem();
 	}
 
-	public String getTextFieldPesoExpPreviaEmpleador() {
-		return textFieldPesoExpPreviaEmpleador.getText();
+	public int getTextFieldPesoExpPreviaEmpleador() {
+		return Integer.parseInt((String) textFieldPesoExpPreviaEmpleador.getText());
 	}
 
 	public String getComboBoxEstudiosCursadosEmpleador() {
 		return (String) comboBoxEstudiosCursadosEmpleador.getSelectedItem();
 	}
 
-	public String getTextFieldPesoEstudiosCursadosEmpleador() {
-		return textFieldPesoEstudiosCursadosEmpleador.getText();
+	public int getTextFieldPesoEstudiosCursadosEmpleador() {
+		return Integer.parseInt((String) textFieldPesoEstudiosCursadosEmpleador.getText());
 	}
 
 	public String getListTicketActualEmpleador() {
