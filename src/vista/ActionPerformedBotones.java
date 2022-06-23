@@ -2,14 +2,14 @@ package vista;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDateTime;
 
 import javax.swing.JOptionPane;
 
-import armaTickets.FormularioDeBusqueda;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.UsuarioIncorrectoException;
-import usuariosDelSistema.*;
+import usuariosDelSistema.Empleado;
+import usuariosDelSistema.Empleador;
+import usuariosDelSistema.Sistema;
 
 public class ActionPerformedBotones implements ActionListener {
 		NuevaVentanaFinal v;
@@ -92,7 +92,13 @@ public class ActionPerformedBotones implements ActionListener {
 			} 
 	}
 
-
+    
+     void seleccionarEmpleados(Empleador e) {
+     for (Empleado empleado: this.v.getListRondaEleccionesEmpleador()) { //hago un foreach de los que se selecciona con el mouse y los agrego a la lista
+    	e.getEmpleadosSeleccionados().add(empleado); 
+	}
+    	
+    }
     			
 }
 
