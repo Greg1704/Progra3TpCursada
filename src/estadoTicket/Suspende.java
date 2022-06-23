@@ -3,8 +3,9 @@ package estadoTicket;
 import java.io.Serializable;
 
 import armaTickets.TicketDeBusqueda;
+import excepciones.NoActivoException;
 
-public class Suspende implements I_EstadoTicket,Serializable {
+public class Suspende implements I_EstadoTicket {
 	private TicketDeBusqueda ticket;
 
 	public Suspende(TicketDeBusqueda ticket) {
@@ -33,4 +34,8 @@ public class Suspende implements I_EstadoTicket,Serializable {
 		return "No es posible, el ticket se encuentra finalizado";
 	}
 
+	@Override
+	public void esActivo() throws NoActivoException {
+		throw new NoActivoException();
+	}
 }

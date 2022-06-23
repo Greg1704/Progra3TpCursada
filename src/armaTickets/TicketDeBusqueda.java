@@ -2,6 +2,7 @@ package armaTickets;
 
 import excepciones.AtributoInvalidoException;
 import excepciones.FormularioInvalidoException;
+import excepciones.NoActivoException;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 import estadoTicket.Activo;
 import estadoTicket.I_EstadoTicket;
 
-public abstract class TicketDeBusqueda {
+public abstract class TicketDeBusqueda implements I_EstadoTicket{
 	private LocalDateTime fechaAlta;
 	private FormularioDeBusqueda formulario;
 	private I_EstadoTicket estado;
@@ -56,6 +57,10 @@ public abstract class TicketDeBusqueda {
 
 	public String finaliza() {
 		return this.estado.finaliza();
+	}
+	
+	public void comparaActivo() throws NoActivoException {
+		this.estado.esActivo();
 	}
 
 	

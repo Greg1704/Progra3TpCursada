@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import armaTickets.TicketDeBusqueda;
 
-public class Activo implements I_EstadoTicket,Serializable {
+public class Activo implements I_EstadoTicket {
 	private TicketDeBusqueda ticket;
 	
 
@@ -34,5 +34,11 @@ public class Activo implements I_EstadoTicket,Serializable {
 		this.ticket.setEstado(new Finaliza(ticket));
 		return "Ticket finalizado.";
 	}
+
+	@Override
+	public void esActivo() {
+		
+	}
+
 
 }

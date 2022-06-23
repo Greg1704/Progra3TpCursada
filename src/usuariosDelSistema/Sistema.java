@@ -255,7 +255,7 @@ public class Sistema implements Serializable{
 			System.out.println(e.getMessage());
 		} catch (ListaVaciaException e) {
 			System.out.println(e.getMessage());
-		}
+		} //tienen que retornar algo, esta funcion puede ser string, por el hecho de que no puede haber syso en modelo
 
 	}
 
