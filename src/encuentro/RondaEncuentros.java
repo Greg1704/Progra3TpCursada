@@ -119,6 +119,7 @@ public class RondaEncuentros{
 		double puntajeAux;
 
 		for (Empleador empleador : empleadores) {
+			
 			if (empleador.getTicketEmpleador()!=null && empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
 				empleador.setLista(new ListaAsignaciones());
 

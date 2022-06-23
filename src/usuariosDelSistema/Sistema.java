@@ -33,6 +33,10 @@ public class Sistema implements Serializable{
 			instancia = new Sistema();
 		return instancia;
 	}
+	
+	protected Sistema readResolve(){ //NO SE SI ESTA BIEN
+        return this;
+    }
 
 	/**
 	 * el m�todo <b> agregaEmpleado </b> agrega un empleado a la lista de
