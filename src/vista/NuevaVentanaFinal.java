@@ -1207,6 +1207,14 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxEstudiosCursados.addItem("Secundario");
 		comboBoxEstudiosCursados.addItem("Terciario");
 		
+		comboBoxBolsaTipoTrabajo.addItem("Salud");
+		comboBoxBolsaTipoTrabajo.addItem("Comercio Local");
+		comboBoxBolsaTipoTrabajo.addItem("Comercio Internacional");
+		
+		comboBoxBolsaLocacion.addItem("HomeOffice");
+		comboBoxBolsaLocacion.addItem("Presencial");
+		comboBoxBolsaLocacion.addItem("Indistinto");
+		
 		// Funcionalidad de los botones
 
 		this.btnConfirmarLogin.setActionCommand(confirmaLoginUsuario);
@@ -1265,10 +1273,17 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionCreacionUsuarioEmpleador.setEnabled(false);
 		this.btnConfirmacionCreacionTicketEmpleador.setEnabled(false);
 		this.btnConfirmacionEleccionEmpleador.setEnabled(false);
-		this.btnCrearTicketSimplificado.setEnabled(false);
+		this.btnCrearTicketSimplificado.setEnabled(false); // (hasta q se loguee por lo menos)
 		this.btnInicioBolsa.setEnabled(false);
 		
 		// Seteo ComboBox
+		
+		comboBoxRubroEmpleador.addItem("Salud");
+		comboBoxRubroEmpleador.addItem("ComercioLocal");
+		comboBoxRubroEmpleador.addItem("ComercioInternacional");
+		
+		comboBoxTipoPersonaEmpleador.addItem("Físico");
+		comboBoxTipoPersonaEmpleador.addItem("Jurídico");
 		
 		comboBoxLocacionEmpleador.addItem("HomeOffice");
 		comboBoxLocacionEmpleador.addItem("Presencial");
@@ -1282,6 +1297,14 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxTipoDePuestoEmpleador.addItem("Senior");
 		comboBoxTipoDePuestoEmpleador.addItem("Managment");
 		
+		comboBoxBolsaTipoTrabajoEmpleador.addItem("Salud");
+		comboBoxBolsaTipoTrabajoEmpleador.addItem("Comercio Local");
+		comboBoxBolsaTipoTrabajoEmpleador.addItem("Comercio Internacional");
+		
+		comboBoxBolsaLocacionEmpleador.addItem("HomeOffice");
+		comboBoxBolsaLocacionEmpleador.addItem("Presencial");
+		comboBoxBolsaLocacionEmpleador.addItem("Indistinto");
+		
 		comboBoxExperienciaPreviaEmpleador.addItem("Nada");
 		comboBoxExperienciaPreviaEmpleador.addItem("Media");
 		comboBoxExperienciaPreviaEmpleador.addItem("Mucha");
@@ -1293,6 +1316,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxRangoEtarioEmpleador.addItem("Menos de 40");
 		comboBoxRangoEtarioEmpleador.addItem("Entre 40 y 50");
 		comboBoxRangoEtarioEmpleador.addItem("Mas de 50");
+		
+		
+		
 		
 		//
 
