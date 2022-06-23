@@ -14,6 +14,7 @@ import usuariosDelSistema.Sistema;
 public class ActionPerformedBotones implements ActionListener {
 		NuevaVentanaFinal v;
 		Empleado empleado;
+		Empleador empleador;
 	
 	public ActionPerformedBotones(NuevaVentanaFinal v) {
 		this.v = v;
@@ -35,7 +36,7 @@ public class ActionPerformedBotones implements ActionListener {
 				//Ta jodido el asunto
 				
 				
-				
+				//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA FALTA HACER LO DE RONDA ENCUENTRO Y RONDA CONTRATACIONES
 			} else { // ventana Empleado
 				
 				
@@ -58,12 +59,13 @@ public class ActionPerformedBotones implements ActionListener {
 						
 					
 				} else
-					if (e.getActionCommand().equals(IVista.confirmaCreacionUsuario)) {
+					if (e.getActionCommand().equals(IVista.confirmaCreacionUsuario)) {//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 						
 						// cuando se cree usuario, buscar en la lista si el usuario ya existe (s�lo buscar por campo de usuario estar�a bien). si no existe, hacer un new empleado
 						
 						Empleado empleado1 = new Empleado(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionContrasenia(), v.getTextFieldCreacionNyA(), v.getTextFieldCreacionDNI(), 
 								  Integer.parseInt(v.getTextFieldCreacionTelefono()), v.getTextFieldCreacionEdad(), v.getTextFieldCreacionCiudad());
+						//Cambiar getTextFieldCreacionTelefono() a Integer
 						
 						Sistema.getInstancia().agregaEmpleado(empleado1);
 					 
