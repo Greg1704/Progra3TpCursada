@@ -1,11 +1,13 @@
 package armaTickets;
 
+import java.io.Serializable;
+
 import atributosFormularios.*;
 import excepciones.AtributoInvalidoException;
 import excepciones.FormularioInvalidoException;
 
 
-public class FormularioDeBusqueda {
+public class FormularioDeBusqueda implements Serializable{
 	private Locacion locacion;
 	private Remuneracion remuneracion;
 	private CargaHoraria cargaHoraria;

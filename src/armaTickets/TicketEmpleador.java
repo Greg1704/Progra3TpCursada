@@ -4,7 +4,7 @@ import excepciones.FormularioInvalidoException;
 
 import java.time.LocalDateTime;
 
-public class TicketEmpleador extends TicketDeBusqueda {
+public class TicketEmpleador extends TicketDeBusqueda{
 	private int cantEmpleados;
 	private int empleadosObtenidos = 0;
 	

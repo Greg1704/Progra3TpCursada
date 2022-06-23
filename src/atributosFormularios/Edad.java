@@ -1,10 +1,12 @@
 package atributosFormularios;
 
+import java.io.Serializable;
+
 import calculosAspectosLaborales.I_RangoEtario;
 import calculosAspectosLaborales.RangoEtarioFactory;
 import excepciones.AtributoInvalidoException;
 
-public class Edad {
+public class Edad implements Serializable{
 	private int edad;
 	private int peso;
 	private I_RangoEtario instanciaEdad;

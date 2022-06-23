@@ -3,12 +3,13 @@ package armaTickets;
 import excepciones.AtributoInvalidoException;
 import excepciones.FormularioInvalidoException;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import estadoTicket.Activo;
 import estadoTicket.I_EstadoTicket;
 
-public abstract class TicketDeBusqueda{
+public abstract class TicketDeBusqueda implements Serializable{
 	private LocalDateTime fechaAlta;
 	private String estadoTicket;
 	private FormularioDeBusqueda formulario;
