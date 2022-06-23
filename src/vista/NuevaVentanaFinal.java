@@ -1149,7 +1149,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
 
 		this.btnConfirmarNombreAgencia.addActionListener(new ActionPerformedBotones(this));
-		this.btnConfirmarNombreAgencia.addActionListener(this);
+		this.btnConfirmarNombreAgencia.addMouseListener(this);
 
 		/*
 		 * if (hayRondaContrataciones) { this.botonRondaContrataciones.setEnabled(true);
@@ -1191,13 +1191,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnBolsaRechazar.addActionListener(new ActionPerformedBotones(this));
 		this.btnInicioBolsa.addActionListener(new ActionPerformedBotones(this));
 		
-		this.btnConfirmarLogin.addActionListener(this);
-		this.btnConfirmacionCreacionUsuario.addActionListener(this);
-		this.btnConfirmacionCreacionTicket.addActionListener(this);
-		this.btnConfirmacionEleccionEmpleado.addActionListener(this);
-		this.btnBolsaAceptar.addActionListener(this);
-		this.btnBolsaRechazar.addActionListener(this);
-		this.btnInicioBolsa.addActionListener(this);
+		this.btnConfirmarLogin.addMouseListener(this);
+		this.btnConfirmacionCreacionUsuario.addMouseListener(this);
+		this.btnConfirmacionCreacionTicket.addMouseListener(this);
+		this.btnConfirmacionEleccionEmpleado.addMouseListener(this);
+		this.btnBolsaAceptar.addMouseListener(this);
+		this.btnBolsaRechazar.addMouseListener(this);
+		this.btnInicioBolsa.addMouseListener(this);
 
 		// Asigno a los textfield para que escuchen el texto ingresado por teclado
 		// (LOGIN)
@@ -1248,12 +1248,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnCrearTicketSimplificado.addActionListener(new ActionPerformedBotones(this));
 		this.btnInicioBolsa.addActionListener(new ActionPerformedBotones(this));
 		
-		this.btnConfirmarLoginEmpleador.addActionListener(this);
-		this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(this);
-		this.btnConfirmacionCreacionTicketEmpleador.addActionListener(this);
-		this.btnConfirmacionEleccionEmpleador.addActionListener(this);
-		this.btnCrearTicketSimplificado.addActionListener(this);
-		this.btnInicioBolsa.addActionListener(this);
+		this.btnConfirmarLoginEmpleador.addMouseListener(this);
+		this.btnConfirmacionCreacionUsuarioEmpleador.addMouseListener(this);
+		this.btnConfirmacionCreacionTicketEmpleador.addMouseListener(this);
+		this.btnConfirmacionEleccionEmpleador.addMouseListener(this);
+		this.btnCrearTicketSimplificado.addMouseListener(this);
+		this.btnInicioBolsa.addMouseListener(this);
 
 		this.rdbtnActivoEmpleador.addMouseListener(this);
 		this.rdbtnCancelarEmpleador.addMouseListener(this);
@@ -1560,6 +1560,91 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionEleccionEmpleador.setEnabled(hab);
 
 	}
+	
+
+	public void setTextFieldCrearAgencia(String textFieldCrearAgencia) {
+		this.textFieldCrearAgencia.setText(textFieldCrearAgencia);
+	}
+
+	public void setTextFieldUsuario(String textFieldUsuario) {
+		this.textFieldUsuario.setText(textFieldUsuario);
+	}
+
+	public void setTextFieldContrasenia(String textFieldContrasenia) {
+		this.textFieldContrasenia.setText(textFieldContrasenia);
+	}
+
+	public void setTextFieldPesoLocacion(String textFieldPesoLocacion) {
+		this.textFieldPesoLocacion.setText(textFieldPesoLocacion);
+	}
+
+	public void setTextFieldRemuneracion(String textFieldRemuneracion) {
+		this.textFieldRemuneracion.setText(textFieldRemuneracion);
+	}
+
+	public void setTextFieldPesoRemuneracion(String textFieldPesoRemuneracion) {
+		this.textFieldPesoRemuneracion.setText(textFieldPesoRemuneracion);
+	}
+
+	public void setTextFieldPesoCargaHoraria(String textFieldPesoCargaHoraria) {
+		this.textFieldPesoCargaHoraria.setText(textFieldPesoCargaHoraria);
+	}
+
+	public void setTextFieldPesoTipoDePuesto(String textFieldPesoTipoDePuesto) {
+		this.textFieldPesoTipoDePuesto.setText(textFieldPesoTipoDePuesto);
+	}
+
+	public void setTextFieldUsuarioEmpleador(String textFieldUsuarioEmpleador) {
+		this.textFieldUsuarioEmpleador.setText(textFieldUsuarioEmpleador);
+	}
+
+	public void setTextFieldContraseniaEmpleador(String textFieldContraseniaEmpleador) {
+		this.textFieldContraseniaEmpleador.setText(textFieldContraseniaEmpleador);
+	}
+
+	public void setTextFieldCreacionUsuarioEmpleador(String textFieldCreacionUsuarioEmpleador) {
+		this.textFieldCreacionUsuarioEmpleador.setText(textFieldCreacionUsuarioEmpleador);
+	}
+
+	public void setTextFieldCreacionContraseniaEmpleador(String textFieldCreacionContraseniaEmpleador) {
+		this.textFieldCreacionContraseniaEmpleador.setText(textFieldCreacionContraseniaEmpleador);
+	}
+
+	public void setTextFieldCreacionNombreEmpleador(String textFieldCreacionNombreEmpleador) {
+		this.textFieldCreacionNombreEmpleador.setText(textFieldCreacionNombreEmpleador);
+	}
+
+	public void setTextFieldPesoLocacionEmpleador(String textFieldPesoLocacionEmpleador) {
+		this.textFieldPesoLocacionEmpleador.setText(textFieldPesoLocacionEmpleador);
+	}
+
+	public void setTextFieldRemuneracionEmpleador(String textFieldRemuneracionEmpleador) {
+		this.textFieldRemuneracionEmpleador.setText(textFieldRemuneracionEmpleador);
+	}
+
+	public void setTextFieldPesoRemuneracionEmpleador(String textFieldPesoRemuneracionEmpleador) {
+		this.textFieldPesoRemuneracionEmpleador.setText(textFieldPesoRemuneracionEmpleador);
+	}
+
+	public void setTextFieldPesoCargaHorariaEmpleador(String textFieldPesoCargaHorariaEmpleador) {
+		this.textFieldPesoCargaHorariaEmpleador.setText(textFieldPesoCargaHorariaEmpleador);
+	}
+
+	public void setTextFieldPesoTipoDePuestoEmpleador(String textFieldPesoTipoDePuestoEmpleador) {
+		this.textFieldPesoTipoDePuestoEmpleador.setText(textFieldPesoTipoDePuestoEmpleador);
+	}
+
+	public void setTextFieldPesoRangoEtarioEmpleador(String textFieldPesoRangoEtarioEmpleador) {
+		this.textFieldPesoRangoEtarioEmpleador.setText(textFieldPesoRangoEtarioEmpleador);
+	}
+
+	public void setTextFieldPesoExpPreviaEmpleador(String textFieldPesoExpPreviaEmpleador) {
+		this.textFieldPesoExpPreviaEmpleador.setText(textFieldPesoExpPreviaEmpleador);
+	}
+
+	public void setTextFieldPesoEstudiosCursadosEmpleador(String textFieldPesoEstudiosCursadosEmpleador) {
+		this.textFieldPesoEstudiosCursadosEmpleador.setText(textFieldPesoEstudiosCursadosEmpleador);
+	}
 
 	public void setTextFieldCreacionUsuario(String textFieldCreacionUsuario) {
 		this.textFieldCreacionUsuario.setText(textFieldCreacionUsuario);
@@ -1741,7 +1826,15 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-
+		if (e.getSource()==btnConfirmarNombreAgencia) {
+			setTextFieldCrearAgencia("");
+			setBtnConfirmarNombreAgencia(false);
+		} else
+			if (e.getSource()==btnConfirmarLogin) {
+				textField("");
+				setTextFieldCreacionContrasenia("");
+				setBtnConfirmarLogin(false);
+			}
 	}
 
 	@Override
