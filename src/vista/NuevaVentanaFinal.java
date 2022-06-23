@@ -113,9 +113,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JComboBox comboBoxTipoDePuesto;
 	private JTextField textFieldPesoTipoDePuesto;
 	private JLabel labelPesoTipoDePuesto;
-	private JPanel panelRangoEtario;
-	private JComboBox comboBoxRangoEtario;
-	private JLabel labelPesoRangoEtario;
 	private JPanel panelExperienciaPrevia;
 	private JComboBox comboBoxExperienciaPrevia;
 	private JLabel labelPesoExperienciaPrevia;
@@ -515,9 +512,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		this.panelCreacionTicket = new JPanel();
 		this.panelCreacionTicket.setBorder(new TitledBorder(null, "Crear Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelCreacionTicket.setBounds(10, 11, 389, 495);
+		this.panelCreacionTicket.setBounds(10, 11, 389, 450);
 		this.panelTicket.add(this.panelCreacionTicket);
-		this.panelCreacionTicket.setLayout(new GridLayout(8, 0, 0, 0));
+		this.panelCreacionTicket.setLayout(new GridLayout(7, 0, 0, 0));
 		
 		this.panelLocacion = new JPanel();
 		this.panelLocacion.setLayout(null);
@@ -539,7 +536,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		this.panelRemuneracion = new JPanel();
 		this.panelRemuneracion.setLayout(null);
-		this.panelRemuneracion.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Remuneraci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.panelRemuneracion.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Remuneraci\u00F3n Minima Buscada", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		this.panelCreacionTicket.add(this.panelRemuneracion);
 		
 		this.comboBoxRemuneracion = new JComboBox();
@@ -591,19 +588,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.labelPesoTipoDePuesto.setBounds(241, 30, 63, 14);
 		this.panelTipoDePuesto.add(this.labelPesoTipoDePuesto);
 		
-		this.panelRangoEtario = new JPanel();
-		this.panelRangoEtario.setLayout(null);
-		this.panelRangoEtario.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Rango Etario", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		this.panelCreacionTicket.add(this.panelRangoEtario);
-		
-		this.comboBoxRangoEtario = new JComboBox();
-		this.comboBoxRangoEtario.setBounds(23, 26, 167, 22);
-		this.panelRangoEtario.add(this.comboBoxRangoEtario);
-		
-		this.labelPesoRangoEtario = new JLabel("Ponderacion: 1");
-		this.labelPesoRangoEtario.setBounds(241, 30, 90, 14);
-		this.panelRangoEtario.add(this.labelPesoRangoEtario);
-		
 		this.panelExperienciaPrevia = new JPanel();
 		this.panelExperienciaPrevia.setLayout(null);
 		this.panelExperienciaPrevia.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Experiencia Previa", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
@@ -639,13 +623,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelConfirmacionCreacionTicket.add(this.btnConfirmacionCreacionTicket);
 		
 		this.listTicketActual = new JList();
-		this.listTicketActual.setBorder(new TitledBorder(null, "Ticket Actual", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.listTicketActual.setBounds(10, 577, 389, 57);
+		this.listTicketActual.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Ticket de Busqueda y Ticket Simplificado Actual", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.listTicketActual.setBounds(10, 531, 389, 103);
 		this.panelTicket.add(this.listTicketActual);
 		
 		this.panel_6 = new JPanel();
 		this.panel_6.setBorder(new TitledBorder(null, "Estado del Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panel_6.setBounds(10, 512, 387, 57);
+		this.panel_6.setBounds(10, 463, 387, 57);
 		this.panelTicket.add(this.panel_6);
 		this.panel_6.setLayout(null);
 		
@@ -1286,10 +1270,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 	public String getTextFieldPesoTipoDePuesto() {
 		return textFieldPesoTipoDePuesto.getText();
-	}
-
-	public String getComboBoxRangoEtario() {
-		return (String) comboBoxRangoEtario.getSelectedItem();
 	}
 
 	public String getComboBoxExperienciaPrevia() {

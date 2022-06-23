@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
 
 import javax.swing.JOptionPane;
 
@@ -76,12 +77,10 @@ public class ActionPerformedBotones implements ActionListener {
 						v.setTextFieldCreacionCiudad("");
 						v.setBotonConfirmacionCreacionUsuario(false);
 						
-						
-						
 					} else
 						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) {
 							String comboBoxOpcion =  v.getComboBoxLocacion();
-							//CASE Y METER PONDERACION
+							
 							comboBoxOpcion = v.getComboBoxBolsaTipoTrabajo();
 							
 							comboBoxOpcion = v.getComboBoxCargaHoraria();
@@ -90,9 +89,12 @@ public class ActionPerformedBotones implements ActionListener {
 							
 							comboBoxOpcion = v.getComboBoxExperienciaPrevia();
 							
-							comboBoxOpcion = v.getComboBoxRangoEtario();
+							//comboBoxOpcion = v.getComboBoxRangoEtario();
 							
 							comboBoxOpcion = v.getComboBoxRemuneracion();
+							//crear el ticket LocalDateTime.now()
+							
+							empleado.crearTicket(comboBoxOpcion, 0, 0, 0, comboBoxOpcion, 0, comboBoxOpcion, 0, 0, 0, comboBoxOpcion, 0, comboBoxOpcion, 0);
 							
 					}
 			} 
