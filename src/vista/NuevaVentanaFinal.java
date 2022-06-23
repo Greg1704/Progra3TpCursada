@@ -1149,6 +1149,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
 
 		this.btnConfirmarNombreAgencia.addActionListener(new ActionPerformedBotones(this));
+		this.btnConfirmarNombreAgencia.addActionListener(this);
 
 		/*
 		 * if (hayRondaContrataciones) { this.botonRondaContrataciones.setEnabled(true);
@@ -1189,6 +1190,14 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnBolsaAceptar.addActionListener(new ActionPerformedBotones(this));
 		this.btnBolsaRechazar.addActionListener(new ActionPerformedBotones(this));
 		this.btnInicioBolsa.addActionListener(new ActionPerformedBotones(this));
+		
+		this.btnConfirmarLogin.addActionListener(this);
+		this.btnConfirmacionCreacionUsuario.addActionListener(this);
+		this.btnConfirmacionCreacionTicket.addActionListener(this);
+		this.btnConfirmacionEleccionEmpleado.addActionListener(this);
+		this.btnBolsaAceptar.addActionListener(this);
+		this.btnBolsaRechazar.addActionListener(this);
+		this.btnInicioBolsa.addActionListener(this);
 
 		// Asigno a los textfield para que escuchen el texto ingresado por teclado
 		// (LOGIN)
@@ -1231,6 +1240,20 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnCambiarEstadoEmpleador.setActionCommand(confirmaCambiorEstadoEmpleador);
 		this.btnConfirmacionEleccionEmpleador.setActionCommand(confirmacionEleccionEmpleador);
 		this.btnCrearTicketSimplificado.setActionCommand(confirmaCracionTicketSimplificado);
+		
+		this.btnConfirmarLoginEmpleador.addActionListener(new ActionPerformedBotones(this));
+		this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(new ActionPerformedBotones(this));
+		this.btnConfirmacionCreacionTicketEmpleador.addActionListener(new ActionPerformedBotones(this));
+		this.btnConfirmacionEleccionEmpleador.addActionListener(new ActionPerformedBotones(this));
+		this.btnCrearTicketSimplificado.addActionListener(new ActionPerformedBotones(this));
+		this.btnInicioBolsa.addActionListener(new ActionPerformedBotones(this));
+		
+		this.btnConfirmarLoginEmpleador.addActionListener(this);
+		this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(this);
+		this.btnConfirmacionCreacionTicketEmpleador.addActionListener(this);
+		this.btnConfirmacionEleccionEmpleador.addActionListener(this);
+		this.btnCrearTicketSimplificado.addActionListener(this);
+		this.btnInicioBolsa.addActionListener(this);
 
 		this.rdbtnActivoEmpleador.addMouseListener(this);
 		this.rdbtnCancelarEmpleador.addMouseListener(this);
