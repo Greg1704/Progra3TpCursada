@@ -64,8 +64,8 @@ public class ActionPerformedBotones implements ActionListener {
 						
 						// cuando se cree usuario, buscar en la lista si el usuario ya existe (s�lo buscar por campo de usuario estar�a bien). si no existe, hacer un new empleado
 						
-						Empleado empleado1 = new Empleado(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionContrasenia(), v.getTextFieldCreacionNyA(), Integer.parseInt(v.getTextFieldCreacionDNI()), 
-								  Integer.parseInt(v.getTextFieldCreacionTelefono()), Integer.parseInt(v.getTextFieldCreacionEdad()), v.getTextFieldCreacionCiudad());
+						Empleado empleado1 = new Empleado(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionContrasenia(), v.getTextFieldCreacionNyA(), v.getTextFieldCreacionDNI(), 
+								  Integer.parseInt(v.getTextFieldCreacionTelefono()), v.getTextFieldCreacionEdad(), v.getTextFieldCreacionCiudad());
 						
 						Sistema.getInstancia().agregaEmpleado(empleado1);
 					

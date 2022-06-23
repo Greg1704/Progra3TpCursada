@@ -17,7 +17,7 @@ import java.util.Observer;
 @SuppressWarnings("deprecation")
 public class Empleado extends Usuario implements Observer {
 	private String nya; //Nombre y Apellido
-	private int dni;
+	private String dni;
 	private int telefono;
 	private int edad;
 	private String ciudad;
@@ -27,7 +27,7 @@ public class Empleado extends Usuario implements Observer {
 	private int pasadas=10;
 	private BolsaDeTrabajo bolsa = BolsaDeTrabajo.getInstancia();
 
-	public Empleado(String usuario, String contrasenia, String nya, int dni, int telefono, int edad, String ciudad) {
+	public Empleado(String usuario, String contrasenia, String nya, String dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
 		this.nya = nya;
 		this.dni = dni;
@@ -53,11 +53,11 @@ public class Empleado extends Usuario implements Observer {
 		this.nya = nya;
 	}
 
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
