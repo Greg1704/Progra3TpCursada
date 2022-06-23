@@ -139,7 +139,7 @@ public class Empleado extends Usuario implements Observer {
 	}
 	
 	
-	public void rondaElecciones(){  //Puede ser que este medio al dope AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	public void rondaElecciones(Usuario elegido){  //Puede ser que este medio al dope AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 		
 		this.empleadorSeleccionado = (Empleador) super.getLista().getOrdenados().get(0).getUsuario(); //HABRIA QUE REEMPLAZAR PARA QUE DE AL SELECCIONADO POR EL USUARIO
 		this.empleadorSeleccionado.setPuntaje(getPuntaje() + 10); //Suma 10 puntos por estar primero en la lista

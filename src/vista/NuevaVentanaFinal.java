@@ -229,6 +229,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JList listContrataciones;
 	private final ButtonGroup buttonGroupEstados = new ButtonGroup();
 	private final ButtonGroup buttonGroupEstadosEmpleador = new ButtonGroup();
+	private JPanel panelCantEmpleadosBuscados;
+	private JTextField textFieldCantEmpleadosBuscados;
 	
 
 	/**
@@ -927,7 +929,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				.setBorder(new TitledBorder(null, "Crear Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.panelCreacionTicketEmpleador.setBounds(10, 11, 389, 556);
 		this.panelTicketEmpleador.add(this.panelCreacionTicketEmpleador);
-		this.panelCreacionTicketEmpleador.setLayout(new GridLayout(8, 0, 0, 0));
+		this.panelCreacionTicketEmpleador.setLayout(new GridLayout(9, 0, 0, 0));
 
 		this.panelLocacionEmpleador = new JPanel();
 		this.panelLocacionEmpleador.setLayout(null);
@@ -1067,6 +1069,16 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.labelPesoEstudiosCursadosEmpleador = new JLabel("Ponderacion:");
 		this.labelPesoEstudiosCursadosEmpleador.setBounds(241, 30, 63, 14);
 		this.panelEstudiosCursadosEmpleador.add(this.labelPesoEstudiosCursadosEmpleador);
+		
+		this.panelCantEmpleadosBuscados = new JPanel();
+		this.panelCantEmpleadosBuscados.setBorder(new TitledBorder(null, "Cantidad de Empleados Buscados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelCreacionTicketEmpleador.add(this.panelCantEmpleadosBuscados);
+		this.panelCantEmpleadosBuscados.setLayout(null);
+		
+		this.textFieldCantEmpleadosBuscados = new JTextField();
+		this.textFieldCantEmpleadosBuscados.setColumns(10);
+		this.textFieldCantEmpleadosBuscados.setBounds(163, 28, 48, 20);
+		this.panelCantEmpleadosBuscados.add(this.textFieldCantEmpleadosBuscados);
 
 		this.panelConfirmacionCreacionTicketEmpleador = new JPanel();
 		this.panelCreacionTicketEmpleador.add(this.panelConfirmacionCreacionTicketEmpleador);
@@ -1974,5 +1986,4 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		setBtnConfirmacionEleccionEmpleador(hab2);
 
 	}
-
 }

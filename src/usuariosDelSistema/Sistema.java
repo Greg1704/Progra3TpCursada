@@ -162,7 +162,7 @@ public class Sistema implements Serializable{
 			encuentros.enfrentamientoEmpleados();
 	}
 
-	public void rondaDeElecciones() {
+	/*public void rondaDeElecciones() {
 		ArrayList<Empleador> empleadoresElegidos = new ArrayList<Empleador>();
 
 		for (Empleador empleador : empleadores) {
@@ -178,7 +178,7 @@ public class Sistema implements Serializable{
 			}
 		}
 		this.empleadoresNoSeleccionados(empleadoresElegidos);
-	}
+	} */
 
 	/**
 	 * PostCond: el empleador que no haya sido elegido por nadie pierde 20 puntos.
@@ -249,8 +249,8 @@ public class Sistema implements Serializable{
 		try {
 			verificaActivos();
 			this.llamaRondaEncuentros();
-			this.rondaDeElecciones();
-			this.rondaDeContrataciones();
+			//this.rondaDeElecciones();
+			//this.rondaDeContrataciones();
 		} catch (NingunActivoException e) {
 			System.out.println(e.getMessage());
 		} catch (ListaVaciaException e) {

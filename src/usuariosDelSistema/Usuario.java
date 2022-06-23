@@ -52,7 +52,7 @@ public abstract class Usuario implements Serializable{
 		this.contrasenia = contrasenia;
 	}
 
-	public abstract void rondaElecciones();
+	public abstract void rondaElecciones(Usuario elegido);
 
 	public abstract void muestraUsuarios();
 
