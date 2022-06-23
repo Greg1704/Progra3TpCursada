@@ -11,7 +11,6 @@ import estadoTicket.I_EstadoTicket;
 
 public abstract class TicketDeBusqueda implements Serializable{
 	private LocalDateTime fechaAlta;
-	private String estadoTicket;
 	private FormularioDeBusqueda formulario;
 	private I_EstadoTicket estado;
 	
@@ -31,25 +30,14 @@ public abstract class TicketDeBusqueda implements Serializable{
 		return fechaAlta;
 	}
 
-	public String getEstadoTicket() {
-		return estadoTicket;
-	}
-
-	public void setEstadoTicket(String estadoTicket) {
-		this.estadoTicket = estadoTicket;
-	}
-
-
 	public FormularioDeBusqueda getFormularioDeBusqueda(){
 		return this.formulario;
 	}
-
-	@Override
-	public String toString() {
-		return ". Estado de Ticket: " + estadoTicket;
+	
+	public I_EstadoTicket getEstado() {
+		return estado;
 	}
-	
-	
+
 	public void setEstado(I_EstadoTicket estado) {
 		this.estado = estado;
 	}
