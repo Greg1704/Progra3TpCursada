@@ -1,8 +1,10 @@
 package estadoTicket;
 
+import java.io.Serializable;
+
 import armaTickets.TicketDeBusqueda;
 
-public class Activo implements I_EstadoTicket {
+public class Activo implements I_EstadoTicket,Serializable {
 	private TicketDeBusqueda ticket;
 	
 

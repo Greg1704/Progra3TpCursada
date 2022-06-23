@@ -1,10 +1,10 @@
 package encuentro;
 
 import java.util.*;
-
+import java.io.Serializable;
 import java.time.*;
 
-public class ListaAsignaciones {
+public class ListaAsignaciones implements Serializable{
 	private ArrayList <UsuarioyPuntaje>ordenados = new ArrayList<UsuarioyPuntaje>();
 	private LocalDateTime fecha;
 
