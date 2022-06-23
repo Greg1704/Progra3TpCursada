@@ -226,6 +226,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JButton btnCambiarEstadoEmpleador;
 	private JList listTicketSimplificadosEmpleador;
 	private JList listContrataciones;
+	
+	private boolean habDesplegablesTicketEmpleado=false;
+	private boolean habTextFieldTicketEmpleado=false;
+	
+	private boolean habDesplegablesTicketEmpleador=false;
+	private boolean habTextFieldTicketEmpleador=false;
+	
 
 	/**
 	 * Launch the application.
@@ -1499,9 +1506,14 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionCreacionUsuario.setEnabled(hab);
 	}
 
-	public void setBotonConfirmarCreacionTicket(boolean hab1, boolean hab2) {
-		boolean hab = hab1 && hab2;
+	public void setBotonConfirmarCreacionTicket() {
+		boolean hab = habDesplegablesTicketEmpleado && habTextFieldTicketEmpleado;
 		this.btnConfirmacionCreacionTicket.setEnabled(hab);
+	}
+	
+	public void setBotonConfirmarCreacionTicketEmpleador() {
+		boolean hab = habDesplegablesTicketEmpleador && habTextFieldTicketEmpleador;
+		this.btnConfirmacionCreacionTicket_1.setEnabled(hab);
 	}
 
 	public void setCambiarEstadoTicketEmpleado(boolean hab) {
@@ -1563,7 +1575,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnBolsaRechazar.setEnabled(habFinal); // seteo los dos botones de una porque esto es solo para verificar
 													// si seleccione el ticket simplificado
 	}
-
+	public void setBotonArrancarBolsa(boolean hab) {
+		
+	}
 	
 	
 	
@@ -1615,7 +1629,15 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		boolean hab4 = !(textFieldUsuarioEmpleador.getText().isEmpty()
 				|| textFieldContraseniaEmpleador.getText().isEmpty());
 		setBotonConfirmarLoginEmpleador(hab4);
-
+		
+		habTextFieldTicketEmpleado = !(textFieldRemuneracion.getText().isEmpty() || textFieldPesoCargaHoraria.getText().isEmpty() || textFieldPesoLocacion.getText().isEmpty() || textFieldPesoTipoDePuesto.getText().isEmpty()
+				|| textFieldPesoRemuneracion.getText().isEmpty());
+		setBotonConfirmarCreacionTicket();
+		
+		habTextFieldTicketEmpleador = !(textFieldRemuneracionEmpleador.getText().isEmpty() || textFieldPesoCargaHorariaEmpleador.getText().isEmpty() || textFieldPesoEstudiosCursadosEmpleador.getText().isEmpty() 
+				|| textFieldPesoExpPreviaEmpleador.getText().isEmpty() || textFieldPesoLocacionEmpleador.getText().isEmpty() || textFieldPesoRangoEtarioEmpleador.getText().isEmpty() || textFieldPesoRemuneracionEmpleador.getText().isEmpty() || 
+				textFieldPesoTipoDePuestoEmpleador.getText().isEmpty());
+		setBotonConfirmarCreacionTicketEmpleador();
 	}
 
 	@Override
