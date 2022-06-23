@@ -83,16 +83,16 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JTextField textFieldCreacionNyA;
 	private JPanel panelDNI;
 	private JLabel lblDNI;
-	private JTextField textFieldDNI;
+	private JTextField textFieldCreacionDNI;
 	private JPanel panelTelefono;
 	private JLabel lblTelefono;
-	private JTextField textFieldTelefono;
+	private JTextField textFieldCreacionTelefono;
 	private JPanel panelEdad;
 	private JLabel lblEdad;
-	private JTextField textFieldEdad;
+	private JTextField textFieldCreacionEdad;
 	private JPanel panelCiudad;
 	private JLabel lblCiudad;
-	private JTextField textFieldCiudad;
+	private JTextField textFieldCreacionCiudad;
 	private JPanel panelConfirmacionCreacionUsuario;
 	private JButton btnConfirmacionCreacionUsuario;
 	private JPanel panelTicket;
@@ -459,10 +459,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.lblDNI.setBounds(82, 22, 39, 14);
 		this.panelDNI.add(this.lblDNI);
 		
-		this.textFieldDNI = new JTextField();
-		this.textFieldDNI.setColumns(10);
-		this.textFieldDNI.setBounds(172, 19, 176, 20);
-		this.panelDNI.add(this.textFieldDNI);
+		this.textFieldCreacionDNI = new JTextField();
+		this.textFieldCreacionDNI.setColumns(10);
+		this.textFieldCreacionDNI.setBounds(172, 19, 176, 20);
+		this.panelDNI.add(this.textFieldCreacionDNI);
 		
 		this.panelTelefono = new JPanel();
 		this.panelTelefono.setLayout(null);
@@ -472,10 +472,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.lblTelefono.setBounds(69, 22, 52, 14);
 		this.panelTelefono.add(this.lblTelefono);
 		
-		this.textFieldTelefono = new JTextField();
-		this.textFieldTelefono.setColumns(10);
-		this.textFieldTelefono.setBounds(172, 19, 176, 20);
-		this.panelTelefono.add(this.textFieldTelefono);
+		this.textFieldCreacionTelefono = new JTextField();
+		this.textFieldCreacionTelefono.setColumns(10);
+		this.textFieldCreacionTelefono.setBounds(172, 19, 176, 20);
+		this.panelTelefono.add(this.textFieldCreacionTelefono);
 		
 		this.panelEdad = new JPanel();
 		this.panelEdad.setLayout(null);
@@ -485,10 +485,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.lblEdad.setBounds(81, 22, 40, 14);
 		this.panelEdad.add(this.lblEdad);
 		
-		this.textFieldEdad = new JTextField();
-		this.textFieldEdad.setColumns(10);
-		this.textFieldEdad.setBounds(172, 19, 176, 20);
-		this.panelEdad.add(this.textFieldEdad);
+		this.textFieldCreacionEdad = new JTextField();
+		this.textFieldCreacionEdad.setColumns(10);
+		this.textFieldCreacionEdad.setBounds(172, 19, 176, 20);
+		this.panelEdad.add(this.textFieldCreacionEdad);
 		
 		this.panelCiudad = new JPanel();
 		this.panelCiudad.setLayout(null);
@@ -498,10 +498,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.lblCiudad.setBounds(76, 22, 45, 14);
 		this.panelCiudad.add(this.lblCiudad);
 		
-		this.textFieldCiudad = new JTextField();
-		this.textFieldCiudad.setColumns(10);
-		this.textFieldCiudad.setBounds(172, 19, 176, 20);
-		this.panelCiudad.add(this.textFieldCiudad);
+		this.textFieldCreacionCiudad = new JTextField();
+		this.textFieldCreacionCiudad.setColumns(10);
+		this.textFieldCreacionCiudad.setBounds(172, 19, 176, 20);
+		this.panelCiudad.add(this.textFieldCreacionCiudad);
 		
 		this.panelConfirmacionCreacionUsuario = new JPanel();
 		this.panelCreacionEmpleado.add(this.panelConfirmacionCreacionUsuario);
@@ -1147,10 +1147,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			this.textFieldCreacionUsuario.addKeyListener(this);
 			this.textFieldCreacionContrasenia.addKeyListener(this);
 			this.textFieldCreacionNyA.addKeyListener(this);
-			this.textFieldDNI.addKeyListener(this);
-			this.textFieldTelefono.addKeyListener(this);
-			this.textFieldEdad.addKeyListener(this);
-			this.textFieldCiudad.addKeyListener(this);
+			this.textFieldCreacionDNI.addKeyListener(this);
+			this.textFieldCreacionTelefono.addKeyListener(this);
+			this.textFieldCreacionEdad.addKeyListener(this);
+			this.textFieldCreacionCiudad.addKeyListener(this);
 			
 			this.textFieldPesoCargaHoraria.addKeyListener(this);
 			this.textFieldPesoLocacion.addKeyListener(this);
@@ -1240,20 +1240,20 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return textFieldCreacionNyA.getText();
 	}
 
-	public String getTextFieldDNI() {
-		return textFieldDNI.getText();
+	public String getTextFieldCreacionDNI() {
+		return textFieldCreacionDNI.getText();
 	}
 
-	public String getTextFieldTelefono() {
-		return textFieldTelefono.getText();
+	public String getTextFieldCreacionTelefono() {
+		return textFieldCreacionTelefono.getText();
 	}
 
-	public String getTextFieldEdad() {
-		return textFieldEdad.getText();
+	public String getTextFieldCreacionEdad() {
+		return textFieldCreacionEdad.getText();
 	}
 
-	public String getTextFieldCiudad() {
-		return textFieldCiudad.getText();
+	public String getTextFieldCreacionCiudad() {
+		return textFieldCreacionCiudad.getText();
 	}
 
 	public String getComboBoxLocacion() {
@@ -1490,6 +1490,40 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		}
 		
+		public void setTextFieldCreacionUsuario(String textFieldCreacionUsuario) {
+			this.textFieldCreacionUsuario.setText(textFieldCreacionUsuario);
+		}
+
+		public void setTextFieldCreacionContrasenia(String textFieldCreacionContrasenia) {
+			this.textFieldCreacionContrasenia.setText(textFieldCreacionContrasenia); 
+		}
+
+		public void setTextFieldCreacionNyA(String textFieldCreacionNyA) {
+			this.textFieldCreacionNyA.setText(textFieldCreacionNyA);
+		}
+
+		public void setTextFieldCreacionDNI(String textFieldCreacionDNI) {
+			this.textFieldCreacionDNI.setText(textFieldCreacionDNI);
+		}
+
+		public void setTextFieldCreacionTelefono(String textFieldCreacionTelefono) {
+			this.textFieldCreacionTelefono.setText(textFieldCreacionTelefono);
+		}
+
+		public void setTextFieldCreacionEdad(String textFieldCreacionEdad) {
+			this.textFieldCreacionEdad.setText(textFieldCreacionEdad);
+		}
+
+		public void setTextFieldCreacionCiudad(String textFieldCreacionCiudad) {
+			this.textFieldCreacionCiudad.setText(textFieldCreacionCiudad);
+		}
+		
+		
+
+		public void setTextFieldCrearAgencia(String textFieldCrearAgencia) {
+			this.textFieldCrearAgencia.setText(textFieldCrearAgencia); 
+		}
+
 		public void setBotonAceptarYRechazarTicketSimplificado(boolean hab, boolean hab2) {
 			boolean habFinal = hab && hab2;
 			this.btnBolsaAceptar.setEnabled(habFinal);
@@ -1517,8 +1551,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			boolean hab1 = !(textFieldUsuario.getText().isEmpty() || textFieldContrasenia.getText().isEmpty());
 			setBotonConfirmarLogin(hab1);
 			
-			boolean hab2 = !(textFieldCreacionUsuario.getText().isEmpty() || textFieldCreacionContrasenia.getText().isEmpty() || textFieldCreacionNyA.getText().isEmpty() || textFieldDNI.getText()
-					.isEmpty() || textFieldTelefono.getText().isEmpty() || textFieldEdad.getText().isEmpty() || textFieldCiudad.getText().isEmpty());
+			boolean hab2 = !(textFieldCreacionUsuario.getText().isEmpty() || textFieldCreacionContrasenia.getText().isEmpty() || textFieldCreacionNyA.getText().isEmpty() || textFieldCreacionDNI.getText()
+					.isEmpty() || textFieldCreacionTelefono.getText().isEmpty() || textFieldCreacionEdad.getText().isEmpty() || textFieldCreacionCiudad.getText().isEmpty());
 			setBotonConfirmacionCreacionUsuario(hab2);
 			
 			boolean hab3 = !(textFieldPesoCargaHoraria.getText().isEmpty() || textFieldPesoLocacion.getText().isEmpty() || textFieldPesoRemuneracion.getText().isEmpty() || textFieldPesoTipoDePuesto.getText().isEmpty());

@@ -25,7 +25,7 @@ public class ActionPerformedBotones implements ActionListener {
 			
 			//chequear si ya existe la agencia o no
 			
-			v.textFieldCrearAgencia.setText("");
+			v.setTextFieldCrearAgencia("");
 			v.setBotonConfirmarNombreAgencia(false);
 			
 		} else
@@ -40,7 +40,7 @@ public class ActionPerformedBotones implements ActionListener {
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
 					
 					try {
-						empleado.Login(v.textFieldCreacionUsuario.getText(), v.textFieldCreacionUsuarioEmpleador.getText());
+						empleado.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuarioEmpleador());
 						//caso logueo exitoso, podemos tirar mensaje en pantalla o no AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 						JOptionPane.showMessageDialog(null, "Login Correcto");
 						//Hacer lo que haya que hacer para que se desbloquee el resto de la ventana
@@ -52,9 +52,9 @@ public class ActionPerformedBotones implements ActionListener {
 						JOptionPane.showMessageDialog(null, ex.getMessage());
 
 					}
-					v.textFieldUsuario.setText("");
-					v.textFieldContrasenia.setText("");
-					v.btnConfirmarLogin.setEnabled(false);
+					v.setTextFieldCreacionUsuario("");
+					v.setTextFieldCreacionContrasenia("");
+					v.setBotonConfirmarLogin(false);
 						
 					
 				} else
@@ -62,19 +62,19 @@ public class ActionPerformedBotones implements ActionListener {
 						
 						// cuando se cree usuario, buscar en la lista si el usuario ya existe (s�lo buscar por campo de usuario estar�a bien). si no existe, hacer un new empleado
 						
-						Empleado empleado1 = new Empleado(v.textFieldCreacionUsuario.getText(), v.textFieldCreacionContrasenia.getText(), v.textFieldCreacionNyA.getText(), Integer.parseInt(v.textFieldDNI.getText()), 
-								  Integer.parseInt(v.textFieldTelefono.getText()), Integer.parseInt(v.textFieldEdad.getText()), v.textFieldCiudad.getText());
+						Empleado empleado1 = new Empleado(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionContrasenia(), v.getTextFieldCreacionNyA(), Integer.parseInt(v.getTextFieldCreacionDNI()), 
+								  Integer.parseInt(v.getTextFieldCreacionTelefono()), Integer.parseInt(v.getTextFieldCreacionEdad()), v.getTextFieldCreacionCiudad());
 						
 						Sistema.getInstancia().agregaEmpleado(empleado1);
 					
-						v.textFieldCreacionUsuario.setText("");
-						v.textFieldCreacionContrasenia.setText("");
-						v.textFieldCreacionNyA.setText("");
-						v.textFieldDNI.setText("");
-						v.textFieldTelefono.setText("");
-						v.textFieldEdad.setText("");
-						v.textFieldCiudad.setText("");
-						v.btnConfirmacionCreacionUsuario.setEnabled(false);
+						v.setTextFieldCreacionUsuario("");
+						v.setTextFieldCreacionContrasenia("");
+						v.setTextFieldCreacionNyA("");
+						v.setTextFieldCreacionDNI("");
+						v.setTextFieldCreacionTelefono("");
+						v.setTextFieldCreacionEdad("");
+						v.setTextFieldCreacionCiudad("");
+						v.setBotonConfirmacionCreacionUsuario(false);
 						
 						
 						
