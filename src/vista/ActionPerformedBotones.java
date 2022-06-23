@@ -81,24 +81,6 @@ public class ActionPerformedBotones implements ActionListener {
 					} else
 						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) { //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 							
-							//comboBoxOpcion = v.getComboBoxBolsaTipoTrabajo();
-							
-							//comboBoxOpcion = v.getComboBoxCargaHoraria();
-							
-							//comboBoxOpcion = v.getComboBoxEstudiosCursados();
-							
-							//comboBoxOpcion = v.getComboBoxExperienciaPrevia();
-							
-							//comboBoxOpcion = v.getComboBoxRangoEtario();
-							
-							//comboBoxOpcion = v.getComboBoxRemuneracion();
-							//crear el ticket LocalDateTime.now()
-							
-							/*FormularioDeBusqueda(locacion, pesoLocacion,  remuneracion,  pesoRemuneracion, cargaHoraria, pesoCargaHoraria,
-			 tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
-			 estudiosCursados, pesoEstudiosCursados);
-			 												 v.getTextFieldCreacionEdad()
-							 * */
 							empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPesoRemuneracion(), 
 									v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , v.getTextFieldCreacionEdad(), 1, 
 									v.getComboBoxExperienciaPrevia(), 1, v.getComboBoxEstudiosCursados(), 1);
