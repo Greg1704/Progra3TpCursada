@@ -1,8 +1,10 @@
 package encuentro;
 
+import java.io.Serializable;
+
 import usuariosDelSistema.*;
 
-public class UsuarioyPuntaje implements Comparable<UsuarioyPuntaje>{
+public class UsuarioyPuntaje implements Comparable<UsuarioyPuntaje>,Serializable{
 	private Usuario usuario;
 	private double puntaje;
 	

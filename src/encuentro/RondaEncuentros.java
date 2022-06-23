@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import calculosAspectosLaborales.*;
 import usuariosDelSistema.*;
 
-public class RondaEncuentros {
+public class RondaEncuentros{
 	private ArrayList<Empleado> empleadosPretensos = Sistema.getInstancia().getEmpleadosPretensos();
 	private ArrayList<Empleador> empleadores = Sistema.getInstancia().getEmpleadores();
 	private UsuarioyPuntaje aux;
