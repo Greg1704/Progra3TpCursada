@@ -1580,72 +1580,72 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 	}
 	
-	public void setComboBoxLocacion(JComboBox comboBoxLocacion) {
-		this.comboBoxLocacion = comboBoxLocacion;
+	public void setComboBoxLocacion() {
+		this.comboBoxLocacion.setSelectedIndex(0);
 	}
 
-	public void setComboBoxCargaHoraria(JComboBox comboBoxCargaHoraria) {
-		this.comboBoxCargaHoraria = comboBoxCargaHoraria;
+	public void setComboBoxCargaHoraria() {
+		this.comboBoxCargaHoraria.setSelectedIndex(0);
 	}
 
-	public void setComboBoxTipoDePuesto(JComboBox comboBoxTipoDePuesto) {
-		this.comboBoxTipoDePuesto = comboBoxTipoDePuesto;
+	public void setComboBoxTipoDePuesto() {
+		this.comboBoxTipoDePuesto.setSelectedIndex(0);
 	}
 
-	public void setComboBoxExperienciaPrevia(JComboBox comboBoxExperienciaPrevia) {
-		this.comboBoxExperienciaPrevia = comboBoxExperienciaPrevia;
+	public void setComboBoxExperienciaPrevia() {
+		this.comboBoxExperienciaPrevia.setSelectedIndex(0);
 	}
 
-	public void setComboBoxEstudiosCursados(JComboBox comboBoxEstudiosCursados) {
-		this.comboBoxEstudiosCursados = comboBoxEstudiosCursados;
+	public void setComboBoxEstudiosCursados() {
+		this.comboBoxEstudiosCursados.setSelectedIndex(0);
 	}
 
-	public void setComboBoxBolsaTipoTrabajo(JComboBox comboBoxBolsaTipoTrabajo) {
-		this.comboBoxBolsaTipoTrabajo = comboBoxBolsaTipoTrabajo;
+	public void setComboBoxBolsaTipoTrabajo() {
+		this.comboBoxBolsaTipoTrabajo.setSelectedIndex(0);
 	}
 
-	public void setComboBoxBolsaLocacion(JComboBox comboBoxBolsaLocacion) {
-		this.comboBoxBolsaLocacion = comboBoxBolsaLocacion;
+	public void setComboBoxBolsaLocacion() {
+		this.comboBoxBolsaLocacion.setSelectedIndex(0);
 	}
 
-	public void setComboBoxTipoPersonaEmpleador(JComboBox comboBoxTipoPersonaEmpleador) {
-		this.comboBoxTipoPersonaEmpleador = comboBoxTipoPersonaEmpleador;
+	public void setComboBoxTipoPersonaEmpleador() {
+		this.comboBoxTipoPersonaEmpleador.setSelectedIndex(0);
 	}
 
-	public void setComboBoxRubroEmpleador(JComboBox comboBoxRubroEmpleador) {
-		this.comboBoxRubroEmpleador = comboBoxRubroEmpleador;
+	public void setComboBoxRubroEmpleador() {
+		this.comboBoxRubroEmpleador.setSelectedIndex(0);
 	}
 
-	public void setComboBoxLocacionEmpleador(JComboBox comboBoxLocacionEmpleador) {
-		this.comboBoxLocacionEmpleador = comboBoxLocacionEmpleador;
+	public void setComboBoxLocacionEmpleador() {
+		this.comboBoxLocacionEmpleador.setSelectedIndex(0);
 	}
 
-	public void setComboBoxCargaHorariaEmpleador(JComboBox comboBoxCargaHorariaEmpleador) {
-		this.comboBoxCargaHorariaEmpleador = comboBoxCargaHorariaEmpleador;
+	public void setComboBoxCargaHorariaEmpleador() {
+		this.comboBoxCargaHorariaEmpleador.setSelectedIndex(0);
 	}
 
-	public void setComboBoxTipoDePuestoEmpleador(JComboBox comboBoxTipoDePuestoEmpleador) {
-		this.comboBoxTipoDePuestoEmpleador = comboBoxTipoDePuestoEmpleador;
+	public void setComboBoxTipoDePuestoEmpleador() {
+		this.comboBoxTipoDePuestoEmpleador.setSelectedIndex(0);
 	}
 
-	public void setComboBoxRangoEtarioEmpleador(JComboBox comboBoxRangoEtarioEmpleador) {
-		this.comboBoxRangoEtarioEmpleador = comboBoxRangoEtarioEmpleador;
+	public void setComboBoxRangoEtarioEmpleador() {
+		this.comboBoxRangoEtarioEmpleador.setSelectedIndex(0);
 	}
 
-	public void setComboBoxExperienciaPreviaEmpleador(JComboBox comboBoxExperienciaPreviaEmpleador) {
-		this.comboBoxExperienciaPreviaEmpleador = comboBoxExperienciaPreviaEmpleador;
+	public void setComboBoxExperienciaPreviaEmpleador() {
+		this.comboBoxExperienciaPreviaEmpleador.setSelectedIndex(0);
 	}
 
-	public void setComboBoxEstudiosCursadosEmpleador(JComboBox comboBoxEstudiosCursadosEmpleador) {
-		this.comboBoxEstudiosCursadosEmpleador = comboBoxEstudiosCursadosEmpleador;
+	public void setComboBoxEstudiosCursadosEmpleador() {
+		this.comboBoxEstudiosCursadosEmpleador.setSelectedIndex(0);
 	}
 
-	public void setComboBoxBolsaTipoTrabajoEmpleador(JComboBox comboBoxBolsaTipoTrabajoEmpleador) {
-		this.comboBoxBolsaTipoTrabajoEmpleador = comboBoxBolsaTipoTrabajoEmpleador;
+	public void setComboBoxBolsaTipoTrabajoEmpleador() {
+		this.comboBoxBolsaTipoTrabajoEmpleador.setSelectedIndex(0);
 	}
 
-	public void setComboBoxBolsaLocacionEmpleador(JComboBox comboBoxBolsaLocacionEmpleador) {
-		this.comboBoxBolsaLocacionEmpleador = comboBoxBolsaLocacionEmpleador;
+	public void setComboBoxBolsaLocacionEmpleador() {
+		this.comboBoxBolsaLocacionEmpleador.setSelectedIndex(0);
 	}
 
 	public Empleador empleadorSeleccionado() {   //el empleado selecciona un empleador con el mouse (capaz que va en controlador, discutiL)
