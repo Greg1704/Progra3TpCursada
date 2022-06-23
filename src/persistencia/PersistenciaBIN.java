@@ -7,7 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-public class PersistenciaBIN {
+public class PersistenciaBIN implements IPersistencia <Serializable>{
 
     private FileOutputStream fileoutput;
     private FileInputStream fileinput;

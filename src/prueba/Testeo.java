@@ -1,5 +1,9 @@
 package prueba;
 
+import java.io.IOException;
+
+import persistencia.IPersistencia;
+import persistencia.PersistenciaBIN;
 import usuariosDelSistema.*;
 
 
@@ -18,6 +22,7 @@ public class Testeo {
 		EmpleadorJuridico em1;
 		EmpleadorFisico em2;
 		EmpleadorFisico em3;
+		
 
 		e1 = new Empleado("Juanu","contrasenia","Juan pedro Garcia",43322122,22345654,25,"Mar del Plata");
 		e1.crearTicket("HomeOffice",1,45000,1,"Completa",1,"Junior",1,25,1,"Media",1,"Secundario",1);
@@ -82,7 +87,7 @@ public class Testeo {
 		
 		System.out.println("***********************");
 		System.out.println("***********************");
-		
+
 		
 	}
 
