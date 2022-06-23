@@ -1,6 +1,8 @@
 package estadoTicket;
 
-public interface I_EstadoTicket {
+import java.io.Serializable;
+
+public interface I_EstadoTicket extends Serializable{
 	
 	public String activa();
 	
