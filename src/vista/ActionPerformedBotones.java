@@ -91,7 +91,7 @@ public class ActionPerformedBotones implements ActionListener {
 							
 							//comboBoxOpcion = v.getComboBoxRangoEtario();
 							
-							comboBoxOpcion = v.getComboBoxRemuneracion();
+							//comboBoxOpcion = v.getComboBoxRemuneracion();
 							//crear el ticket LocalDateTime.now()
 							
 							empleado.crearTicket(comboBoxOpcion, 0, 0, 0, comboBoxOpcion, 0, comboBoxOpcion, 0, 0, 0, comboBoxOpcion, 0, comboBoxOpcion, 0);

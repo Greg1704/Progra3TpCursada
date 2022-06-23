@@ -102,7 +102,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JTextField textFieldPesoLocacion;
 	private JLabel labelPesoLocacion;
 	private JPanel panelRemuneracion;
-	private JComboBox comboBoxRemuneracion;
+	private JTextField textFieldRemuneracion;
 	private JTextField textFieldPesoRemuneracion;
 	private JLabel labelPesoRemuneracion;
 	private JPanel panelCargaHoraria;
@@ -173,7 +173,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JTextField textFieldPesoLocacionEmpleador;
 	private JLabel labelPesoLocacionEmpleador;
 	private JPanel panelRemuneracionEmpleador;
-	private JComboBox comboBoxRemuneracionEmpleador;
+	private JTextField textFieldRemuneracionEmpleador;
 	private JTextField textFieldPesoRemuneracionEmpleador;
 	private JLabel labelPesoRemuneracionEmpleador;
 	private JPanel panelCargaHorariaEmpleador;
@@ -539,9 +539,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelRemuneracion.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Remuneraci\u00F3n Minima Buscada", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		this.panelCreacionTicket.add(this.panelRemuneracion);
 		
-		this.comboBoxRemuneracion = new JComboBox();
-		this.comboBoxRemuneracion.setBounds(23, 26, 167, 22);
-		this.panelRemuneracion.add(this.comboBoxRemuneracion);
+		this.textFieldRemuneracion = new JTextField();
+		this.textFieldRemuneracion.setBounds(23, 26, 167, 22);
+		this.panelRemuneracion.add(this.textFieldRemuneracion);
 		
 		this.textFieldPesoRemuneracion = new JTextField();
 		this.textFieldPesoRemuneracion.setColumns(10);
@@ -899,9 +899,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelRemuneracionEmpleador.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Remuneraci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		this.panelCreacionTicketEmpleador.add(this.panelRemuneracionEmpleador);
 		
-		this.comboBoxRemuneracionEmpleador = new JComboBox();
-		this.comboBoxRemuneracionEmpleador.setBounds(23, 26, 167, 22);
-		this.panelRemuneracionEmpleador.add(this.comboBoxRemuneracionEmpleador);
+		this.textFieldRemuneracionEmpleador = new JTextField();
+		this.textFieldRemuneracionEmpleador.setBounds(23, 26, 167, 22);
+		this.panelRemuneracionEmpleador.add(this.textFieldRemuneracionEmpleador);
 		
 		this.textFieldPesoRemuneracionEmpleador = new JTextField();
 		this.textFieldPesoRemuneracionEmpleador.setColumns(10);
@@ -1244,16 +1244,16 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return (String) comboBoxLocacion.getSelectedItem();
 	}
 
-	public String getTextFieldPesoLocacion() {
-		return textFieldPesoLocacion.getText();
+	public int getTextFieldPesoLocacion() {
+		return Integer.parseInt((String) textFieldPesoLocacion.getText());
 	}
 
-	public String getComboBoxRemuneracion() {
-		return (String) comboBoxRemuneracion.getSelectedItem();
+	public int getTextFieldRemuneracion() {
+		return  Integer.parseInt((String) textFieldRemuneracion.getText());
 	}
 
-	public String getTextFieldPesoRemuneracion() {
-		return textFieldPesoRemuneracion.getText();
+	public int getTextFieldPesoRemuneracion() {
+		return Integer.parseInt((String) textFieldPesoRemuneracion.getText());
 	}
 
 	public String getComboBoxCargaHoraria() {
@@ -1261,7 +1261,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	}
 
 	public String getTextFieldPesoCargaHoraria() {
-		return textFieldPesoCargaHoraria.getText();
+		return Integer.parseInt((String) textFieldPesoCargaHoraria.getText());
 	}
 
 	public String getComboBoxTipoDePuesto() {
@@ -1336,12 +1336,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return textFieldPesoLocacionEmpleador.getText();
 	}
 
-	public String getComboBoxRemuneracionEmpleador() {
-		return (String) comboBoxRemuneracionEmpleador.getSelectedItem();
+	public int getTextFieldRemuneracionEmpleador() {
+		return Integer.parseInt((String) textFieldRemuneracionEmpleador.getText());
 	}
 
-	public String getTextFieldPesoRemuneracionEmpleador() {
-		return textFieldPesoRemuneracionEmpleador.getText();
+	public int getTextFieldPesoRemuneracionEmpleador() {
+		return Integer.parseInt((String) textFieldPesoRemuneracionEmpleador.getText());
 	}
 
 	public String getComboBoxCargaHorariaEmpleador() {
