@@ -13,7 +13,7 @@ import estadoTicket.I_EstadoTicket;
 public abstract class TicketDeBusqueda implements I_EstadoTicket{
 	private LocalDateTime fechaAlta;
 	private FormularioDeBusqueda formulario;
-	private I_EstadoTicket estado;
+	protected I_EstadoTicket estado;
 	
 	public TicketDeBusqueda(LocalDateTime fechaAlta,String locacion,int pesoLocacion, double remuneracion, int pesoRemuneracion,String cargaHoraria,int pesoCargaHoraria,
 							String tipoPuestoLaboral,int pesoTipoPuestoLaboral, int edad,int pesoEdad, String experienciaPrevia,int pesoExperienciaPrevia,
@@ -59,9 +59,7 @@ public abstract class TicketDeBusqueda implements I_EstadoTicket{
 		return this.estado.finaliza();
 	}
 	
-	public void comparaActivo() throws NoActivoException {
-		this.estado.esActivo();
-	}
+	public abstract void esActivo() throws NoActivoException;
 
 	
 }

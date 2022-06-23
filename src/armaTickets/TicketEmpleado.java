@@ -1,6 +1,7 @@
 package armaTickets;
 
 import excepciones.FormularioInvalidoException;
+import excepciones.NoActivoException;
 
 import java.time.LocalDateTime;
 
@@ -22,6 +23,11 @@ public class TicketEmpleado extends TicketDeBusqueda {
 
 	public void setResultado(boolean resultado) {
 		this.resultado = resultado;
+	}
+
+	@Override
+	public void esActivo() throws NoActivoException {
+		this.estado.esActivo();
 	}
 
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import encuentro.RondaEncuentros;
 import excepciones.ListaVaciaException;
 import excepciones.NingunActivoException;
+import excepciones.NoActivoException;
 import ticketSimplificado.TicketSimplificado;
 
 /**
@@ -121,6 +122,36 @@ public class Sistema implements Serializable{
 	public ArrayList<Empleador> getEmpleadores() {
 		return this.empleadores;
 	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public RondaEncuentros getEncuentros() {
+		return encuentros;
+	}
+
+
+	public void setEncuentros(RondaEncuentros encuentros) {
+		this.encuentros = encuentros;
+	}
+
+
+	public void setEmpleadosPretensos(ArrayList<Empleado> empleadosPretensos) {
+		this.empleadosPretensos = empleadosPretensos;
+	}
+
+
+	public void setEmpleadores(ArrayList<Empleador> empleadores) {
+		this.empleadores = empleadores;
+	}
+
 
 	/**
 	 * el m�todo <b> comisionEmpleadoPretenso </b> calcula la comisi�n del
@@ -267,15 +298,24 @@ public class Sistema implements Serializable{
 		boolean empleadoActivo = false;
 		boolean empleadorActivo = false;
 
-		for (Empleador empleador : empleadores) {
-			if (empleador.getTicketEmpleador() != null
-					&& empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo"))
-				empleadorActivo = true;
+		for (Empleador empleador : empleadores) {		
+			try {
+				if (empleador.getTicketEmpleador() != null) {
+					empleador.getTicketEmpleador().esActivo();
+					empleadorActivo = true;
+				}
+			}catch(NoActivoException e) {}			
 		}
 
 		for (Empleado empleado : empleadosPretensos) {
-			if (empleado.getTicket() != null && empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo"))
-				empleadoActivo = true;
+			
+			try {
+				if (empleado.getTicket() != null) {
+					empleado.getTicket().esActivo();
+					empleadoActivo = true;
+				}
+			}catch(NoActivoException e) {}			
+			
 		}
 
 		if (!empleadoActivo)
