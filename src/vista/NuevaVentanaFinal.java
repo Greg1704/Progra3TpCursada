@@ -1635,10 +1635,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return (TicketSimplificado)listTicketSimplificadosEmpleador.getSelectedValue();
 	}
 
-	public String getListContrataciones() {
-		return textAreaContrataciones;
-	}
-
 	public int getTextFieldCantEmpleadosBuscados() {
 		return Integer.parseInt((String) textFieldCantEmpleadosBuscados.getText());
 	}
@@ -1801,12 +1797,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.textFieldCreacionCiudad.setText(textFieldCreacionCiudad);
 	}
 
-	public void setBtnAceptarYRechazarTicketSimplificado(boolean hab) {
-		this.btnBolsaAceptar.setEnabled(hab);
-		this.btnBolsaRechazar.setEnabled(hab); // seteo los dos botones de una porque esto es solo para verificar
-													// si seleccione el ticket simplificado
-	}
-	public void setBtnArrancarBolsa(boolean hab) { // activar cuando se complete el login
+	public void setBtnArrancarBolsa(boolean hab) { 
 		this.setBtnArrancarBolsa(hab);
 	}
 	
