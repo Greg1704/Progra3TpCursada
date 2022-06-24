@@ -52,7 +52,7 @@ public class ActionPerformedBotones implements ActionListener {
 					
 					try {
 						
-						empleado.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuario());
+						sistema.LoginEmpleado(v.getTextFieldUsuario(), v.getTextFieldContrasenia());
 						JOptionPane.showMessageDialog(null, "Login Correcto");
 						v.EmpleadoLogeado(true);
 					}catch (ContraseniaIncorrectaException ex) {
@@ -112,7 +112,7 @@ public class ActionPerformedBotones implements ActionListener {
 					}else    // VENTANA EMPLEADOR
 						if(e.getActionCommand().equals(IVista.confirmarLoginEmpleador)) {
 							try {
-								empleador.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuarioEmpleador());
+								sistema.LoginEmpleador(v.getTextFieldUsuarioEmpleador(), v.getTextFieldContraseniaEmpleador());
 								JOptionPane.showMessageDialog(null, "Login Correcto");
 								v.EmpleadorLogeado(true);
 							}

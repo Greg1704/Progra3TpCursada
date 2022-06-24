@@ -125,27 +125,6 @@ public class Empleado extends Usuario implements Observer,Runnable {
 	public void setTipoTrabajoSimp(String tipoTrabajoSimp) {
 		this.tipoTrabajoSimp = tipoTrabajoSimp;
 	}
-
-	public void Login(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException{
-
-			buscaEmpleado(usuario,contrasenia);
-	}
-	
-	public Empleado buscaEmpleado(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
-		int i = 0;
-		
-		while (i < Sistema.getInstancia().getEmpleadosPretensos().size()) {
-			if (Sistema.getInstancia().getEmpleadosPretensos().get(i).usuario.compareTo(usuario) == 0) {
-				if(Sistema.getInstancia().getEmpleadosPretensos().get(i).contrasenia.compareTo(contrasenia) == 0)
-					return Sistema.getInstancia().getEmpleadosPretensos().get(i);
-				else
-					throw new ContraseniaIncorrectaException();
-			}
-			i++;		
-		}
-		throw new UsuarioIncorrectoException();
-		
-	}
 	
 	
 	public void rondaElecciones(Empleador elegido){  //Puede ser que este medio al dope AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

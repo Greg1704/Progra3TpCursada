@@ -3,9 +3,11 @@ package usuariosDelSistema;
 import java.io.Serializable;
 import java.util.ArrayList;
 import encuentro.RondaEncuentros;
+import excepciones.ContraseniaIncorrectaException;
 import excepciones.ListaVaciaException;
 import excepciones.NingunActivoException;
 import excepciones.NoActivoException;
+import excepciones.UsuarioIncorrectoException;
 import ticketSimplificado.TicketSimplificado;
 
 /**
@@ -331,7 +333,51 @@ public class Sistema implements Serializable{
 			throw new NingunActivoException("No hay empleadores con tickets activos");
 	}
 
+	
+	
+	public void LoginEmpleado(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
+		
+		buscaEmpleado(usuario,contrasenia);
+		
+	}
+	
+	public Empleado buscaEmpleado(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
+		int i = 0;
+		
+		while (i < empleadosPretensos.size()) {
+			if (Sistema.getInstancia().getEmpleadosPretensos().get(i).usuario.compareTo(usuario) == 0) {
+				if(Sistema.getInstancia().getEmpleadosPretensos().get(i).contrasenia.compareTo(contrasenia) == 0)
+					return Sistema.getInstancia().getEmpleadosPretensos().get(i);
+				else
+					throw new ContraseniaIncorrectaException();
+			}
+			i++;		
+		}
+		throw new UsuarioIncorrectoException();
+		
+	}
+	
+	public void LoginEmpleador(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException{
 
+		buscaEmpleador(usuario,contrasenia);
+
+}
+
+public Empleador buscaEmpleador(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
+	int i = 0;
+	
+	while (i < empleadores.size()) {
+		if (Sistema.getInstancia().getEmpleadores().get(i).usuario.compareTo(usuario) == 0) {
+			if(Sistema.getInstancia().getEmpleadores().get(i).contrasenia.compareTo(contrasenia) == 0)
+				return Sistema.getInstancia().getEmpleadores().get(i);
+			else
+				throw new ContraseniaIncorrectaException();
+		}
+		i++;		
+	}
+	throw new UsuarioIncorrectoException();
+	
+}
 }
 
 
