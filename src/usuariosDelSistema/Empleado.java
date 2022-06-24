@@ -14,7 +14,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 @SuppressWarnings("deprecation")
-public class Empleado extends Usuario implements Observer {
+public class Empleado extends Usuario implements Observer,Runnable {
 	private String nya; //Nombre y Apellido
 	private String dni;
 	private int telefono;
@@ -213,6 +213,14 @@ public class Empleado extends Usuario implements Observer {
 
 		this.bolsa.setEleccionEnCurso(false);
 	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 
 
 }
