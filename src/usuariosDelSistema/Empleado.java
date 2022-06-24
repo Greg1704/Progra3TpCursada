@@ -20,6 +20,8 @@ public class Empleado extends Usuario implements Observer,Runnable {
 	private int telefono;
 	private int edad;
 	private String ciudad;
+	private String locacionSimp;
+	private String tipoTrabajoSimp;
 	private TicketEmpleado ticket;
 	private Empleador empleadorSeleccionado;
 	private transient TicketSimplificado ticketSimpElegido = null;
@@ -107,13 +109,21 @@ public class Empleado extends Usuario implements Observer,Runnable {
 	public void setPasadas(int pasadas) {
 		this.pasadas = pasadas;
 	}
-
-	public BolsaDeTrabajo getBolsa() {
-		return bolsa;
+	
+	public String getLocacionSimp() {
+		return locacionSimp;
 	}
 
-	public void setBolsa(BolsaDeTrabajo bolsa) {
-		this.bolsa = bolsa;
+	public void setLocacionSimp(String locacionSimp) {
+		this.locacionSimp = locacionSimp;
+	}
+
+	public String getTipoTrabajoSimp() {
+		return tipoTrabajoSimp;
+	}
+
+	public void setTipoTrabajoSimp(String tipoTrabajoSimp) {
+		this.tipoTrabajoSimp = tipoTrabajoSimp;
 	}
 
 	public void Login(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException{
