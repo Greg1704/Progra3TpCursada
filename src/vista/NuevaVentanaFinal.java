@@ -1297,7 +1297,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionCreacionUsuarioEmpleador.setEnabled(false);
 		this.btnConfirmacionCreacionTicketEmpleador.setEnabled(false);
 		this.btnConfirmacionEleccionEmpleador.setEnabled(false);
-		this.btnCrearTicketSimplificado.setEnabled(false);
+		this.btnCrearTicketSimplificado.setEnabled(true);
 		
 		// Seteo ComboBox
 		
@@ -1407,8 +1407,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.textFieldPesoRemuneracionEmpleador.addKeyListener(this);
 		this.textFieldPesoTipoDePuestoEmpleador.addKeyListener(this);
 		this.textFieldRemuneracionEmpleador.addKeyListener(this);
+		this.textFieldCantEmpleadosBuscados.addKeyListener(this);
 		
-
+		EmpleadoLogeado(false);
+		EmpleadorLogeado(false);
 	}
 
 	public String getTextFieldCrearAgencia() {
@@ -1495,7 +1497,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return (TicketEmpleado)listTicketActual.getSelectedValue();
 	}
 
-	public Empleador getListRondaEleccionesEmpleado() { // public Empleador
+	public Empleador getListRondaEleccionesEmpleado() { 
 		return (Empleador)listRondaEleccionesEmpleado.getSelectedValue();
 	}
 
@@ -1505,10 +1507,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 	public String getComboBoxBolsaLocacion() {
 		return (String) comboBoxBolsaLocacion.getSelectedItem();
-	}
-
-	public String getListTicketSimpActual() {
-		return (String) listTicketSimpActual.getSelectedValue();
 	}
 
 	public String getTextFieldUsuarioEmpleador() {
@@ -1601,7 +1599,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	*/
 
 	public ArrayList<Empleado> getListRondaEleccionesEmpleador() {
-		return (ArrayList)listRondaEleccionesEmpleador.getSelectedValuesList(); 
+		return (ArrayList<Empleado>) listRondaEleccionesEmpleador.getSelectedValuesList(); 
 	}
 
 	public String getComboBoxBolsaTipoTrabajoEmpleador() {
@@ -1801,10 +1799,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	public void setTextFieldCreacionCiudad(String textFieldCreacionCiudad) {
 		this.textFieldCreacionCiudad.setText(textFieldCreacionCiudad);
 	}
-
-	public void setBtnArrancarBolsa(boolean hab) { 
-		this.setBtnArrancarBolsa(hab);
-	}
 	
 	public void setComboBoxLocacion() {
 		this.comboBoxLocacion.setSelectedIndex(0);
@@ -1869,11 +1863,23 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	public void setComboBoxBolsaTipoTrabajoEmpleador() {
 		this.comboBoxBolsaTipoTrabajoEmpleador.setSelectedIndex(0);
 	}
-
-	public void setComboBoxBolsaLocacionEmpleador() {
-		this.comboBoxBolsaLocacionEmpleador.setSelectedIndex(0);
-	}
 	
+	public void setComboBoxBolsaLocacionEmpleador() {
+		this.comboBoxBolsaLocacionEmpleador.setSelectedIndex(0);;
+	}
+
+	public void setTextFieldCantEmpleadosBuscados(String textFieldCantEmpleadosBuscados) {
+		this.textFieldCantEmpleadosBuscados.setText(textFieldCantEmpleadosBuscados);
+	}
+
+	public void setBtnConfirmarRequisitosBolsa(boolean hab) {
+		this.btnConfirmarRequisitosBolsa.setEnabled(hab);
+	}
+
+	public void setBtnCrearTicketSimplificado(boolean hab) {
+		this.btnCrearTicketSimplificado.setEnabled(hab);
+	}
+
 	public void EmpleadoLogeado(boolean hab) { // Logeo con exito o no ? Ac� va a meterse cuando se toque el botoncito de loguearse o crear una nueva cuenta !
 		if (hab) {
 			textFieldRemuneracion.setEnabled(true);
@@ -1881,12 +1887,30 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			textFieldPesoRemuneracion.setEnabled(true);
 			textFieldPesoCargaHoraria.setEnabled(true);
 			textFieldPesoTipoDePuesto.setEnabled(true);
-		} else {
+			comboBoxLocacion.setEnabled(true);
+			comboBoxTipoDePuesto.setEnabled(true);
+			comboBoxCargaHoraria.setEnabled(true);
+			comboBoxEstudiosCursados.setEnabled(true);
+			comboBoxExperienciaPrevia.setEnabled(true);
+			comboBoxBolsaLocacion.setEnabled(true);
+			comboBoxBolsaTipoTrabajo.setEnabled(true);
+			setCambiarEstadoTicketEmpleado(true);
+			setBtnConfirmarRequisitosBolsa(true);
+		} else { // todo esto tendria que venir por default
 			textFieldRemuneracion.setEnabled(false);
 			textFieldPesoLocacion.setEnabled(false);
 			textFieldPesoRemuneracion.setEnabled(false);
 			textFieldPesoCargaHoraria.setEnabled(false);
 			textFieldPesoTipoDePuesto.setEnabled(false);
+			comboBoxLocacion.setEnabled(false);
+			comboBoxTipoDePuesto.setEnabled(false);
+			comboBoxCargaHoraria.setEnabled(false);
+			comboBoxEstudiosCursados.setEnabled(false);
+			comboBoxExperienciaPrevia.setEnabled(false);
+			comboBoxBolsaLocacion.setEnabled(false);
+			comboBoxBolsaTipoTrabajo.setEnabled(false);
+			setCambiarEstadoTicketEmpleado(false);
+			setBtnConfirmarRequisitosBolsa(false);
 		}
 		setTextFieldPesoCargaHoraria("");
 		setTextFieldPesoLocacion("");
@@ -1894,6 +1918,51 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		setTextFieldPesoTipoDePuesto("");
 		setTextFieldRemuneracion("");
 	}
+	
+	public void EmpleadorLogeado(boolean hab) {
+		if (hab) {
+			textFieldRemuneracionEmpleador.setEnabled(true);
+			textFieldPesoLocacionEmpleador.setEnabled(true);
+			textFieldPesoRemuneracionEmpleador.setEnabled(true);
+			textFieldPesoCargaHorariaEmpleador.setEnabled(true);
+			textFieldPesoTipoDePuestoEmpleador.setEnabled(true);
+			textFieldPesoRangoEtarioEmpleador.setEnabled(true);
+			textFieldPesoExpPreviaEmpleador.setEnabled(true);
+			textFieldPesoEstudiosCursadosEmpleador.setEnabled(true);
+			textFieldCantEmpleadosBuscados.setEnabled(true);
+			comboBoxLocacionEmpleador.setEnabled(true);
+			comboBoxTipoDePuestoEmpleador.setEnabled(true);
+			comboBoxCargaHorariaEmpleador.setEnabled(true);
+			comboBoxEstudiosCursadosEmpleador.setEnabled(true);
+			comboBoxExperienciaPreviaEmpleador.setEnabled(true);
+			comboBoxBolsaLocacionEmpleador.setEnabled(true);
+			comboBoxBolsaTipoTrabajoEmpleador.setEnabled(true);
+			setCambiarEstadoTicketEmpleador(true);
+			setBtnCrearTicketSimplificado(true);
+		} else {
+			textFieldRemuneracionEmpleador.setEnabled(false);
+			textFieldPesoLocacionEmpleador.setEnabled(false);
+			textFieldPesoRemuneracionEmpleador.setEnabled(false);
+			textFieldPesoCargaHorariaEmpleador.setEnabled(false);
+			textFieldPesoTipoDePuestoEmpleador.setEnabled(false);
+			textFieldPesoRangoEtarioEmpleador.setEnabled(false);
+			textFieldPesoExpPreviaEmpleador.setEnabled(false);
+			textFieldPesoEstudiosCursadosEmpleador.setEnabled(false);
+			textFieldCantEmpleadosBuscados.setEnabled(false);
+			comboBoxLocacionEmpleador.setEnabled(false);
+			comboBoxTipoDePuestoEmpleador.setEnabled(false);
+			comboBoxCargaHorariaEmpleador.setEnabled(false);
+			comboBoxEstudiosCursadosEmpleador.setEnabled(false);
+			comboBoxExperienciaPreviaEmpleador.setEnabled(false);
+			comboBoxRangoEtarioEmpleador.setEnabled(false);
+			comboBoxBolsaLocacionEmpleador.setEnabled(false);
+			comboBoxBolsaTipoTrabajoEmpleador.setEnabled(false);
+			setCambiarEstadoTicketEmpleador(false);
+			setBtnCrearTicketSimplificado(false);
+		}
+	}
+	
+	
 	
 	//pensamiento propio: desde ventana mandamos el empleador que seleccionamos al controlador, y este "une" al empleado con su empleador
 	//En este caso el getter de la lista estaria al pedo capaz, salvo que se use para otra cosa
@@ -1914,6 +1983,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	@Override
 	public void keyReleased(KeyEvent e) {
 
+		
 		boolean hab = !(textFieldCrearAgencia.getText().isEmpty());
 		setBtnConfirmarNombreAgencia(hab);
 
@@ -1942,7 +2012,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		boolean hab6 = !(textFieldRemuneracionEmpleador.getText().isEmpty() || textFieldPesoCargaHorariaEmpleador.getText().isEmpty() || textFieldPesoEstudiosCursadosEmpleador.getText().isEmpty() 
 				|| textFieldPesoExpPreviaEmpleador.getText().isEmpty() || textFieldPesoLocacionEmpleador.getText().isEmpty() || textFieldPesoRangoEtarioEmpleador.getText().isEmpty() || textFieldPesoRemuneracionEmpleador.getText().isEmpty() || 
-				textFieldPesoTipoDePuestoEmpleador.getText().isEmpty());
+				textFieldPesoTipoDePuestoEmpleador.getText().isEmpty() || textFieldCantEmpleadosBuscados.getText().isEmpty());
 		setBtnConfirmarCreacionTicketEmpleador(hab6);
 		
 		boolean hab7 = !(textFieldCreacionUsuarioEmpleador.getText().isEmpty() || textFieldCreacionContraseniaEmpleador.getText().isEmpty() || textFieldCreacionNombreEmpleador.getText().isEmpty());
@@ -1988,6 +2058,11 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 						setTextFieldPesoRemuneracion("");
 						setTextFieldPesoTipoDePuesto("");
 						setTextFieldRemuneracion("");
+						setComboBoxCargaHoraria();
+						setComboBoxLocacion();
+						setComboBoxEstudiosCursados();
+						setComboBoxExperienciaPrevia();
+						setComboBoxTipoDePuesto();
 						setBtnConfirmarCreacionTicket(false);
 					} else
 						if (e.getSource()==btnConfirmarLoginEmpleador) {
@@ -1999,6 +2074,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 								setTextFieldCreacionUsuarioEmpleador("");
 								setTextFieldCreacionContraseniaEmpleador("");
 								setTextFieldCreacionNombreEmpleador("");
+								setComboBoxTipoPersonaEmpleador();
+								setComboBoxRubroEmpleador();
 								setBtnConfirmacionCreacionUsuarioEmpleador(false);
 							} else
 								if (e.getSource()==btnConfirmacionCreacionTicketEmpleador) {
@@ -2010,8 +2087,19 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 									setTextFieldPesoRemuneracionEmpleador("");
 									setTextFieldPesoTipoDePuestoEmpleador("");
 									setTextFieldRemuneracionEmpleador("");
+									setTextFieldCantEmpleadosBuscados("");
+									setComboBoxLocacionEmpleador();
+									setComboBoxCargaHorariaEmpleador();
+									setComboBoxTipoDePuestoEmpleador();
+									setComboBoxEstudiosCursadosEmpleador();
+									setComboBoxExperienciaPreviaEmpleador();
+									setComboBoxRangoEtarioEmpleador();
 									setBtnConfirmarCreacionTicketEmpleador(false);
-								}
+								} else
+									if (e.getSource()==btnCrearTicketSimplificado) {
+										setComboBoxBolsaTipoTrabajoEmpleador();
+										setComboBoxBolsaLocacionEmpleador();
+									}
 					
 	}
 
@@ -2045,14 +2133,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		if (e.getSource()==listRondaEleccionesEmpleado) {
 		boolean hab = !(listRondaEleccionesEmpleado.isSelectionEmpty());
 		setBtnConfirmacionEleccionEmpleado(hab);
-		} else
-			if (e.getSource()==listTicketSimpActual) {
-				boolean hab1 = !(listTicketSimpActual.isSelectionEmpty());
-				setBtnAceptarYRechazarTicketSimplificado(hab1);
-			} else 
-				if (e.getSource()==listRondaEleccionesEmpleador) {
-					boolean hab2 = !listRondaEleccionesEmpleador.isSelectionEmpty();
-					setBtnConfirmacionEleccionEmpleador(hab2);
-				}
+		} else 
+			if (e.getSource()==listRondaEleccionesEmpleador) {
+				boolean hab2 = !listRondaEleccionesEmpleador.isSelectionEmpty();
+				setBtnConfirmacionEleccionEmpleador(hab2);
+			}
 	}
 }

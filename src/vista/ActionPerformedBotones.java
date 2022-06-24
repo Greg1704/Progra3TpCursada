@@ -53,7 +53,7 @@ public class ActionPerformedBotones implements ActionListener {
 					try {
 						empleado.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuario());
 						JOptionPane.showMessageDialog(null, "Login Correcto");
-						//Hacer lo que haya que hacer para que se desbloquee el resto de la ventana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+						EmpleadorLogeado(true);
 					}catch (ContraseniaIncorrectaException ex) {
 						JOptionPane.showMessageDialog(null, ex.getMessage());
 
