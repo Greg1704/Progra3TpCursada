@@ -9,6 +9,7 @@ public class BolsaTrabajo {
 	private ArrayList<TicketSimplificado> tickets = new ArrayList<TicketSimplificado>();
 	private static BolsaTrabajo instancia = null;
 	private boolean usaLista = false;
+	private int i;
 
     private BolsaTrabajo() {}
     
@@ -33,12 +34,12 @@ public class BolsaTrabajo {
 		while (this.usaLista == true) {
 			try {		
 				wait();	
-			}catch(InterruptedException e) {}
-					
+			}catch(InterruptedException e) {}			
 		}
 		
 		this.usaLista = true;
-		// pickeamos ticket
+		i=0;
+		while(i<tickets.size()) //Falta condicion: Ver como comparar rubro de ticket simplificado con el del empleado
 		// funcion para analizar si el ticket corresponde, esta funcion deberia estar en empleado, de donde son los threads
 		notifyAll();
 		this.usaLista = false;
