@@ -8,6 +8,7 @@ public class BolsaTrabajo {
 
 	private ArrayList<TicketSimplificado> tickets = new ArrayList<TicketSimplificado>();
 	private static BolsaTrabajo instancia = null;
+	private boolean usaLista = false;
 
     private BolsaTrabajo() {}
     
@@ -29,30 +30,36 @@ public class BolsaTrabajo {
 	
 	
 	public synchronized void sacarTicket(Empleado empleado) {
-		while () {
-			try {
-				
-				wait();
-				
-			}catch(InterrumptedException e) {}
-			
-				
-			
+		while (this.usaLista == true) {
+			try {		
+				wait();	
+			}catch(InterruptedException e) {}
+					
 		}
 		
-	
+		this.usaLista = true;
+		// pickeamos ticket
+		// funcion para analizar si el ticket corresponde, esta funcion deberia estar en empleado, de donde son los threads
+		notifyAll();
+		this.usaLista = false;
+		
 	}
 	
 	
 	public synchronized void devolverTicket(Empleado empleado) {
-		while () {
+		while (this.usaLista == true) {
 			try {
 				
+				wait();
 				
-				
-			}catch(InterrumptedException e) {}
+			}catch(InterruptedException e) {}
 			
 		}
+		
+		this.usaLista = true;
+		// aca se deberia agregar el ticket nuevamentw pq no sirvio
+		notifyAll();
+		this.usaLista = false;
 	}
 	
 	
