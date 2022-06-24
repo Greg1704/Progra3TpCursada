@@ -9,12 +9,15 @@ import excepciones.ContraseniaIncorrectaException;
 import excepciones.UsuarioIncorrectoException;
 import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
+import usuariosDelSistema.EmpleadorFisico;
+import usuariosDelSistema.EmpleadorJuridico;
 import usuariosDelSistema.Sistema;
 
 public class ActionPerformedBotones implements ActionListener {
 		NuevaVentanaFinal v;
 		Empleado empleado;
 		Empleador empleador;
+		Sistema sistema = Sistema.getInstancia();
 	
 	public ActionPerformedBotones(NuevaVentanaFinal v) {
 		this.v = v;
@@ -32,21 +35,22 @@ public class ActionPerformedBotones implements ActionListener {
 			v.setBtnConfirmarNombreAgencia(false);
 			
 		} else
-			if (e.getActionCommand().equals(IVista.confirmaTipoTicket)) {
-				//Ta jodido el asunto
+			if (e.getActionCommand().equals(IVista.arrrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
+				sistema.busquedaLaboral();
 				
+		}else
+			if(e.getActionCommand().equals(IVista.arrrancaRondaDeContrataciones)) { //HACER PARTE VENTANA
+				sistema.rondaDeContrataciones();
 				
-				//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA FALTA HACER LO DE RONDA ENCUENTRO Y RONDA CONTRATACIONES
-			} else { // ventana Empleado
+			} else { // VENTANA EMPLEADO
 				
 				
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
 					
 					try {
-						empleado.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuarioEmpleador());
-						//caso logueo exitoso, podemos tirar mensaje en pantalla o no AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+						empleado.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuario());
 						JOptionPane.showMessageDialog(null, "Login Correcto");
-						//Hacer lo que haya que hacer para que se desbloquee el resto de la ventana
+						//Hacer lo que haya que hacer para que se desbloquee el resto de la ventana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 					}catch (ContraseniaIncorrectaException ex) {
 						JOptionPane.showMessageDialog(null, ex.getMessage());
 
@@ -64,33 +68,66 @@ public class ActionPerformedBotones implements ActionListener {
 						// cuando se cree usuario, buscar en la lista si el usuario ya existe (s�lo buscar por campo de usuario estar�a bien). si no existe, hacer un new empleado
 						
 						Empleado empleado1 = new Empleado(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionContrasenia(), v.getTextFieldCreacionNyA(), v.getTextFieldCreacionDNI(), 
-								  Integer.parseInt(v.getTextFieldCreacionTelefono()), v.getTextFieldCreacionEdad(), v.getTextFieldCreacionCiudad());
+								  v.getTextFieldCreacionTelefono(), v.getTextFieldCreacionEdad(), v.getTextFieldCreacionCiudad());
 						//Cambiar getTextFieldCreacionTelefono() a Integer
 						
-						Sistema.getInstancia().agregaEmpleado(empleado1);
+						sistema.agregaEmpleado(empleado1);
 					 
 						
-					} else
-						if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) { //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				} else
+					if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) { //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 							
-							empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPesoRemuneracion(), 
-									v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , v.getTextFieldCreacionEdad(), 1, 
-									v.getComboBoxExperienciaPrevia(), 1, v.getComboBoxEstudiosCursados(), 1);
+						empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPesoRemuneracion(), 
+							v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , v.getTextFieldCreacionEdad(), 1, 
+							v.getComboBoxExperienciaPrevia(), 1, v.getComboBoxEstudiosCursados(), 1);
 							
-					}else
-						if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
-							if(v.getRdbtnActivo()) 
-								JOptionPane.showMessageDialog(null,empleado.getTicket().activa());
-							else if(v.getRdbtnSuspendido())
-								JOptionPane.showMessageDialog(null,empleado.getTicket().suspende());
-							else if(v.getRdbtnCancelar()) 
-								JOptionPane.showMessageDialog(null,empleado.getTicket().cancela());
+				}else
+					if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
+						if(v.getRdbtnActivo()) 
+							JOptionPane.showMessageDialog(null,empleado.getTicket().activa());
+						else if(v.getRdbtnSuspendido())
+							JOptionPane.showMessageDialog(null,empleado.getTicket().suspende());
+						else if(v.getRdbtnCancelar()) 
+							JOptionPane.showMessageDialog(null,empleado.getTicket().cancela());
 							
-							//Creo que nada mas
-						}else
-							if(e.getActionCommand().equals(IVista.confirmaEleccionEmpleado)) {
-								empleado.rondaElecciones(v.getListRondaEleccionesEmpleado());
+						//Creo que nada mas
+				}else
+					if(e.getActionCommand().equals(IVista.confirmaEleccionEmpleado)) {
+						empleado.rondaElecciones(v.getListRondaEleccionesEmpleado());
+				}else
+					if(e.getActionCommand().equals(IVista.confirmaArranqueBDT)) {
+						//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				}else
+					if(e.getActionCommand().equals(IVista.confirmaAceptacionTicket)) {
+						//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+				}else
+					if(e.getActionCommand().equals(IVista.confirmaRechazoTicket)) {
+						//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+						
+						
+					}else    // VENTANA EMPLEADOR
+						if(e.getActionCommand().equals(IVista.confirmarLoginEmpleador)) {
+							try {
+								empleador.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuarioEmpleador());
+								JOptionPane.showMessageDialog(null, "Login Correcto");
+								//Hacer lo que haya que hacer para que se desbloquee el resto de la ventana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 							}
+							catch (ContraseniaIncorrectaException ex) {
+								JOptionPane.showMessageDialog(null, ex.getMessage());
+							}
+							catch(UsuarioIncorrectoException ex) {
+								JOptionPane.showMessageDialog(null, ex.getMessage());
+
+							}
+					}else
+						if(e.getActionCommand().equals(IVista.confirmacionCreacionUsuarioEmpleador)) {
+							if(v.getComboBoxTipoPersonaEmpleador().equals("Fisico")) {
+								EmpleadorFisico empleador1 = new EmpleadorFisico(v.getTextFieldCreacionUsuarioEmpleador(),v.getTextFieldCreacionContraseniaEmpleador(),v.getTextFieldCreacionNombreEmpleador(),v.getComboBoxRubroEmpleador());
+							}else {
+								EmpleadorJuridico empleador1 = new EmpleadorJuridico(v.getTextFieldCreacionUsuarioEmpleador(),v.getTextFieldCreacionContraseniaEmpleador(),v.getTextFieldCreacionNombreEmpleador(),v.getComboBoxRubroEmpleador());
+							} 
+							sistema.agregaEmpleador(empleador1);
+						}
 			} 
 	}
 
@@ -101,23 +138,26 @@ public class ActionPerformedBotones implements ActionListener {
 	}
     	
     }
-    			
-}
-	void cambioEstadoTicket(Empleado e) { //dependiendo que radiobutton toco es lo que hacemos con el ticket
-    //creo que hacer el getter que esta en la ventana del ticketActual es al pedo teniendo un metodo
-    	 
-    	 if(this.v.getRdbtnActivo()) {	     //si el empleado toco Activar activo ticket							
-    		e.ActivaTicket(); 
-    		 
-    	 }
-    	 else if(this.v.getRdbtnCancelar()) {		//idem con cancela y suspende
-    		 e.CancelaTicket();
-    	 }
-    	 else {
-    		 e.SuspendeTicket();
-    	 }
-       
-    	 
+     
+   //(Grego): Ya habia hecho eso en la linea 81(por ahora, o mas abajo pero me entendes, si tenes dudas consultamelo)
+     void cambioEstadoTicket(Empleado e) { //dependiendo que radiobutton toco es lo que hacemos con el ticket
+         //creo que hacer el getter que esta en la ventana del ticketActual es al pedo teniendo un metodo
+         	 
+         	 if(this.v.getRdbtnActivo()) {	     //si el empleado toco Activar activo ticket							
+         		e.ActivaTicket(); 
+         		 
+         	 }
+         	 else if(this.v.getRdbtnCancelar()) {		//idem con cancela y suspende
+         		 e.CancelaTicket();
+         	 }
+         	 else {
+         		 e.SuspendeTicket();
+         	 }
+            
+         	 
      }
 
 }
+    			
+
+

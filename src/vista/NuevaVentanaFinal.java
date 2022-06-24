@@ -35,6 +35,7 @@ import armaTickets.TicketEmpleado;
 import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
+import javax.swing.DefaultComboBoxModel;
 
 
 
@@ -874,6 +875,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelTipoPersonaEmpleador.add(this.lblTipoPersonaEmpleador);
 
 		this.comboBoxTipoPersonaEmpleador = new JComboBox();
+		this.comboBoxTipoPersonaEmpleador.setModel(new DefaultComboBoxModel(new String[] {"Fisico","Juridico"}));
 		this.comboBoxTipoPersonaEmpleador.setBounds(172, 18, 176, 22);
 		this.panelTipoPersonaEmpleador.add(this.comboBoxTipoPersonaEmpleador);
 
@@ -1330,8 +1332,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		//
 
 		this.btnConfirmarLoginEmpleador.setActionCommand(confirmarLoginEmpleador);
-		this.btnConfirmacionCreacionUsuarioEmpleador.setActionCommand(confirmacionCreacionUsuario_1);
-		this.btnConfirmacionCreacionTicketEmpleador.setActionCommand(confirmacionCreacionTicket_1);
+		this.btnConfirmacionCreacionUsuarioEmpleador.setActionCommand(confirmacionCreacionUsuarioEmpleador);
+		this.btnConfirmacionCreacionTicketEmpleador.setActionCommand(confirmacionCreacionTicketEmpleador);
 		this.btnCambiarEstadoEmpleador.setActionCommand(confirmaCambiorEstadoEmpleador);
 		this.btnConfirmacionEleccionEmpleador.setActionCommand(confirmacionEleccionEmpleador);
 		this.btnCrearTicketSimplificado.setActionCommand(confirmaCracionTicketSimplificado);
@@ -1421,8 +1423,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return textFieldCreacionDNI.getText();
 	}
 
-	public String getTextFieldCreacionTelefono() {
-		return textFieldCreacionTelefono.getText();
+	public int getTextFieldCreacionTelefono() {
+		return Integer.parseInt((String)textFieldCreacionTelefono.getText());
 	}
 
 	public int getTextFieldCreacionEdad() {

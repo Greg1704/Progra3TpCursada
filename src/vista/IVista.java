@@ -6,8 +6,9 @@ public interface IVista {
 	
 	// botones de ventana agencia
 	
-	static final String confirmaTipoTicket = "Confirmar tipos de tickets";
 	static final String confirmaCreacionAgencia = "Confirmar creacion de agencia";
+	static final String arrrancaRondaDeEncuentro= "Arranca ronda de encuentro";
+	static final String arrrancaRondaDeContrataciones= "Arranca ronda de contrataciones";
 	
 	// botones de ventana empleado
 	
@@ -23,8 +24,8 @@ public interface IVista {
 	// botones de ventana empleador
 	
 	static final String confirmarLoginEmpleador = "confirma login de empleador";
-	static final String confirmacionCreacionUsuario_1 = "confirma creacion de empleador";
-	static final String confirmacionCreacionTicket_1 = "confirma creacion de ticket de empleador";
+	static final String confirmacionCreacionUsuarioEmpleador = "confirma creacion de empleador";
+	static final String confirmacionCreacionTicketEmpleador = "confirma creacion de ticket de empleador";
 	static final String confirmaCambiorEstadoEmpleador = "Confirma cambio de estado de ticket de empleador";
 	static final String confirmacionEleccionEmpleador = "Confirma eleccion del empleador";
 	static final String confirmaCracionTicketSimplificado = "Confirma la creacion de un TS";
