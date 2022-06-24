@@ -29,12 +29,30 @@ public class BolsaTrabajo {
 	
 	
 	public synchronized void sacarTicket() {
+		while () {
+			try {
+				
+				
+				
+			}catch(InterrumptedException e) {}
+			
+				
+			
+		}
+		
 		
 	}
 	
 	
 	public synchronized void devolverTicket() {
-		
+		while () {
+			try {
+				
+				
+				
+			}catch(InterrumptedException e) {}
+			
+		}
 	}
 	
 	
