@@ -8,7 +8,6 @@ import excepciones.LoginIncorrectoException;
 import excepciones.UsuarioIncorrectoException;
 import ticketSimplificado.TicketSimplificado;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList.*;
 import java.util.Observable;
@@ -23,9 +22,9 @@ public class Empleado extends Usuario implements Observer {
 	private String ciudad;
 	private TicketEmpleado ticket;
 	private Empleador empleadorSeleccionado;
-	private TicketSimplificado ticketSimpElegido = null;
+	private transient TicketSimplificado ticketSimpElegido = null;
 	private int pasadas=10;
-	private BolsaDeTrabajo bolsa = BolsaDeTrabajo.getInstancia();
+	private transient BolsaDeTrabajo bolsa = BolsaDeTrabajo.getInstancia();
 
 	public Empleado(String usuario, String contrasenia, String nya, String dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);

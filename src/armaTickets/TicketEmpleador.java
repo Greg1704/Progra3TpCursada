@@ -9,8 +9,6 @@ public class TicketEmpleador extends TicketDeBusqueda{
 	private int cantEmpleados;
 	private int empleadosObtenidos = 0;
 	
-	
-	
 	public TicketEmpleador(LocalDateTime fechaAlta,String locacion,int pesoLocacion, double remuneracion, int pesoRemuneracion,String cargaHoraria,int pesoCargaHoraria,
 						   String tipoPuestoLaboral,int pesoTipoPuestoLaboral, int edad,int pesoEdad, String experienciaPrevia,int pesoExperienciaPrevia,
 						   String estudiosCursados,int pesoEstudiosCursados,int cantEmpleados) throws FormularioInvalidoException {

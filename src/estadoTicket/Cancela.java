@@ -1,7 +1,5 @@
 package estadoTicket;
 
-import java.io.Serializable;
-
 import armaTickets.TicketDeBusqueda;
 import excepciones.NoActivoException;
 
