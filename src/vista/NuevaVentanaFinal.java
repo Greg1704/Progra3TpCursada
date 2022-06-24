@@ -1627,6 +1627,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return listContrataciones;
 	}
 
+	public int getTextFieldCantEmpleadosBuscados() {
+		return Integer.parseInt((String) textFieldCantEmpleadosBuscados.getText());
+	}
+
 	public void setBtnConfirmarNombreAgencia(boolean hab) {
 		this.btnConfirmarNombreAgencia.setEnabled(hab);
 	}
