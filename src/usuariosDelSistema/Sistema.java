@@ -218,11 +218,17 @@ public class Sistema implements Serializable{
 	public void empleadoresNoSeleccionados(ArrayList<Empleador> empleadoresElegidos) {
 
 		for (Empleador empleador : empleadores) {
-			if (empleador.getTicketEmpleador() != null
-					&& empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
+			if (empleador.getTicketEmpleador() != null){
+				
+				try {
+				empleador.getTicketEmpleador().esActivo();
+				
 				if (!empleadoresElegidos.contains(empleador))
 					empleador.setPuntaje(empleador.getPuntaje() - 20);
 				// Resta 20 porque el empleador no es elegido por nadie
+				
+				}catch (NoActivoException e) {}
+				
 			}
 		}
 	}
@@ -234,10 +240,11 @@ public class Sistema implements Serializable{
 		double comision;
 
 		for (Empleador empleador : empleadores) {
-			if (empleador.getTicketEmpleador() != null
-					&& empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo")) {
+			if (empleador.getTicketEmpleador() != null) {
+				
+				try {
+				empleador.getTicketEmpleador().esActivo();
 				aux = empleador.getEmpleadosSeleccionados();
-
 				for (int i = 0; i < empleador.getCantidadEmpleadosSeleccionados(); i++) {
 
 					if (aux.get(i).getEmpleadorSeleccionado().getNombre().equalsIgnoreCase(empleador.getNombre())) {
@@ -262,7 +269,10 @@ public class Sistema implements Serializable{
 							* rubroEmpleador.getComision();
 					System.out.println("Comision para el empleador " + empleador.getNombre() + ": " + comision);
 				}
-
+					
+				
+				}catch(NoActivoException e) {}
+				
 			}
 
 		}
