@@ -182,12 +182,9 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 			if (this.observables.size() <= 2) {
 				BolsaTrabajo.getInstancia().agregaTicket(ticketSimplificado);// agrego ticket a la lista de bolsa de trabajo
 				this.observables.add(ticketSimplificado); //agrego ticket a lista de tickets simp del empleador
-			}
-			//Thread t1=new Thread(ticketSimplificado); COMENTE ESTAS 2 LINEAS PQ SON FALOPA
-			//t1.start(); //Arrancas el run, por ahora no se si es la mejor idea, consultar con Grego o Manu
-			
+			}			
 		} catch (AtributoInvalidoException e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage()); //PODRIA COMENTARSE ESTO DICIENDO QUE NO SE PUEDEN CREAR MAS TICKETS SIMPLIFICADOS
 		}
 
 	}
