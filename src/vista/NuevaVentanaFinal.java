@@ -62,7 +62,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JPanel panel_2;
 	private JPanel panel_3;
 	private JButton btnRondaEncuentro;
-	private JPanel panel_4;
 	private JButton btnRondaContraciones;
 	private JPanel panel_5;
 	private JList listComisiones;
@@ -238,6 +237,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JPanel panelCantEmpleadosBuscados;
 	private JTextField textFieldCantEmpleadosBuscados;
 	private JList listTicketSimpObtenido;
+	private JPanel panel_7;
+	private JPanel panel_8;
+	private JButton btnBolsaDeTrabajo;
+	private JPanel panel_4;
+	private JPanel panelBolsaDeTrabajo;
+	private JPanel panelGeneralBolsaDeTrabajo;
 	
 
 	/**
@@ -316,7 +321,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 		this.panelRondaEncCont = new JPanel();
 		this.panelRondaEncCont.setBorder(
-				new TitledBorder(null, "Busqueda Laboral", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Funcionalidades de la Agencia", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		this.PanelFuncionalidades.add(this.panelRondaEncCont);
 		this.panelRondaEncCont.setLayout(new GridLayout(3, 1, 0, 0));
 
@@ -326,17 +331,26 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panel_3 = new JPanel();
 		this.panelRondaEncCont.add(this.panel_3);
 		this.panel_3.setLayout(new GridLayout(0, 3, 0, 0));
+		
+		this.panel_7 = new JPanel();
+		this.panel_3.add(this.panel_7);
 
 		this.btnRondaEncuentro = new JButton("Ronda de Encuentros");
+		this.panel_7.add(this.btnRondaEncuentro);
 		this.btnRondaEncuentro.setEnabled(false);
-		this.panel_3.add(this.btnRondaEncuentro);
-
-		this.panel_4 = new JPanel();
-		this.panel_3.add(this.panel_4);
+		
+		this.panel_8 = new JPanel();
+		this.panel_3.add(this.panel_8);
 
 		this.btnRondaContraciones = new JButton("Ronda de Contrataciones");
+		this.panel_8.add(this.btnRondaContraciones);
 		this.btnRondaContraciones.setEnabled(false);
-		this.panel_3.add(this.btnRondaContraciones);
+		
+		this.panel_4 = new JPanel();
+		this.panel_3.add(this.panel_4);
+		
+		this.btnBolsaDeTrabajo = new JButton("Bolsa de Trabajo");
+		this.panel_4.add(this.btnBolsaDeTrabajo);
 
 		this.panel_5 = new JPanel();
 		this.panelRondaEncCont.add(this.panel_5);
@@ -1334,6 +1348,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionEleccionEmpleador.setActionCommand(confirmacionEleccionEmpleador);
 		this.btnCrearTicketSimplificado.setActionCommand(confirmaCracionTicketSimplificado);
 		
+		this.panelBolsaDeTrabajo = new JPanel();
+		this.tabbedPane.addTab("Bolsa de trabajo", null, this.panelBolsaDeTrabajo, null);
+		this.panelBolsaDeTrabajo.setLayout(new BorderLayout(0, 0));
+		
+		this.panelGeneralBolsaDeTrabajo = new JPanel();
+		this.panelBolsaDeTrabajo.add(this.panelGeneralBolsaDeTrabajo, BorderLayout.CENTER);
+		
 		this.btnConfirmarLoginEmpleador.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmacionCreacionTicketEmpleador.addActionListener(new ActionPerformedBotones(this));
@@ -1843,7 +1864,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.comboBoxBolsaLocacionEmpleador.setSelectedIndex(0);
 	}
 	
-	public void EmpleadoLogeado(boolean hab) { // Logeo con exito o no ? Acá va a meterse cuando se toque el botoncito de loguearse o crear una nueva cuenta !
+	public void EmpleadoLogeado(boolean hab) { // Logeo con exito o no ? Acï¿½ va a meterse cuando se toque el botoncito de loguearse o crear una nueva cuenta !
 		if (hab) {
 			textFieldRemuneracion.setEnabled(true);
 			textFieldPesoLocacion.setEnabled(true);
