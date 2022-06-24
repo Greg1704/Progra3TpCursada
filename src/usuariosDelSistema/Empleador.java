@@ -216,5 +216,11 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		return "Empleador: Nombre=" + nombre + ticketEmpleador + ". Cantidad de empleados seleccionados:"
 				+ cantidadEmpleadosSeleccionados;
 	}
+	
+	
+	public void agregaTicketSimplificado(String locacion,String tipoTrabajo) throws AtributoInvalidoException {
+		BolsaTrabajo.getInstancia().agregaTicket(new TicketSimplificado(locacion,tipoTrabajo,this));
+	}
+	
 
 }
