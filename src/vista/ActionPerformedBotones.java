@@ -5,8 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import excepciones.AtributoInvalidoException;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.UsuarioIncorrectoException;
+import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
 import usuariosDelSistema.EmpleadorFisico;
@@ -144,10 +146,23 @@ public class ActionPerformedBotones implements ActionListener {
 									v.getTextFieldPesoEstudiosCursadosEmpleador(), v.getTextFieldCantEmpleadosBuscados());
 					}else
 						if(e.getActionCommand().equals(IVista.confirmacionEleccionEmpleador)) {
+							if(v.getRdbtnActivo()) 
+								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().activa());
+							else if(v.getRdbtnSuspendido())
+								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().suspende());
+							else if(v.getRdbtnCancelar()) 
+								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().cancela());
+					}else
+						if(e.getActionCommand().equals(IVista.confirmacionEleccionEmpleador)) {
 							empleador.rondaElecciones(v.getListRondaEleccionesEmpleador());
 					}else
 						if(e.getActionCommand().equals(IVista.confirmaCracionTicketSimplificado)) {
-							//Siu
+							try {
+								empleador.agregaObservable(new TicketSimplificado(v.getComboBoxBolsaLocacionEmpleador(),v.getComboBoxBolsaTipoTrabajoEmpleador(),empleador));
+								//No se si deberiamos hacer algo para que se muestre en la ventana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+							} catch (AtributoInvalidoException e1) {
+								//No va a pasar nada, ya que no puede tirar error realmente si lo creamos desde aca xd AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+							}
 						}
 			} 
 	}
@@ -160,23 +175,6 @@ public class ActionPerformedBotones implements ActionListener {
     	
     }
      
-   //(Grego): Ya habia hecho eso en la linea 81(por ahora, o mas abajo pero me entendes, si tenes dudas consultamelo)
-     void cambioEstadoTicket(Empleado e) { //dependiendo que radiobutton toco es lo que hacemos con el ticket
-         //creo que hacer el getter que esta en la ventana del ticketActual es al pedo teniendo un metodo
-         	 
-         	 if(this.v.getRdbtnActivo()) {	     //si el empleado toco Activar activo ticket							
-         		e.ActivaTicket(); 
-         		 
-         	 }
-         	 else if(this.v.getRdbtnCancelar()) {		//idem con cancela y suspende
-         		 e.CancelaTicket();
-         	 }
-         	 else {
-         		 e.SuspendeTicket();
-         	 }
-            
-         	 
-     }
 
 }
     			

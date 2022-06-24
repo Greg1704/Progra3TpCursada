@@ -187,7 +187,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 
 	}
 
-	private void agregaObservable(TicketSimplificado ticketSimplificado){
+	public void agregaObservable(TicketSimplificado ticketSimplificado){
 		if(cantObservados<3) {
 			this.observables.add(ticketSimplificado);
 			this.cantObservados++;
@@ -207,8 +207,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		Empleado emp=(Empleado) arg;
 		if(((Empleado) arg).getTicket()!=null)
 			((Empleado) arg).getTicket().suspende(); //Se le suspende el ticket normal ya que encontro trabajo por la bolsa
-		this.observables.remove(o);
-		this.cantObservados--;
+		this.quitaObservable((TicketSimplificado)o);
 		
 	}
 
