@@ -28,11 +28,11 @@ public class BolsaTrabajo {
 	}
 	
 	
-	public synchronized void sacarTicket() {
+	public synchronized void sacarTicket(Empleado empleado) {
 		while () {
 			try {
 				
-				
+				wait();
 				
 			}catch(InterrumptedException e) {}
 			
@@ -44,7 +44,7 @@ public class BolsaTrabajo {
 	}
 	
 	
-	public synchronized void devolverTicket() {
+	public synchronized void devolverTicket(Empleado empleado) {
 		while () {
 			try {
 				
