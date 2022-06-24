@@ -1288,9 +1288,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxRubroEmpleador.addItem("ComercioLocal");
 		comboBoxRubroEmpleador.addItem("ComercioInternacional");
 		
-		comboBoxTipoPersonaEmpleador.addItem("Fï¿½sico");
-		comboBoxTipoPersonaEmpleador.addItem("Jurï¿½dico");
-		
 		comboBoxLocacionEmpleador.addItem("HomeOffice");
 		comboBoxLocacionEmpleador.addItem("Presencial");
 		comboBoxLocacionEmpleador.addItem("Indistinto");
@@ -1846,6 +1843,26 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.comboBoxBolsaLocacionEmpleador.setSelectedIndex(0);
 	}
 	
+	public void EmpleadoLogeado(boolean hab) { // Logeo con exito o no ? Acá va a meterse cuando se toque el botoncito de loguearse o crear una nueva cuenta !
+		if (hab) {
+			textFieldRemuneracion.setEnabled(true);
+			textFieldPesoLocacion.setEnabled(true);
+			textFieldPesoRemuneracion.setEnabled(true);
+			textFieldPesoCargaHoraria.setEnabled(true);
+			textFieldPesoTipoDePuesto.setEnabled(true);
+		} else {
+			textFieldRemuneracion.setEnabled(false);
+			textFieldPesoLocacion.setEnabled(false);
+			textFieldPesoRemuneracion.setEnabled(false);
+			textFieldPesoCargaHoraria.setEnabled(false);
+			textFieldPesoTipoDePuesto.setEnabled(false);
+		}
+		setTextFieldPesoCargaHoraria("");
+		setTextFieldPesoLocacion("");
+		setTextFieldPesoRemuneracion("");
+		setTextFieldPesoTipoDePuesto("");
+		setTextFieldRemuneracion("");
+	}
 	
 	//pensamiento propio: desde ventana mandamos el empleador que seleccionamos al controlador, y este "une" al empleado con su empleador
 	//En este caso el getter de la lista estaria al pedo capaz, salvo que se use para otra cosa
