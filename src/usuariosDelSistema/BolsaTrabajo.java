@@ -12,6 +12,11 @@ public class BolsaTrabajo {
 		this.tickets.add(t);
 	}
 	
+	public void eliminaTicket(TicketSimplificado t) {
+		
+			
+	}
+	
 	
 	public synchronized void sacarTicket() {
 		
