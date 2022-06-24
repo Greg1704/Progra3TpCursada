@@ -52,6 +52,7 @@ public class RondaEncuentros{
 
 						if (empleador.getTicketEmpleador()!=null) {
 							
+							try{ 
 							empleador.getTicketEmpleador().esActivo();
 							
 							puntajeAux += empleado.getTicket().getFormularioDeBusqueda().getCargaHoraria().getPeso()
@@ -104,7 +105,10 @@ public class RondaEncuentros{
 
 							aux.setPuntaje(puntajeAux);
 
-							empleado.getLista().agregaElemento(aux);
+							empleado.getLista().agregaElemento(aux);		
+							}catch(NoActivoException e) {}
+											
+									
 						}
 						
 					}
@@ -142,6 +146,7 @@ public class RondaEncuentros{
 
 						if (empleado.getTicket()!=null) {
 							
+							try {
 							empleado.getTicket().esActivo();
 							puntajeAux += empleador.getTicketEmpleador().getFormularioDeBusqueda().getCargaHoraria()
 									.getPeso()
@@ -201,10 +206,12 @@ public class RondaEncuentros{
 
 							empleador.getLista().agregaElemento(aux);
 
+							}catch(NoActivoException e) {}
+								
 						}
+		
 					}
-					
-					
+	
 					empleador.getLista().getOrdenados().get(empleador.getLista().getOrdenados().size() - 1)
 							.getUsuario().setPuntaje(empleador.getLista().getOrdenados()
 									.get(empleador.getLista().getOrdenados().size() - 1).getUsuario().getPuntaje() - 5);
@@ -213,8 +220,6 @@ public class RondaEncuentros{
 					
 				} catch (NoActivoException e) {}
 				
-				
-
 			}
 		}
 

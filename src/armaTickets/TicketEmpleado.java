@@ -25,7 +25,6 @@ public class TicketEmpleado extends TicketDeBusqueda {
 		this.resultado = resultado;
 	}
 
-	@Override
 	public void esActivo() throws NoActivoException {
 		this.estado.esActivo();
 	}

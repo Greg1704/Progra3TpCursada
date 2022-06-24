@@ -36,9 +36,7 @@ public class Activo implements I_EstadoTicket {
 	}
 
 	@Override
-	public void esActivo() {
-		
-	}
+	public void esActivo() {}
 
 
 }
