@@ -179,8 +179,13 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 			TicketSimplificado ticketSimplificado= new TicketSimplificado(locacion,tipoTrabajo,this);
 			agregaObservable(ticketSimplificado);
 			ticketSimplificado.addObserver(this);
-			Thread t1=new Thread(ticketSimplificado);
-			t1.start(); //Arrancas el run, por ahora no se si es la mejor idea, consultar con Grego o Manu
+			if (this.observables.size() <= 2) {
+				BolsaTrabajo.getInstancia().agregaTicket(ticketSimplificado);// agrego ticket a la lista de bolsa de trabajo
+				this.observables.add(ticketSimplificado); //agrego ticket a lista de tickets simp del empleador
+			}
+			//Thread t1=new Thread(ticketSimplificado); COMENTE ESTAS 2 LINEAS PQ SON FALOPA
+			//t1.start(); //Arrancas el run, por ahora no se si es la mejor idea, consultar con Grego o Manu
+			
 		} catch (AtributoInvalidoException e) {
 			System.out.println(e.getMessage());
 		}
@@ -217,10 +222,4 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 				+ cantidadEmpleadosSeleccionados;
 	}
 	
-	
-	public void agregaTicketSimplificado(String locacion,String tipoTrabajo) throws AtributoInvalidoException {
-		BolsaTrabajo.getInstancia().agregaTicket(new TicketSimplificado(locacion,tipoTrabajo,this));
-	}
-	
-
 }
