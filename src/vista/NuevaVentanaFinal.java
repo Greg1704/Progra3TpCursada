@@ -37,6 +37,8 @@ import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 
 
@@ -64,12 +66,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JButton btnRondaEncuentro;
 	private JButton btnRondaContraciones;
 	private JPanel panel_5;
-	private JList listComisiones;
+	private JTextArea textAreaComisiones;
 	private JPanel PanelListas;
 	private JList listEmpleados;
-	private JList listTicketEmpleados;
 	private JList listEmpleadores;
-	private JList listTicketEmpleadores;
 	private JPanel panelGeneralEmpleado;
 	private JPanel panelLoginCreacionEmpleado;
 	private JPanel panelLogin;
@@ -142,11 +142,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JComboBox comboBoxBolsaLocacion;
 	private JLabel lblBolsaTipoTrabajo;
 	private JLabel lblBolsaLocacion;
-	private JPanel panelPantallaBolsa;
-	private JList listTicketSimpActual;
-	private JButton btnBolsaAceptar;
-	private JButton btnBolsaRechazar;
-	private JButton btnInicioBolsa;
 	private JPanel panelGeneralEmpleador;
 	private JPanel panelLoginCreacionEmpleador;
 	private JPanel panelLoginEmpleador;
@@ -231,18 +226,34 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JRadioButton rdbtnCancelarEmpleador;
 	private JButton btnCambiarEstadoEmpleador;
 	private JList listTicketSimplificadosEmpleador;
-	private JList listContrataciones;
+	private JTextArea textAreaContrataciones;
 	private final ButtonGroup buttonGroupEstados = new ButtonGroup();
 	private final ButtonGroup buttonGroupEstadosEmpleador = new ButtonGroup();
 	private JPanel panelCantEmpleadosBuscados;
 	private JTextField textFieldCantEmpleadosBuscados;
-	private JList listTicketSimpObtenido;
 	private JPanel panel_7;
 	private JPanel panel_8;
 	private JButton btnBolsaDeTrabajo;
 	private JPanel panel_4;
 	private JPanel panelBolsaDeTrabajo;
 	private JPanel panelGeneralBolsaDeTrabajo;
+	private JList listTicketsSimplificados;
+	private JScrollPane scrollPaneEmpleados;
+	private JScrollPane scrollPaneEmpleadores;
+	private JScrollPane scrollPaneTicketsSimplificados;
+	private JTextArea textAreaSimulacionThreads;
+	private JScrollPane scrollPaneSimulacionThreads;
+	private JTextArea textAreaContratacionesBolsaTrabajo;
+	private JScrollPane scrollPaneContratacionesBolsaTrabajo;
+	private JScrollPane scrollPaneContrataciones;
+	private JScrollPane scrollPaneComisiones;
+	private JList listTicketSimpObtenido;
+	private JScrollPane scrollPaneTicketActual;
+	private JScrollPane scrollPaneRondaEleccionEmpleado;
+	private JScrollPane scrollPaneTicketSimpObtenido;
+	private JScrollPane scrollPaneTicketActualEmpleador;
+	private JScrollPane scrollPaneRondaEleccionesEmpleador;
+	private JScrollPane scrollPaneTicketsSimplificadosEmpleador;
 	
 
 	/**
@@ -354,42 +365,53 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 		this.panel_5 = new JPanel();
 		this.panelRondaEncCont.add(this.panel_5);
+		
+		this.scrollPaneContrataciones = new JScrollPane();
+		this.PanelFuncionalidades.add(this.scrollPaneContrataciones);
 
-		this.listContrataciones = new JList();
-		this.listContrataciones.setBorder(
+		this.textAreaContrataciones = new JTextArea();
+		this.scrollPaneContrataciones.setViewportView(this.textAreaContrataciones);
+		this.textAreaContrataciones.setBorder(
 				new TitledBorder(null, "Contrataciones", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.PanelFuncionalidades.add(this.listContrataciones);
+		
+		this.scrollPaneComisiones = new JScrollPane();
+		this.PanelFuncionalidades.add(this.scrollPaneComisiones);
 
-		this.listComisiones = new JList();
-		this.listComisiones
+		this.textAreaComisiones = new JTextArea();
+		this.scrollPaneComisiones.setViewportView(this.textAreaComisiones);
+		this.textAreaComisiones
 				.setBorder(new TitledBorder(null, "Comisiones", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.PanelFuncionalidades.add(this.listComisiones);
 
 		this.PanelListas = new JPanel();
 		this.PanelListas.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		this.PanelGeneralAgencia.add(this.PanelListas);
-		this.PanelListas.setLayout(new GridLayout(4, 0, 0, 0));
+		this.PanelListas.setLayout(new GridLayout(2, 0, 0, 0));
+		
+		this.scrollPaneEmpleados = new JScrollPane();
+		this.PanelListas.add(this.scrollPaneEmpleados);
 
 		this.listEmpleados = new JList();
+		this.scrollPaneEmpleados.setViewportView(this.listEmpleados);
 		this.listEmpleados.setBorder(
 				new TitledBorder(null, "Lista Empleados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.PanelListas.add(this.listEmpleados);
-
-		this.listTicketEmpleados = new JList();
-		this.listTicketEmpleados.setBorder(new TitledBorder(
-				new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)),
-				"Solicitudes de Empleados", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		this.PanelListas.add(this.listTicketEmpleados);
+		
+		// Seteo lista
+		
+		listEmpleados.setName("listEmpleados");
+		listEmpleados.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		
+		this.scrollPaneEmpleadores = new JScrollPane();
+		this.PanelListas.add(this.scrollPaneEmpleadores);
 
 		this.listEmpleadores = new JList();
+		this.scrollPaneEmpleadores.setViewportView(this.listEmpleadores);
 		this.listEmpleadores.setBorder(
 				new TitledBorder(null, "Lista Empleadores", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.PanelListas.add(this.listEmpleadores);
-
-		this.listTicketEmpleadores = new JList();
-		this.listTicketEmpleadores.setBorder(new TitledBorder(null, "Solicitudes de Empleadores", TitledBorder.LEADING,
-				TitledBorder.TOP, null, null));
-		this.PanelListas.add(this.listTicketEmpleadores);
+		
+		//Seteo lista
+		
+		listEmpleadores.setName("listEmpleadores");
+		listEmpleadores.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		this.panelEmpleado = new JPanel();
 		this.tabbedPane.addTab("Empleado", null, this.panelEmpleado, null);
@@ -554,7 +576,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionTicket = new JPanel();
 		this.panelCreacionTicket
 				.setBorder(new TitledBorder(null, "Crear Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelCreacionTicket.setBounds(10, 11, 389, 450);
+		this.panelCreacionTicket.setBounds(10, 11, 389, 463);
 		this.panelTicket.add(this.panelCreacionTicket);
 		this.panelCreacionTicket.setLayout(new GridLayout(7, 0, 0, 0));
 
@@ -674,16 +696,19 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionCreacionTicket = new JButton("Confirmar");
 		this.btnConfirmacionCreacionTicket.setBounds(150, 25, 79, 23);
 		this.panelConfirmacionCreacionTicket.add(this.btnConfirmacionCreacionTicket);
+		
+		this.scrollPaneTicketActual = new JScrollPane();
+		this.scrollPaneTicketActual.setBounds(10, 553, 389, 81);
+		this.panelTicket.add(this.scrollPaneTicketActual);
 
 		this.listTicketActual = new JList();
+		this.scrollPaneTicketActual.setViewportView(this.listTicketActual);
 		this.listTicketActual.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Ticket de Busqueda Actual", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		this.listTicketActual.setBounds(10, 524, 389, 57);
-		this.panelTicket.add(this.listTicketActual);
 
 		this.panel_6 = new JPanel();
 		this.panel_6.setBorder(
 				new TitledBorder(null, "Estado del Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panel_6.setBounds(10, 463, 387, 57);
+		this.panel_6.setBounds(10, 485, 387, 57);
 		this.panelTicket.add(this.panel_6);
 		this.panel_6.setLayout(null);
 
@@ -711,23 +736,28 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelEleccionYBolsa.setBorder(
 				new TitledBorder(null, "Ronda de Eleccion", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.panelGeneralEmpleado.add(this.panelEleccionYBolsa);
-		this.panelEleccionYBolsa.setLayout(new GridLayout(2, 0, 0, 0));
+		this.panelEleccionYBolsa.setLayout(null);
 
 		this.panelRondaElecciones = new JPanel();
+		this.panelRondaElecciones.setBounds(6, 16, 395, 412);
 		this.panelRondaElecciones.setLayout(null);
 		this.panelEleccionYBolsa.add(this.panelRondaElecciones);
+		
+		this.scrollPaneRondaEleccionEmpleado = new JScrollPane();
+		this.scrollPaneRondaEleccionEmpleado.setBounds(10, 11, 377, 356);
+		this.panelRondaElecciones.add(this.scrollPaneRondaEleccionEmpleado);
 
 		this.listRondaEleccionesEmpleado = new JList();
+		this.scrollPaneRondaEleccionEmpleado.setViewportView(this.listRondaEleccionesEmpleado);
 		this.listRondaEleccionesEmpleado
 				.setBorder(new TitledBorder(null, "Empleadores", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.listRondaEleccionesEmpleado.setBounds(10, 11, 377, 233);
-		this.panelRondaElecciones.add(this.listRondaEleccionesEmpleado);
 
 		this.btnConfirmacionEleccionEmpleado = new JButton("Confirmar");
-		this.btnConfirmacionEleccionEmpleado.setBounds(162, 277, 89, 23);
+		this.btnConfirmacionEleccionEmpleado.setBounds(162, 378, 89, 23);
 		this.panelRondaElecciones.add(this.btnConfirmacionEleccionEmpleado);
 
 		this.panelBolsaTrabajo = new JPanel();
+		this.panelBolsaTrabajo.setBounds(6, 439, 395, 199);
 		this.panelBolsaTrabajo.setLayout(null);
 		this.panelBolsaTrabajo.setBorder(
 				new TitledBorder(null, "Bolsa de Trabajo", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -755,31 +785,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.lblBolsaLocacion = new JLabel("Locacion:");
 		this.lblBolsaLocacion.setBounds(247, 11, 58, 14);
 		this.panelEmpleadoRequisitosBolsa.add(this.lblBolsaLocacion);
-
-		this.panelPantallaBolsa = new JPanel();
-		this.panelPantallaBolsa.setLayout(null);
-		this.panelPantallaBolsa.setBorder(new TitledBorder(
-				new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Eleccion",
-				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		this.panelPantallaBolsa.setBounds(21, 93, 366, 182);
-		this.panelBolsaTrabajo.add(this.panelPantallaBolsa);
-
-		this.listTicketSimpActual = new JList();
-		this.listTicketSimpActual.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		this.listTicketSimpActual.setBounds(10, 21, 346, 81);
-		this.panelPantallaBolsa.add(this.listTicketSimpActual);
-
-		this.btnBolsaAceptar = new JButton("Aceptar");
-		this.btnBolsaAceptar.setBounds(43, 125, 89, 23);
-		this.panelPantallaBolsa.add(this.btnBolsaAceptar);
-
-		this.btnBolsaRechazar = new JButton("Rechazar");
-		this.btnBolsaRechazar.setBounds(241, 125, 89, 23);
-		this.panelPantallaBolsa.add(this.btnBolsaRechazar);
-
-		this.btnInicioBolsa = new JButton("Arrancar");
-		this.btnInicioBolsa.setBounds(162, 277, 89, 23);
-		this.panelBolsaTrabajo.add(this.btnInicioBolsa);
 
 		this.panelEmpleador = new JPanel();
 		this.tabbedPane.addTab("Empleador", null, this.panelEmpleador, null);
@@ -946,7 +951,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionTicketEmpleador = new JPanel();
 		this.panelCreacionTicketEmpleador
 				.setBorder(new TitledBorder(null, "Crear Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelCreacionTicketEmpleador.setBounds(10, 11, 389, 556);
+		this.panelCreacionTicketEmpleador.setBounds(10, 11, 389, 531);
 		this.panelTicketEmpleador.add(this.panelCreacionTicketEmpleador);
 		this.panelCreacionTicketEmpleador.setLayout(new GridLayout(9, 0, 0, 0));
 
@@ -1104,12 +1109,15 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 		this.btnConfirmacionCreacionTicketEmpleador = new JButton("Confirmar");
 		this.panelConfirmacionCreacionTicketEmpleador.add(this.btnConfirmacionCreacionTicketEmpleador);
+		
+		this.scrollPaneTicketActualEmpleador = new JScrollPane();
+		this.scrollPaneTicketActualEmpleador.setBounds(10, 545, 389, 89);
+		this.panelTicketEmpleador.add(this.scrollPaneTicketActualEmpleador);
 
 		this.listTicketActualEmpleador = new JList();
+		this.scrollPaneTicketActualEmpleador.setViewportView(this.listTicketActualEmpleador);
 		this.listTicketActualEmpleador
 				.setBorder(new TitledBorder(null, "Ticket Actual", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.listTicketActualEmpleador.setBounds(10, 577, 389, 57);
-		this.panelTicketEmpleador.add(this.listTicketActualEmpleador);
 
 		this.panelRondaDeEleccionEmpleador = new JPanel();
 		this.panelGeneralEmpleador.add(this.panelRondaDeEleccionEmpleador);
@@ -1121,13 +1129,16 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelRondaEleccionesEmpleador.setLayout(null);
 		this.panelRondaEleccionesEmpleador.setBounds(10, 11, 395, 311);
 		this.panelRondaDeEleccionEmpleador.add(this.panelRondaEleccionesEmpleador);
+		
+		this.scrollPaneRondaEleccionesEmpleador = new JScrollPane();
+		this.scrollPaneRondaEleccionesEmpleador.setBounds(10, 23, 377, 221);
+		this.panelRondaEleccionesEmpleador.add(this.scrollPaneRondaEleccionesEmpleador);
 
 		this.listRondaEleccionesEmpleador = new JList();
+		this.scrollPaneRondaEleccionesEmpleador.setViewportView(this.listRondaEleccionesEmpleador);
 		this.listRondaEleccionesEmpleador.setBorder(new TitledBorder(
 				new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Empleados",
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		this.listRondaEleccionesEmpleador.setBounds(10, 23, 377, 221);
-		this.panelRondaEleccionesEmpleador.add(this.listRondaEleccionesEmpleador);
 
 		this.btnConfirmacionEleccionEmpleador = new JButton("Confirmar");
 		this.btnConfirmacionEleccionEmpleador.setBounds(162, 277, 89, 23);
@@ -1166,12 +1177,15 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnCrearTicketSimplificado = new JButton("Crear");
 		this.btnCrearTicketSimplificado.setBounds(147, 109, 89, 23);
 		this.panelTicketSimplificado.add(this.btnCrearTicketSimplificado);
+		
+		this.scrollPaneTicketsSimplificadosEmpleador = new JScrollPane();
+		this.scrollPaneTicketsSimplificadosEmpleador.setBounds(10, 510, 387, 124);
+		this.panelRondaDeEleccionEmpleador.add(this.scrollPaneTicketsSimplificadosEmpleador);
 
 		this.listTicketSimplificadosEmpleador = new JList();
+		this.scrollPaneTicketsSimplificadosEmpleador.setViewportView(this.listTicketSimplificadosEmpleador);
 		this.listTicketSimplificadosEmpleador.setBorder(
 				new TitledBorder(null, "Tickets Simplificados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.listTicketSimplificadosEmpleador.setBounds(10, 510, 387, 124);
-		this.panelRondaDeEleccionEmpleador.add(this.listTicketSimplificadosEmpleador);
 
 		// ventana Agencia
 
@@ -1190,9 +1204,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionCreacionUsuario.setEnabled(false);
 		this.btnConfirmacionCreacionTicket.setEnabled(false);
 		this.btnConfirmacionEleccionEmpleado.setEnabled(false);
-		this.btnBolsaAceptar.setEnabled(false);
-		this.btnBolsaRechazar.setEnabled(false);
-		this.btnInicioBolsa.setEnabled(false);
 		
 		// Seteo comboBox
 		
@@ -1224,42 +1235,30 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxBolsaLocacion.addItem("Presencial");
 		comboBoxBolsaLocacion.addItem("Indistinto");
 		
-		//Seteo lista
+		this.scrollPaneTicketSimpObtenido = new JScrollPane();
+		this.scrollPaneTicketSimpObtenido.setBounds(21, 94, 364, 94);
+		this.panelBolsaTrabajo.add(this.scrollPaneTicketSimpObtenido);
 		
-		listEmpleadores.setName("listEmpleadores");
-		listEmpleadores.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // single selection es 0
-		listTicketSimpActual.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		this.listTicketSimpObtenido = new JList();
+		this.scrollPaneTicketSimpObtenido.setViewportView(this.listTicketSimpObtenido);
+		this.listTicketSimpObtenido.setBorder(new TitledBorder(null, "Ticket Simplificado Obtenido", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
 		// Funcionalidad de los botones
 
 		this.btnConfirmarLogin.setActionCommand(confirmaLoginUsuario);
 		this.btnConfirmacionCreacionUsuario.setActionCommand(confirmaCreacionUsuario);
 		this.btnConfirmacionCreacionTicket.setActionCommand(confirmaCreacionTicket);
-		
-		this.listTicketSimpObtenido = new JList();
-		this.listTicketSimpObtenido.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Ticket Simplificado Obtenido", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		this.listTicketSimpObtenido.setBounds(10, 588, 389, 57);
-		this.panelTicket.add(this.listTicketSimpObtenido);
 		this.btnConfirmacionEleccionEmpleado.setActionCommand(confirmaEleccionEmpleado);
-		this.btnBolsaAceptar.setActionCommand(confirmaAceptacionTicket);
-		this.btnBolsaRechazar.setActionCommand(confirmaRechazoTicket);
-		this.btnInicioBolsa.setActionCommand(confirmaArranqueBDT);
 
 		this.btnConfirmarLogin.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmacionCreacionUsuario.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmacionCreacionTicket.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmacionEleccionEmpleado.addActionListener(new ActionPerformedBotones(this));
-		this.btnBolsaAceptar.addActionListener(new ActionPerformedBotones(this));
-		this.btnBolsaRechazar.addActionListener(new ActionPerformedBotones(this));
-		this.btnInicioBolsa.addActionListener(new ActionPerformedBotones(this));
 		
 		this.btnConfirmarLogin.addMouseListener(this);
 		this.btnConfirmacionCreacionUsuario.addMouseListener(this);
 		this.btnConfirmacionCreacionTicket.addMouseListener(this);
 		this.btnConfirmacionEleccionEmpleado.addMouseListener(this);
-		this.btnBolsaAceptar.addMouseListener(this);
-		this.btnBolsaRechazar.addMouseListener(this);
-		this.btnInicioBolsa.addMouseListener(this);
 
 		// Asigno a los textfield para que escuchen el texto ingresado por teclado
 		// (LOGIN)
@@ -1293,8 +1292,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionCreacionUsuarioEmpleador.setEnabled(false);
 		this.btnConfirmacionCreacionTicketEmpleador.setEnabled(false);
 		this.btnConfirmacionEleccionEmpleador.setEnabled(false);
-		this.btnCrearTicketSimplificado.setEnabled(false); // (hasta q se loguee por lo menos)
-		this.btnInicioBolsa.setEnabled(false);
+		this.btnCrearTicketSimplificado.setEnabled(false);
 		
 		// Seteo ComboBox
 		
@@ -1334,11 +1332,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxRangoEtarioEmpleador.addItem("Entre 40 y 50");
 		comboBoxRangoEtarioEmpleador.addItem("Mas de 50");
 		
-		// Seteo lista
-		
-		listEmpleados.setName("listEmpleados");
-		listEmpleados.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // single selection es 0
-		
 		//
 
 		this.btnConfirmarLoginEmpleador.setActionCommand(confirmarLoginEmpleador);
@@ -1354,20 +1347,41 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		this.panelGeneralBolsaDeTrabajo = new JPanel();
 		this.panelBolsaDeTrabajo.add(this.panelGeneralBolsaDeTrabajo, BorderLayout.CENTER);
+		this.panelGeneralBolsaDeTrabajo.setLayout(new GridLayout(0, 3, 0, 0));
+		
+		this.scrollPaneTicketsSimplificados = new JScrollPane();
+		this.scrollPaneTicketsSimplificados.setViewportBorder(new TitledBorder(null, "Lista Tickets Simplificados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelGeneralBolsaDeTrabajo.add(this.scrollPaneTicketsSimplificados);
+		
+		this.listTicketsSimplificados = new JList();
+		this.scrollPaneTicketsSimplificados.setViewportView(this.listTicketsSimplificados);
+		
+		this.scrollPaneSimulacionThreads = new JScrollPane();
+		this.scrollPaneSimulacionThreads.setViewportBorder(new TitledBorder(null, "Simulaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelGeneralBolsaDeTrabajo.add(this.scrollPaneSimulacionThreads);
+		
+		this.textAreaSimulacionThreads = new JTextArea();
+		this.scrollPaneSimulacionThreads.setViewportView(this.textAreaSimulacionThreads);
+		
+		this.scrollPaneContratacionesBolsaTrabajo = new JScrollPane();
+		this.scrollPaneContratacionesBolsaTrabajo.setViewportBorder(new TitledBorder(null, "Contrataciones", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelGeneralBolsaDeTrabajo.add(this.scrollPaneContratacionesBolsaTrabajo);
+		
+		this.textAreaContratacionesBolsaTrabajo = new JTextArea();
+		this.scrollPaneContratacionesBolsaTrabajo.setViewportView(this.textAreaContratacionesBolsaTrabajo);
+		this.textAreaContratacionesBolsaTrabajo.setColumns(10);
 		
 		this.btnConfirmarLoginEmpleador.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmacionCreacionTicketEmpleador.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmacionEleccionEmpleador.addActionListener(new ActionPerformedBotones(this));
 		this.btnCrearTicketSimplificado.addActionListener(new ActionPerformedBotones(this));
-		this.btnInicioBolsa.addActionListener(new ActionPerformedBotones(this));
 		
 		this.btnConfirmarLoginEmpleador.addMouseListener(this);
 		this.btnConfirmacionCreacionUsuarioEmpleador.addMouseListener(this);
 		this.btnConfirmacionCreacionTicketEmpleador.addMouseListener(this);
 		this.btnConfirmacionEleccionEmpleador.addMouseListener(this);
 		this.btnCrearTicketSimplificado.addMouseListener(this);
-		this.btnInicioBolsa.addMouseListener(this);
 
 		this.rdbtnActivoEmpleador.addMouseListener(this);
 		this.rdbtnCancelarEmpleador.addMouseListener(this);
@@ -1622,7 +1636,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	}
 
 	public String getListContrataciones() {
-		return listContrataciones;
+		return textAreaContrataciones;
 	}
 
 	public int getTextFieldCantEmpleadosBuscados() {
