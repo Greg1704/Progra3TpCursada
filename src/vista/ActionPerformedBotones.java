@@ -51,7 +51,7 @@ public class ActionPerformedBotones implements ActionListener {
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
 					
 					try {
-						empleado
+						
 						empleado.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuario());
 						JOptionPane.showMessageDialog(null, "Login Correcto");
 						v.EmpleadoLogeado(true);
