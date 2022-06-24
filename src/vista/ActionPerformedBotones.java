@@ -51,16 +51,17 @@ public class ActionPerformedBotones implements ActionListener {
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
 					
 					try {
+						empleado
 						empleado.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuario());
 						JOptionPane.showMessageDialog(null, "Login Correcto");
-						EmpleadorLogeado(true);
+						v.EmpleadoLogeado(true);
 					}catch (ContraseniaIncorrectaException ex) {
 						JOptionPane.showMessageDialog(null, ex.getMessage());
-
+						v.EmpleadoLogeado(false);
 					}
 					catch(UsuarioIncorrectoException ex) {
 						JOptionPane.showMessageDialog(null, ex.getMessage());
-
+						v.EmpleadoLogeado(false);
 					}
 
 						
@@ -113,14 +114,15 @@ public class ActionPerformedBotones implements ActionListener {
 							try {
 								empleador.Login(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionUsuarioEmpleador());
 								JOptionPane.showMessageDialog(null, "Login Correcto");
-								//Hacer lo que haya que hacer para que se desbloquee el resto de la ventana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+								v.EmpleadorLogeado(true);
 							}
 							catch (ContraseniaIncorrectaException ex) {
 								JOptionPane.showMessageDialog(null, ex.getMessage());
+								v.EmpleadorLogeado(false);
 							}
 							catch(UsuarioIncorrectoException ex) {
 								JOptionPane.showMessageDialog(null, ex.getMessage());
-
+								v.EmpleadorLogeado(false);
 							}
 					}else
 						if(e.getActionCommand().equals(IVista.confirmacionCreacionUsuarioEmpleador)) {
