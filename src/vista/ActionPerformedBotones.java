@@ -40,6 +40,7 @@ public class ActionPerformedBotones implements ActionListener {
 			if (e.getActionCommand().equals(IVista.arrrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
 				sistema.busquedaLaboral();
 				
+				
 		}else
 			if(e.getActionCommand().equals(IVista.arrrancaRondaDeContrataciones)) { //HACER PARTE VENTANA
 				sistema.rondaDeContrataciones();

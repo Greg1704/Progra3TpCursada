@@ -24,6 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
@@ -1167,16 +1168,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmarNombreAgencia.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmarNombreAgencia.addMouseListener(this);
 
-		/*
-		 * if (hayRondaContrataciones) { this.botonRondaContrataciones.setEnabled(true);
-		 * else this.botonRondaContrataciones.setEnabled(false); //(esto viene por
-		 * default en realidad pero no est� de m�s) if (hayRondaContrataciones &
-		 * hayRondaEncuentro) { this.botonRondaEncuentro.setEnabled(true); else
-		 * this.botonRondaEncuentro.setEnabled(false); //(esto viene por default en
-		 * realidad pero no est� de m�s)
-		 * 
-		 */
-
 		// ventana Empleado
 
 		// Seteo de los botones en false para que aparezcan en gris
@@ -1218,6 +1209,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxBolsaLocacion.addItem("HomeOffice");
 		comboBoxBolsaLocacion.addItem("Presencial");
 		comboBoxBolsaLocacion.addItem("Indistinto");
+		
+		//Seteo lista
+		
+		listEmpleadores.setName("listEmpleadores");
+		listEmpleadores.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // single selection es 0
+		listTicketSimpActual.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
 		// Funcionalidad de los botones
 
@@ -1326,8 +1323,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxRangoEtarioEmpleador.addItem("Entre 40 y 50");
 		comboBoxRangoEtarioEmpleador.addItem("Mas de 50");
 		
+		// Seteo lista
 		
-		
+		listEmpleados.setName("listEmpleados");
+		listEmpleados.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // single selection es 0
 		
 		//
 
@@ -1377,26 +1376,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 	public String getTextFieldCrearAgencia() {
 		return textFieldCrearAgencia.getText();
-	}
-
-	public String getListComisiones() {
-		return listComisiones;
-	}
-
-	public String getListEmpleados() {
-		return listEmpleados.getSe;
-	}
-
-	public String getListTicketEmpleados() {
-		return listTicketEmpleados;
-	}
-
-	public String getListEmpleadores() {
-		return listEmpleadores;
-	}
-
-	public String getListTicketEmpleadores() {
-		return listTicketEmpleadores;
 	}
 
 	public String getTextFieldUsuario() {
@@ -1492,7 +1471,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	}
 
 	public String getListTicketSimpActual() {
-		return listTicketSimpActual;
+		return (String) listTicketSimpActual.getSelectedValue();
 	}
 
 	public String getTextFieldUsuarioEmpleador() {
@@ -1579,9 +1558,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return Integer.parseInt((String) textFieldPesoEstudiosCursadosEmpleador.getText());
 	}
 
-	public String getListTicketActualEmpleador() {
+	/*public String getListTicketActualEmpleador() {
 		return listTicketActualEmpleador;
 	}
+	*/
 
 	public ArrayList<Empleado> getListRondaEleccionesEmpleador() {
 		return (ArrayList)listRondaEleccionesEmpleador.getSelectedValuesList(); 
@@ -1789,14 +1769,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.textFieldCreacionCiudad.setText(textFieldCreacionCiudad);
 	}
 
-	public void setBtnAceptarYRechazarTicketSimplificado(boolean hab, boolean hab2) {
-		boolean habFinal = hab && hab2;
-		this.btnBolsaAceptar.setEnabled(habFinal);
-		this.btnBolsaRechazar.setEnabled(habFinal); // seteo los dos botones de una porque esto es solo para verificar
+	public void setBtnAceptarYRechazarTicketSimplificado(boolean hab) {
+		this.btnBolsaAceptar.setEnabled(hab);
+		this.btnBolsaRechazar.setEnabled(hab); // seteo los dos botones de una porque esto es solo para verificar
 													// si seleccione el ticket simplificado
 	}
-	public void setBtnArrancarBolsa(boolean hab) {
-		
+	public void setBtnArrancarBolsa(boolean hab) { // activar cuando se complete el login
+		this.setBtnArrancarBolsa(hab);
 	}
 	
 	public void setComboBoxLocacion() {
@@ -2014,15 +1993,18 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 	@Override
 	public void valueChanged(ListSelectionEvent e) { // listas
+		
+		if (e.getSource()==listRondaEleccionesEmpleado) {
 		boolean hab = !(listRondaEleccionesEmpleado.isSelectionEmpty());
 		setBtnConfirmacionEleccionEmpleado(hab);
-
-		/*
-		 * boolean hab1 = !(listTicketSimpActual.isSelectionEmpty());
-		 * setBotonAceptarYRechazarTicketSimplificado(hab);
-		 */
-		boolean hab2 = !listRondaEleccionesEmpleador.isSelectionEmpty();
-		setBtnConfirmacionEleccionEmpleador(hab2);
-
+		} else
+			if (e.getSource()==listTicketSimpActual) {
+				boolean hab1 = !(listTicketSimpActual.isSelectionEmpty());
+				setBtnAceptarYRechazarTicketSimplificado(hab1);
+			} else 
+				if (e.getSource()==listRondaEleccionesEmpleador) {
+					boolean hab2 = !listRondaEleccionesEmpleador.isSelectionEmpty();
+					setBtnConfirmacionEleccionEmpleador(hab2);
+				}
 	}
 }
