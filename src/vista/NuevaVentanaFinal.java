@@ -254,6 +254,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JScrollPane scrollPaneTicketActualEmpleador;
 	private JScrollPane scrollPaneRondaEleccionesEmpleador;
 	private JScrollPane scrollPaneTicketsSimplificadosEmpleador;
+	private JButton btnConfirmarRequisitosBolsa;
 	
 
 	/**
@@ -739,12 +740,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelEleccionYBolsa.setLayout(null);
 
 		this.panelRondaElecciones = new JPanel();
-		this.panelRondaElecciones.setBounds(6, 16, 395, 412);
+		this.panelRondaElecciones.setBounds(6, 16, 395, 394);
 		this.panelRondaElecciones.setLayout(null);
 		this.panelEleccionYBolsa.add(this.panelRondaElecciones);
 		
 		this.scrollPaneRondaEleccionEmpleado = new JScrollPane();
-		this.scrollPaneRondaEleccionEmpleado.setBounds(10, 11, 377, 356);
+		this.scrollPaneRondaEleccionEmpleado.setBounds(10, 11, 377, 321);
 		this.panelRondaElecciones.add(this.scrollPaneRondaEleccionEmpleado);
 
 		this.listRondaEleccionesEmpleado = new JList();
@@ -753,11 +754,11 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				.setBorder(new TitledBorder(null, "Empleadores", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
 		this.btnConfirmacionEleccionEmpleado = new JButton("Confirmar");
-		this.btnConfirmacionEleccionEmpleado.setBounds(162, 378, 89, 23);
+		this.btnConfirmacionEleccionEmpleado.setBounds(162, 360, 89, 23);
 		this.panelRondaElecciones.add(this.btnConfirmacionEleccionEmpleado);
 
 		this.panelBolsaTrabajo = new JPanel();
-		this.panelBolsaTrabajo.setBounds(6, 439, 395, 199);
+		this.panelBolsaTrabajo.setBounds(6, 414, 395, 224);
 		this.panelBolsaTrabajo.setLayout(null);
 		this.panelBolsaTrabajo.setBorder(
 				new TitledBorder(null, "Bolsa de Trabajo", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1236,12 +1237,16 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxBolsaLocacion.addItem("Indistinto");
 		
 		this.scrollPaneTicketSimpObtenido = new JScrollPane();
-		this.scrollPaneTicketSimpObtenido.setBounds(21, 94, 364, 94);
+		this.scrollPaneTicketSimpObtenido.setBounds(21, 119, 364, 94);
 		this.panelBolsaTrabajo.add(this.scrollPaneTicketSimpObtenido);
 		
 		this.listTicketSimpObtenido = new JList();
 		this.scrollPaneTicketSimpObtenido.setViewportView(this.listTicketSimpObtenido);
 		this.listTicketSimpObtenido.setBorder(new TitledBorder(null, "Ticket Simplificado Obtenido", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		
+		this.btnConfirmarRequisitosBolsa = new JButton("Confirmar");
+		this.btnConfirmarRequisitosBolsa.setBounds(162, 85, 89, 23);
+		this.panelBolsaTrabajo.add(this.btnConfirmarRequisitosBolsa);
 		
 		// Funcionalidad de los botones
 
