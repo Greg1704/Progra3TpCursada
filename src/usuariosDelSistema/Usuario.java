@@ -67,6 +67,4 @@ public abstract class Usuario implements Serializable{
 
 	public abstract void CancelaTicket();
 
-	public abstract void Login(String usuario, String contrasenia) throws UsuarioIncorrectoException, ContraseniaIncorrectaException;
-
 }
