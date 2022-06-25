@@ -9,4 +9,6 @@ public interface I_TipoTrabajo {
     public abstract double ComercioLocal();
 
     public abstract double ComercioInternacional();
+    
+    public abstract String getRubro();
 }

@@ -50,6 +50,9 @@ public String getLocacion() {
 		return locacion.toString();
 	}
 
+public String getTipoDeTrabajo() {
+	return this.tipoTrabajo.getRubro();
+}
    
    //Revisar si hay que agregar algun error a tipoTrabajoFactory
    //Revisar como relacionar las clases Salud, ComercioLocal, y ComercioInternacional con los empleados

@@ -31,20 +31,31 @@ public class BolsaTrabajo {
 	
 	
 	public synchronized void sacarTicket(Empleado empleado) {
-		while (this.usaLista == true) {
+		while (this.usaLista == true && empleado.getPasadas()>0) {
 			try {		
+				empleado.setPasadas(empleado.getPasadas()-1);
 				wait();	
 			}catch(InterruptedException e) {}			
 		}
 		
 		this.usaLista = true;
 		i=0;
-		while(i<tickets.size()) //Falta condicion: Ver como comparar rubro de ticket simplificado con el del empleado
-		// funcion para analizar si el ticket corresponde, esta funcion deberia estar en empleado, de donde son los threads
-		notifyAll();
-		this.usaLista = false;
-		
+	while((i<tickets.size())&&!(tickets.get(i).getTipoDeTrabajo().equals(empleado.getTicketSimpElegido().getTipoDeTrabajo()))) {//creo que este getTicketSimp esta mal
+		i++;																													//deberiamos hacer un get del ticket que quiere tambien
+	} //Volvimos a progra 2 chicos																								  consultar con creadores de tickets :D		
+	
+	if(i<tickets.size()&&tickets.get(i).getTipoDeTrabajo().equals(empleado.getTicketSimpElegido().getTipoDeTrabajo())) { //Si hay un ticket que me sirve
+	// funcion para analizar si el ticket corresponde, esta funcion deberia estar en empleado, de donde son los threads
+	
 	}
+																											
+																										  
+
+		this.usaLista = false;																				
+		notifyAll();
+//		this.usaLista = false; Opinion, DesertiManuel42782400 , hijo de Adrian: Esto va arriba porq en todos los ejs es asi :)
+		}	
+	
 	
 	
 	public synchronized void devolverTicket(Empleado empleado) {

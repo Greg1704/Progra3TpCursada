@@ -1,7 +1,7 @@
 package usuariosDelSistema;
 
 public class Salud extends RubroDecorator implements I_TipoTrabajo {
-
+	private String rubro="Salud"; 
     public Salud(Empleador empleador) {
         super(empleador);
     }
@@ -30,4 +30,11 @@ public class Salud extends RubroDecorator implements I_TipoTrabajo {
     public double ComercioInternacional() {
         return -1;
     }
+    
+   
+
+	@Override
+	public String getRubro() {
+		return this.rubro;
+	}
 }

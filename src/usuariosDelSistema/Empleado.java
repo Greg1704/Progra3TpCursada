@@ -230,7 +230,10 @@ public class Empleado extends Usuario implements Observer,Runnable {
 		
 	}
 	
-	
+	public void eleccionTicketSimp() { // esto es lo que va en BolsaTrabajo para ver si me quedo el ticket que esta en la lista o lo devuelvo
+									   //como no la tengo tan clara con los criterios lo dejo comentado y lo hacemos juntos :)
+		
+	}
 
 
 }
