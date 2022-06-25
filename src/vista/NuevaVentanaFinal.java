@@ -1423,11 +1423,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		EmpleadoLogeado(false);
 		EmpleadorLogeado(false);
-		
-		if (Sistema.getInstancia()!=null) {
-			AdminLogueado(true);
-		} else
-			AdminLogueado(false);
 
 	}
 	

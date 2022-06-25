@@ -32,11 +32,16 @@ public class Controlador implements ActionListener {
 		
 		if (e.getActionCommand().equals(IVista.confirmaCreacionAgencia)) { // ventana Agencia
 			
-			//chequear si ya existe la agencia o no
-			
+			if (Sistema.getInstancia()!=null) {
+				v.AdminLogueado(true);
+				JOptionPane.showMessageDialog(null, "La agencia ya existe");
+			} else  {
+				// crear la agencia
+					
+				Sistema agencia = Sistema.getInstancia();
+			}
 			v.setTextFieldCrearAgencia("");
 			v.setBtnConfirmarNombreAgencia(false);
-			
 		} else
 			if (e.getActionCommand().equals(IVista.arrrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
 				sistema.busquedaLaboral();
