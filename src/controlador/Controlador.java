@@ -1,4 +1,4 @@
-package vista;
+package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +14,8 @@ import usuariosDelSistema.Empleador;
 import usuariosDelSistema.EmpleadorFisico;
 import usuariosDelSistema.EmpleadorJuridico;
 import usuariosDelSistema.Sistema;
+import vista.IVista;
+import vista.NuevaVentanaFinal;
 
 public class Controlador implements ActionListener {
 		NuevaVentanaFinal v;
@@ -21,8 +23,8 @@ public class Controlador implements ActionListener {
 		Empleador empleador;
 		Sistema sistema;
 	
-	public Controlador(NuevaVentanaFinal v) {
-		this.v = v;
+	public Controlador() {
+		this.v = new NuevaVentanaFinal();
 		v.setControlador(this);
 	}
 

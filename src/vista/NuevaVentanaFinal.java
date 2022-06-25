@@ -33,6 +33,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import armaTickets.TicketEmpleado;
+import controlador.Controlador;
 import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
@@ -262,7 +263,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -273,12 +274,15 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
 	public NuevaVentanaFinal() {
+		
+		this.setVisible(true);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1254, 722);
 		this.contentPane = new JPanel();
