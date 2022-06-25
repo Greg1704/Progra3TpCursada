@@ -19,7 +19,7 @@ public class Controlador implements ActionListener {
 		NuevaVentanaFinal v;
 		Empleado empleado;
 		Empleador empleador;
-		Sistema sistema = Sistema.getInstancia();
+		Sistema sistema;
 	
 	public Controlador(NuevaVentanaFinal v) {
 		this.v = v;
@@ -37,8 +37,8 @@ public class Controlador implements ActionListener {
 				System.out.println("La agencia ay existe");
 			} else  {
 				// crear la agencia	
-				Sistema agencia = Sistema.getInstancia();
-				agencia.setNombre(v.getTextFieldCrearAgencia());
+				sistema = Sistema.getInstancia();
+				sistema.setNombre(v.getTextFieldCrearAgencia());
 				v.AdminLogueado(true);
 			}
 			v.setTextFieldCrearAgencia("");
