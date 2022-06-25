@@ -68,9 +68,9 @@ public class Testeo {
 		e5.setLocacionSimp("Indistinto");
 		e1.setTipoTrabajoSimp("Salud");
 		e2.setTipoTrabajoSimp("Salud");
-		e3.setTipoTrabajoSimp("Salud");
+		e3.setTipoTrabajoSimp("ComercioInternacional");
 		e4.setTipoTrabajoSimp("Salud");
-		e5.setTipoTrabajoSimp("Salud");
+		e5.setTipoTrabajoSimp("ComercioLocal");
 		
 
 		em1.crearTicketSimplificado("Presencial", "ComercioLocal");

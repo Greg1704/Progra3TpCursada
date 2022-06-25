@@ -30,28 +30,34 @@ public class BolsaTrabajo {
 	}
 	
 	
-	public synchronized void sacarTicket(Empleado empleado) {
-		while (this.usaLista == true) {
-			try {		
-				System.out.println("espera");
-				wait();	
-			}catch(InterruptedException e) {}			
-		}		
-		this.usaLista = true;
-		i=0;
-		while((i<tickets.size()) && !(tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp())))) {//creo que este getTicketSimp esta mal
-			i++;																													//deberiamos hacer un get del ticket que quiere tambien
-		} 																		
 	
-		
-		
-		if(i<tickets.size() && tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp()))) { //Si hay un ticket que me sirve
-			empleado.eleccionTicketSimp(this.tomaTicket(i));
-		}
-				
-		this.usaLista = false;	
-		notifyAll();
-	}	
+	
+	public void setUsaLista(boolean usaLista) {
+		this.usaLista = usaLista;
+	}
+
+	public synchronized void sacarTicket(Empleado empleado) {
+        while (this.usaLista == true) {
+            try {
+                System.out.println("espera");
+                wait();
+            }catch(InterruptedException e) {}
+        }
+        this.usaLista = true;
+
+        i=0;
+
+        while((i<tickets.size()) && !(tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp())))) {//creo que este getTicketSimp esta mal
+            i++;                                                                                                                    //deberiamos hacer un get del ticket que quiere tambien
+        }
+
+        if(i<tickets.size() && tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp()))) { //Si hay un ticket que me sirve
+            empleado.eleccionTicketSimp(this.tomaTicket(i));
+        }
+        this.usaLista = false;
+        notifyAll();
+
+    }	
 	
 	
 	public synchronized void devolverTicket(Empleado empleado,TicketSimplificado t) {
