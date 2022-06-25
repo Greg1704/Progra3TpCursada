@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
@@ -1236,202 +1237,206 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.scrollPaneContratacionesBolsaTrabajo.setViewportView(this.textAreaContratacionesBolsaTrabajo);
 		this.textAreaContratacionesBolsaTrabajo.setColumns(10);
 
+	}
+	
+	public void seteoTodoPorDefault() {
 		// ventana Agencia
 
-		this.textFieldCrearAgencia.addKeyListener(this);
+				this.textFieldCrearAgencia.addKeyListener(this);
 
-		this.btnConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
+				this.btnConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
 
-		this.btnConfirmarNombreAgencia.addActionListener(c);
-		this.btnConfirmarNombreAgencia.addMouseListener(this);
+				this.btnConfirmarNombreAgencia.addActionListener(c);
+				this.btnConfirmarNombreAgencia.addMouseListener(this);
 
-		// ventana Empleado
+				// ventana Empleado
 
-		// Seteo de los botones en false para que aparezcan en gris
+				// Seteo de los botones en false para que aparezcan en gris
 
-		this.btnConfirmarLogin.setEnabled(false);
-		this.btnConfirmacionCreacionUsuario.setEnabled(false);
-		this.btnConfirmacionCreacionTicket.setEnabled(false);
-		this.btnConfirmacionEleccionEmpleado.setEnabled(false);
-		
-		// Seteo comboBox
-		
-		comboBoxLocacion.addItem("HomeOffice");
-		comboBoxLocacion.addItem("Presencial");
-		comboBoxLocacion.addItem("Indistinto");
-		
-		comboBoxCargaHoraria.addItem("Media");
-		comboBoxCargaHoraria.addItem("Completa");
-		comboBoxCargaHoraria.addItem("Extendida");
-		
-		comboBoxTipoDePuesto.addItem("Junior");
-		comboBoxTipoDePuesto.addItem("Senior");
-		comboBoxTipoDePuesto.addItem("Managment");
-		
-		comboBoxExperienciaPrevia.addItem("Nada");
-		comboBoxExperienciaPrevia.addItem("Media");
-		comboBoxExperienciaPrevia.addItem("Mucha");
-		
-		comboBoxEstudiosCursados.addItem("Primario");
-		comboBoxEstudiosCursados.addItem("Secundario");
-		comboBoxEstudiosCursados.addItem("Terciario");
-		
-		comboBoxBolsaTipoTrabajo.addItem("Salud");
-		comboBoxBolsaTipoTrabajo.addItem("Comercio Local");
-		comboBoxBolsaTipoTrabajo.addItem("Comercio Internacional");
-		
-		comboBoxBolsaLocacion.addItem("HomeOffice");
-		comboBoxBolsaLocacion.addItem("Presencial");
-		comboBoxBolsaLocacion.addItem("Indistinto");
-		
-		// seteo listas
-		
-		listRondaEleccionesEmpleado.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		
-		// Funcionalidad de los botones
+				this.btnConfirmarLogin.setEnabled(false);
+				this.btnConfirmacionCreacionUsuario.setEnabled(false);
+				this.btnConfirmacionCreacionTicket.setEnabled(false);
+				this.btnConfirmacionEleccionEmpleado.setEnabled(false);
+				
+				// Seteo comboBox
+				
+				comboBoxLocacion.addItem("HomeOffice");
+				comboBoxLocacion.addItem("Presencial");
+				comboBoxLocacion.addItem("Indistinto");
+				
+				comboBoxCargaHoraria.addItem("Media");
+				comboBoxCargaHoraria.addItem("Completa");
+				comboBoxCargaHoraria.addItem("Extendida");
+				
+				comboBoxTipoDePuesto.addItem("Junior");
+				comboBoxTipoDePuesto.addItem("Senior");
+				comboBoxTipoDePuesto.addItem("Managment");
+				
+				comboBoxExperienciaPrevia.addItem("Nada");
+				comboBoxExperienciaPrevia.addItem("Media");
+				comboBoxExperienciaPrevia.addItem("Mucha");
+				
+				comboBoxEstudiosCursados.addItem("Primario");
+				comboBoxEstudiosCursados.addItem("Secundario");
+				comboBoxEstudiosCursados.addItem("Terciario");
+				
+				comboBoxBolsaTipoTrabajo.addItem("Salud");
+				comboBoxBolsaTipoTrabajo.addItem("Comercio Local");
+				comboBoxBolsaTipoTrabajo.addItem("Comercio Internacional");
+				
+				comboBoxBolsaLocacion.addItem("HomeOffice");
+				comboBoxBolsaLocacion.addItem("Presencial");
+				comboBoxBolsaLocacion.addItem("Indistinto");
+				
+				// seteo listas
+				
+				listRondaEleccionesEmpleado.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+				
+				// Funcionalidad de los botones
 
-		this.btnConfirmarLogin.setActionCommand(confirmaLoginUsuario);
-		this.btnConfirmacionCreacionUsuario.setActionCommand(confirmaCreacionUsuario);
-		this.btnConfirmacionCreacionTicket.setActionCommand(confirmaCreacionTicket);
-		this.btnConfirmacionEleccionEmpleado.setActionCommand(confirmaEleccionEmpleado);
+				this.btnConfirmarLogin.setActionCommand(confirmaLoginUsuario);
+				this.btnConfirmacionCreacionUsuario.setActionCommand(confirmaCreacionUsuario);
+				this.btnConfirmacionCreacionTicket.setActionCommand(confirmaCreacionTicket);
+				this.btnConfirmacionEleccionEmpleado.setActionCommand(confirmaEleccionEmpleado);
 
-		this.btnConfirmarLogin.addActionListener(c);
-		this.btnConfirmacionCreacionUsuario.addActionListener(c);
-		this.btnConfirmacionCreacionTicket.addActionListener(c);
-		this.btnConfirmacionEleccionEmpleado.addActionListener(c);
-		
-		this.btnConfirmarLogin.addMouseListener(this);
-		this.btnConfirmacionCreacionUsuario.addMouseListener(this);
-		this.btnConfirmacionCreacionTicket.addMouseListener(this);
-		this.btnConfirmacionEleccionEmpleado.addMouseListener(this);
+				this.btnConfirmarLogin.addActionListener(c);
+				this.btnConfirmacionCreacionUsuario.addActionListener(c);
+				this.btnConfirmacionCreacionTicket.addActionListener(c);
+				this.btnConfirmacionEleccionEmpleado.addActionListener(c);
+				
+				this.btnConfirmarLogin.addMouseListener(this);
+				this.btnConfirmacionCreacionUsuario.addMouseListener(this);
+				this.btnConfirmacionCreacionTicket.addMouseListener(this);
+				this.btnConfirmacionEleccionEmpleado.addMouseListener(this);
 
-		// Asigno a los textfield para que escuchen el texto ingresado por teclado
-		// (LOGIN)
+				// Asigno a los textfield para que escuchen el texto ingresado por teclado
+				// (LOGIN)
 
-		this.textFieldUsuario.addKeyListener(this);
-		this.textFieldContrasenia.addKeyListener(this);
+				this.textFieldUsuario.addKeyListener(this);
+				this.textFieldContrasenia.addKeyListener(this);
 
-		// Asigno a los textfield para que escuchen el texto ingresado por teclado
-		// (CREACION DE TECLADO)
+				// Asigno a los textfield para que escuchen el texto ingresado por teclado
+				// (CREACION DE TECLADO)
 
-		this.textFieldCreacionUsuario.addKeyListener(this);
-		this.textFieldCreacionContrasenia.addKeyListener(this);
-		this.textFieldCreacionNyA.addKeyListener(this);
-		this.textFieldCreacionDNI.addKeyListener(this);
-		this.textFieldCreacionTelefono.addKeyListener(this);
-		this.textFieldCreacionEdad.addKeyListener(this);
-		this.textFieldCreacionCiudad.addKeyListener(this);
+				this.textFieldCreacionUsuario.addKeyListener(this);
+				this.textFieldCreacionContrasenia.addKeyListener(this);
+				this.textFieldCreacionNyA.addKeyListener(this);
+				this.textFieldCreacionDNI.addKeyListener(this);
+				this.textFieldCreacionTelefono.addKeyListener(this);
+				this.textFieldCreacionEdad.addKeyListener(this);
+				this.textFieldCreacionCiudad.addKeyListener(this);
 
-		this.textFieldPesoCargaHoraria.addKeyListener(this);
-		this.textFieldPesoLocacion.addKeyListener(this);
-		this.textFieldPesoRemuneracion.addKeyListener(this);
-		this.textFieldPesoTipoDePuesto.addKeyListener(this);
+				this.textFieldPesoCargaHoraria.addKeyListener(this);
+				this.textFieldPesoLocacion.addKeyListener(this);
+				this.textFieldPesoRemuneracion.addKeyListener(this);
+				this.textFieldPesoTipoDePuesto.addKeyListener(this);
 
-		this.rdbtnActivo.addMouseListener(this);
-		this.rdbtnSuspendido.addMouseListener(this);
-		this.rdbtnCancelar.addMouseListener(this);
+				this.rdbtnActivo.addMouseListener(this);
+				this.rdbtnSuspendido.addMouseListener(this);
+				this.rdbtnCancelar.addMouseListener(this);
 
-		// ventana Empleador
+				// ventana Empleador
 
-		this.btnConfirmarLoginEmpleador.setEnabled(false);
-		this.btnConfirmacionCreacionUsuarioEmpleador.setEnabled(false);
-		this.btnConfirmacionCreacionTicketEmpleador.setEnabled(false);
-		this.btnConfirmacionEleccionEmpleador.setEnabled(false);
-		this.btnCrearTicketSimplificado.setEnabled(true);
-		
-		// Seteo ComboBox
-		
-		comboBoxRubroEmpleador.addItem("Salud");
-		comboBoxRubroEmpleador.addItem("ComercioLocal");
-		comboBoxRubroEmpleador.addItem("ComercioInternacional");
-		
-		comboBoxLocacionEmpleador.addItem("HomeOffice");
-		comboBoxLocacionEmpleador.addItem("Presencial");
-		comboBoxLocacionEmpleador.addItem("Indistinto");
-		
-		comboBoxCargaHorariaEmpleador.addItem("Media");
-		comboBoxCargaHorariaEmpleador.addItem("Completa");
-		comboBoxCargaHorariaEmpleador.addItem("Extendida");
-		
-		comboBoxTipoDePuestoEmpleador.addItem("Junior");
-		comboBoxTipoDePuestoEmpleador.addItem("Senior");
-		comboBoxTipoDePuestoEmpleador.addItem("Managment");
-		
-		comboBoxBolsaTipoTrabajoEmpleador.addItem("Salud");
-		comboBoxBolsaTipoTrabajoEmpleador.addItem("Comercio Local");
-		comboBoxBolsaTipoTrabajoEmpleador.addItem("Comercio Internacional");
-		
-		comboBoxBolsaLocacionEmpleador.addItem("HomeOffice");
-		comboBoxBolsaLocacionEmpleador.addItem("Presencial");
-		comboBoxBolsaLocacionEmpleador.addItem("Indistinto");
-		
-		comboBoxExperienciaPreviaEmpleador.addItem("Nada");
-		comboBoxExperienciaPreviaEmpleador.addItem("Media");
-		comboBoxExperienciaPreviaEmpleador.addItem("Mucha");
-		
-		comboBoxEstudiosCursadosEmpleador.addItem("Primario");
-		comboBoxEstudiosCursadosEmpleador.addItem("Secundario");
-		comboBoxEstudiosCursadosEmpleador.addItem("Terciario");
-		
-		comboBoxRangoEtarioEmpleador.addItem("Menos de 40");
-		comboBoxRangoEtarioEmpleador.addItem("Entre 40 y 50");
-		comboBoxRangoEtarioEmpleador.addItem("Mas de 50");
-		
-		// seteo listas
-		
-		listRondaEleccionesEmpleador.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+				this.btnConfirmarLoginEmpleador.setEnabled(false);
+				this.btnConfirmacionCreacionUsuarioEmpleador.setEnabled(false);
+				this.btnConfirmacionCreacionTicketEmpleador.setEnabled(false);
+				this.btnConfirmacionEleccionEmpleador.setEnabled(false);
+				this.btnCrearTicketSimplificado.setEnabled(true);
+				
+				// Seteo ComboBox
+				
+				comboBoxRubroEmpleador.addItem("Salud");
+				comboBoxRubroEmpleador.addItem("ComercioLocal");
+				comboBoxRubroEmpleador.addItem("ComercioInternacional");
+				
+				comboBoxLocacionEmpleador.addItem("HomeOffice");
+				comboBoxLocacionEmpleador.addItem("Presencial");
+				comboBoxLocacionEmpleador.addItem("Indistinto");
+				
+				comboBoxCargaHorariaEmpleador.addItem("Media");
+				comboBoxCargaHorariaEmpleador.addItem("Completa");
+				comboBoxCargaHorariaEmpleador.addItem("Extendida");
+				
+				comboBoxTipoDePuestoEmpleador.addItem("Junior");
+				comboBoxTipoDePuestoEmpleador.addItem("Senior");
+				comboBoxTipoDePuestoEmpleador.addItem("Managment");
+				
+				comboBoxBolsaTipoTrabajoEmpleador.addItem("Salud");
+				comboBoxBolsaTipoTrabajoEmpleador.addItem("Comercio Local");
+				comboBoxBolsaTipoTrabajoEmpleador.addItem("Comercio Internacional");
+				
+				comboBoxBolsaLocacionEmpleador.addItem("HomeOffice");
+				comboBoxBolsaLocacionEmpleador.addItem("Presencial");
+				comboBoxBolsaLocacionEmpleador.addItem("Indistinto");
+				
+				comboBoxExperienciaPreviaEmpleador.addItem("Nada");
+				comboBoxExperienciaPreviaEmpleador.addItem("Media");
+				comboBoxExperienciaPreviaEmpleador.addItem("Mucha");
+				
+				comboBoxEstudiosCursadosEmpleador.addItem("Primario");
+				comboBoxEstudiosCursadosEmpleador.addItem("Secundario");
+				comboBoxEstudiosCursadosEmpleador.addItem("Terciario");
+				
+				comboBoxRangoEtarioEmpleador.addItem("Menos de 40");
+				comboBoxRangoEtarioEmpleador.addItem("Entre 40 y 50");
+				comboBoxRangoEtarioEmpleador.addItem("Mas de 50");
+				
+				// seteo listas
+				
+				listRondaEleccionesEmpleador.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
-		//
+				//
 
-		this.btnConfirmarLoginEmpleador.setActionCommand(confirmarLoginEmpleador);
-		this.btnConfirmacionCreacionUsuarioEmpleador.setActionCommand(confirmacionCreacionUsuarioEmpleador);
-		this.btnConfirmacionCreacionTicketEmpleador.setActionCommand(confirmacionCreacionTicketEmpleador);
-		this.btnCambiarEstadoEmpleador.setActionCommand(confirmaCambioEstadoEmpleador);
-		this.btnConfirmacionEleccionEmpleador.setActionCommand(confirmacionEleccionEmpleador);
-		this.btnCrearTicketSimplificado.setActionCommand(confirmaCracionTicketSimplificado);
-		
-		
-		
-		this.btnConfirmarLoginEmpleador.addActionListener(c);
-		this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(c);
-		this.btnConfirmacionCreacionTicketEmpleador.addActionListener(c);
-		this.btnConfirmacionEleccionEmpleador.addActionListener(c);
-		this.btnCrearTicketSimplificado.addActionListener(c);
-		
-		this.btnConfirmarLoginEmpleador.addMouseListener(this);
-		this.btnConfirmacionCreacionUsuarioEmpleador.addMouseListener(this);
-		this.btnConfirmacionCreacionTicketEmpleador.addMouseListener(this);
-		this.btnConfirmacionEleccionEmpleador.addMouseListener(this);
-		this.btnCrearTicketSimplificado.addMouseListener(this);
+				this.btnConfirmarLoginEmpleador.setActionCommand(confirmarLoginEmpleador);
+				this.btnConfirmacionCreacionUsuarioEmpleador.setActionCommand(confirmacionCreacionUsuarioEmpleador);
+				this.btnConfirmacionCreacionTicketEmpleador.setActionCommand(confirmacionCreacionTicketEmpleador);
+				this.btnCambiarEstadoEmpleador.setActionCommand(confirmaCambioEstadoEmpleador);
+				this.btnConfirmacionEleccionEmpleador.setActionCommand(confirmacionEleccionEmpleador);
+				this.btnCrearTicketSimplificado.setActionCommand(confirmaCracionTicketSimplificado);
+				
+				
+				
+				this.btnConfirmarLoginEmpleador.addActionListener(c); // new Controlador(this)
+				this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(c);
+				this.btnConfirmacionCreacionTicketEmpleador.addActionListener(c);
+				this.btnConfirmacionEleccionEmpleador.addActionListener(c);
+				this.btnCrearTicketSimplificado.addActionListener(c);
+				
+				this.btnConfirmarLoginEmpleador.addMouseListener(this);
+				this.btnConfirmacionCreacionUsuarioEmpleador.addMouseListener(this);
+				this.btnConfirmacionCreacionTicketEmpleador.addMouseListener(this);
+				this.btnConfirmacionEleccionEmpleador.addMouseListener(this);
+				this.btnCrearTicketSimplificado.addMouseListener(this);
 
-		this.rdbtnActivoEmpleador.addMouseListener(this);
-		this.rdbtnCancelarEmpleador.addMouseListener(this);
-		this.rdbtnSuspendidoEmpleador.addMouseListener(this);
+				this.rdbtnActivoEmpleador.addMouseListener(this);
+				this.rdbtnCancelarEmpleador.addMouseListener(this);
+				this.rdbtnSuspendidoEmpleador.addMouseListener(this);
 
-		this.textFieldUsuarioEmpleador.addKeyListener(this);
-		this.textFieldContraseniaEmpleador.addKeyListener(this);
+				this.textFieldUsuarioEmpleador.addKeyListener(this);
+				this.textFieldContraseniaEmpleador.addKeyListener(this);
 
-		this.textFieldCreacionUsuarioEmpleador.addKeyListener(this);
-		this.textFieldCreacionContraseniaEmpleador.addKeyListener(this);
-		this.textFieldCreacionNombreEmpleador.addKeyListener(this);
-		
-		this.textFieldPesoCargaHorariaEmpleador.addKeyListener(this);
-		this.textFieldPesoEstudiosCursadosEmpleador.addKeyListener(this);
-		this.textFieldPesoExpPreviaEmpleador.addKeyListener(this);
-		this.textFieldPesoLocacionEmpleador.addKeyListener(this);
-		this.textFieldPesoRangoEtarioEmpleador.addKeyListener(this);
-		this.textFieldPesoRemuneracionEmpleador.addKeyListener(this);
-		this.textFieldPesoTipoDePuestoEmpleador.addKeyListener(this);
-		this.textFieldRemuneracionEmpleador.addKeyListener(this);
-		this.textFieldCantEmpleadosBuscados.addKeyListener(this);
-		
-		EmpleadoLogeado(false);
-		EmpleadorLogeado(false);
+				this.textFieldCreacionUsuarioEmpleador.addKeyListener(this);
+				this.textFieldCreacionContraseniaEmpleador.addKeyListener(this);
+				this.textFieldCreacionNombreEmpleador.addKeyListener(this);
+				
+				this.textFieldPesoCargaHorariaEmpleador.addKeyListener(this);
+				this.textFieldPesoEstudiosCursadosEmpleador.addKeyListener(this);
+				this.textFieldPesoExpPreviaEmpleador.addKeyListener(this);
+				this.textFieldPesoLocacionEmpleador.addKeyListener(this);
+				this.textFieldPesoRangoEtarioEmpleador.addKeyListener(this);
+				this.textFieldPesoRemuneracionEmpleador.addKeyListener(this);
+				this.textFieldPesoTipoDePuestoEmpleador.addKeyListener(this);
+				this.textFieldRemuneracionEmpleador.addKeyListener(this);
+				this.textFieldCantEmpleadosBuscados.addKeyListener(this);
+				
+				EmpleadoLogeado(false);
+				EmpleadorLogeado(false);
 
-	}
+			}
 	
 	public void setControlador(Controlador c) {
 		this.c = c;
+		seteoTodoPorDefault();
 	}
 	
 	public void setBtnRondaEncuentro(boolean hab) {
