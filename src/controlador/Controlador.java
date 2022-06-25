@@ -141,6 +141,7 @@ public class Controlador implements ActionListener {
 								empleador1 = new EmpleadorJuridico(v.getTextFieldCreacionUsuarioEmpleador(),v.getTextFieldCreacionContraseniaEmpleador(),v.getTextFieldCreacionNombreEmpleador(),v.getComboBoxRubroEmpleador());
 							} 
 							sistema.agregaEmpleador(empleador1);
+							v.ActualizarListaEmpleadores();
 					}else
 						if(e.getActionCommand().equals(IVista.confirmacionCreacionTicketEmpleador)) {
 							String aux = v.getComboBoxRangoEtarioEmpleador();
@@ -180,6 +181,10 @@ public class Controlador implements ActionListener {
 	
 	public ArrayList<Empleado> RecuperaListaEmpleados() {
 		return sistema.getEmpleadosPretensos();
+	}
+	
+	public ArrayList<Empleador>RecuperaListaEmpleadores(){
+		return sistema.getEmpleadores();
 	}
 
     public TicketEmpleado RecuperaTicketEmpleado() {

@@ -261,7 +261,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JScrollPane scrollPaneTicketsSimplificadosEmpleador;
 	private JButton btnConfirmarRequisitosBolsa;
 	private DefaultListModel<Empleado> modelListaEmpleados; //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-	
+	private DefaultListModel<Empleador> modelListaEmpleadores;
 
 	/**
 	 * Launch the application.
@@ -405,7 +405,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.listEmpleados.setBorder(
 				new TitledBorder(null, "Lista Empleados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.modelListaEmpleados = new DefaultListModel<Empleado>();
-		this.listEmpleados.setModel(modelListaEmpleados);//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		this.listEmpleados.setModel(modelListaEmpleados);
 		listEmpleados.setName("listEmpleados");
 		listEmpleados.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
@@ -418,7 +418,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				new TitledBorder(null, "Lista Empleadores", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
 		//Seteo lista
-		
+		this.modelListaEmpleadores = new DefaultListModel<Empleador>();
+		this.listEmpleadores.setModel(modelListaEmpleadores);
 		listEmpleadores.setName("listEmpleadores");
 		listEmpleadores.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
@@ -2031,6 +2032,14 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		ArrayList<Empleado> it=c.RecuperaListaEmpleados();
 		for(int i=0;i<it.size();i++) {
 			this.modelListaEmpleados.addElement(it.get(i));
+		}
+	}
+	
+	public void ActualizarListaEmpleadores() {
+		this.modelListaEmpleadores.clear();
+		ArrayList<Empleador> it=c.RecuperaListaEmpleadores();
+		for(int i=0;i<it.size();i++) {
+			this.modelListaEmpleadores.addElement(it.get(i));
 		}
 	}
 	
