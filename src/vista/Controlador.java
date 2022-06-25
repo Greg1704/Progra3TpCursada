@@ -15,14 +15,15 @@ import usuariosDelSistema.EmpleadorFisico;
 import usuariosDelSistema.EmpleadorJuridico;
 import usuariosDelSistema.Sistema;
 
-public class ActionPerformedBotones implements ActionListener {
+public class Controlador implements ActionListener {
 		NuevaVentanaFinal v;
 		Empleado empleado;
 		Empleador empleador;
 		Sistema sistema = Sistema.getInstancia();
 	
-	public ActionPerformedBotones(NuevaVentanaFinal v) {
+	public Controlador(NuevaVentanaFinal v) {
 		this.v = v;
+		v.setControlador(this);
 	}
 
 	@Override

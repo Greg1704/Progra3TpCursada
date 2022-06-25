@@ -46,7 +46,7 @@ import javax.swing.JTextArea;
 
 public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, ListSelectionListener, IVista { 
 	
-	ActionPerformedBotones c;
+	Controlador c;
 	private JPanel contentPane;
 	private JTabbedPane tabbedPane;
 	private JPanel panelAgencia;
@@ -1238,7 +1238,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 		this.btnConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
 
-		this.btnConfirmarNombreAgencia.addActionListener(new ActionPerformedBotones(this));
+		this.btnConfirmarNombreAgencia.addActionListener(c);
 		this.btnConfirmarNombreAgencia.addMouseListener(this);
 
 		// ventana Empleado
@@ -1291,10 +1291,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionCreacionTicket.setActionCommand(confirmaCreacionTicket);
 		this.btnConfirmacionEleccionEmpleado.setActionCommand(confirmaEleccionEmpleado);
 
-		this.btnConfirmarLogin.addActionListener(new ActionPerformedBotones(this));
-		this.btnConfirmacionCreacionUsuario.addActionListener(new ActionPerformedBotones(this));
-		this.btnConfirmacionCreacionTicket.addActionListener(new ActionPerformedBotones(this));
-		this.btnConfirmacionEleccionEmpleado.addActionListener(new ActionPerformedBotones(this));
+		this.btnConfirmarLogin.addActionListener(c);
+		this.btnConfirmacionCreacionUsuario.addActionListener(c);
+		this.btnConfirmacionCreacionTicket.addActionListener(c);
+		this.btnConfirmacionEleccionEmpleado.addActionListener(c);
 		
 		this.btnConfirmarLogin.addMouseListener(this);
 		this.btnConfirmacionCreacionUsuario.addMouseListener(this);
@@ -1388,11 +1388,11 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		
 		
-		this.btnConfirmarLoginEmpleador.addActionListener(new ActionPerformedBotones(this));
-		this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(new ActionPerformedBotones(this));
-		this.btnConfirmacionCreacionTicketEmpleador.addActionListener(new ActionPerformedBotones(this));
-		this.btnConfirmacionEleccionEmpleador.addActionListener(new ActionPerformedBotones(this));
-		this.btnCrearTicketSimplificado.addActionListener(new ActionPerformedBotones(this));
+		this.btnConfirmarLoginEmpleador.addActionListener(c);
+		this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(c);
+		this.btnConfirmacionCreacionTicketEmpleador.addActionListener(c);
+		this.btnConfirmacionEleccionEmpleador.addActionListener(c);
+		this.btnCrearTicketSimplificado.addActionListener(c);
 		
 		this.btnConfirmarLoginEmpleador.addMouseListener(this);
 		this.btnConfirmacionCreacionUsuarioEmpleador.addMouseListener(this);
@@ -1431,10 +1431,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 	}
 	
-	/*public void setControlador(ActionPerformedBotones c) {
+	public void setControlador(Controlador c) {
 		this.c = c;
 	}
-	*/
 	
 	public void setBtnRondaEncuentro(boolean hab) {
 		this.btnRondaEncuentro.setEnabled(hab);
