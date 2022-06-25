@@ -78,31 +78,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	@Override
 	public void SuspendeTicket() {
 		this.ticketEmpleador.suspende();
-	}
-	
-	public void Login(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException{
-
-			buscaEmpleador(usuario,contrasenia);
-
-	}
-	
-	public Empleador buscaEmpleador(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
-		int i = 0;
-		
-		while (i < Sistema.getInstancia().getEmpleadores().size()) {
-			if (Sistema.getInstancia().getEmpleadores().get(i).usuario.compareTo(usuario) == 0) {
-				if(Sistema.getInstancia().getEmpleadores().get(i).contrasenia.compareTo(contrasenia) == 0)
-					return Sistema.getInstancia().getEmpleadores().get(i);
-				else
-					throw new ContraseniaIncorrectaException();
-			}
-			i++;		
-		}
-		throw new UsuarioIncorrectoException();
-		
-	}
-	
-	
+	}	
   
 	@Override
 	public void CancelaTicket() {
