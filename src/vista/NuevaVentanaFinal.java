@@ -1186,7 +1186,49 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.listTicketSimplificadosEmpleador = new JList();
 		this.scrollPaneTicketsSimplificadosEmpleador.setViewportView(this.listTicketSimplificadosEmpleador);
 		this.listTicketSimplificadosEmpleador.setBorder(
-				new TitledBorder(null, "Tickets Simplificados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		new TitledBorder(null, "Tickets Simplificados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		
+		this.scrollPaneTicketSimpObtenido = new JScrollPane();
+		this.scrollPaneTicketSimpObtenido.setBounds(21, 119, 364, 94);
+		this.panelBolsaTrabajo.add(this.scrollPaneTicketSimpObtenido);
+		
+		this.listTicketSimpObtenido = new JList();
+		this.scrollPaneTicketSimpObtenido.setViewportView(this.listTicketSimpObtenido);
+		this.listTicketSimpObtenido.setBorder(new TitledBorder(null, "Ticket Simplificado Obtenido", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		
+		this.btnConfirmarRequisitosBolsa = new JButton("Confirmar");
+		this.btnConfirmarRequisitosBolsa.setBounds(162, 85, 89, 23);
+		this.panelBolsaTrabajo.add(this.btnConfirmarRequisitosBolsa);
+		
+		this.panelBolsaDeTrabajo = new JPanel();
+		this.tabbedPane.addTab("Bolsa de trabajo", null, this.panelBolsaDeTrabajo, null);
+		this.panelBolsaDeTrabajo.setLayout(new BorderLayout(0, 0));
+		
+		this.panelGeneralBolsaDeTrabajo = new JPanel();
+		this.panelBolsaDeTrabajo.add(this.panelGeneralBolsaDeTrabajo, BorderLayout.CENTER);
+		this.panelGeneralBolsaDeTrabajo.setLayout(new GridLayout(0, 3, 0, 0));
+		
+		this.scrollPaneTicketsSimplificados = new JScrollPane();
+		this.scrollPaneTicketsSimplificados.setViewportBorder(new TitledBorder(null, "Lista Tickets Simplificados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelGeneralBolsaDeTrabajo.add(this.scrollPaneTicketsSimplificados);
+		
+		this.listTicketsSimplificados = new JList();
+		this.scrollPaneTicketsSimplificados.setViewportView(this.listTicketsSimplificados);
+		
+		this.scrollPaneSimulacionThreads = new JScrollPane();
+		this.scrollPaneSimulacionThreads.setViewportBorder(new TitledBorder(null, "Simulaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelGeneralBolsaDeTrabajo.add(this.scrollPaneSimulacionThreads);
+		
+		this.textAreaSimulacionThreads = new JTextArea();
+		this.scrollPaneSimulacionThreads.setViewportView(this.textAreaSimulacionThreads);
+		
+		this.scrollPaneContratacionesBolsaTrabajo = new JScrollPane();
+		this.scrollPaneContratacionesBolsaTrabajo.setViewportBorder(new TitledBorder(null, "Contrataciones", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.panelGeneralBolsaDeTrabajo.add(this.scrollPaneContratacionesBolsaTrabajo);
+		
+		this.textAreaContratacionesBolsaTrabajo = new JTextArea();
+		this.scrollPaneContratacionesBolsaTrabajo.setViewportView(this.textAreaContratacionesBolsaTrabajo);
+		this.textAreaContratacionesBolsaTrabajo.setColumns(10);
 
 		// ventana Agencia
 
@@ -1236,17 +1278,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxBolsaLocacion.addItem("Presencial");
 		comboBoxBolsaLocacion.addItem("Indistinto");
 		
-		this.scrollPaneTicketSimpObtenido = new JScrollPane();
-		this.scrollPaneTicketSimpObtenido.setBounds(21, 119, 364, 94);
-		this.panelBolsaTrabajo.add(this.scrollPaneTicketSimpObtenido);
+		// seteo listas
 		
-		this.listTicketSimpObtenido = new JList();
-		this.scrollPaneTicketSimpObtenido.setViewportView(this.listTicketSimpObtenido);
-		this.listTicketSimpObtenido.setBorder(new TitledBorder(null, "Ticket Simplificado Obtenido", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		
-		this.btnConfirmarRequisitosBolsa = new JButton("Confirmar");
-		this.btnConfirmarRequisitosBolsa.setBounds(162, 85, 89, 23);
-		this.panelBolsaTrabajo.add(this.btnConfirmarRequisitosBolsa);
+		listRondaEleccionesEmpleado.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		
 		// Funcionalidad de los botones
 
@@ -1337,6 +1371,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		comboBoxRangoEtarioEmpleador.addItem("Entre 40 y 50");
 		comboBoxRangoEtarioEmpleador.addItem("Mas de 50");
 		
+		// seteo listas
+		
+		listRondaEleccionesEmpleador.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+
 		//
 
 		this.btnConfirmarLoginEmpleador.setActionCommand(confirmarLoginEmpleador);
@@ -1346,35 +1384,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnConfirmacionEleccionEmpleador.setActionCommand(confirmacionEleccionEmpleador);
 		this.btnCrearTicketSimplificado.setActionCommand(confirmaCracionTicketSimplificado);
 		
-		this.panelBolsaDeTrabajo = new JPanel();
-		this.tabbedPane.addTab("Bolsa de trabajo", null, this.panelBolsaDeTrabajo, null);
-		this.panelBolsaDeTrabajo.setLayout(new BorderLayout(0, 0));
 		
-		this.panelGeneralBolsaDeTrabajo = new JPanel();
-		this.panelBolsaDeTrabajo.add(this.panelGeneralBolsaDeTrabajo, BorderLayout.CENTER);
-		this.panelGeneralBolsaDeTrabajo.setLayout(new GridLayout(0, 3, 0, 0));
-		
-		this.scrollPaneTicketsSimplificados = new JScrollPane();
-		this.scrollPaneTicketsSimplificados.setViewportBorder(new TitledBorder(null, "Lista Tickets Simplificados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelGeneralBolsaDeTrabajo.add(this.scrollPaneTicketsSimplificados);
-		
-		this.listTicketsSimplificados = new JList();
-		this.scrollPaneTicketsSimplificados.setViewportView(this.listTicketsSimplificados);
-		
-		this.scrollPaneSimulacionThreads = new JScrollPane();
-		this.scrollPaneSimulacionThreads.setViewportBorder(new TitledBorder(null, "Simulaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelGeneralBolsaDeTrabajo.add(this.scrollPaneSimulacionThreads);
-		
-		this.textAreaSimulacionThreads = new JTextArea();
-		this.scrollPaneSimulacionThreads.setViewportView(this.textAreaSimulacionThreads);
-		
-		this.scrollPaneContratacionesBolsaTrabajo = new JScrollPane();
-		this.scrollPaneContratacionesBolsaTrabajo.setViewportBorder(new TitledBorder(null, "Contrataciones", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		this.panelGeneralBolsaDeTrabajo.add(this.scrollPaneContratacionesBolsaTrabajo);
-		
-		this.textAreaContratacionesBolsaTrabajo = new JTextArea();
-		this.scrollPaneContratacionesBolsaTrabajo.setViewportView(this.textAreaContratacionesBolsaTrabajo);
-		this.textAreaContratacionesBolsaTrabajo.setColumns(10);
 		
 		this.btnConfirmarLoginEmpleador.addActionListener(new ActionPerformedBotones(this));
 		this.btnConfirmacionCreacionUsuarioEmpleador.addActionListener(new ActionPerformedBotones(this));
@@ -1499,6 +1509,42 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 	public Empleador getListRondaEleccionesEmpleado() { 
 		return (Empleador)listRondaEleccionesEmpleado.getSelectedValue();
+	}
+	
+	public void setListEmpleados(JList listEmpleados) {
+		this.listEmpleados = listEmpleados;
+	}
+
+	public void setListEmpleadores(JList listEmpleadores) {
+		this.listEmpleadores = listEmpleadores;
+	}
+
+	public void setListTicketActual(JList listTicketActual) {
+		this.listTicketActual = listTicketActual;
+	}
+
+	public void setListRondaEleccionesEmpleado(JList listRondaEleccionesEmpleado) {
+		this.listRondaEleccionesEmpleado = listRondaEleccionesEmpleado;
+	}
+
+	public void setListTicketActualEmpleador(JList listTicketActualEmpleador) {
+		this.listTicketActualEmpleador = listTicketActualEmpleador;
+	}
+
+	public void setListRondaEleccionesEmpleador(JList listRondaEleccionesEmpleador) {
+		this.listRondaEleccionesEmpleador = listRondaEleccionesEmpleador;
+	}
+
+	public void setListTicketSimplificadosEmpleador(JList listTicketSimplificadosEmpleador) {
+		this.listTicketSimplificadosEmpleador = listTicketSimplificadosEmpleador;
+	}
+
+	public void setListTicketsSimplificados(JList listTicketsSimplificados) {
+		this.listTicketsSimplificados = listTicketsSimplificados;
+	}
+
+	public void setListTicketSimpObtenido(JList listTicketSimpObtenido) {
+		this.listTicketSimpObtenido = listTicketSimpObtenido;
 	}
 
 	public String getComboBoxBolsaTipoTrabajo() {
@@ -1896,6 +1942,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			comboBoxBolsaTipoTrabajo.setEnabled(true);
 			setCambiarEstadoTicketEmpleado(true);
 			setBtnConfirmarRequisitosBolsa(true);
+			listRondaEleccionesEmpleado.setEnabled(true);
 		} else { // todo esto tendria que venir por default
 			textFieldRemuneracion.setEnabled(false);
 			textFieldPesoLocacion.setEnabled(false);
@@ -1911,6 +1958,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			comboBoxBolsaTipoTrabajo.setEnabled(false);
 			setCambiarEstadoTicketEmpleado(false);
 			setBtnConfirmarRequisitosBolsa(false);
+			listRondaEleccionesEmpleado.setEnabled(false);
 		}
 		setTextFieldPesoCargaHoraria("");
 		setTextFieldPesoLocacion("");
@@ -1939,6 +1987,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			comboBoxBolsaTipoTrabajoEmpleador.setEnabled(true);
 			setCambiarEstadoTicketEmpleador(true);
 			setBtnCrearTicketSimplificado(true);
+			listRondaEleccionesEmpleador.setEnabled(true);
 		} else {
 			textFieldRemuneracionEmpleador.setEnabled(false);
 			textFieldPesoLocacionEmpleador.setEnabled(false);
@@ -1959,6 +2008,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			comboBoxBolsaTipoTrabajoEmpleador.setEnabled(false);
 			setCambiarEstadoTicketEmpleador(false);
 			setBtnCrearTicketSimplificado(false);
+			listRondaEleccionesEmpleador.setEnabled(false);
 		}
 	}
 	
@@ -1983,42 +2033,62 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	@Override
 	public void keyReleased(KeyEvent e) {
 
-		
-		boolean hab = !(textFieldCrearAgencia.getText().isEmpty());
-		setBtnConfirmarNombreAgencia(hab);
+		if (e.getSource() == textFieldCrearAgencia) {
+			
+			boolean hab = !(textFieldCrearAgencia.getText().isEmpty());
+			setBtnConfirmarNombreAgencia(hab);
+			
+			} else 
+				
+				if (e.getSource()==textFieldUsuario || e.getSource()==textFieldContrasenia) {
+					
+					boolean hab1 = !(textFieldUsuario.getText().isEmpty() || textFieldContrasenia.getText().isEmpty());
+					setBtnConfirmarLogin(hab1);
+				
+				} else 
+					if (e.getSource() == textFieldCreacionUsuario || e.getSource() == textFieldCreacionContrasenia || e.getSource() == textFieldCreacionNyA || e.getSource() == textFieldCreacionDNI 
+						|| e.getSource() == textFieldCreacionTelefono || e.getSource() == textFieldCreacionEdad || e.getSource() == textFieldCreacionCiudad) {
+					
+						boolean hab2 = !(textFieldCreacionUsuario.getText().isEmpty()
+								|| textFieldCreacionContrasenia.getText().isEmpty() || textFieldCreacionNyA.getText().isEmpty()
+								|| textFieldCreacionDNI.getText().isEmpty() || textFieldCreacionTelefono.getText().isEmpty()
+								|| textFieldCreacionEdad.getText().isEmpty() || textFieldCreacionCiudad.getText().isEmpty());
+						setBtnConfirmacionCreacionUsuario(hab2);
+			
+					} else 
+						if (e.getSource() == textFieldPesoCargaHoraria || e.getSource() == textFieldPesoLocacion || e.getSource() == textFieldPesoRemuneracion || e.getSource() == textFieldPesoTipoDePuesto) {
 
-		boolean hab1 = !(textFieldUsuario.getText().isEmpty() || textFieldContrasenia.getText().isEmpty());
-		setBtnConfirmarLogin(hab1);
-
-		boolean hab2 = !(textFieldCreacionUsuario.getText().isEmpty()
-				|| textFieldCreacionContrasenia.getText().isEmpty() || textFieldCreacionNyA.getText().isEmpty()
-				|| textFieldCreacionDNI.getText().isEmpty() || textFieldCreacionTelefono.getText().isEmpty()
-				|| textFieldCreacionEdad.getText().isEmpty() || textFieldCreacionCiudad.getText().isEmpty());
-		setBtnConfirmacionCreacionUsuario(hab2);
-
-		boolean hab3 = !(textFieldPesoCargaHoraria.getText().isEmpty() || textFieldPesoLocacion.getText().isEmpty()
-				|| textFieldPesoRemuneracion.getText().isEmpty() || textFieldPesoTipoDePuesto.getText().isEmpty());
-
-		// ac� viene una referencia del modelo que dice si el usuario est� logueado,
-		// entonces har�a un AND con hab3 para asi se
-
-		boolean hab4 = !(textFieldUsuarioEmpleador.getText().isEmpty()
-				|| textFieldContraseniaEmpleador.getText().isEmpty());
-		setBtnConfirmarLoginEmpleador(hab4);
-		
-		boolean hab5 = !(textFieldRemuneracion.getText().isEmpty() || textFieldPesoCargaHoraria.getText().isEmpty() || textFieldPesoLocacion.getText().isEmpty() || textFieldPesoTipoDePuesto.getText().isEmpty()
-				|| textFieldPesoRemuneracion.getText().isEmpty());
-		setBtnConfirmarCreacionTicket(hab5);
-		
-		boolean hab6 = !(textFieldRemuneracionEmpleador.getText().isEmpty() || textFieldPesoCargaHorariaEmpleador.getText().isEmpty() || textFieldPesoEstudiosCursadosEmpleador.getText().isEmpty() 
-				|| textFieldPesoExpPreviaEmpleador.getText().isEmpty() || textFieldPesoLocacionEmpleador.getText().isEmpty() || textFieldPesoRangoEtarioEmpleador.getText().isEmpty() || textFieldPesoRemuneracionEmpleador.getText().isEmpty() || 
-				textFieldPesoTipoDePuestoEmpleador.getText().isEmpty() || textFieldCantEmpleadosBuscados.getText().isEmpty());
-		setBtnConfirmarCreacionTicketEmpleador(hab6);
-		
-		boolean hab7 = !(textFieldCreacionUsuarioEmpleador.getText().isEmpty() || textFieldCreacionContraseniaEmpleador.getText().isEmpty() || textFieldCreacionNombreEmpleador.getText().isEmpty());
-		setBtnConfirmacionCreacionUsuarioEmpleador(hab7);
-	
-		}
+							boolean hab3 = !(textFieldPesoCargaHoraria.getText().isEmpty() || textFieldPesoLocacion.getText().isEmpty()
+								|| textFieldPesoRemuneracion.getText().isEmpty() || textFieldPesoTipoDePuesto.getText().isEmpty());
+						} else 
+							if (e.getSource() == textFieldUsuarioEmpleador || e.getSource() == textFieldContraseniaEmpleador) {
+					
+								boolean hab4 = !(textFieldUsuarioEmpleador.getText().isEmpty()
+										|| textFieldContraseniaEmpleador.getText().isEmpty());
+								setBtnConfirmarLoginEmpleador(hab4);
+							} else
+								if (e.getSource() == textFieldRemuneracion || e.getSource() == textFieldPesoCargaHoraria || e.getSource() == textFieldPesoLocacion || e.getSource() == textFieldPesoTipoDePuesto ||
+								e.getSource() == textFieldPesoRemuneracion) {
+			
+									boolean hab5 = !(textFieldRemuneracion.getText().isEmpty() || textFieldPesoCargaHoraria.getText().isEmpty() || textFieldPesoLocacion.getText().isEmpty() || textFieldPesoTipoDePuesto.getText().isEmpty()
+											|| textFieldPesoRemuneracion.getText().isEmpty());
+									setBtnConfirmarCreacionTicket(hab5);
+								} else
+									if (e.getSource() == textFieldRemuneracionEmpleador || e.getSource() == textFieldPesoCargaHorariaEmpleador || e.getSource() == textFieldPesoEstudiosCursadosEmpleador
+										|| e.getSource() == textFieldPesoExpPreviaEmpleador || e.getSource() == textFieldPesoLocacionEmpleador || e.getSource() == textFieldPesoRangoEtarioEmpleador
+										|| e.getSource() == textFieldPesoRemuneracionEmpleador || e.getSource() == textFieldPesoTipoDePuestoEmpleador || e.getSource() == textFieldCantEmpleadosBuscados) {
+			
+										boolean hab6 = !(textFieldRemuneracionEmpleador.getText().isEmpty() || textFieldPesoCargaHorariaEmpleador.getText().isEmpty() || textFieldPesoEstudiosCursadosEmpleador.getText().isEmpty() 
+												|| textFieldPesoExpPreviaEmpleador.getText().isEmpty() || textFieldPesoLocacionEmpleador.getText().isEmpty() || textFieldPesoRangoEtarioEmpleador.getText().isEmpty() || textFieldPesoRemuneracionEmpleador.getText().isEmpty() || 
+												textFieldPesoTipoDePuestoEmpleador.getText().isEmpty() || textFieldCantEmpleadosBuscados.getText().isEmpty());
+										setBtnConfirmarCreacionTicketEmpleador(hab6);
+									} else
+										if (e.getSource() == textFieldCreacionUsuarioEmpleador || e.getSource() == textFieldCreacionContraseniaEmpleador || e.getSource() == textFieldCreacionNombreEmpleador) {
+			
+											boolean hab7 = !(textFieldCreacionUsuarioEmpleador.getText().isEmpty() || textFieldCreacionContraseniaEmpleador.getText().isEmpty() || textFieldCreacionNombreEmpleador.getText().isEmpty());
+											setBtnConfirmacionCreacionUsuarioEmpleador(hab7);
+										}
+			}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
