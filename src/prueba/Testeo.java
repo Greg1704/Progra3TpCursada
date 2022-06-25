@@ -2,8 +2,10 @@ package prueba;
 
 import java.io.IOException;
 
+import excepciones.AtributoInvalidoException;
 import persistencia.IPersistencia;
 import persistencia.PersistenciaBIN;
+import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.*;
 
 
@@ -22,6 +24,8 @@ public class Testeo {
 		EmpleadorJuridico em1;
 		EmpleadorFisico em2;
 		EmpleadorFisico em3;
+		
+		
 		
 
 		e1 = new Empleado("Juanu","contrasenia","Juan pedro Garcia","43322122",22345654,25,"Mar del Plata");
@@ -55,8 +59,24 @@ public class Testeo {
 		agencia.agregaEmpleador(em1);
 		agencia.agregaEmpleador(em2);
 		agencia.agregaEmpleador(em3);
+
 		
-		agencia.busquedaLaboral();
+		try {
+			TicketSimplificado ts1 = new TicketSimplificado("Presencial", "Salud",em1);
+			TicketSimplificado ts2 = new TicketSimplificado("HomeOffice", "ComercioLocal",em2);
+			TicketSimplificado ts3 = new TicketSimplificado("Presencial", "ComercioLocal",em3);	
+		} catch (AtributoInvalidoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		new Thread(e1).start();
+		new Thread(e2).start();
+		new Thread(e3).start();
+		new Thread(e4).start();
+		new Thread(e5).start();
+		
+		/*agencia.busquedaLaboral();
 		
 		System.out.println(e1.toString());
 		System.out.println(e2.toString());
@@ -87,7 +107,9 @@ public class Testeo {
 		
 		System.out.println("***********************");
 		System.out.println("***********************");
-
+		*/
+		
+		
 		
 	}
 

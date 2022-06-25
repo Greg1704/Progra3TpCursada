@@ -33,10 +33,11 @@ public class BolsaTrabajo {
 	public synchronized void sacarTicket(Empleado empleado) {
 		while (this.usaLista == true) {
 			try {		
+				System.out.println("espera");
 				wait();	
 			}catch(InterruptedException e) {}			
 		}		
-		//this.usaLista = true;
+		this.usaLista = true;
 		
 		i=0;
 		
@@ -50,18 +51,19 @@ public class BolsaTrabajo {
 																											
 		this.usaLista = false;																				
 		notifyAll();
-		}	
+	}	
 	
 	
 	public synchronized void devolverTicket(Empleado empleado,TicketSimplificado t) {
 		while (this.usaLista == true) {
-			try {		
+			try {	
+				System.out.println("espera2");
 				wait();
 			}catch(InterruptedException e) {}
 			
 		}
 		
-		//this.usaLista = true;
+		this.usaLista = true;
 		this.agregaTicket(t);
 		this.usaLista = false;
 		notifyAll();

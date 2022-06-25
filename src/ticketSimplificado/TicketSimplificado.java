@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Observable;
 
 @SuppressWarnings("deprecation")
-public class TicketSimplificado extends Observable implements Runnable{
+public class TicketSimplificado extends Observable{
 //habria que agregar 2 strings: rubro, y locacion. Con eso aplicar los decorator y agregarle las funcionalidades
 //a su vez hay que aplicar metodo run, para asi correrlo como un thread, podemos extender de clase thread o implementar
 //la interfaz runneable.
@@ -35,17 +35,7 @@ public class TicketSimplificado extends Observable implements Runnable{
    }
 
    @SuppressWarnings("deprecation")
-@Override
-   public void run() {
-      while(this.contratado==false){
-         //Entra al metodo, y cuando sale, puede o no estar contratado
-         //Ya que puede entrar al recurso compartido, pero ser rechazado por el empleado
-         BolsaDeTrabajo.getInstancia().eleccionTicketSimplificado(this);
-      }
-      setChanged();
-      notifyObservers(empleadoContratado);
-   }
-
+  
    public String getLocacion() {
 		return locacion.toString();
 	}
