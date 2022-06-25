@@ -228,10 +228,10 @@ public class Empleado extends Usuario implements Observer,Runnable {
 		
 		if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
 			this.ticketSimpElegido = t;
-			System.out.println(this.getNya()+"se queda con ticket");
+			System.out.println(this.getNya()+" se queda con ticket");
 			//return "El empleado "+this.getNya()+" reclamo el ticket de "+ +".";
 		}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
-			System.out.println(this.getNya()+"devuelve ticket");
+			System.out.println(this.getNya()+" devuelve ticket");
 			BolsaTrabajo.getInstancia().devolverTicket(this,t);
 			//return "El empleado "+this.getNya()+" quiso reclamar el ticket "++" pero no coincidian las locaciones.";
 		}

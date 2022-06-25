@@ -1,7 +1,7 @@
 package usuariosDelSistema;
 
 public class ComercioLocal extends RubroDecorator implements I_TipoTrabajo{
-	private String rubro="Comercio Local"; 
+	private String rubro="ComercioLocal"; 
     public ComercioLocal(Empleador empleador) {
         super(empleador);
     }
@@ -33,6 +33,6 @@ public class ComercioLocal extends RubroDecorator implements I_TipoTrabajo{
 
 	@Override
 	public String getRubro() {
-		return this.rubro;
+		return "ComercioLocal";
 	}
 }

@@ -35,6 +35,6 @@ public class Salud extends RubroDecorator implements I_TipoTrabajo {
 
 	@Override
 	public String getRubro() {
-		return this.rubro;
+		return "Salud";
 	}
 }

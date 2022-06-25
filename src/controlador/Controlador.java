@@ -2,9 +2,12 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import armaTickets.TicketEmpleado;
+import encuentro.ListaAsignaciones;
 import excepciones.AtributoInvalidoException;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.UsuarioIncorrectoException;
@@ -21,7 +24,7 @@ public class Controlador implements ActionListener {
 		NuevaVentanaFinal v;
 		Empleado empleado;
 		Empleador empleador;
-		Sistema sistema;
+		Sistema sistema=null;
 	
 	public Controlador() {
 		this.v = new NuevaVentanaFinal();
@@ -33,7 +36,7 @@ public class Controlador implements ActionListener {
 		// aca se cruzan los datos con los datos del sistema para ver si el logeo esta bien o no, e iria con un if
 		
 		if (e.getActionCommand().equals(IVista.confirmaCreacionAgencia)) { // ventana Agencia
-			if (Sistema.getInstancia()!=null) {
+			if (sistema!=null) {
 				JOptionPane.showMessageDialog(null, "La agencia ya existe");
 			} else  {
 				// crear la agencia	
@@ -58,7 +61,7 @@ public class Controlador implements ActionListener {
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
 					try {
 						
-						sistema.LoginEmpleado(v.getTextFieldUsuario(), v.getTextFieldContrasenia());
+						sistema.LoginEmpleado(v.getTextFieldUsuario(), v.getTextFieldContrasenia());  //Falta alguna referencia a la que apunte la variable empleado
 						JOptionPane.showMessageDialog(null, "Login Correcto");
 						v.EmpleadoLogeado(true);
 					}catch (ContraseniaIncorrectaException ex) {
@@ -80,6 +83,7 @@ public class Controlador implements ActionListener {
 						//Cambiar getTextFieldCreacionTelefono() a Integer
 						
 						sistema.agregaEmpleado(empleado1);
+						v.ActualizarListaEmpleados();
 					 
 						
 				} else
@@ -116,7 +120,7 @@ public class Controlador implements ActionListener {
 					}else    // VENTANA EMPLEADOR
 						if(e.getActionCommand().equals(IVista.confirmarLoginEmpleador)) {
 							try {
-								sistema.LoginEmpleador(v.getTextFieldUsuarioEmpleador(), v.getTextFieldContraseniaEmpleador());
+								sistema.LoginEmpleador(v.getTextFieldUsuarioEmpleador(), v.getTextFieldContraseniaEmpleador()); //Falta alguna referencia a la que apunte la variable empleado
 								JOptionPane.showMessageDialog(null, "Login Correcto");
 								v.EmpleadorLogeado(true);
 							}
@@ -173,15 +177,15 @@ public class Controlador implements ActionListener {
 						}
 			} 
 	}
-
-    
-     void seleccionarEmpleados(Empleador e) {
-     for (Empleado empleado: this.v.getListRondaEleccionesEmpleador()) { //hago un foreach de los que se selecciona con el mouse y los agrego a la lista
-    	e.getEmpleadosSeleccionados().add(empleado); 
+	
+	public ArrayList<Empleado> RecuperaListaEmpleados() {
+		return sistema.getEmpleadosPretensos();
 	}
-    	
+
+    public TicketEmpleado RecuperaTicketEmpleado() {
+    	return empleado.getTicket();
     }
-     
+
 
 }
     			

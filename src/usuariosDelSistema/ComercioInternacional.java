@@ -1,7 +1,7 @@
 package usuariosDelSistema;
 
 public class ComercioInternacional extends RubroDecorator implements I_TipoTrabajo{
-	private String rubro="Comercio Internacional"; 
+	private String rubro="ComercioInternacional"; 
     public ComercioInternacional(Empleador empleador) {
         super(empleador);
     }
@@ -33,6 +33,6 @@ public class ComercioInternacional extends RubroDecorator implements I_TipoTraba
 
 	@Override
 	public String getRubro() {
-		return this.rubro;
+		return "ComercioInternacional";
 	}
 }

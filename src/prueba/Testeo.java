@@ -51,6 +51,7 @@ public class Testeo {
 
 		em3 = new EmpleadorFisico("Puma","MateoVendeZapas","Puma Arg","ComercioLocal");
 		em3.crearTicket("Presencial",8,70000,10,"Extendida",8,"Senior",10,43,3,"Media",5,"Primario",1,2);
+		
 		agencia.agregaEmpleado(e1);
 		agencia.agregaEmpleado(e2);
 		agencia.agregaEmpleado(e3);
@@ -59,16 +60,22 @@ public class Testeo {
 		agencia.agregaEmpleador(em1);
 		agencia.agregaEmpleador(em2);
 		agencia.agregaEmpleador(em3);
-
 		
-		try {
-			TicketSimplificado ts1 = new TicketSimplificado("Presencial", "Salud",em1);
-			TicketSimplificado ts2 = new TicketSimplificado("HomeOffice", "ComercioLocal",em2);
-			TicketSimplificado ts3 = new TicketSimplificado("Presencial", "ComercioLocal",em3);	
-		} catch (AtributoInvalidoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		e1.setLocacionSimp("Presencial");
+		e2.setLocacionSimp("Indistinto");
+		e3.setLocacionSimp("Presencial");
+		e4.setLocacionSimp("HomeOffice");
+		e5.setLocacionSimp("Indistinto");
+		e1.setTipoTrabajoSimp("Salud");
+		e2.setTipoTrabajoSimp("Salud");
+		e3.setTipoTrabajoSimp("Salud");
+		e4.setTipoTrabajoSimp("Salud");
+		e5.setTipoTrabajoSimp("Salud");
+		
+
+		em1.crearTicketSimplificado("Presencial", "ComercioLocal");
+		em2.crearTicketSimplificado("HomeOffice", "Salud");
+		em3.crearTicketSimplificado("Presencial", "ComercioInternacional");	
 		
 		new Thread(e1).start();
 		new Thread(e2).start();

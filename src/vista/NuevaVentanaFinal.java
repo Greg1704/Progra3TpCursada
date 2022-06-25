@@ -41,6 +41,7 @@ import usuariosDelSistema.Empleador;
 import usuariosDelSistema.Sistema;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -259,6 +260,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JScrollPane scrollPaneRondaEleccionesEmpleador;
 	private JScrollPane scrollPaneTicketsSimplificadosEmpleador;
 	private JButton btnConfirmarRequisitosBolsa;
+	private DefaultListModel<Empleado> modelListaEmpleados; //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 	
 
 	/**
@@ -402,9 +404,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.scrollPaneEmpleados.setViewportView(this.listEmpleados);
 		this.listEmpleados.setBorder(
 				new TitledBorder(null, "Lista Empleados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		
-		// Seteo lista
-		
+		this.modelListaEmpleados = new DefaultListModel<Empleado>();
+		this.listEmpleados.setModel(modelListaEmpleados);//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 		listEmpleados.setName("listEmpleados");
 		listEmpleados.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
@@ -1547,8 +1548,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.listEmpleadores = listEmpleadores;
 	}
 
-	public void setListTicketActual(JList listTicketActual) {
-		this.listTicketActual = listTicketActual;
+	public void setListTicketActual(TicketEmpleado ticket) {
+		//this.listTicketActual.add(ticket); //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 	}
 
 	public void setListRondaEleccionesEmpleado(JList listRondaEleccionesEmpleado) {
@@ -1986,6 +1987,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			listTicketActual.setEnabled(hab);
 			listTicketSimpObtenido.setEnabled(hab);
 			
+			//Funcion de controlador que me traiga Ticket Actual, Lista Ronda Encuentros, Ticket simp obtenido
+			//this.setListTicketActual(c.RecuperaTicketEmpleado());
 	}
 	
 	public void EmpleadorLogeado(boolean hab) { // si es true, va a prender o apagar todo
@@ -2022,6 +2025,14 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			listTicketActualEmpleador.setEnabled(hab);
 			listTicketSimplificadosEmpleador.setEnabled(hab);
 		}
+	
+	public void ActualizarListaEmpleados() {
+		this.modelListaEmpleados.clear();
+		ArrayList<Empleado> it=c.RecuperaListaEmpleados();
+		for(int i=0;i<it.size();i++) {
+			this.modelListaEmpleados.addElement(it.get(i));
+		}
+	}
 	
 	
 	

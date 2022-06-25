@@ -18,15 +18,15 @@ public class TicketSimplificado extends Observable{
 //o puede ser un recurso compartido por el que compiten los thread que resultan ser los empleados
 //hay que aplicar a su vez observer observador
    private I_Locacion locacion;
-   private I_TipoTrabajo tipoTrabajo;
+   private String tipoTrabajo;
    private boolean contratado;
    private Empleado empleadoContratado;
 
    public TicketSimplificado(String locacion, String tipoTrabajo, Empleador empleador) throws AtributoInvalidoException {
       LocacionFactory locacionFactory=new LocacionFactory();
       this.locacion=locacionFactory.getLocacion(locacion);
-      TipoTrabajoFactory tipoTrabajoFactory=new TipoTrabajoFactory();
-      this.tipoTrabajo=tipoTrabajoFactory.getTipoTrabajo(tipoTrabajo,empleador);
+      //TipoTrabajoFactory tipoTrabajoFactory=new TipoTrabajoFactory();
+      this.tipoTrabajo=tipoTrabajo;
       this.contratado=false;
    }
 
@@ -41,7 +41,7 @@ public class TicketSimplificado extends Observable{
 	}
 
    public String getTipoDeTrabajo() {
-	   return this.tipoTrabajo.getRubro();
+	   return this.tipoTrabajo;
    }
    
    public I_Locacion getLocacionInterfaz() {
