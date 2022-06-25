@@ -12,6 +12,7 @@ import excepciones.UsuarioIncorrectoException;
 import ticketSimplificado.TicketSimplificado;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -222,20 +223,29 @@ public class Empleado extends Usuario implements Observer,Runnable {
 		
 	}
 	
-	public void eleccionTicketSimp(TicketSimplificado t) { // esto es lo que va en BolsaTrabajo para ver si me quedo el ticket que esta en la lista o lo devuelvo
+	public void eleccionTicketSimp(ArrayList tickets) { // esto es lo que va en BolsaTrabajo para ver si me quedo el ticket que esta en la lista o lo devuelvo
 		double respuesta;
+		TicketSimplificado t;
+		int i;
 		
-		respuesta = this.locacionSimp.versus(t.getLocacionInterfaz());
+		i = 0;
 		
-		if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
-			this.ticketSimpElegido = t;
-			System.out.println(this.getNya()+" se queda con ticket");
-			//return "El empleado "+this.getNya()+" reclamo el ticket de "+ +".";
-		}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
-			System.out.println(this.getNya()+" devuelve ticket");
-			BolsaTrabajo.getInstancia().devolverTicket(this,t);
-			//return "El empleado "+this.getNya()+" quiso reclamar el ticket "++" pero no coincidian las locaciones.";
-		}
+		while i <= 
+		
+		
+		
+		
+			respuesta = this.locacionSimp.versus(t.getLocacionInterfaz());
+		
+			if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
+				this.ticketSimpElegido = t;
+				System.out.println(this.getNya()+" se queda con ticket");
+				//return "El empleado "+this.getNya()+" reclamo el ticket de "+ +".";
+			}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
+				System.out.println(this.getNya()+" devuelve ticket");
+				BolsaTrabajo.getInstancia().devolverTicket(this,t);
+				//return "El empleado "+this.getNya()+" quiso reclamar el ticket "++" pero no coincidian las locaciones.";
+			}
 
 	} //podemos hacerlo string y que despues de la llamada retorne el string que corresponda a la situacion
 

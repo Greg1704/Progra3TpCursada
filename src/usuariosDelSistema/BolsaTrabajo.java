@@ -46,25 +46,11 @@ public class BolsaTrabajo {
         }
         
         this.usaLista = true;
-        
-        if(this.tickets.size() != 0) {
-
-        	i=0;
-
-        	while((i<tickets.size()) && !(tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp())))) {//creo que este getTicketSimp esta mal
-        		i++;                                                                                                                    //deberiamos hacer un get del ticket que quiere tambien
-        	}
-
-        	if(i<tickets.size() && tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp()))) { //Si hay un ticket que me sirve
-        		this.usaLista = false;
-        		notifyAll();
-        		empleado.eleccionTicketSimp(this.tomaTicket(i));
-        	}
-        	
-		}
-        
-		this.usaLista = false;
+              
+        empleado.eleccionTicketSimp(this.tickets);
+      	this.usaLista = false;
 		notifyAll();
+		
 		
     }	
 	
