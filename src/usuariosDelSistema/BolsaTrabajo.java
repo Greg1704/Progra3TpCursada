@@ -53,21 +53,18 @@ public class BolsaTrabajo {
 		}	
 	
 	
-	
 	public synchronized void devolverTicket(Empleado empleado,TicketSimplificado t) {
 		while (this.usaLista == true) {
-			try {
-				
+			try {		
 				wait();
-				
 			}catch(InterruptedException e) {}
 			
 		}
 		
-		this.usaLista = true;
-		// aca se deberia agregar el ticket nuevamentw pq no sirvio
-		notifyAll();
+		//this.usaLista = true;
+		this.agregaTicket(t);
 		this.usaLista = false;
+		notifyAll();
 	}
 	
 	

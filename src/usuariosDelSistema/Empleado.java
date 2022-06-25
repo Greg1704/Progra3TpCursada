@@ -29,7 +29,6 @@ public class Empleado extends Usuario implements Observer,Runnable {
 	private transient TicketSimplificado ticketSimpElegido = null;
 	private int pasadas=10;
 	private transient BolsaDeTrabajo bolsa = BolsaDeTrabajo.getInstancia();
-	private boolean encuentraEmpleoSimp = false;
 
 	public Empleado(String usuario, String contrasenia, String nya, String dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
@@ -213,7 +212,12 @@ public class Empleado extends Usuario implements Observer,Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		int j = 0;
+		
+		while(j <= this.pasadas && this.ticketSimpElegido == null) {
+			BolsaTrabajo.getInstancia().sacarTicket(this);
+			j++;
+		}
 		
 	}
 	
@@ -224,12 +228,13 @@ public class Empleado extends Usuario implements Observer,Runnable {
 		
 		if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
 			this.ticketSimpElegido = t;
-			this.encuentraEmpleoSimp = true;
+			//return "El empleado "+this.getNya()+" reclamo el ticket de "+ +".";
 		}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
 			BolsaTrabajo.getInstancia().devolverTicket(this,t);
+			//return "El empleado "+this.getNya()+" quiso reclamar el ticket "++" pero no coincidian las locaciones.";
 		}
 
-	}
+	} //podemos hacerlo string y que despues de la llamada retorne el string que corresponda a la situacion
 
 
 }
