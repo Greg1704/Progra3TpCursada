@@ -36,6 +36,8 @@ import armaTickets.TicketEmpleado;
 import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
+import usuariosDelSistema.Sistema;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -44,7 +46,7 @@ import javax.swing.JTextArea;
 
 public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListener, ItemListener, ActionListener, ListSelectionListener, IVista { 
 	
-	
+	ActionPerformedBotones c;
 	private JPanel contentPane;
 	private JTabbedPane tabbedPane;
 	private JPanel panelAgencia;
@@ -1421,6 +1423,29 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		EmpleadoLogeado(false);
 		EmpleadorLogeado(false);
+		
+		if (Sistema.getInstancia()!=null) {
+			AdminLogueado(true);
+		} else
+			AdminLogueado(false);
+
+	}
+	
+	/*public void setControlador(ActionPerformedBotones c) {
+		this.c = c;
+	}
+	*/
+	
+	public void setBtnRondaEncuentro(boolean hab) {
+		this.btnRondaEncuentro.setEnabled(hab);
+	}
+
+	public void setBtnRondaContraciones(boolean hab){
+		this.btnRondaContraciones.setEnabled(hab);
+	}
+
+	public void setBtnBolsaDeTrabajo(boolean hab) {
+		this.btnBolsaDeTrabajo.setEnabled(hab);
 	}
 
 	public String getTextFieldCrearAgencia() {
@@ -1925,92 +1950,75 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	public void setBtnCrearTicketSimplificado(boolean hab) {
 		this.btnCrearTicketSimplificado.setEnabled(hab);
 	}
+	
+	public void AdminLogueado(boolean hab) {
+			listEmpleados.setEnabled(hab);
+			listEmpleados.setEnabled(hab);
+			textAreaContrataciones.setEnabled(hab);
+			textAreaComisiones.setEnabled(hab);
+	}
 
-	public void EmpleadoLogeado(boolean hab) { // Logeo con exito o no ? Ac� va a meterse cuando se toque el botoncito de loguearse o crear una nueva cuenta !
-		if (hab) {
-			textFieldRemuneracion.setEnabled(true);
-			textFieldPesoLocacion.setEnabled(true);
-			textFieldPesoRemuneracion.setEnabled(true);
-			textFieldPesoCargaHoraria.setEnabled(true);
-			textFieldPesoTipoDePuesto.setEnabled(true);
-			comboBoxLocacion.setEnabled(true);
-			comboBoxTipoDePuesto.setEnabled(true);
-			comboBoxCargaHoraria.setEnabled(true);
-			comboBoxEstudiosCursados.setEnabled(true);
-			comboBoxExperienciaPrevia.setEnabled(true);
-			comboBoxBolsaLocacion.setEnabled(true);
-			comboBoxBolsaTipoTrabajo.setEnabled(true);
-			setCambiarEstadoTicketEmpleado(true);
-			setBtnConfirmarRequisitosBolsa(true);
-			listRondaEleccionesEmpleado.setEnabled(true);
-		} else { // todo esto tendria que venir por default
-			textFieldRemuneracion.setEnabled(false);
-			textFieldPesoLocacion.setEnabled(false);
-			textFieldPesoRemuneracion.setEnabled(false);
-			textFieldPesoCargaHoraria.setEnabled(false);
-			textFieldPesoTipoDePuesto.setEnabled(false);
-			comboBoxLocacion.setEnabled(false);
-			comboBoxTipoDePuesto.setEnabled(false);
-			comboBoxCargaHoraria.setEnabled(false);
-			comboBoxEstudiosCursados.setEnabled(false);
-			comboBoxExperienciaPrevia.setEnabled(false);
-			comboBoxBolsaLocacion.setEnabled(false);
-			comboBoxBolsaTipoTrabajo.setEnabled(false);
-			setCambiarEstadoTicketEmpleado(false);
-			setBtnConfirmarRequisitosBolsa(false);
-			listRondaEleccionesEmpleado.setEnabled(false);
-		}
-		setTextFieldPesoCargaHoraria("");
-		setTextFieldPesoLocacion("");
-		setTextFieldPesoRemuneracion("");
-		setTextFieldPesoTipoDePuesto("");
-		setTextFieldRemuneracion("");
+	public void EmpleadoLogeado(boolean hab) { // // si es true, va a prender o apagar todo. 
+			textFieldRemuneracion.setEnabled(hab);
+			textFieldPesoLocacion.setEnabled(hab);
+			textFieldPesoRemuneracion.setEnabled(hab);
+			textFieldPesoCargaHoraria.setEnabled(hab);
+			textFieldPesoTipoDePuesto.setEnabled(hab);
+			comboBoxLocacion.setEnabled(hab);
+			comboBoxTipoDePuesto.setEnabled(hab);
+			comboBoxCargaHoraria.setEnabled(hab);
+			comboBoxEstudiosCursados.setEnabled(hab);
+			comboBoxExperienciaPrevia.setEnabled(hab);
+			comboBoxBolsaLocacion.setEnabled(hab);
+			comboBoxBolsaTipoTrabajo.setEnabled(hab);
+			setCambiarEstadoTicketEmpleado(hab);
+			setBtnConfirmarRequisitosBolsa(hab);
+			listRondaEleccionesEmpleado.setEnabled(hab);
+			setTextFieldPesoCargaHoraria("");
+			setTextFieldPesoLocacion("");
+			setTextFieldPesoRemuneracion("");
+			setTextFieldPesoTipoDePuesto("");
+			setTextFieldRemuneracion("");
+			
+			listTicketActual.setEnabled(hab);
+			listTicketSimpObtenido.setEnabled(hab);
+			
 	}
 	
-	public void EmpleadorLogeado(boolean hab) {
-		if (hab) {
-			textFieldRemuneracionEmpleador.setEnabled(true);
-			textFieldPesoLocacionEmpleador.setEnabled(true);
-			textFieldPesoRemuneracionEmpleador.setEnabled(true);
-			textFieldPesoCargaHorariaEmpleador.setEnabled(true);
-			textFieldPesoTipoDePuestoEmpleador.setEnabled(true);
-			textFieldPesoRangoEtarioEmpleador.setEnabled(true);
-			textFieldPesoExpPreviaEmpleador.setEnabled(true);
-			textFieldPesoEstudiosCursadosEmpleador.setEnabled(true);
-			textFieldCantEmpleadosBuscados.setEnabled(true);
-			comboBoxLocacionEmpleador.setEnabled(true);
-			comboBoxTipoDePuestoEmpleador.setEnabled(true);
-			comboBoxCargaHorariaEmpleador.setEnabled(true);
-			comboBoxEstudiosCursadosEmpleador.setEnabled(true);
-			comboBoxExperienciaPreviaEmpleador.setEnabled(true);
-			comboBoxBolsaLocacionEmpleador.setEnabled(true);
-			comboBoxBolsaTipoTrabajoEmpleador.setEnabled(true);
-			setCambiarEstadoTicketEmpleador(true);
-			setBtnCrearTicketSimplificado(true);
-			listRondaEleccionesEmpleador.setEnabled(true);
-		} else {
-			textFieldRemuneracionEmpleador.setEnabled(false);
-			textFieldPesoLocacionEmpleador.setEnabled(false);
-			textFieldPesoRemuneracionEmpleador.setEnabled(false);
-			textFieldPesoCargaHorariaEmpleador.setEnabled(false);
-			textFieldPesoTipoDePuestoEmpleador.setEnabled(false);
-			textFieldPesoRangoEtarioEmpleador.setEnabled(false);
-			textFieldPesoExpPreviaEmpleador.setEnabled(false);
-			textFieldPesoEstudiosCursadosEmpleador.setEnabled(false);
-			textFieldCantEmpleadosBuscados.setEnabled(false);
-			comboBoxLocacionEmpleador.setEnabled(false);
-			comboBoxTipoDePuestoEmpleador.setEnabled(false);
-			comboBoxCargaHorariaEmpleador.setEnabled(false);
-			comboBoxEstudiosCursadosEmpleador.setEnabled(false);
-			comboBoxExperienciaPreviaEmpleador.setEnabled(false);
-			comboBoxRangoEtarioEmpleador.setEnabled(false);
-			comboBoxBolsaLocacionEmpleador.setEnabled(false);
-			comboBoxBolsaTipoTrabajoEmpleador.setEnabled(false);
-			setCambiarEstadoTicketEmpleador(false);
-			setBtnCrearTicketSimplificado(false);
-			listRondaEleccionesEmpleador.setEnabled(false);
+	public void EmpleadorLogeado(boolean hab) { // si es true, va a prender o apagar todo
+			textFieldRemuneracionEmpleador.setEnabled(hab);
+			textFieldPesoLocacionEmpleador.setEnabled(hab);
+			textFieldPesoRemuneracionEmpleador.setEnabled(hab);
+			textFieldPesoCargaHorariaEmpleador.setEnabled(hab);
+			textFieldPesoTipoDePuestoEmpleador.setEnabled(hab);
+			textFieldPesoRangoEtarioEmpleador.setEnabled(hab);
+			textFieldPesoExpPreviaEmpleador.setEnabled(hab);
+			textFieldPesoEstudiosCursadosEmpleador.setEnabled(hab);
+			textFieldCantEmpleadosBuscados.setEnabled(hab);
+			comboBoxLocacionEmpleador.setEnabled(hab);
+			comboBoxRangoEtarioEmpleador.setEnabled(hab);
+			comboBoxTipoDePuestoEmpleador.setEnabled(hab);
+			comboBoxCargaHorariaEmpleador.setEnabled(hab);
+			comboBoxEstudiosCursadosEmpleador.setEnabled(hab);
+			comboBoxExperienciaPreviaEmpleador.setEnabled(hab);
+			comboBoxBolsaLocacionEmpleador.setEnabled(hab);
+			comboBoxBolsaTipoTrabajoEmpleador.setEnabled(hab);
+			setCambiarEstadoTicketEmpleador(hab);
+			setBtnCrearTicketSimplificado(hab);
+			listRondaEleccionesEmpleador.setEnabled(hab);
+			setTextFieldPesoCargaHorariaEmpleador("");
+			setTextFieldPesoEstudiosCursadosEmpleador("");
+			setTextFieldPesoExpPreviaEmpleador("");
+			setTextFieldPesoLocacionEmpleador("");
+			setTextFieldPesoRangoEtarioEmpleador("");
+			setTextFieldPesoRemuneracionEmpleador("");
+			setTextFieldPesoTipoDePuestoEmpleador("");
+			setTextFieldRemuneracionEmpleador("");
+			setTextFieldCantEmpleadosBuscados("");
+			
+			listTicketActualEmpleador.setEnabled(hab);
+			listTicketSimplificadosEmpleador.setEnabled(hab);
 		}
-	}
 	
 	
 	
