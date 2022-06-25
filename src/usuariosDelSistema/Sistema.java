@@ -27,7 +27,7 @@ public class Sistema implements Serializable{
 	private RondaEncuentros encuentros;
 
 	private Sistema(){
-		this.nombre="La Agencia de Pedrito";
+		
 	}
 
 
