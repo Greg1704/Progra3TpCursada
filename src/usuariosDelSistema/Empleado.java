@@ -199,7 +199,7 @@ public class Empleado extends Usuario implements Observer,Runnable {
 	}
 
 	@Override
-	public void update(Observable o, Object arg) { // ac� va a entrar si se eligi� un ticket
+	public void update(Observable o, Object arg) { // aca va a entrar si se eligio un ticket
 		//Hacer que al emopleado le salte una ventana emergente para elegir si lo acepta o no
 		//En el update de empleador se le suspende el Ticket normal(Consultar a grego o tomi)
 		/*
@@ -217,6 +217,7 @@ public class Empleado extends Usuario implements Observer,Runnable {
 		while(j <= this.pasadas && this.ticketSimpElegido == null) {
 			BolsaTrabajo.getInstancia().sacarTicket(this);
 			j++;
+			Util.espera();
 		}
 		
 	}

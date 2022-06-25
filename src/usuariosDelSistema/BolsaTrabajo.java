@@ -37,33 +37,42 @@ public class BolsaTrabajo {
 	}
 
 	public synchronized void sacarTicket(Empleado empleado) {
+		
         while (this.usaLista == true) {
             try {
-                System.out.println("espera");
+                System.out.println(empleado.getNya()+"espera");
                 wait();
             }catch(InterruptedException e) {}
         }
+        
         this.usaLista = true;
+        
+        if(this.tickets.size() != 0) {
 
-        i=0;
+        	i=0;
 
-        while((i<tickets.size()) && !(tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp())))) {//creo que este getTicketSimp esta mal
-            i++;                                                                                                                    //deberiamos hacer un get del ticket que quiere tambien
-        }
+        	while((i<tickets.size()) && !(tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp())))) {//creo que este getTicketSimp esta mal
+        		i++;                                                                                                                    //deberiamos hacer un get del ticket que quiere tambien
+        	}
 
-        if(i<tickets.size() && tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp()))) { //Si hay un ticket que me sirve
-            empleado.eleccionTicketSimp(this.tomaTicket(i));
-        }
-        this.usaLista = false;
-        notifyAll();
-
+        	if(i<tickets.size() && tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp()))) { //Si hay un ticket que me sirve
+        		this.usaLista = false;
+        		notifyAll();
+        		empleado.eleccionTicketSimp(this.tomaTicket(i));
+        	}
+        	
+		}
+        
+		this.usaLista = false;
+		notifyAll();
+		
     }	
 	
 	
 	public synchronized void devolverTicket(Empleado empleado,TicketSimplificado t) {
 		while (this.usaLista == true) {
 			try {	
-				System.out.println("espera2");
+				System.out.println(empleado.getNya()+" espera2");
 				wait();
 			}catch(InterruptedException e) {}
 			

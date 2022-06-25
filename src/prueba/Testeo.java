@@ -62,12 +62,12 @@ public class Testeo {
 		agencia.agregaEmpleador(em3);
 		
 		e1.setLocacionSimp("Presencial");
-		e2.setLocacionSimp("Indistinto");
+		e2.setLocacionSimp("Presencial");
 		e3.setLocacionSimp("Presencial");
 		e4.setLocacionSimp("HomeOffice");
-		e5.setLocacionSimp("Indistinto");
+		e5.setLocacionSimp("Presencial");
 		e1.setTipoTrabajoSimp("Salud");
-		e2.setTipoTrabajoSimp("Salud");
+		e2.setTipoTrabajoSimp("ComercioLocal");
 		e3.setTipoTrabajoSimp("ComercioInternacional");
 		e4.setTipoTrabajoSimp("Salud");
 		e5.setTipoTrabajoSimp("ComercioLocal");
@@ -76,12 +76,15 @@ public class Testeo {
 		em1.crearTicketSimplificado("Presencial", "ComercioLocal");
 		em2.crearTicketSimplificado("HomeOffice", "Salud");
 		em3.crearTicketSimplificado("Presencial", "ComercioInternacional");	
+		em2.crearTicketSimplificado("HomeOffice", "Salud");	
+		em1.crearTicketSimplificado("Presencial", "ComercioLocal");	
 		
 		new Thread(e1).start();
 		new Thread(e2).start();
 		new Thread(e3).start();
 		new Thread(e4).start();
 		new Thread(e5).start();
+		
 		
 		/*agencia.busquedaLaboral();
 		
