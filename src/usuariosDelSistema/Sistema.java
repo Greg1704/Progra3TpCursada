@@ -334,9 +334,9 @@ public class Sistema implements Serializable{
 
 	
 	
-	public void LoginEmpleado(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
+	public Empleado LoginEmpleado(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
 		
-		buscaEmpleado(usuario,contrasenia);
+		return buscaEmpleado(usuario,contrasenia);
 		
 	}
 	
@@ -356,9 +356,9 @@ public class Sistema implements Serializable{
 		
 	}
 	
-	public void LoginEmpleador(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException{
+	public Empleador LoginEmpleador(String usuario, String contrasenia) throws UsuarioIncorrectoException,ContraseniaIncorrectaException{
 
-		buscaEmpleador(usuario,contrasenia);
+		return buscaEmpleador(usuario,contrasenia);
 
 }
 

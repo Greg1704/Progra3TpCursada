@@ -188,6 +188,12 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		this.quitaObservable((TicketSimplificado)o);
 		
 	}
+	
+	
+
+	public ArrayList<TicketSimplificado> getObservables() {
+		return observables;
+	}
 
 	@Override
 	public String toString() {

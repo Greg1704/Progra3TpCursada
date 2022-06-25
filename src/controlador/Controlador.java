@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import armaTickets.TicketEmpleado;
+import armaTickets.TicketEmpleador;
 import encuentro.ListaAsignaciones;
 import excepciones.AtributoInvalidoException;
 import excepciones.ContraseniaIncorrectaException;
@@ -61,7 +62,7 @@ public class Controlador implements ActionListener {
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
 					try {
 						
-						sistema.LoginEmpleado(v.getTextFieldUsuario(), v.getTextFieldContrasenia());  //Falta alguna referencia a la que apunte la variable empleado
+						empleado=sistema.LoginEmpleado(v.getTextFieldUsuario(), v.getTextFieldContrasenia());  //Falta alguna referencia a la que apunte la variable empleado
 						JOptionPane.showMessageDialog(null, "Login Correcto");
 						v.EmpleadoLogeado(true);
 					}catch (ContraseniaIncorrectaException ex) {
@@ -90,9 +91,10 @@ public class Controlador implements ActionListener {
 					if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) { //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 							
 						empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPesoRemuneracion(), 
-							v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , v.getTextFieldCreacionEdad(), 1, 
+							v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , empleado.getEdad(), 1, 
 							v.getComboBoxExperienciaPrevia(), 1, v.getComboBoxEstudiosCursados(), 1);
 							
+						v.ActualizarListaTicketActualEmpleado();
 				}else
 					if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
 						if(v.getRdbtnActivo()) 
@@ -120,7 +122,7 @@ public class Controlador implements ActionListener {
 					}else    // VENTANA EMPLEADOR
 						if(e.getActionCommand().equals(IVista.confirmarLoginEmpleador)) {
 							try {
-								sistema.LoginEmpleador(v.getTextFieldUsuarioEmpleador(), v.getTextFieldContraseniaEmpleador()); //Falta alguna referencia a la que apunte la variable empleado
+								empleador=sistema.LoginEmpleador(v.getTextFieldUsuarioEmpleador(), v.getTextFieldContraseniaEmpleador()); //Falta alguna referencia a la que apunte la variable empleado
 								JOptionPane.showMessageDialog(null, "Login Correcto");
 								v.EmpleadorLogeado(true);
 							}
@@ -156,6 +158,8 @@ public class Controlador implements ActionListener {
 									v.getComboBoxCargaHorariaEmpleador(), v.getTextFieldPesoCargaHorariaEmpleador(), v.getComboBoxTipoDePuestoEmpleador(), v.getTextFieldPesoTipoDePuestoEmpleador(),
 									auxNumerico, v.getTextFieldPesoRangoEtarioEmpleador(), v.getComboBoxExperienciaPrevia(), v.getTextFieldPesoExpPreviaEmpleador(), v.getComboBoxEstudiosCursadosEmpleador(),
 									v.getTextFieldPesoEstudiosCursadosEmpleador(), v.getTextFieldCantEmpleadosBuscados());
+							
+							v.ActualizarListaTicketActualEmpleador();
 					}else
 						if(e.getActionCommand().equals(IVista.confirmaCambioEstadoEmpleador)) {
 							if(v.getRdbtnActivo()) 
@@ -171,6 +175,7 @@ public class Controlador implements ActionListener {
 						if(e.getActionCommand().equals(IVista.confirmaCracionTicketSimplificado)) {
 							try {
 								empleador.agregaObservable(new TicketSimplificado(v.getComboBoxBolsaLocacionEmpleador(),v.getComboBoxBolsaTipoTrabajoEmpleador(),empleador));
+								v.ActualizarListaTicketSimpEmpleadores();
 								//No se si deberiamos hacer algo para que se muestre en la ventana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 							} catch (AtributoInvalidoException e1) {
 								//No va a pasar nada, ya que no puede tirar error realmente si lo creamos desde aca xd AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -189,6 +194,14 @@ public class Controlador implements ActionListener {
 
     public TicketEmpleado RecuperaTicketEmpleado() {
     	return empleado.getTicket();
+    }
+    
+    public TicketEmpleador RecuperaTicketEmpleador() {
+    	return empleador.getTicketEmpleador();
+    }
+    
+    public ArrayList<TicketSimplificado> RecuperaListaTicketSimplificadosEmpleadores(){
+    	return empleador.getObservables();
     }
 
 

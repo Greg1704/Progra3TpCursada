@@ -34,6 +34,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import armaTickets.TicketEmpleado;
+import armaTickets.TicketEmpleador;
 import controlador.Controlador;
 import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.Empleado;
@@ -262,6 +263,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JButton btnConfirmarRequisitosBolsa;
 	private DefaultListModel<Empleado> modelListaEmpleados; //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 	private DefaultListModel<Empleador> modelListaEmpleadores;
+	private DefaultListModel<TicketEmpleado> modelTicketActualEmpleado;
+	private DefaultListModel<TicketEmpleador> modelTicketActualEmpleador;
+	private DefaultListModel<TicketSimplificado> modelListTicketsSimpEmpleador;
 
 	/**
 	 * Launch the application.
@@ -714,7 +718,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.listTicketActual = new JList();
 		this.scrollPaneTicketActual.setViewportView(this.listTicketActual);
 		this.listTicketActual.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Ticket de Busqueda Actual", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-
+		this.modelTicketActualEmpleado=new DefaultListModel<TicketEmpleado>();
+		this.listTicketActual.setModel(modelTicketActualEmpleado);
+		
+		
 		this.panel_6 = new JPanel();
 		this.panel_6.setBorder(
 				new TitledBorder(null, "Estado del Ticket", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1128,7 +1135,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.scrollPaneTicketActualEmpleador.setViewportView(this.listTicketActualEmpleador);
 		this.listTicketActualEmpleador
 				.setBorder(new TitledBorder(null, "Ticket Actual", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-
+		this.modelTicketActualEmpleador=new DefaultListModel<TicketEmpleador>();
+		this.listTicketActualEmpleador.setModel(modelTicketActualEmpleador);
 		this.panelRondaDeEleccionEmpleador = new JPanel();
 		this.panelGeneralEmpleador.add(this.panelRondaDeEleccionEmpleador);
 		this.panelRondaDeEleccionEmpleador.setLayout(null);
@@ -1196,6 +1204,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.scrollPaneTicketsSimplificadosEmpleador.setViewportView(this.listTicketSimplificadosEmpleador);
 		this.listTicketSimplificadosEmpleador.setBorder(
 		new TitledBorder(null, "Tickets Simplificados", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.modelListTicketsSimpEmpleador=new DefaultListModel<TicketSimplificado>();
+		this.listTicketSimplificadosEmpleador.setModel(modelListTicketsSimpEmpleador);
 		
 		this.scrollPaneTicketSimpObtenido = new JScrollPane();
 		this.scrollPaneTicketSimpObtenido.setBounds(21, 119, 364, 94);
@@ -1979,6 +1989,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			setCambiarEstadoTicketEmpleado(hab);
 			setBtnConfirmarRequisitosBolsa(hab);
 			listRondaEleccionesEmpleado.setEnabled(hab);
+			setBtnConfirmarCreacionTicket(hab);
 			setTextFieldPesoCargaHoraria("");
 			setTextFieldPesoLocacion("");
 			setTextFieldPesoRemuneracion("");
@@ -2043,6 +2054,24 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		}
 	}
 	
+	public void ActualizarListaTicketActualEmpleado() {
+		this.modelTicketActualEmpleado.clear();
+		this.modelTicketActualEmpleado.addElement(c.RecuperaTicketEmpleado());
+	}
+	
+	public void ActualizarListaTicketActualEmpleador() {
+		this.modelTicketActualEmpleador.clear();
+		this.modelTicketActualEmpleador.addElement(c.RecuperaTicketEmpleador());
+	}
+	
+	
+	public void ActualizarListaTicketSimpEmpleadores() {
+		this.modelListTicketsSimpEmpleador.clear();
+		ArrayList<TicketSimplificado> it=c.RecuperaListaTicketSimplificadosEmpleadores();
+		for(int i=0;i<it.size();i++) {
+			this.modelListTicketsSimpEmpleador.addElement(it.get(i));
+		}
+	}
 	
 	
 	//pensamiento propio: desde ventana mandamos el empleador que seleccionamos al controlador, y este "une" al empleado con su empleador
