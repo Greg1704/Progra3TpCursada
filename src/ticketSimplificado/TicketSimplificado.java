@@ -46,13 +46,17 @@ public class TicketSimplificado extends Observable implements Runnable{
       notifyObservers(empleadoContratado);
    }
 
-public String getLocacion() {
+   public String getLocacion() {
 		return locacion.toString();
 	}
 
-public String getTipoDeTrabajo() {
-	return this.tipoTrabajo.getRubro();
-}
+   public String getTipoDeTrabajo() {
+	   return this.tipoTrabajo.getRubro();
+   }
+   
+   public I_Locacion getLocacionInterfaz() {
+		return locacion;
+	}
    
    //Revisar si hay que agregar algun error a tipoTrabajoFactory
    //Revisar como relacionar las clases Salud, ComercioLocal, y ComercioInternacional con los empleados

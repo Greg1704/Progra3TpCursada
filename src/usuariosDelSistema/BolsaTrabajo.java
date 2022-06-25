@@ -25,40 +25,36 @@ public class BolsaTrabajo {
 	}
 	
 	
-	public void eliminaTicket(TicketSimplificado t,int i) {
-		this.tickets.remove(i);	
+	public TicketSimplificado tomaTicket(int i) {
+		return this.tickets.remove(i);	
 	}
 	
 	
 	public synchronized void sacarTicket(Empleado empleado) {
-		while (this.usaLista == true && empleado.getPasadas()>0) {
+		while (this.usaLista == true) {
 			try {		
-				empleado.setPasadas(empleado.getPasadas()-1);
 				wait();	
 			}catch(InterruptedException e) {}			
-		}
+		}		
+		//this.usaLista = true;
 		
-		this.usaLista = true;
 		i=0;
-	while((i<tickets.size())&&!(tickets.get(i).getTipoDeTrabajo().equals(empleado.getTicketSimpElegido().getTipoDeTrabajo()))) {//creo que este getTicketSimp esta mal
-		i++;																													//deberiamos hacer un get del ticket que quiere tambien
-	} //Volvimos a progra 2 chicos																								  consultar con creadores de tickets :D		
+		
+		while((i<tickets.size()) && !(tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp())))) {//creo que este getTicketSimp esta mal
+			i++;																													//deberiamos hacer un get del ticket que quiere tambien
+		} 																		
 	
-	if(i<tickets.size()&&tickets.get(i).getTipoDeTrabajo().equals(empleado.getTicketSimpElegido().getTipoDeTrabajo())) { //Si hay un ticket que me sirve
-	// funcion para analizar si el ticket corresponde, esta funcion deberia estar en empleado, de donde son los threads
-	
-	}
+		if(i<tickets.size() && tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase((empleado.getTipoTrabajoSimp()))) { //Si hay un ticket que me sirve
+			empleado.eleccionTicketSimp(this.tomaTicket(i));
+		}
 																											
-																										  
-
 		this.usaLista = false;																				
 		notifyAll();
-//		this.usaLista = false; Opinion, DesertiManuel42782400 , hijo de Adrian: Esto va arriba porq en todos los ejs es asi :)
 		}	
 	
 	
 	
-	public synchronized void devolverTicket(Empleado empleado) {
+	public synchronized void devolverTicket(Empleado empleado,TicketSimplificado t) {
 		while (this.usaLista == true) {
 			try {
 				

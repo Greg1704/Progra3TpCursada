@@ -1,6 +1,9 @@
 package usuariosDelSistema;
 
 import armaTickets.TicketEmpleado;
+import calculosAspectosLaborales.I_Locacion;
+import calculosAspectosLaborales.LocacionFactory;
+import excepciones.AtributoInvalidoException;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.FormularioInvalidoException;
 import excepciones.ListaVaciaException;
@@ -9,7 +12,6 @@ import excepciones.UsuarioIncorrectoException;
 import ticketSimplificado.TicketSimplificado;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList.*;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -20,13 +22,14 @@ public class Empleado extends Usuario implements Observer,Runnable {
 	private int telefono;
 	private int edad;
 	private String ciudad;
-	private String locacionSimp;
+	private I_Locacion locacionSimp;
 	private String tipoTrabajoSimp;
 	private TicketEmpleado ticket;
 	private Empleador empleadorSeleccionado;
 	private transient TicketSimplificado ticketSimpElegido = null;
 	private int pasadas=10;
 	private transient BolsaDeTrabajo bolsa = BolsaDeTrabajo.getInstancia();
+	private boolean encuentraEmpleoSimp = false;
 
 	public Empleado(String usuario, String contrasenia, String nya, String dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
@@ -110,13 +113,18 @@ public class Empleado extends Usuario implements Observer,Runnable {
 		this.pasadas = pasadas;
 	}
 	
-	public String getLocacionSimp() {
+	public I_Locacion getLocacionSimp() {
 		return locacionSimp;
 	}
 
-	public void setLocacionSimp(String locacionSimp) {
-		this.locacionSimp = locacionSimp;
-	}
+	public void setLocacionSimp(String locacionSimp)  {
+		LocacionFactory locacionFactory=new LocacionFactory();
+	    try {
+			this.locacionSimp=locacionFactory.getLocacion(locacionSimp);
+		} catch (AtributoInvalidoException e) {
+			e.printStackTrace();
+		}
+	}//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 	public String getTipoTrabajoSimp() {
 		return tipoTrabajoSimp;
@@ -209,9 +217,18 @@ public class Empleado extends Usuario implements Observer,Runnable {
 		
 	}
 	
-	public void eleccionTicketSimp() { // esto es lo que va en BolsaTrabajo para ver si me quedo el ticket que esta en la lista o lo devuelvo
-									   //como no la tengo tan clara con los criterios lo dejo comentado y lo hacemos juntos :)
+	public void eleccionTicketSimp(TicketSimplificado t) { // esto es lo que va en BolsaTrabajo para ver si me quedo el ticket que esta en la lista o lo devuelvo
+		double respuesta;
 		
+		respuesta = this.locacionSimp.versus(t.getLocacionInterfaz());
+		
+		if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
+			this.ticketSimpElegido = t;
+			this.encuentraEmpleoSimp = true;
+		}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
+			BolsaTrabajo.getInstancia().devolverTicket(this,t);
+		}
+
 	}
 
 

@@ -26,8 +26,7 @@ public class Sistema implements Serializable{
 	private ArrayList<TicketSimplificado> bolsaDeTrabajo = new ArrayList<TicketSimplificado>();
 	private RondaEncuentros encuentros;
 
-	private Sistema(){
-		
+	private Sistema(){		
 	}
 
 
@@ -363,21 +362,21 @@ public class Sistema implements Serializable{
 
 }
 
-public Empleador buscaEmpleador(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
-	int i = 0;
+	public Empleador buscaEmpleador(String usuario, String contrasenia)throws UsuarioIncorrectoException,ContraseniaIncorrectaException {
+		int i = 0;
 	
-	while (i < empleadores.size()) {
-		if (Sistema.getInstancia().getEmpleadores().get(i).usuario.compareTo(usuario) == 0) {
-			if(Sistema.getInstancia().getEmpleadores().get(i).contrasenia.compareTo(contrasenia) == 0)
-				return Sistema.getInstancia().getEmpleadores().get(i);
-			else
-				throw new ContraseniaIncorrectaException();
+		while (i < empleadores.size()) {
+			if (Sistema.getInstancia().getEmpleadores().get(i).usuario.compareTo(usuario) == 0) {
+				if(Sistema.getInstancia().getEmpleadores().get(i).contrasenia.compareTo(contrasenia) == 0)
+					return Sistema.getInstancia().getEmpleadores().get(i);
+				else
+					throw new ContraseniaIncorrectaException();
+			}
+			i++;		
 		}
-		i++;		
-	}
-	throw new UsuarioIncorrectoException();
+		throw new UsuarioIncorrectoException();
 	
-}
+	}
 }
 
 

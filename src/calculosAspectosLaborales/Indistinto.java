@@ -20,4 +20,10 @@ public class Indistinto implements I_Locacion {
     public double indistinto() {
         return 1;
     }
+    
+	@Override
+	public String toString() {
+		return "Indistinto";
+	}
+	
 }
