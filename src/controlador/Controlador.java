@@ -33,10 +33,8 @@ public class Controlador implements ActionListener {
 		// aca se cruzan los datos con los datos del sistema para ver si el logeo esta bien o no, e iria con un if
 		
 		if (e.getActionCommand().equals(IVista.confirmaCreacionAgencia)) { // ventana Agencia
-			System.out.println("entra aca");
 			if (Sistema.getInstancia()!=null) {
 				JOptionPane.showMessageDialog(null, "La agencia ya existe");
-				System.out.println("La agencia ay existe");
 			} else  {
 				// crear la agencia	
 				sistema = Sistema.getInstancia();
@@ -58,7 +56,6 @@ public class Controlador implements ActionListener {
 				
 				
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
-					System.out.println("llega aca");
 					try {
 						
 						sistema.LoginEmpleado(v.getTextFieldUsuario(), v.getTextFieldContrasenia());
