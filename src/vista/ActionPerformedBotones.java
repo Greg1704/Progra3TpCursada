@@ -148,7 +148,7 @@ public class ActionPerformedBotones implements ActionListener {
 									auxNumerico, v.getTextFieldPesoRangoEtarioEmpleador(), v.getComboBoxExperienciaPrevia(), v.getTextFieldPesoExpPreviaEmpleador(), v.getComboBoxEstudiosCursadosEmpleador(),
 									v.getTextFieldPesoEstudiosCursadosEmpleador(), v.getTextFieldCantEmpleadosBuscados());
 					}else
-						if(e.getActionCommand().equals(IVista.confirmacionEleccionEmpleador)) {
+						if(e.getActionCommand().equals(IVista.confirmaCambioEstadoEmpleador)) {
 							if(v.getRdbtnActivo()) 
 								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().activa());
 							else if(v.getRdbtnSuspendido())

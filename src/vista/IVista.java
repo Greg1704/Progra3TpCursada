@@ -26,7 +26,7 @@ public interface IVista {
 	static final String confirmarLoginEmpleador = "confirma login de empleador";
 	static final String confirmacionCreacionUsuarioEmpleador = "confirma creacion de empleador";
 	static final String confirmacionCreacionTicketEmpleador = "confirma creacion de ticket de empleador";
-	static final String confirmaCambiorEstadoEmpleador = "Confirma cambio de estado de ticket de empleador";
+	static final String confirmaCambioEstadoEmpleador = "Confirma cambio de estado de ticket de empleador";
 	static final String confirmacionEleccionEmpleador = "Confirma eleccion del empleador";
 	static final String confirmaCracionTicketSimplificado = "Confirma la creacion de un TS";
 	
