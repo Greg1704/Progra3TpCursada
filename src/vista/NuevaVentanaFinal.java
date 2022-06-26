@@ -1180,6 +1180,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelRondaEleccionesEmpleador.add(this.scrollPaneRondaEleccionesEmpleador);
 
 		this.listRondaEleccionesEmpleador = new JList();
+		this.listRondaEleccionesEmpleador.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		this.scrollPaneRondaEleccionesEmpleador.setViewportView(this.listRondaEleccionesEmpleador);
 		this.listRondaEleccionesEmpleador.setBorder(new TitledBorder(
 				new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Empleados",
@@ -2124,7 +2125,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 					listRondaEleccionesEmpleador.setEnabled(false);
 				}
 				ActualizarListaTicketActualEmpleador();
-				ActualizarListaTicketSimpEmpleadores();
 			}
 	}
 	
@@ -2413,6 +2413,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			this.setBtnRondaEncuentro(true);
 			this.setBtnRondaContraciones(false);
 		}
+		setBtnBolsaDeTrabajo(true);
 	}
 
 	@Override

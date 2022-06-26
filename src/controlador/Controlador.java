@@ -92,14 +92,14 @@ public class Controlador implements ActionListener {
 					}
 		}else if(e.getActionCommand().equals(IVista.guardaInformacionAgencia)) {
 					PersistirSistema.EscrituraSistema();
-					JOptionPane.showMessageDialog(null, "Agencia guardada en Sistema");
 				
 		}else if(e.getActionCommand().equals(IVista.recuperaInformacionAgencia)) {
 					PersistirSistema.LecturaSistema();
+					sistema=Sistema.getInstancia();
 					v.setLbLAgenciaCreadaNombre(sistema.getNombre());
 					v.ActualizarListaEmpleados();
 					v.ActualizarListaEmpleadores();
-					JOptionPane.showMessageDialog(null, "Agencia recuperada en Sistema");
+					v.EncuentroOContratacion(sistema.isEncuentroHecho());
 				
 			}else { // VENTANA EMPLEADO
 				

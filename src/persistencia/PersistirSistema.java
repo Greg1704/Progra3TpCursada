@@ -17,7 +17,7 @@ public class PersistirSistema {
 			SistemaDTO sistema = UtilSistema.sistemaDTOfromSistema();			
 			persistencia.escribir(sistema);
 			persistencia.cerrarOutput();
-			
+			JOptionPane.showMessageDialog(null, "Agencia guardada en Sistema");
 		}catch(IOException e) {
 			JOptionPane.showMessageDialog(null, "Se guardo mal");
 		}
@@ -29,14 +29,12 @@ public class PersistirSistema {
 		IPersistencia<Serializable> persistencia = new PersistenciaBIN();
 		
 		try {
-			persistencia.abrirInput("Sistema.bin");
+			persistencia.abrirInput("Agencia.bin");
 			SistemaDTO sistdto = (SistemaDTO) persistencia.leer();
-			UtilSistema.sistemafromSistemaDTO(sistdto);
-			
-			System.out.println("Se recupero sistema");
+			UtilSistema.sistemafromSistemaDTO(sistdto);			
 			persistencia.cerrarInput();
-			System.out.println("Termino con exito");
 			
+			JOptionPane.showMessageDialog(null, "Agencia recuperada en Sistema");
 		}catch (IOException e){
 			JOptionPane.showMessageDialog(null, "Esta pasando algo");
         } catch (ClassNotFoundException e){
