@@ -28,14 +28,12 @@ public class BolsaTrabajo {
 	public TicketSimplificado tomaTicket(int i) {
 		return this.tickets.remove(i);	
 	}
-	
-	
-	
-	
+
 	public void setUsaLista(boolean usaLista) {
 		this.usaLista = usaLista;
 	}
 
+	
 	public synchronized void sacarTicket(Empleado empleado) {
 		
         while (this.usaLista == true) {
@@ -47,10 +45,10 @@ public class BolsaTrabajo {
         
         this.usaLista = true;
               
-        empleado.eleccionTicketSimp(this.tickets);
-      	this.usaLista = false;
+        this.usaLista = false;
 		notifyAll();
-		
+        empleado.eleccionTicketSimp(this.tickets);
+      		
 		
     }	
 	

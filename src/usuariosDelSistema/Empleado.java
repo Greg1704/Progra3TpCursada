@@ -223,29 +223,30 @@ public class Empleado extends Usuario implements Observer,Runnable {
 		
 	}
 	
-	public void eleccionTicketSimp(ArrayList tickets) { // esto es lo que va en BolsaTrabajo para ver si me quedo el ticket que esta en la lista o lo devuelvo
+	public void eleccionTicketSimp(ArrayList<TicketSimplificado> tickets) { // esto es lo que va en BolsaTrabajo para ver si me quedo el ticket que esta en la lista o lo devuelvo
 		double respuesta;
 		TicketSimplificado t;
 		int i;
 		
 		i = 0;
 		
-		while i <= 
+		while (i < tickets.size() && this.tipoTrabajoSimp.equalsIgnoreCase(tickets.get(i).getTipoDeTrabajo())) {
+			i++;
+		} 
 		
-		
-		
-		
-			respuesta = this.locacionSimp.versus(t.getLocacionInterfaz());
-		
+		if (i < tickets.size()) {
+			respuesta = this.locacionSimp.versus(tickets.get(i).getLocacionInterfaz());
+			
 			if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
-				this.ticketSimpElegido = t;
+				this.ticketSimpElegido = tickets.get(i);
 				System.out.println(this.getNya()+" se queda con ticket");
-				//return "El empleado "+this.getNya()+" reclamo el ticket de "+ +".";
+				
 			}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
 				System.out.println(this.getNya()+" devuelve ticket");
-				BolsaTrabajo.getInstancia().devolverTicket(this,t);
+				BolsaTrabajo.getInstancia().devolverTicket(this,tickets.get(i));
 				//return "El empleado "+this.getNya()+" quiso reclamar el ticket "++" pero no coincidian las locaciones.";
 			}
+		}	
 
 	} //podemos hacerlo string y que despues de la llamada retorne el string que corresponda a la situacion
 
