@@ -32,6 +32,9 @@ public class TicketSimplificado extends Observable{
 
    public void setEmpleadoContratado(Empleado empleadoContratado) {
       this.empleadoContratado = empleadoContratado;
+      this.contratado = true;
+      setChanged();
+      notifyObservers();
    }
 
    @SuppressWarnings("deprecation")

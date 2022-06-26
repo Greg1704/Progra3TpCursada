@@ -178,15 +178,12 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	}
 
 	@Override
-	public void update(Observable o, Object arg) { // ac� va a entrar si se eligi� un ticket
+	public void update(Observable o, Object arg) { // aca va a entrar si se eligio un ticket
 		//Se deberia ejecutar cuando el empleado se apropia del ticket
 		//El Object seria el empleado, se usaria este update para hacer los cambios en el empleado y el empleador
 		//Consultar con Grego o Manu
-		Empleado emp=(Empleado) arg;
-		if(((Empleado) arg).getTicket()!=null)
-			((Empleado) arg).getTicket().suspende(); //Se le suspende el ticket normal ya que encontro trabajo por la bolsa
-		this.quitaObservable((TicketSimplificado)o);
 		
+		this.quitaObservable((TicketSimplificado) o);
 	}
 	
 	
