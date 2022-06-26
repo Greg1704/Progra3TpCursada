@@ -68,9 +68,8 @@ public class FormularioDeBusqueda implements Serializable{
 
 	@Override
 	public String toString() {
-		return "[locacion=" + locacion + ", remuneracion=" + remuneracion + ", cargaHoraria="
-				+ cargaHoraria + ", tipoPuestoLaboral=" + tipoPuestoLaboral + ", edad=" + edad + ", experienciaPrevia="
-				+ experienciaPrevia + ", estudiosCursados=" + estudiosCursados + "]";
+		return locacion.toString() +  remuneracion.toString() + cargaHoraria.toString() + tipoPuestoLaboral.toString() + edad.toString() +
+				experienciaPrevia.toString() + estudiosCursados.toString();
 	}
 	
 	

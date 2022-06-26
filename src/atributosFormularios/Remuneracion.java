@@ -37,4 +37,10 @@ public class Remuneracion implements Serializable{
 	public I_Remuneracion getInstanciaRemuneracion() {
 		return instanciaRemuneracion;
 	}
+
+	@Override
+	public String toString() {
+		return "Remuneracion: " + monto;
+	}
+	
 }

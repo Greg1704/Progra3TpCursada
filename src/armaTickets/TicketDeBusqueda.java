@@ -61,5 +61,12 @@ public abstract class TicketDeBusqueda implements I_EstadoTicket{
 	
 	public abstract void esActivo() throws NoActivoException;
 
+	@Override
+	public String toString() {
+		return "TicketDeBusqueda [fechaAlta=" + fechaAlta + ", formulario=" + formulario.toString() + ", getEstado()="
+				+ getEstado() + "]";
+	}
+
+	
 	
 }

@@ -37,5 +37,12 @@ public class Edad implements Serializable{
 	public I_RangoEtario getInstanciaEdad() {
 		return instanciaEdad;
 	}
+
+	@Override
+	public String toString() {
+		return "Edad:" + edad;
+	}
+	
+	
 }
 

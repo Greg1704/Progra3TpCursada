@@ -38,4 +38,11 @@ public class TipoPuestoLaboral implements Serializable{
 	public I_TipoDePuesto getInstanciaLaboral() {
 		return instanciaLaboral;
 	}
+
+	@Override
+	public String toString() {
+		return "TipoPuestoLaboral: " + tipoPuestoLaboral;
+	}
+	
+	
 }

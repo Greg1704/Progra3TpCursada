@@ -37,4 +37,10 @@ public class CargaHoraria implements Serializable{
 	public I_CargaHoraria getInstanciaHorario() {
 		return instanciaHorario;
 	}
+
+	@Override
+	public String toString() {
+		return "CargaHoraria:" + cargaHoraria;
+	}
+	
 }

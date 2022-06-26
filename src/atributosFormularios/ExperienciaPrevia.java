@@ -37,4 +37,11 @@ public class ExperienciaPrevia implements Serializable{
 	public I_ExperienciaPrevia getInstanciaExperiencia() {
 		return instanciaExperiencia;
 	}
+
+	@Override
+	public String toString() {
+		return "ExperienciaPrevia: " + experienciaPrevia;
+	}
+	
+	
 }

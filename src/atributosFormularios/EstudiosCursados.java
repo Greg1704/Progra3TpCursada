@@ -37,4 +37,10 @@ public class EstudiosCursados implements Serializable{
 	public I_EstudiosCursados getInstanciaEstudios() {
 		return instanciaEstudios;
 	}
+
+	@Override
+	public String toString() {
+		return "EstudiosCursados: " + instanciaEstudios;
+	}
+	
 }

@@ -195,7 +195,8 @@ public class Empleado extends Usuario implements Runnable {
 
 	@Override
 	public String toString() {
-		return "Empleado: Nombre y Apellido: " + nya + ticket + ". Puntaje: "+ getPuntaje();
+		return "Empleado [nya=" + nya + ", dni=" + dni + ", telefono=" + telefono + ", edad=" + edad + ", ciudad="
+				+ ciudad + "]";
 	}
 
 	@Override

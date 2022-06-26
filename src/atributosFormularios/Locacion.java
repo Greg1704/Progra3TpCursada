@@ -37,4 +37,10 @@ public class Locacion implements Serializable{
 	public I_Locacion getInstanciaLocacion() {
 		return instanciaLocacion;
 	}
+
+	@Override
+	public String toString() {
+		return "Locacion: " + locacion;
+	}
+	
 }
