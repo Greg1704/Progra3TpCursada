@@ -14,10 +14,8 @@ public class PersistirSistema {
 		
 		try {
 			persistencia.abrirOutput("Agencia.bin");
-			SistemaDTO sistema = UtilSistema.sistemaDTOfromSistema();
-			
+			SistemaDTO sistema = UtilSistema.sistemaDTOfromSistema();			
 			persistencia.escribir(sistema);
-			System.out.println("Se grabo bien");
 			persistencia.cerrarOutput();
 			
 		}catch(IOException e) {

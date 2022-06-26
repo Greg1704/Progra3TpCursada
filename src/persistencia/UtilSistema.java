@@ -15,10 +15,12 @@ public class UtilSistema {
 	}
 	
 	public static void sistemafromSistemaDTO(SistemaDTO sist) {
-		Sistema.getInstancia().setNombre(sist.getNombre());
-		Sistema.getInstancia().setEncuentroHecho(sist.isEncuentroHecho());
-		Sistema.getInstancia().setEmpleadosPretensos(sist.getEmpleadosPretensos());
-		Sistema.getInstancia().setEmpleadores(sist.getEmpleadores());
+		Sistema sistema = Sistema.getInstancia();
+	
+		sistema.setNombre(sist.getNombre());
+		sistema.setEncuentroHecho(sist.isEncuentroHecho());
+		sistema.setEmpleadosPretensos(sist.getEmpleadosPretensos());
+		sistema.setEmpleadores(sist.getEmpleadores());
 	}
 	
 }

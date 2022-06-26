@@ -32,7 +32,6 @@ public class Sistema{
 	private boolean encuentroHecho;
 
 	private Sistema(){	
-		
 	}
 
 
@@ -165,7 +164,9 @@ public class Sistema{
 		this.empleadores = empleadores;
 	}
 
-
+	
+	
+	
 	/**
 	 * el metodo <b> comisionEmpleadoPretenso </b> calcula la comision del
 	 * empleado dependiendo del cargo que este posee <br>
@@ -206,27 +207,6 @@ public class Sistema{
 			encuentros.enfrentamientoEmpleados();
 	}
 
-	/*public void rondaDeElecciones() {
-		ArrayList<Empleador> empleadoresElegidos = new ArrayList<Empleador>();
-
-		for (Empleador empleador : empleadores) {
-			if (empleador.getTicketEmpleador() != null
-					&& empleador.getTicketEmpleador().getEstadoTicket().equalsIgnoreCase("Activo"))
-				empleador.rondaElecciones();
-		}
-
-		for (Empleado empleado : empleadosPretensos) {
-			if (empleado.getTicket() != null && empleado.getTicket().getEstadoTicket().equalsIgnoreCase("Activo")) {
-				empleado.rondaElecciones();
-				empleadoresElegidos.add(empleado.getEmpleadorSeleccionado());
-			}
-		}
-		this.empleadoresNoSeleccionados(empleadoresElegidos);
-	} */
-
-	/**
-	 * PostCond: el empleador que no haya sido elegido por nadie pierde 20 puntos.
-	 */
 
 	public void empleadoresNoSeleccionados(ArrayList<Empleador> empleadoresElegidos) {
 
