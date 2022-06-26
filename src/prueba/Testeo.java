@@ -3,6 +3,7 @@ package prueba;
 import java.io.IOException;
 
 import excepciones.AtributoInvalidoException;
+import excepciones.UsuarioDuplicadoException;
 import persistencia.IPersistencia;
 import persistencia.PersistenciaBIN;
 import ticketSimplificado.TicketSimplificado;
@@ -55,16 +56,18 @@ public class Testeo {
 		em3 = new EmpleadorFisico("Puma","MateoVendeZapas","Puma Arg","ComercioLocal");
 		em3.crearTicket("Presencial",8,70000,10,"Extendida",8,"Senior",10,43,3,"Media",5,"Primario",1,2);
 		
-		//agencia.agregaEmpleado(e1);
-		//agencia.agregaEmpleado(e2);
-		//agencia.agregaEmpleado(e3);
-		//agencia.agregaEmpleado(e4);
-		//agencia.agregaEmpleado(e5);
-		//agencia.agregaEmpleador(em1);
-		//agencia.agregaEmpleador(em2);
-		//agencia.agregaEmpleador(em3);
+		try {
+		agencia.agregaEmpleado(e1);
+		agencia.agregaEmpleado(e2);
+		agencia.agregaEmpleado(e3);
+		agencia.agregaEmpleado(e4);
+		agencia.agregaEmpleado(e5);
+		agencia.agregaEmpleador(em1);
+		agencia.agregaEmpleador(em2);
+		agencia.agregaEmpleador(em3);
+		}catch(UsuarioDuplicadoException e) {}
 		
-		e1.setLocacionSimp("Presencial");
+		e1.setLocacionSimp("HomeOffice");
 		e2.setLocacionSimp("Presencial");
 		e3.setLocacionSimp("Presencial");
 		e4.setLocacionSimp("Presencial");
