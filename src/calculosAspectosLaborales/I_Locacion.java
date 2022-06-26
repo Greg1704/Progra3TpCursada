@@ -9,4 +9,6 @@ public interface I_Locacion {
     public abstract double presencial();
 
     public abstract double indistinto();
+    
+    public String toString();
 }

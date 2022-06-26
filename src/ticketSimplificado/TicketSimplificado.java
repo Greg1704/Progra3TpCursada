@@ -7,16 +7,10 @@ import usuariosDelSistema.*;
 
 import javax.swing.JFrame;
 
-import java.io.Serializable;
 import java.util.Observable;
 
 @SuppressWarnings("deprecation")
 public class TicketSimplificado extends Observable{
-//habria que agregar 2 strings: rubro, y locacion. Con eso aplicar los decorator y agregarle las funcionalidades
-//a su vez hay que aplicar metodo run, para asi correrlo como un thread, podemos extender de clase thread o implementar
-//la interfaz runneable.
-//o puede ser un recurso compartido por el que compiten los thread que resultan ser los empleados
-//hay que aplicar a su vez observer observador
    private I_Locacion locacion;
    private String tipoTrabajo;
    private boolean contratado;
@@ -49,6 +43,13 @@ public class TicketSimplificado extends Observable{
    public I_Locacion getLocacionInterfaz() {
 		return locacion;
 	}
+
+   @Override
+   public String toString() {
+	   return "TicketSimplificado: Locacion: " + locacion.toString() + ", Tipo de trabajo: " + tipoTrabajo;
+}
+   
+   
    
    //Revisar si hay que agregar algun error a tipoTrabajoFactory
    //Revisar como relacionar las clases Salud, ComercioLocal, y ComercioInternacional con los empleados
