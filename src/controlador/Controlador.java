@@ -28,10 +28,17 @@ public class Controlador implements ActionListener {
 		Empleador empleador;
 		Sistema sistema=null;
 		BolsaTrabajo bolsa=BolsaTrabajo.getInstancia();
+		private static Controlador instancia = null;
 	
-	public Controlador() {
+	private Controlador() {
 		this.v = new NuevaVentanaFinal();
 		this.v.setControlador(this);
+	}
+	
+	public static Controlador getInstancia() {
+		if (instancia == null)
+			instancia = new Controlador();
+		return instancia;
 	}
 
 	@Override
@@ -61,7 +68,13 @@ public class Controlador implements ActionListener {
 			if(e.getActionCommand().equals(IVista.arrrancaRondaDeContrataciones)) { //HACER PARTE VENTANA
 				sistema.rondaDeContrataciones();
 				
-			} else { // VENTANA EMPLEADO
+		}else
+			if(e.getActionCommand().equals(IVista.arrrancaRondaDeContrataciones)){  //ESTO TIENE QUE SER CAMBIADO POR BOLSA DU TRBAJO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+					v.ActualizarBolsaTicketsSimp();
+					for(int i=0;i<sistema.getEmpleadosPretensos().size();i++) {
+						new Thread(sistema.getEmpleadosPretensos().get(i)).start();
+					}
+			}else { // VENTANA EMPLEADO
 				
 				
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
@@ -221,6 +234,14 @@ public class Controlador implements ActionListener {
 
     public String nombreSistema() {
     	return sistema.getNombre();
+    }
+    
+    public void agregarTextoComisiones(String mensaje) {
+    	v.ActualizarTextAreaComisiones(mensaje);
+    }
+    
+    public void agregarTextoContrataciones(String mensaje) {
+    	v.ActualizarTextAreaContrataciones(mensaje);
     }
 
 }

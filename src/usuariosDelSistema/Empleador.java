@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+import javax.swing.JOptionPane;
+
 import armaTickets.TicketEmpleador;
 import excepciones.*;
 import ticketSimplificado.TicketSimplificado;
@@ -169,7 +171,8 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		if(cantObservados<3) {
 			this.observables.add(ticketSimplificado);
 			this.cantObservados++;
-		}
+		}else
+			JOptionPane.showMessageDialog(null, "Ya hay 3 tickets simplificados creados, hasta que un empleado no se lleve alguno no puede crear nuevos");
 	}
 
 	private void quitaObservable(TicketSimplificado ticketSimplificado){

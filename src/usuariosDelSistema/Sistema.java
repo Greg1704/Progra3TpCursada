@@ -1,6 +1,8 @@
 package usuariosDelSistema;
 
 import java.util.ArrayList;
+
+import controlador.Controlador;
 import encuentro.RondaEncuentros;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.ListaVaciaException;
@@ -252,8 +254,10 @@ public class Sistema{
 						aux.get(i).getTicket().finaliza();
 						aux.get(i).setPuntaje(aux.get(i).getPuntaje() + 10);
 						comision = this.comisionEmpleadoPretenso(aux.get(i));
-						System.out.println("El empleado " + aux.get(i).getNya() + " fue contratado por la empresa " + empleador.getNombre());
-						System.out.println("Comision para el empleado " + aux.get(i).getNya() + ": " + comision);
+						//System.out.println("El empleado " + aux.get(i).getNya() + " fue contratado por la empresa " + empleador.getNombre());
+						//System.out.println("Comision para el empleado " + aux.get(i).getNya() + ": " + comision);
+						mandarTextoContrataciones("El empleado " + aux.get(i).getNya() + " fue contratado por la empresa " + empleador.getNombre() + "\n");
+						mandarTextoComisiones("Comision para el empleado " + aux.get(i).getNya() + ": " + comision + "\n");
 					}
 
 				}
@@ -265,7 +269,8 @@ public class Sistema{
 					rubroEmpleador = rubroFactory.getRubro(empleador.getRubro(), empleador);
 					comision = empleador.getTicketEmpleador().getFormularioDeBusqueda().getRemuneracion().getMonto()
 							* rubroEmpleador.getComision();
-					System.out.println("Comision para el empleador " + empleador.getNombre() + ": " + comision);
+					//System.out.println("Comision para el empleador " + empleador.getNombre() + ": " + comision);
+					mandarTextoComisiones("Comision para el empleador " + empleador.getNombre() + ": " + comision + "\n");
 				}
 					
 				
@@ -390,6 +395,15 @@ public class Sistema{
 	}
 	
 	
+	public void mandarTextoContrataciones(String mensaje) {
+		Controlador.getInstancia().agregarTextoContrataciones(mensaje);
+	}
+	
+	public void mandarTextoComisiones(String mensaje) {
+		Controlador.getInstancia().agregarTextoComisiones(mensaje);
+	}
+	
 }
+
 
 

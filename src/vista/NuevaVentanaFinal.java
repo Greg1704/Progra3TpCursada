@@ -1560,7 +1560,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	}
 
 	public Empleador getListRondaEleccionesEmpleado() { 
-		//return (Empleador)listRondaEleccionesEmpleado.getSelectedValue();
 		return (Empleador) this.modelListRondaEleccionesEmpleado.get(this.listRondaEleccionesEmpleado.getSelectedIndex()).getUsuario();
 	}
 	
@@ -1699,7 +1698,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	*/
 
 	public ArrayList<Empleado> getListRondaEleccionesEmpleador() {
-		return (ArrayList<Empleado>) this.modelListRondaEleccionesEmpleador.get(this.listRondaEleccionesEmpleador.getSelectedIndex()).getUsuario();
+		int[] aux = this.listRondaEleccionesEmpleador.getSelectedIndices();
+		ArrayList<Empleado> arrayAux=new ArrayList<Empleado>();
+		for(int i=0;i<aux.length;i++) {
+			arrayAux.add((Empleado) this.modelListRondaEleccionesEmpleador.get(aux[i]).getUsuario());
+		}
+		return arrayAux;
 	}
 
 	public String getComboBoxBolsaTipoTrabajoEmpleador() {
@@ -2113,7 +2117,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		}
 	}
 	
-	public void ActualizarListaRondaEleccionesEmpleado() {  //FALTA APLICAR AL CONTROLADOR Y ESOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOooooooooooooooooooooooooooooooooooooooooooooo
+	public void ActualizarListaRondaEleccionesEmpleado() {  
 		this.modelListRondaEleccionesEmpleado.clear();
 		ListaAsignaciones it=c.RecuperaListaAsignacionEmpleado();
 		for(int i=0;i<it.getOrdenados().size();i++) {
@@ -2122,7 +2126,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		setBtnConfirmacionEleccionEmpleado(true);
 	}
 	
-	public void ActualizarListaRondaEleccionesEmpleador() {  //FALTA APLICAR AL CONTROLADOR Y ESOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOooooooooooooooooooooooooooooooooooooooooooooo
+	public void ActualizarListaRondaEleccionesEmpleador() {  
 		this.modelListRondaEleccionesEmpleador.clear();
 		ListaAsignaciones it=c.RecuperaListaAsignacionEmpleador();
 		for(int i=0;i<it.getOrdenados().size();i++) {
@@ -2142,6 +2146,15 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	public void habilitaRondaDeContrataciones() {
 		setBtnRondaContraciones(true);
 	}
+	
+	public void ActualizarTextAreaComisiones(String mensaje) {  
+		textAreaComisiones.append(mensaje); 
+	}
+	
+	public void ActualizarTextAreaContrataciones(String mensaje) {  
+		textAreaContrataciones.append(mensaje); 
+	}
+	
 	
 	
 	//pensamiento propio: desde ventana mandamos el empleador que seleccionamos al controlador, y este "une" al empleado con su empleador
