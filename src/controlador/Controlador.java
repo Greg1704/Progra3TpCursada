@@ -175,6 +175,10 @@ public class Controlador implements ActionListener {
 			} 
 	}
 	
+	public boolean ExisteAgencia() {
+		return (sistema != null); 
+	}
+	
 	public ArrayList<Empleado> RecuperaListaEmpleados() {
 		return sistema.getEmpleadosPretensos();
 	}

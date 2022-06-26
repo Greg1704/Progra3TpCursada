@@ -2153,7 +2153,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				
 				if (e.getSource()==textFieldUsuario || e.getSource()==textFieldContrasenia) {
 					
-					boolean hab1 = !(textFieldUsuario.getText().isEmpty() || textFieldContrasenia.getText().isEmpty());
+					boolean hab1 = !(textFieldUsuario.getText().isEmpty() || textFieldContrasenia.getText().isEmpty()) && c.ExisteAgencia();
 					setBtnConfirmarLogin(hab1);
 				
 				} else 
@@ -2163,7 +2163,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 						boolean hab2 = !(textFieldCreacionUsuario.getText().isEmpty()
 								|| textFieldCreacionContrasenia.getText().isEmpty() || textFieldCreacionNyA.getText().isEmpty()
 								|| textFieldCreacionDNI.getText().isEmpty() || textFieldCreacionTelefono.getText().isEmpty()
-								|| textFieldCreacionEdad.getText().isEmpty() || textFieldCreacionCiudad.getText().isEmpty());
+								|| textFieldCreacionEdad.getText().isEmpty() || textFieldCreacionCiudad.getText().isEmpty()) && c.ExisteAgencia();
 						setBtnConfirmacionCreacionUsuario(hab2);
 			
 					} else 
@@ -2177,7 +2177,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 							if (e.getSource() == textFieldUsuarioEmpleador || e.getSource() == textFieldContraseniaEmpleador) {
 					
 								boolean hab4 = !(textFieldUsuarioEmpleador.getText().isEmpty()
-										|| textFieldContraseniaEmpleador.getText().isEmpty());
+										|| textFieldContraseniaEmpleador.getText().isEmpty()) && c.ExisteAgencia();
 								setBtnConfirmarLoginEmpleador(hab4);
 							} else
 								if (e.getSource() == textFieldRemuneracion || e.getSource() == textFieldPesoCargaHoraria || e.getSource() == textFieldPesoLocacion || e.getSource() == textFieldPesoTipoDePuesto ||
@@ -2198,7 +2198,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 									} else
 										if (e.getSource() == textFieldCreacionUsuarioEmpleador || e.getSource() == textFieldCreacionContraseniaEmpleador || e.getSource() == textFieldCreacionNombreEmpleador) {
 			
-											boolean hab7 = !(textFieldCreacionUsuarioEmpleador.getText().isEmpty() || textFieldCreacionContraseniaEmpleador.getText().isEmpty() || textFieldCreacionNombreEmpleador.getText().isEmpty());
+											boolean hab7 = !(textFieldCreacionUsuarioEmpleador.getText().isEmpty() || textFieldCreacionContraseniaEmpleador.getText().isEmpty() || textFieldCreacionNombreEmpleador.getText().isEmpty()) && c.ExisteAgencia();
 											setBtnConfirmacionCreacionUsuarioEmpleador(hab7);
 										}
 			}
