@@ -10,6 +10,8 @@ public interface IVista {
 	static final String arrancaRondaDeEncuentro = "Arranca ronda de encuentro";
 	static final String arrancaRondaDeContrataciones= "Arranca ronda de contrataciones";
 	static final String arrancaBolsaDeTrabajo = "Arranca bolsa de trabajo";
+	static final String guardaInformacionAgencia = "Guarda agencia";
+	static final String recuperaInformacionAgencia = "Recupera agencia";
 	
 	// botones de ventana empleado
 	

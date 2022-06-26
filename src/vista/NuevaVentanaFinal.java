@@ -47,6 +47,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import java.awt.Font;
 
 
 
@@ -69,7 +70,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JPanel panelConfirmarNombreAgencia;
 	private JButton btnConfirmarNombreAgencia;
 	private JPanel panelRondaEncCont;
-	private JPanel panel_2;
 	private JPanel panel_3;
 	private JButton btnRondaEncuentro;
 	private JButton btnRondaContraciones;
@@ -271,6 +271,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private DefaultListModel<UsuarioyPuntaje> modelListRondaEleccionesEmpleado;
 	private DefaultListModel<UsuarioyPuntaje> modelListRondaEleccionesEmpleador;
 	private DefaultListModel<TicketSimplificado> modelListBolsaTicketsSimp;
+	private JPanel panelPersistencia;
+	private JButton btnGuardarAgencia;
+	private JButton btnRecuperarAgencia;
+	private JLabel lbLAgenciaCreadaNombre;
 
 	/**
 	 * Launch the application.
@@ -344,19 +348,23 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 		this.panelConfirmarNombreAgencia = new JPanel();
 		this.panelCreacionAgencia.add(this.panelConfirmarNombreAgencia);
+		this.panelConfirmarNombreAgencia.setLayout(null);
 
 		this.btnConfirmarNombreAgencia = new JButton("Confirmar");
+		this.btnConfirmarNombreAgencia.setBounds(410, 11, 79, 23);
 		this.btnConfirmarNombreAgencia.setEnabled(false);
 		this.panelConfirmarNombreAgencia.add(this.btnConfirmarNombreAgencia);
+		
+		this.lbLAgenciaCreadaNombre = new JLabel("");
+		this.lbLAgenciaCreadaNombre.setFont(new Font("Arial Black", Font.PLAIN, 24));
+		this.lbLAgenciaCreadaNombre.setBounds(10, 11, 371, 47);
+		this.panelConfirmarNombreAgencia.add(this.lbLAgenciaCreadaNombre);
 
 		this.panelRondaEncCont = new JPanel();
 		this.panelRondaEncCont.setBorder(
 				new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Funcionalidades de la Agencia", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		this.PanelFuncionalidades.add(this.panelRondaEncCont);
 		this.panelRondaEncCont.setLayout(new GridLayout(3, 1, 0, 0));
-
-		this.panel_2 = new JPanel();
-		this.panelRondaEncCont.add(this.panel_2);
 
 		this.panel_3 = new JPanel();
 		this.panelRondaEncCont.add(this.panel_3);
@@ -384,6 +392,18 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 		this.panel_5 = new JPanel();
 		this.panelRondaEncCont.add(this.panel_5);
+		
+		this.panelPersistencia = new JPanel();
+		this.panelRondaEncCont.add(this.panelPersistencia);
+		this.panelPersistencia.setLayout(null);
+		
+		this.btnGuardarAgencia = new JButton("Guardar Agencia");
+		this.btnGuardarAgencia.setBounds(73, 11, 137, 23);
+		this.panelPersistencia.add(this.btnGuardarAgencia);
+		
+		this.btnRecuperarAgencia = new JButton("Recuperar Agencia");
+		this.btnRecuperarAgencia.setBounds(354, 11, 137, 23);
+		this.panelPersistencia.add(this.btnRecuperarAgencia);
 		
 		this.scrollPaneContrataciones = new JScrollPane();
 		this.PanelFuncionalidades.add(this.scrollPaneContrataciones);
@@ -1270,11 +1290,15 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				this.btnRondaEncuentro.setActionCommand(arrancaRondaDeEncuentro);
 				this.btnRondaContraciones.setActionCommand(arrancaRondaDeContrataciones);
 				this.btnBolsaDeTrabajo.setActionCommand(arrancaBolsaDeTrabajo);
+				this.btnGuardarAgencia.setActionCommand(guardaInformacionAgencia);
+				this.btnRecuperarAgencia.setActionCommand(recuperaInformacionAgencia);
 
 				this.btnConfirmarNombreAgencia.addActionListener(c);
 				this.btnRondaEncuentro.addActionListener(c);
 				this.btnRondaContraciones.addActionListener(c);
 				this.btnBolsaDeTrabajo.addActionListener(c);
+				this.btnGuardarAgencia.addActionListener(c);
+				this.btnRecuperarAgencia.addActionListener(c);
 				
 				this.btnConfirmarNombreAgencia.addMouseListener(this);
 				this.btnRondaEncuentro.addMouseListener(this);
@@ -2000,6 +2024,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.btnCrearTicketSimplificado.setEnabled(hab);
 	}
 	
+	public void setLbLAgenciaCreadaNombre(String lbLAgenciaCreadaNombre) {
+		this.lbLAgenciaCreadaNombre.setText(lbLAgenciaCreadaNombre); 
+	}
+
 	public void AdminLogueado(boolean hab) {
 			listEmpleados.setEnabled(hab);
 			listEmpleados.setEnabled(hab);
@@ -2282,6 +2310,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		if (e.getSource()==btnConfirmarNombreAgencia && btnConfirmarNombreAgencia.isEnabled()) {
 			setTextFieldCrearAgencia("");
 			setBtnConfirmarNombreAgencia(false);
+			//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 		} else
 			if (e.getSource()==btnConfirmarLogin && btnConfirmarLogin.isEnabled()) {
 				setTextFieldUsuario("");

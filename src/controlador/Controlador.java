@@ -55,6 +55,7 @@ public class Controlador implements ActionListener {
 				// crear la agencia	
 				sistema = Sistema.getInstancia();
 				sistema.setNombre(v.getTextFieldCrearAgencia());
+				setearNombreAgencia(sistema.getNombre());
 				v.AdminLogueado(true);
 			}
 			v.setTextFieldCrearAgencia("");
@@ -88,6 +89,14 @@ public class Controlador implements ActionListener {
 					for(int i=0;i<sistema.getEmpleadosPretensos().size();i++) {
 						new Thread(sistema.getEmpleadosPretensos().get(i)).start();
 					}
+		}else if(e.getActionCommand().equals(IVista.guardaInformacionAgencia)) {
+					//aaaaaaaaaaaaaaaaa
+					JOptionPane.showMessageDialog(null, "Agencia guardada en Sistema");
+				
+		}else if(e.getActionCommand().equals(IVista.recuperaInformacionAgencia)) {
+					//aaaaaaaaaaaaaaaaa
+					JOptionPane.showMessageDialog(null, "Agencia recuperada en Sistema");
+				
 			}else { // VENTANA EMPLEADO
 				
 				
@@ -292,8 +301,9 @@ public class Controlador implements ActionListener {
     	v.ActualizarTextAreaBolsaSimulacion(mensaje);
     }
 
-    
-    
+    public void setearNombreAgencia(String nombre) {
+    	v.setLbLAgenciaCreadaNombre(nombre);
+    }
     
 }
     			
