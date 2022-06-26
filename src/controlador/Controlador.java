@@ -215,7 +215,9 @@ public class Controlador implements ActionListener {
     	return bolsa.getTickets();
     }
 
-    
+    public String nombreSistema() {
+    	return sistema.getNombre();
+    }
 
 }
     			

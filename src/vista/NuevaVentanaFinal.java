@@ -1464,7 +1464,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				
 				EmpleadoLogeado(false);
 				EmpleadorLogeado(false);
-
 			}
 	
 	public void setControlador(Controlador c) {
@@ -1996,6 +1995,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			textAreaComisiones.setEnabled(hab);
 			setBtnBolsaDeTrabajo(true);
 			setBtnRondaEncuentro(true);
+			if (hab) {
+				textFieldCrearAgencia.setText(c.nombreSistema());
+				textFieldCrearAgencia.setEnabled(false);
+			}
 	}
 
 	public void EmpleadoLogeado(boolean hab) { // // si es true, va a prender o apagar todo. 
