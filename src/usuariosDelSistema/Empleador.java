@@ -17,7 +17,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	private ArrayList<Empleado> empleadosSeleccionados = new ArrayList<Empleado>();
 	private int cantidadEmpleadosSeleccionados;
 	private String rubro;
-	private transient ArrayList<TicketSimplificado> observables=new ArrayList<TicketSimplificado>();
+	private transient ArrayList<TicketSimplificado> observables=null;
 	private transient int cantObservados;
 	private boolean yaEligioEmpleados;
 
@@ -123,11 +123,14 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	 */
 	public void rondaElecciones(ArrayList<Empleado> elegidos) {
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
-		int i = 0;
+		int i=0;
 		super.getLista().getOrdenados().get(0).getUsuario().setPuntaje(super.getLista().getOrdenados().get(0).getUsuario().getPuntaje() + 5);
 		//Suma 5 puntos por estar primero en la lista
-		this.empleadosSeleccionados = elegidos;
-		this.cantidadEmpleadosSeleccionados = elegidos.size();
+		while(i<cuposTotal && i<elegidos.size()) {
+			this.empleadosSeleccionados.add(elegidos.get(i));
+			i++;
+		}
+		this.cantidadEmpleadosSeleccionados=i;
 		this.setYaEligioEmpleados(true);
 	}
 
@@ -146,6 +149,8 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 
 	public void crearTicketSimplificado(String locacion,String tipoTrabajo){
 		try {
+			if(this.observables==null) 
+				this.observables=new ArrayList<TicketSimplificado>();
 			TicketSimplificado ticketSimplificado= new TicketSimplificado(locacion,tipoTrabajo,this);
 			ticketSimplificado.addObserver(this);
 			if (this.cantObservados < 3) { //PROBABLEMENTE ACA ESTA EL ERROR 

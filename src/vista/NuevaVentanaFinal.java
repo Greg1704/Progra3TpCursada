@@ -2396,7 +2396,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 											}else
 												if(e.getSource() == this.btnRecuperarAgencia) {
 													listEmpleados.setEnabled(true);
-													listEmpleados.setEnabled(true);
+													listEmpleadores.setEnabled(true);
 													textAreaContrataciones.setEnabled(true);
 													textAreaComisiones.setEnabled(true);
 													setBtnBolsaDeTrabajo(true);

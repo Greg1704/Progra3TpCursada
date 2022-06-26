@@ -239,8 +239,9 @@ public class Sistema{
 				empleador.getTicketEmpleador().esActivo();
 				aux = empleador.getEmpleadosSeleccionados();
 				for (int i = 0; i < empleador.getCantidadEmpleadosSeleccionados(); i++) {
-
+					JOptionPane.showMessageDialog(null, "entro al for");
 					if (aux.get(i).getEmpleadorSeleccionado().getNombre().equalsIgnoreCase(empleador.getNombre())) {
+						JOptionPane.showMessageDialog(null, "entro al ifr");
 						empleador.getTicketEmpleador()
 								.setCantEmpleados(empleador.getTicketEmpleador().getCantEmpleados() - 1);
 						aux.get(i).getTicket().setResultado(true);
