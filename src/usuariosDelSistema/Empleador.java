@@ -74,6 +74,14 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		this.rubro = rubro;
 	}
 
+	public boolean isYaEligioEmpleados() {
+		return yaEligioEmpleados;
+	}
+
+	public void setYaEligioEmpleados(boolean yaEligioEmpleados) {
+		this.yaEligioEmpleados = yaEligioEmpleados;
+	}
+
 	@Override
 	public void ActivaTicket() {
 		this.ticketEmpleador.activa();

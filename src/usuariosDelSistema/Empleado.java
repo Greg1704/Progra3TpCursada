@@ -132,7 +132,14 @@ public class Empleado extends Usuario implements Runnable {
 		this.tipoTrabajoSimp = tipoTrabajoSimp;
 	}
 	
-	
+	public boolean isYaEligioEmpleador() {
+		return yaEligioEmpleador;
+	}
+
+	public void setYaEligioEmpleador(boolean yaEligioEmpleador) {
+		this.yaEligioEmpleador = yaEligioEmpleador;
+	}
+
 	public void rondaElecciones(Empleador elegido){  //Puede ser que este medio al dope AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 		
 		this.empleadorSeleccionado = elegido;

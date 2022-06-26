@@ -112,7 +112,7 @@ public class RondaEncuentros{
 						}
 						
 					}
-
+					empleador.setYaEligioEmpleados(false);
 				}catch(NoActivoException e) {}
 
 			}

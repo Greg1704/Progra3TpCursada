@@ -57,7 +57,7 @@ public class Controlador implements ActionListener {
 			v.setTextFieldCrearAgencia("");
 			v.setBtnConfirmarNombreAgencia(false);
 		} else
-			if (e.getActionCommand().equals(IVista.arrrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
+			if (e.getActionCommand().equals(IVista.arrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
 				sistema.busquedaLaboral();
 				if(empleado != null)
 					v.ActualizarListaRondaEleccionesEmpleado();
@@ -65,11 +65,11 @@ public class Controlador implements ActionListener {
 					v.ActualizarListaRondaEleccionesEmpleador();
 				
 		}else
-			if(e.getActionCommand().equals(IVista.arrrancaRondaDeContrataciones)) { //HACER PARTE VENTANA
+			if(e.getActionCommand().equals(IVista.arrancaRondaDeContrataciones)) { //HACER PARTE VENTANA
 				sistema.rondaDeContrataciones();
 				
 		}else
-			if(e.getActionCommand().equals(IVista.arrancaBolsaDeTrabajo)){  //ESTO TIENE QUE SER CAMBIADO POR BOLSA DU TRBAJO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			if(e.getActionCommand().equals(IVista.arrancaBolsaDeTrabajo)){ 
 					//v.ActualizarBolsaTicketsSimp();
 					for(int i=0;i<sistema.getEmpleadosPretensos().size();i++) {
 						new Thread(sistema.getEmpleadosPretensos().get(i)).start();
@@ -115,7 +115,6 @@ public class Controlador implements ActionListener {
 						v.ActualizarListaTicketActualEmpleado();
 				}else
 					if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
-						System.out.println("entra aca");
 						if(v.getRdbtnActivo()) {
 							JOptionPane.showMessageDialog(null,empleado.getTicket().activa());
 							v.ActualizarListaTicketActualEmpleado();
@@ -207,6 +206,14 @@ public class Controlador implements ActionListener {
 	
 	public boolean checkRondaEncuentroHecha() {
 		return sistema.isEncuentroHecho();
+	}
+	
+	public boolean empleadoYaEligio() {
+		return empleado.isYaEligioEmpleador();
+	}
+	
+	public boolean empleadorYaEligio() {
+		return empleador.isYaEligioEmpleados();
 	}
 	
 	public boolean ExisteAgencia() {
