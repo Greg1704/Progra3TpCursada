@@ -69,7 +69,7 @@ public abstract class TicketDeBusqueda implements I_EstadoTicket{
 	@Override
 	public String toString() {
 		return "Ticket de busqueda: fecha de alta: " + fechaAlta + ", formulario: " + formulario.toString() + ", Estado: "
-				+ getEstado();
+				+ this.getEstado().toString();
 	}
 
 	

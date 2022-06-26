@@ -46,7 +46,7 @@ public class TicketEmpleador extends TicketDeBusqueda{
 
 	@Override
 	public String toString() {
-		return super.toString() + "Empleados solicitados: " + cantEmpleados;
+		return super.toString() + " Empleados solicitados: " + cantEmpleados;
 	}
 
 	
