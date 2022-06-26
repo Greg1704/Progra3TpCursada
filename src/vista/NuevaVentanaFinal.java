@@ -398,11 +398,11 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelPersistencia.setLayout(null);
 		
 		this.btnGuardarAgencia = new JButton("Guardar Agencia");
-		this.btnGuardarAgencia.setBounds(73, 11, 137, 23);
+		this.btnGuardarAgencia.setBounds(73, 11, 166, 23);
 		this.panelPersistencia.add(this.btnGuardarAgencia);
 		
 		this.btnRecuperarAgencia = new JButton("Recuperar Agencia");
-		this.btnRecuperarAgencia.setBounds(354, 11, 137, 23);
+		this.btnRecuperarAgencia.setBounds(354, 11, 166, 23);
 		this.panelPersistencia.add(this.btnRecuperarAgencia);
 		
 		this.scrollPaneContrataciones = new JScrollPane();
@@ -475,7 +475,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelLogin.add(this.panelUsuario);
 
 		this.lblUsuario = new JLabel("Usuario:");
-		this.lblUsuario.setBounds(70, 22, 46, 14);
+		this.lblUsuario.setBounds(48, 22, 68, 14);
 		this.panelUsuario.add(this.lblUsuario);
 
 		this.textFieldUsuario = new JTextField();
@@ -488,7 +488,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelLogin.add(this.panelContrasenia);
 
 		this.lblContrasenia = new JLabel("Contraseña:");
-		this.lblContrasenia.setBounds(61, 22, 60, 14);
+		this.lblContrasenia.setBounds(49, 22, 72, 14);
 		this.panelContrasenia.add(this.lblContrasenia);
 
 		this.textFieldContrasenia = new JTextField();
@@ -516,7 +516,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleado.add(this.panelCreacionUsuario);
 
 		this.lblCreacionUsuario = new JLabel("Usuario:");
-		this.lblCreacionUsuario.setBounds(70, 22, 46, 14);
+		this.lblCreacionUsuario.setBounds(47, 22, 69, 14);
 		this.panelCreacionUsuario.add(this.lblCreacionUsuario);
 
 		this.textFieldCreacionUsuario = new JTextField();
@@ -529,7 +529,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleado.add(this.panelCreacionContrasenia);
 
 		this.lblCreacionContrasenia = new JLabel("Contraseña:");
-		this.lblCreacionContrasenia.setBounds(61, 22, 60, 14);
+		this.lblCreacionContrasenia.setBounds(37, 22, 84, 14);
 		this.panelCreacionContrasenia.add(this.lblCreacionContrasenia);
 
 		this.textFieldCreacionContrasenia = new JTextField();
@@ -542,7 +542,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleado.add(this.panelCreacionNyA);
 
 		this.lblCreacionNyA = new JLabel("Nombre y Apellido:");
-		this.lblCreacionNyA.setBounds(47, 22, 95, 14);
+		this.lblCreacionNyA.setBounds(24, 22, 118, 14);
 		this.panelCreacionNyA.add(this.lblCreacionNyA);
 
 		this.textFieldCreacionNyA = new JTextField();
@@ -555,7 +555,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleado.add(this.panelDNI);
 
 		this.lblDNI = new JLabel("DNI:");
-		this.lblDNI.setBounds(82, 22, 39, 14);
+		this.lblDNI.setBounds(56, 22, 65, 14);
 		this.panelDNI.add(this.lblDNI);
 
 		this.textFieldCreacionDNI = new JTextField();
@@ -568,7 +568,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleado.add(this.panelTelefono);
 
 		this.lblTelefono = new JLabel("Telefono:");
-		this.lblTelefono.setBounds(69, 22, 52, 14);
+		this.lblTelefono.setBounds(42, 22, 79, 14);
 		this.panelTelefono.add(this.lblTelefono);
 
 		this.textFieldCreacionTelefono = new JTextField();
@@ -581,7 +581,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleado.add(this.panelEdad);
 
 		this.lblEdad = new JLabel("Edad:");
-		this.lblEdad.setBounds(81, 22, 40, 14);
+		this.lblEdad.setBounds(55, 22, 66, 14);
 		this.panelEdad.add(this.lblEdad);
 
 		this.textFieldCreacionEdad = new JTextField();
@@ -594,7 +594,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleado.add(this.panelCiudad);
 
 		this.lblCiudad = new JLabel("Ciudad:");
-		this.lblCiudad.setBounds(76, 22, 45, 14);
+		this.lblCiudad.setBounds(50, 22, 71, 14);
 		this.panelCiudad.add(this.lblCiudad);
 
 		this.textFieldCreacionCiudad = new JTextField();
@@ -757,21 +757,21 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.rdbtnActivo = new JRadioButton("Activar");
 		this.rdbtnActivo.setSelected(true);
 		buttonGroupEstados.add(this.rdbtnActivo);
-		this.rdbtnActivo.setBounds(6, 27, 63, 23);
+		this.rdbtnActivo.setBounds(6, 27, 78, 23);
 		this.panel_6.add(this.rdbtnActivo);
 
 		this.rdbtnSuspendido = new JRadioButton("Suspender");
 		buttonGroupEstados.add(this.rdbtnSuspendido);
-		this.rdbtnSuspendido.setBounds(71, 27, 85, 23);
+		this.rdbtnSuspendido.setBounds(86, 27, 97, 23);
 		this.panel_6.add(this.rdbtnSuspendido);
 
 		this.rdbtnCancelar = new JRadioButton("Cancelar");
 		buttonGroupEstados.add(this.rdbtnCancelar);
-		this.rdbtnCancelar.setBounds(158, 27, 85, 23);
+		this.rdbtnCancelar.setBounds(185, 27, 97, 23);
 		this.panel_6.add(this.rdbtnCancelar);
 
 		this.btnCambiarEstado = new JButton("Cambiar");
-		this.btnCambiarEstado.setBounds(249, 27, 89, 23);
+		this.btnCambiarEstado.setBounds(288, 27, 89, 23);
 		this.panel_6.add(this.btnCambiarEstado);
 
 		this.panelEleccionYBolsa = new JPanel();
@@ -823,7 +823,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelEmpleadoRequisitosBolsa.add(this.comboBoxBolsaLocacion);
 
 		this.lblBolsaTipoTrabajo = new JLabel("Tipo de trabajo");
-		this.lblBolsaTipoTrabajo.setBounds(53, 11, 81, 14);
+		this.lblBolsaTipoTrabajo.setBounds(35, 11, 126, 14);
 		this.panelEmpleadoRequisitosBolsa.add(this.lblBolsaTipoTrabajo);
 
 		this.lblBolsaLocacion = new JLabel("Locacion:");
@@ -896,7 +896,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleador.add(this.panelCreacionUsuarioEmpleador);
 
 		this.lblCreacionUsuarioEmpleador = new JLabel("Usuario:");
-		this.lblCreacionUsuarioEmpleador.setBounds(70, 22, 46, 14);
+		this.lblCreacionUsuarioEmpleador.setBounds(49, 22, 67, 14);
 		this.panelCreacionUsuarioEmpleador.add(this.lblCreacionUsuarioEmpleador);
 
 		this.textFieldCreacionUsuarioEmpleador = new JTextField();
@@ -909,7 +909,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleador.add(this.panelCreacionContraseniaEmpleador);
 
 		this.lblCreacionContraseniaEmpleador = new JLabel("Contraseña:");
-		this.lblCreacionContraseniaEmpleador.setBounds(61, 22, 60, 14);
+		this.lblCreacionContraseniaEmpleador.setBounds(39, 22, 82, 14);
 		this.panelCreacionContraseniaEmpleador.add(this.lblCreacionContraseniaEmpleador);
 
 		this.textFieldCreacionContraseniaEmpleador = new JTextField();
@@ -922,7 +922,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleador.add(this.panelCreacionNombreEmpleador);
 
 		this.lblCreacionNombreEmpleador = new JLabel("Nombre:");
-		this.lblCreacionNombreEmpleador.setBounds(74, 22, 68, 14);
+		this.lblCreacionNombreEmpleador.setBounds(47, 22, 95, 14);
 		this.panelCreacionNombreEmpleador.add(this.lblCreacionNombreEmpleador);
 
 		this.textFieldCreacionNombreEmpleador = new JTextField();
@@ -935,7 +935,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleador.add(this.panelTipoPersonaEmpleador);
 
 		this.lblTipoPersonaEmpleador = new JLabel("Tipo persona:");
-		this.lblTipoPersonaEmpleador.setBounds(55, 22, 76, 14);
+		this.lblTipoPersonaEmpleador.setBounds(39, 22, 92, 14);
 		this.panelTipoPersonaEmpleador.add(this.lblTipoPersonaEmpleador);
 
 		this.comboBoxTipoPersonaEmpleador = new JComboBox();
@@ -948,7 +948,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelCreacionEmpleador.add(this.panelRubroEmpleador);
 
 		this.lblRubroEmpleador = new JLabel("Rubro:");
-		this.lblRubroEmpleador.setBounds(77, 22, 44, 14);
+		this.lblRubroEmpleador.setBounds(51, 22, 70, 14);
 		this.panelRubroEmpleador.add(this.lblRubroEmpleador);
 
 		this.comboBoxRubroEmpleador = new JComboBox();
@@ -971,21 +971,21 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.rdbtnActivoEmpleador = new JRadioButton("Activar");
 		this.rdbtnActivoEmpleador.setSelected(true);
 		buttonGroupEstadosEmpleador.add(this.rdbtnActivoEmpleador);
-		this.rdbtnActivoEmpleador.setBounds(6, 27, 63, 23);
+		this.rdbtnActivoEmpleador.setBounds(6, 27, 76, 23);
 		this.panelEstadoTicketEmpleador.add(this.rdbtnActivoEmpleador);
 
 		this.rdbtnSuspendidoEmpleador = new JRadioButton("Suspender");
 		buttonGroupEstadosEmpleador.add(this.rdbtnSuspendidoEmpleador);
-		this.rdbtnSuspendidoEmpleador.setBounds(71, 27, 85, 23);
+		this.rdbtnSuspendidoEmpleador.setBounds(84, 27, 98, 23);
 		this.panelEstadoTicketEmpleador.add(this.rdbtnSuspendidoEmpleador);
 
 		this.rdbtnCancelarEmpleador = new JRadioButton("Cancelar");
 		buttonGroupEstadosEmpleador.add(this.rdbtnCancelarEmpleador);
-		this.rdbtnCancelarEmpleador.setBounds(158, 27, 85, 23);
+		this.rdbtnCancelarEmpleador.setBounds(184, 27, 98, 23);
 		this.panelEstadoTicketEmpleador.add(this.rdbtnCancelarEmpleador);
 
 		this.btnCambiarEstadoEmpleador = new JButton("Cambiar");
-		this.btnCambiarEstadoEmpleador.setBounds(249, 27, 89, 23);
+		this.btnCambiarEstadoEmpleador.setBounds(288, 27, 89, 23);
 		this.panelEstadoTicketEmpleador.add(this.btnCambiarEstadoEmpleador);
 
 		this.panelTicketEmpleador = new JPanel();
@@ -1214,7 +1214,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.panelEmpleadorRequisitosTicketSimp.add(this.comboBoxBolsaLocacionEmpleador);
 
 		this.lblBolsaTipoTrabajo_1 = new JLabel("Tipo de trabajo");
-		this.lblBolsaTipoTrabajo_1.setBounds(53, 11, 81, 14);
+		this.lblBolsaTipoTrabajo_1.setBounds(38, 11, 123, 14);
 		this.panelEmpleadorRequisitosTicketSimp.add(this.lblBolsaTipoTrabajo_1);
 
 		this.lblBolsaLocacion_1 = new JLabel("Locación:");
