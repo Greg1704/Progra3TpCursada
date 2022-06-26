@@ -1470,7 +1470,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				
 				EmpleadoLogeado(false);
 				EmpleadorLogeado(false);
-				
+				listTicketsSimplificados.setEnabled(true);
 			}
 	
 	public void setControlador(Controlador c) {
@@ -2130,6 +2130,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		for(int i=0;i<it.size();i++) {
 			this.modelListTicketsSimpEmpleador.addElement(it.get(i));
 		}
+		text
 	}
 	
 	public void ActualizarListaRondaEleccionesEmpleado() {  
@@ -2156,6 +2157,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		for(int i=0;i<it.size();i++) {
 			this.modelListBolsaTicketsSimp.addElement(it.get(i));
 		}
+		
 	}
 	
 	public void habilitaRondaDeContrataciones() {
