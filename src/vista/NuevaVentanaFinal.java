@@ -1358,12 +1358,14 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				this.btnConfirmacionCreacionTicket.setActionCommand(confirmaCreacionTicket);
 				this.btnConfirmacionEleccionEmpleado.setActionCommand(confirmaEleccionEmpleado);
 				this.btnCambiarEstado.setActionCommand(confirmaEstadoTicket);
+				this.btnConfirmarRequisitosBolsa.setActionCommand(confirmaRequisitosBDT);
 
 				this.btnConfirmarLogin.addActionListener(c);
 				this.btnConfirmacionCreacionUsuario.addActionListener(c);
 				this.btnConfirmacionCreacionTicket.addActionListener(c);
 				this.btnConfirmacionEleccionEmpleado.addActionListener(c);
 				this.btnCambiarEstado.addActionListener(c);
+				this.btnConfirmarRequisitosBolsa.addActionListener(c);
 				
 				this.btnConfirmarLogin.addMouseListener(this);
 				this.btnConfirmacionCreacionUsuario.addMouseListener(this);

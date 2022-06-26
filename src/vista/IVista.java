@@ -20,9 +20,7 @@ public interface IVista {
 	static final String confirmaCreacionTicket = "Confirma creacion de ticket";
 	static final String confirmaEstadoTicket = "Confirma estado de ticket";
 	static final String confirmaEleccionEmpleado = "Confirma eleccion del empleado";
-	static final String confirmaAceptacionTicket = "Confirma aceptacion de un TS";  //NO SIRVE AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-	static final String confirmaRechazoTicket = "Confirma rechazo de un TS";		//NO SIRVE AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-	static final String confirmaArranqueBDT = "Confirma arranque de BDT";			//NO SIRVE AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	static final String confirmaRequisitosBDT = "Confirma requisitos de BDT";
 	
 	// botones de ventana empleador
 	

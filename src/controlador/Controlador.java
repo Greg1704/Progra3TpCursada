@@ -159,7 +159,11 @@ public class Controlador implements ActionListener {
 								v.ActualizarListaTicketActualEmpleado();
 							}
 							
-						//Creo que nada mas
+				}else
+					if(e.getActionCommand().equals(IVista.confirmaRequisitosBDT)) {
+						empleado.setTipoTrabajoSimp(v.getComboBoxBolsaTipoTrabajo());
+						empleado.setLocacionSimp(v.getComboBoxBolsaLocacion());
+						v.ActualizarListaEmpleados();
 				}else
 					if(e.getActionCommand().equals(IVista.confirmaEleccionEmpleado)) {
 						empleado.rondaElecciones(v.getListRondaEleccionesEmpleado());						

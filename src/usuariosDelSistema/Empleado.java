@@ -203,7 +203,7 @@ public class Empleado extends Usuario implements Runnable {
 	@Override
 	public String toString() {
 		return "Usuario: " + this.getUsuario() + ", Nombre y apellido: " + nya + ", DNI: " + dni + ", telefono: " + telefono + ", edad: " + edad + ", ciudad: "
-				+ ciudad;
+				+ ciudad + " Locacion " + this.locacionSimp.toString() + " Rubro " + this.tipoTrabajoSimp;
 	}
 
 	@Override
