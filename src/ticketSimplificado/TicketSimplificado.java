@@ -25,7 +25,6 @@ public class TicketSimplificado extends Observable{
    public TicketSimplificado(String locacion, String tipoTrabajo, Empleador empleador) throws AtributoInvalidoException {
       LocacionFactory locacionFactory=new LocacionFactory();
       this.locacion=locacionFactory.getLocacion(locacion);
-      //TipoTrabajoFactory tipoTrabajoFactory=new TipoTrabajoFactory();
       this.tipoTrabajo=tipoTrabajo;
       this.contratado=false;
    }

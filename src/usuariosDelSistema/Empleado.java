@@ -29,7 +29,7 @@ public class Empleado extends Usuario implements Runnable {
 	private Empleador empleadorSeleccionado;
 	private transient TicketSimplificado ticketSimpElegido = null;
 	private int pasadas=10;
-	private transient BolsaDeTrabajo bolsa = BolsaDeTrabajo.getInstancia();
+	private transient BolsaTrabajo bolsa = BolsaTrabajo.getInstancia();
 
 	public Empleado(String usuario, String contrasenia, String nya, String dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
