@@ -25,8 +25,10 @@ public class Sistema implements Serializable{
 	private ArrayList<Empleador> empleadores = new ArrayList<Empleador>();
 	private ArrayList<TicketSimplificado> bolsaDeTrabajo = new ArrayList<TicketSimplificado>();
 	private RondaEncuentros encuentros;
+	private boolean encuentroHecho;
 
-	private Sistema(){		
+	private Sistema(){	
+		
 	}
 
 
@@ -273,6 +275,7 @@ public class Sistema implements Serializable{
 			}
 
 		}
+		this.encuentroHecho=false;
 
 	}
 
@@ -287,8 +290,7 @@ public class Sistema implements Serializable{
 		try {
 			verificaActivos();
 			this.llamaRondaEncuentros();
-			//this.rondaDeElecciones();
-			//this.rondaDeContrataciones();
+			this.encuentroHecho=true;
 		} catch (NingunActivoException e) {
 			System.out.println(e.getMessage());
 		} catch (ListaVaciaException e) {
@@ -377,6 +379,18 @@ public class Sistema implements Serializable{
 		throw new UsuarioIncorrectoException();
 	
 	}
+
+
+	public boolean isEncuentroHecho() {
+		return encuentroHecho;
+	}
+
+
+	public void setEncuentroHecho(boolean encuentroHecho) {
+		this.encuentroHecho = encuentroHecho;
+	}
+	
+	
 }
 
 

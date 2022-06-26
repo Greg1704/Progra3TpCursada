@@ -2025,7 +2025,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			//Funcion de controlador que me traiga Ticket Actual, Lista Ronda Encuentros, Ticket simp obtenido
 			if (hab) {
 				ActualizarListaTicketActualEmpleado();
-				ActualizarListaRondaEleccionesEmpleado();
+				if(c.checkRondaEncuentroHecha())
+					ActualizarListaRondaEleccionesEmpleado();
 			}
 	}
 	
@@ -2063,11 +2064,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			listTicketSimplificadosEmpleador.setEnabled(hab);
 			
 			if (hab) {
-				ActualizarListaRondaEleccionesEmpleador();
+				if(c.checkRondaEncuentroHecha())
+					ActualizarListaRondaEleccionesEmpleador();
 				ActualizarListaTicketActualEmpleador();
 				ActualizarListaTicketSimpEmpleadores();
 			}
-		}
+	}
+	
 	
 	public void ActualizarListaEmpleados() {
 		this.modelListaEmpleados.clear();

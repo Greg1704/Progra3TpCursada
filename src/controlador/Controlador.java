@@ -52,6 +52,7 @@ public class Controlador implements ActionListener {
 		} else
 			if (e.getActionCommand().equals(IVista.arrrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
 				sistema.busquedaLaboral();
+				
 		}else
 			if(e.getActionCommand().equals(IVista.arrrancaRondaDeContrataciones)) { //HACER PARTE VENTANA
 				sistema.rondaDeContrataciones();
@@ -172,6 +173,10 @@ public class Controlador implements ActionListener {
 							}
 						}
 			} 
+	}
+	
+	public boolean checkRondaEncuentroHecha() {
+		return sistema.isEncuentroHecho();
 	}
 	
 	public boolean ExisteAgencia() {
