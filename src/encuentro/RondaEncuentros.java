@@ -5,6 +5,10 @@ import calculosAspectosLaborales.*;
 import excepciones.NoActivoException;
 import usuariosDelSistema.*;
 
+/**
+ * Clase que sirve para hacer los cruces entre empleados y empleadores en base a un double dispatch, para asignar la ponderacion que tienen
+ * entre ellos respectivamente. <br>
+ */
 public class RondaEncuentros{
 	private ArrayList<Empleado> empleadosPretensos = Sistema.getInstancia().getEmpleadosPretensos();
 	private ArrayList<Empleador> empleadores = Sistema.getInstancia().getEmpleadores();

@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import usuariosDelSistema.*;
 
+/**
+ * Es una clase que contiene un empleado y un puntaje, el cual fue asignado en base a los cruces que se dan en la ronda de encuentros.<br>
+ *
+ */
 public class UsuarioyPuntaje implements Comparable<UsuarioyPuntaje>,Serializable{
 	private Usuario usuario;
 	private double puntaje;

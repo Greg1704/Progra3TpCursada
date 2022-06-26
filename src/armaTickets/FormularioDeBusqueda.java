@@ -7,6 +7,10 @@ import excepciones.AtributoInvalidoException;
 import excepciones.FormularioInvalidoException;
 
 
+/**
+ * Son los formularios de busqueda que representan los atributos que luego seran utilizados para 
+ * encontrar las similitudes entre los empleados y los empleadores.<br>
+ */
 public class FormularioDeBusqueda implements Serializable{
 	private Locacion locacion;
 	private Remuneracion remuneracion;

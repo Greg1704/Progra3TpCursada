@@ -4,6 +4,11 @@ import java.util.*;
 import java.io.Serializable;
 import java.time.*;
 
+/**
+ * Contiene la lista donde se guardan las instancias de UsuarioyPuntaje junto con la fecha de creacion de la misma.
+ * Cada usuario posee un objeto de estos.<br>
+ *
+ */
 public class ListaAsignaciones implements Serializable{
 	private ArrayList <UsuarioyPuntaje>ordenados = new ArrayList<UsuarioyPuntaje>();
 	private LocalDateTime fecha;

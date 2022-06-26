@@ -10,6 +10,11 @@ import java.time.LocalDateTime;
 import estadoTicket.Activo;
 import estadoTicket.I_EstadoTicket;
 
+/**
+ * Clase abstracta que corresponde a los tickets de los usuarios, de ella se extienden el ticket de busqueda del 
+ * empleado y del empleador.<br>
+ *
+ */
 public abstract class TicketDeBusqueda implements I_EstadoTicket{
 	private LocalDateTime fechaAlta;
 	private FormularioDeBusqueda formulario;

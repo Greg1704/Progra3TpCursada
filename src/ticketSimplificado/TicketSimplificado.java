@@ -9,7 +9,13 @@ import javax.swing.JFrame;
 
 import java.util.Observable;
 
+/**
+ * Ticket utilizado en la bolsa de Trabajo, son creados por los empleadores y guardados en la clase "BolsaTrabajo".<br>
+ *
+ */
 @SuppressWarnings("deprecation")
+
+
 public class TicketSimplificado extends Observable{
    private I_Locacion locacion;
    private String tipoTrabajo;
