@@ -43,5 +43,13 @@ public class TicketEmpleador extends TicketDeBusqueda{
 		this.estado.esActivo();
 	}
 
+
+	@Override
+	public String toString() {
+		return super.toString() + "Empleados solicitados: " + cantEmpleados;
+	}
+
+	
+	
 	
 }
