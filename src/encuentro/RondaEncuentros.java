@@ -110,9 +110,8 @@ public class RondaEncuentros{
 											
 									
 						}
-						
 					}
-					empleador.setYaEligioEmpleados(false);
+					empleado.setYaEligioEmpleador(false);
 				}catch(NoActivoException e) {}
 
 			}
@@ -217,7 +216,7 @@ public class RondaEncuentros{
 									.get(empleador.getLista().getOrdenados().size() - 1).getUsuario().getPuntaje() - 5);
 					// Resta 5 puntos por terminar ultimo en la lista
 				
-					
+					empleador.setYaEligioEmpleados(false);
 				} catch (NoActivoException e) {}
 				
 			}
