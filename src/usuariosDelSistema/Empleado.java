@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-@SuppressWarnings("deprecation")
 public class Empleado extends Usuario implements Runnable {
 	private String nya; //Nombre y Apellido
 	private String dni;
@@ -29,7 +28,6 @@ public class Empleado extends Usuario implements Runnable {
 	private Empleador empleadorSeleccionado;
 	private transient TicketSimplificado ticketSimpElegido = null;
 	private int pasadas=10;
-	private transient BolsaTrabajo bolsa = BolsaTrabajo.getInstancia();
 
 	public Empleado(String usuario, String contrasenia, String nya, String dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
