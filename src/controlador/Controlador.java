@@ -53,7 +53,6 @@ public class Controlador implements ActionListener {
 			if (e.getActionCommand().equals(IVista.arrrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
 				sistema.busquedaLaboral();
 				
-				
 		}else
 			if(e.getActionCommand().equals(IVista.arrrancaRondaDeContrataciones)) { //HACER PARTE VENTANA
 				sistema.rondaDeContrataciones();
@@ -109,18 +108,7 @@ public class Controlador implements ActionListener {
 						//Creo que nada mas
 				}else
 					if(e.getActionCommand().equals(IVista.confirmaEleccionEmpleado)) {
-						empleado.rondaElecciones(v.getListRondaEleccionesEmpleado());
-				}else
-					if(e.getActionCommand().equals(IVista.confirmaArranqueBDT)) {
-						//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-				}else
-					if(e.getActionCommand().equals(IVista.confirmaAceptacionTicket)) {
-						//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-				}else
-					if(e.getActionCommand().equals(IVista.confirmaRechazoTicket)) {
-						//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-						
-						
+						empleado.rondaElecciones(v.getListRondaEleccionesEmpleado());						
 					}else    // VENTANA EMPLEADOR
 						if(e.getActionCommand().equals(IVista.confirmarLoginEmpleador)) {
 							try {
