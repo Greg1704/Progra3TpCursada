@@ -46,6 +46,7 @@ public class BolsaTrabajo {
         this.usaLista = true;
 		
 		empleado.eleccionTicketSimp(this.tickets);
+		
 		this.usaLista = false;
 		notifyAll();
     }	
