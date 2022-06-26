@@ -3,6 +3,8 @@ package persistencia;
 import java.io.IOException;
 import java.io.Serializable;
 
+import javax.swing.JOptionPane;
+
 import usuariosDelSistema.Sistema;
 
 public class PersistirSistema {
@@ -19,7 +21,7 @@ public class PersistirSistema {
 			persistencia.cerrarOutput();
 			
 		}catch(IOException e) {
-			//DEBERIAMOS PONER UN CARTELITO QUE AVISE SI NO SE PUDO HACER
+			JOptionPane.showMessageDialog(null, "Se guardo mal");
 		}
 		
 	}
@@ -38,9 +40,9 @@ public class PersistirSistema {
 			System.out.println("Termino con exito");
 			
 		}catch (IOException e){
-			
+			JOptionPane.showMessageDialog(null, "Esta pasando algo");
         } catch (ClassNotFoundException e){
-        	
+        	JOptionPane.showMessageDialog(null, "Esta pasando algo parte 2");
         }
 		
 	}

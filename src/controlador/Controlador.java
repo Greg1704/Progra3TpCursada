@@ -15,6 +15,7 @@ import excepciones.ListaVaciaException;
 import excepciones.NingunActivoException;
 import excepciones.UsuarioDuplicadoException;
 import excepciones.UsuarioIncorrectoException;
+import persistencia.PersistirSistema;
 import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.BolsaTrabajo;
 import usuariosDelSistema.Empleado;
@@ -90,11 +91,11 @@ public class Controlador implements ActionListener {
 						new Thread(sistema.getEmpleadosPretensos().get(i)).start();
 					}
 		}else if(e.getActionCommand().equals(IVista.guardaInformacionAgencia)) {
-					//aaaaaaaaaaaaaaaaa
+					PersistirSistema.EscrituraSistema();
 					JOptionPane.showMessageDialog(null, "Agencia guardada en Sistema");
 				
 		}else if(e.getActionCommand().equals(IVista.recuperaInformacionAgencia)) {
-					//aaaaaaaaaaaaaaaaa
+					PersistirSistema.LecturaSistema();
 					JOptionPane.showMessageDialog(null, "Agencia recuperada en Sistema");
 				
 			}else { // VENTANA EMPLEADO
