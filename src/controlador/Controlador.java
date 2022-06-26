@@ -70,7 +70,7 @@ public class Controlador implements ActionListener {
 				
 		}else
 			if(e.getActionCommand().equals(IVista.arrancaBolsaDeTrabajo)){ 
-					//v.ActualizarBolsaTicketsSimp();
+					v.ActualizarBolsaTicketsSimp();
 					for(int i=0;i<sistema.getEmpleadosPretensos().size();i++) {
 						new Thread(sistema.getEmpleadosPretensos().get(i)).start();
 					}
@@ -192,14 +192,11 @@ public class Controlador implements ActionListener {
 							empleador.rondaElecciones(v.getListRondaEleccionesEmpleador());
 					}else
 						if(e.getActionCommand().equals(IVista.confirmaCracionTicketSimplificado)) {
-							try {
-								empleador.agregaObservable(new TicketSimplificado(v.getComboBoxBolsaLocacionEmpleador(),v.getComboBoxBolsaTipoTrabajoEmpleador(),empleador));
+								empleador.crearTicketSimplificado(v.getComboBoxBolsaLocacionEmpleador(),v.getComboBoxBolsaTipoTrabajoEmpleador());
 								v.ActualizarListaTicketSimpEmpleadores();
 								v.ActualizarBolsaTicketsSimp();
 								//No se si deberiamos hacer algo para que se muestre en la ventana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-							} catch (AtributoInvalidoException e1) {
-								//No va a pasar nada, ya que no puede tirar error realmente si lo creamos desde aca xd AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-							}
+							
 						}
 			} 
 	}

@@ -2130,7 +2130,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		for(int i=0;i<it.size();i++) {
 			this.modelListTicketsSimpEmpleador.addElement(it.get(i));
 		}
-		text
 	}
 	
 	public void ActualizarListaRondaEleccionesEmpleado() {  

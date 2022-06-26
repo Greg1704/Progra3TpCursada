@@ -19,7 +19,6 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	private String rubro;
 	private transient ArrayList<TicketSimplificado> observables=new ArrayList<TicketSimplificado>();
 	private int cantObservados;
-	private int contador = 0;
 	private boolean yaEligioEmpleados;
 
 	public Empleador(String usuario, String contrasenia, String nombre,String rubro) {
@@ -165,26 +164,19 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	public void crearTicketSimplificado(String locacion,String tipoTrabajo){
 		try {
 			TicketSimplificado ticketSimplificado= new TicketSimplificado(locacion,tipoTrabajo,this);
-			agregaObservable(ticketSimplificado);
 			ticketSimplificado.addObserver(this);
-			contador++;
-			if (contador <= 2) { //PROBABLEMENTE ACA ESTA EL ERROR (this.observables.size()) ESTA ERA LA SENTENCIA QUE IBA EN EL IF
+			if (this.cantObservados < 3) { //PROBABLEMENTE ACA ESTA EL ERROR 
+				this.observables.add(ticketSimplificado);
+				this.cantObservados++;
 				BolsaTrabajo.getInstancia().agregaTicket(ticketSimplificado);// agrego ticket a la lista de bolsa de trabajo
-				this.observables.add(ticketSimplificado); //agrego ticket a lista de tickets simp del empleador
-			}			
+			}else
+				JOptionPane.showMessageDialog(null, "Ya hay 3 tickets simplificados creados, hasta que un empleado no se lleve alguno no puede crear nuevos");			
 		} catch (AtributoInvalidoException e) {
 			System.out.println(e.getMessage()); //PODRIA COMENTARSE ESTO DICIENDO QUE NO SE PUEDEN CREAR MAS TICKETS SIMPLIFICADOS
 		}
 
 	}
 
-	public void agregaObservable(TicketSimplificado ticketSimplificado){
-		if(cantObservados<3) {
-			this.observables.add(ticketSimplificado);
-			this.cantObservados++;
-		}else
-			JOptionPane.showMessageDialog(null, "Ya hay 3 tickets simplificados creados, hasta que un empleado no se lleve alguno no puede crear nuevos");
-	}
 
 	private void quitaObservable(TicketSimplificado ticketSimplificado){
 		this.observables.remove(ticketSimplificado);
