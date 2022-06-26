@@ -116,33 +116,22 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		
 	}
 	
-
-	/*public void rondaElecciones() {
-		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
-		int i = 0;
-
-		super.getLista().getOrdenados().get(0).getUsuario().setPuntaje(super.getLista().getOrdenados().get(0).getUsuario().getPuntaje() + 5);
-		//Suma 5 puntos por estar primero en la lista
-		
-		while(i < super.getLista().getOrdenados().size() && i < cuposTotal) {
-			this.empleadosSeleccionados.add((Empleado) super.getLista().getOrdenados().get(i).getUsuario());
-			i++;
-		}
-		
-		this.cantidadEmpleadosSeleccionados = i;
-
-	}*/
 	
+	/**
+	 * Este metodo se utiliza para seleccionar los empleados que seran elegidos en la ronda de elecciones
+	 * @param elegidos: Es una lista de empledos que se eligen en la ronda de elecciones <br>
+	 */
 	public void rondaElecciones(ArrayList<Empleado> elegidos) {
 		int cuposTotal = this.ticketEmpleador.getCantEmpleados();
 		int i = 0;
 		super.getLista().getOrdenados().get(0).getUsuario().setPuntaje(super.getLista().getOrdenados().get(0).getUsuario().getPuntaje() + 5);
 		//Suma 5 puntos por estar primero en la lista
 		this.empleadosSeleccionados = elegidos;
-		this.cantidadEmpleadosSeleccionados = i;
+		this.cantidadEmpleadosSeleccionados = elegidos.size();
 		this.setYaEligioEmpleados(true);
 	}
 
+	
 	public void crearTicket(String locacion, int pesoLocacion, double remuneracion, int pesoRemuneracion, String cargaHoraria, int pesoCargaHoraria,
 							String tipoPuestoLaboral, int pesoTipoPuestoLaboral, int edad, int pesoEdad, String experienciaPrevia, int pesoExperienciaPrevia,
 							String estudiosCursados, int pesoEstudiosCursados, int cantEmpleados){

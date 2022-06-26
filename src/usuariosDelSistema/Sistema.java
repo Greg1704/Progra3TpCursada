@@ -16,10 +16,10 @@ import ticketSimplificado.TicketSimplificado;
 
 /**
  * @author Grupo4 <br>
- *         Clase que representa el <b> Sistema </b> con sus m�todos
- *         principales para el correcto desempe�o del programa <br>
- *         Tiene aplicado m�todo Singleton definido en getInstancia(): no
- *         puede haber m�s de un <b> Sistema </b>.
+ *         Clase que representa el <b> Sistema </b> con sus metodos
+ *         principales para el correcto desempenio del programa <br>
+ *         Tiene aplicado metodo Singleton definido en getInstancia(): no
+ *         puede haber mas de un <b> Sistema </b>.
  */
 
 public class Sistema{
@@ -42,10 +42,10 @@ public class Sistema{
 	}
 
 	/**
-	 * el m�todo <b> agregaEmpleado </b> agrega un empleado a la lista de
+	 * el metodo <b> agregaEmpleado </b> agrega un empleado a la lista de
 	 * empleados del <b> Sistema </b> <br>
 	 * 
-	 * @param e: Empleado que ser� agregado a la lista de empleados del sistema
+	 * @param e: Empleado que seria agregado a la lista de empleados del sistema
 	 *           <br>
 	 *           PreCond: Empleado debe ser distinto de null <br>
 	 *           PostCond: Se agrega empleado a la lista
@@ -79,7 +79,7 @@ public class Sistema{
 	 *
 	 */
 
-	public void sacaEmpleado(Empleado e) { // excepcion si el empleado es inv�lido , ya que remove() devuelve false si
+	public void sacaEmpleado(Empleado e) { // excepcion si el empleado es invalido , ya que remove() devuelve false si
 											// no se elimina nada
 		this.empleadosPretensos.remove(e);
 	}
@@ -168,10 +168,10 @@ public class Sistema{
 	
 	
 	/**
-	 * el metodo <b> comisionEmpleadoPretenso </b> calcula la comision del
+	 * El metodo <b> comisionEmpleadoPretenso </b> calcula la comision del
 	 * empleado dependiendo del cargo que este posee <br>
 	 * 
-	 * @param empleado: Empleado al que le ser� calculada la comision <br>
+	 * @param empleado: Empleado al que le sera calculada la comision <br>
 	 *                  PreCond: Empleado debe ser distinto de null y valido <br>
 	 *                  PostCond: Se retornara la comision como un "double"
 	 *
