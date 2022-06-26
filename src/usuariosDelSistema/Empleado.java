@@ -17,7 +17,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 @SuppressWarnings("deprecation")
-public class Empleado extends Usuario implements Observer,Runnable {
+public class Empleado extends Usuario implements Runnable {
 	private String nya; //Nombre y Apellido
 	private String dni;
 	private int telefono;
@@ -29,7 +29,7 @@ public class Empleado extends Usuario implements Observer,Runnable {
 	private Empleador empleadorSeleccionado;
 	private transient TicketSimplificado ticketSimpElegido = null;
 	private int pasadas=10;
-	private transient BolsaDeTrabajo bolsa = BolsaDeTrabajo.getInstancia();
+	private transient BolsaTrabajo bolsa = BolsaTrabajo.getInstancia();
 
 	public Empleado(String usuario, String contrasenia, String nya, String dni, int telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
@@ -38,7 +38,6 @@ public class Empleado extends Usuario implements Observer,Runnable {
 		this.telefono = telefono;
 		this.edad = edad;
 		this.ciudad = ciudad;
-		bolsa.addObserver(this);
 	}
 
 	public void setTicket(TicketEmpleado ticket) {
@@ -200,18 +199,6 @@ public class Empleado extends Usuario implements Observer,Runnable {
 	}
 
 	@Override
-	public void update(Observable o, Object arg) { // aca va a entrar si se eligio un ticket
-		//Hacer que al emopleado le salte una ventana emergente para elegir si lo acepta o no
-		//En el update de empleador se le suspende el Ticket normal(Consultar a grego o tomi)
-		/*
-			Muestra el ticket para que el empleado haga su eleccion
-			Y modifica los boolean descartado y eleccion en curso
-		* */
-
-		this.bolsa.setEleccionEnCurso(false);
-	}
-
-	@Override
 	public void run() {
 		int j = 1;
 		
@@ -235,8 +222,7 @@ public class Empleado extends Usuario implements Observer,Runnable {
 			if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
 				this.ticketSimpElegido = t;
 				t.setEmpleadoContratado(this);
-				
-				System.out.println(this.getNya()+" se queda con ticket AAAAAAAAAAAAAAAAAAAA");	
+				//System.out.println(this.getNya()+" se queda con ticket AAAAAAAAAAAAAAAAAAAA");	
 				
 			}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
 				System.out.println(this.getNya()+" no encontro ticket");
