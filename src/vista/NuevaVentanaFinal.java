@@ -1566,9 +1566,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.listEmpleadores = listEmpleadores;
 	}
 
-	public void setListTicketActual(TicketEmpleado ticket) {
+/*	public void setListTicketActual(TicketEmpleado ticket) {
 		this.listTicketActual.add(ticket); //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 	}
+	*/
 
 	public void setListRondaEleccionesEmpleado(JList listRondaEleccionesEmpleado) {
 		this.listRondaEleccionesEmpleado = listRondaEleccionesEmpleado;
@@ -2017,8 +2018,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			listTicketSimpObtenido.setEnabled(hab);
 			
 			//Funcion de controlador que me traiga Ticket Actual, Lista Ronda Encuentros, Ticket simp obtenido
-			this.setListTicketActual(c.RecuperaTicketEmpleado());
-			this.setListRondaEleccionesEmpleado(c.RecuperaListaAsignacionEmpleado());
+		//	this.setListTicketActual(c.RecuperaTicketEmpleado());
+			//this.setListRondaEleccionesEmpleado(c.RecuperaListaAsignacionEmpleado());
 			//this.setListTicketSimpObtenido(c.Recupera); // falta ver lo de la bolsa
 	}
 	
@@ -2103,6 +2104,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		for(int i=0;i<it.getOrdenados().size();i++) {
 			this.modelListRondaEleccionesEmpleado.addElement(it.getOrdenados().get(i));
 		}
+		setBtnConfirmacionEleccionEmpleado(true);
 	}
 	
 	public void ActualizarListaRondaEleccionesEmpleador() {  //FALTA APLICAR AL CONTROLADOR Y ESOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOooooooooooooooooooooooooooooooooooooooooooooo
@@ -2111,6 +2113,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		for(int i=0;i<it.getOrdenados().size();i++) {
 			this.modelListRondaEleccionesEmpleador.addElement(it.getOrdenados().get(i));
 		}
+		setBtnConfirmacionEleccionEmpleador(true);
 	}
 	
 	public void ActualizarBolsaTicketsSimp() {  //NO MUESTRA EN PANTALLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
