@@ -282,7 +282,16 @@ public class Sistema{
 
 		}
 		this.encuentroHecho=false;
-
+		vaciarListasAsignaciones();
+	}
+	
+	public void vaciarListasAsignaciones() {
+		for(Empleado empleado : this.empleadosPretensos) {
+			empleado.getLista().getOrdenados().clear();
+		}
+		for(Empleador empleador : this.empleadores) {
+			empleador.getLista().getOrdenados().clear();
+		}
 	}
 
 	/**

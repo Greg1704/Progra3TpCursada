@@ -75,6 +75,10 @@ public class Controlador implements ActionListener {
 		}else
 			if(e.getActionCommand().equals(IVista.arrancaRondaDeContrataciones)) { //HACER PARTE VENTANA
 				sistema.rondaDeContrataciones();
+				if(empleado != null)
+					v.ActualizarListaRondaEleccionesEmpleado();
+				if(empleador != null)
+					v.ActualizarListaRondaEleccionesEmpleador();
 				
 		}else
 			if(e.getActionCommand().equals(IVista.arrancaBolsaDeTrabajo)){ 

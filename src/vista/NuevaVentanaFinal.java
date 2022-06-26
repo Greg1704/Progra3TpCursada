@@ -2145,6 +2145,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		setBtnConfirmacionEleccionEmpleado(true);
 	}
 	
+	
 	public void ActualizarListaRondaEleccionesEmpleador() {  
 		this.modelListRondaEleccionesEmpleador.clear();
 		ListaAsignaciones it=c.RecuperaListaAsignacionEmpleador();
