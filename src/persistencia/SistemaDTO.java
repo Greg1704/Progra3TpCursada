@@ -11,7 +11,7 @@ public class SistemaDTO implements Serializable{
 	private String nombre;
 	private ArrayList<Empleado> empleadosPretensos = new ArrayList<Empleado>();
 	private ArrayList<Empleador> empleadores = new ArrayList<Empleador>();
-	
+	private boolean encuentroHecho;
 	
 	public String getNombre() {
 		return nombre;
@@ -31,6 +31,11 @@ public class SistemaDTO implements Serializable{
 	public void setEmpleadores(ArrayList<Empleador> empleadores) {
 		this.empleadores = empleadores;
 	}
-
+	public boolean isEncuentroHecho() {
+		return encuentroHecho;
+	}
+	public void setEncuentroHecho(boolean encuentroHecho) {
+		this.encuentroHecho = encuentroHecho;
+	}
 	
 }
