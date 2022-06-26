@@ -1,6 +1,8 @@
 package calculosAspectosLaborales;
 
-public interface I_Remuneracion {
+import java.io.Serializable;
+
+public interface I_Remuneracion extends Serializable{
 
     public abstract double versus(I_Remuneracion remuneracion);
 

@@ -1,6 +1,8 @@
 package calculosAspectosLaborales;
 
-public interface I_EstudiosCursados {
+import java.io.Serializable;
+
+public interface I_EstudiosCursados extends Serializable{
 
     public abstract double versus(I_EstudiosCursados estudiosCursados);
 

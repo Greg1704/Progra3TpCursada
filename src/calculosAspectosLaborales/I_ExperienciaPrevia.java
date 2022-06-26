@@ -1,6 +1,8 @@
 package calculosAspectosLaborales;
 
-public interface I_ExperienciaPrevia {
+import java.io.Serializable;
+
+public interface I_ExperienciaPrevia extends Serializable{
 
     public abstract double versus(I_ExperienciaPrevia exp);
 

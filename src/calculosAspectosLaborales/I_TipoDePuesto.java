@@ -1,6 +1,8 @@
 package calculosAspectosLaborales;
 
-public interface I_TipoDePuesto {
+import java.io.Serializable;
+
+public interface I_TipoDePuesto extends Serializable{
 
     public abstract double versus(I_TipoDePuesto tipoDePuesto);
 

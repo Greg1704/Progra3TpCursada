@@ -1,6 +1,8 @@
 package calculosAspectosLaborales;
 
-public interface I_RangoEtario {
+import java.io.Serializable;
+
+public interface I_RangoEtario extends Serializable{
 
     public abstract double versus(I_RangoEtario rangoEtario);
 

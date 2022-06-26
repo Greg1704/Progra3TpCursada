@@ -1,6 +1,8 @@
 package calculosAspectosLaborales;
 
-public interface I_CargaHoraria {
+import java.io.Serializable;
+
+public interface I_CargaHoraria extends Serializable{
 
     public abstract double versus(I_CargaHoraria cargaHoraria);
 

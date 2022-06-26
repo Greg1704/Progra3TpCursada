@@ -1,6 +1,8 @@
 package calculosAspectosLaborales;
 
-public interface I_Locacion {
+import java.io.Serializable;
+
+public interface I_Locacion extends Serializable{
 
     public abstract double versus(I_Locacion locacion);
 
