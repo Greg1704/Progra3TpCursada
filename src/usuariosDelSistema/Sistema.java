@@ -114,7 +114,7 @@ public class Sistema{
 	}
 
 	/**
-	 * el metodo <b> sacaEmpleador </b> saca un empleado a la lista de empleados
+	 * El metodo <b> sacaEmpleador </b> saca un empleado a la lista de empleados
 	 * del <b> Sistema </b> <br>
 	 * 
 	 * @param e: Empleador que sera removido de la lista de empleadores del

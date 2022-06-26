@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * Es la clase de empleados, que seran los objetos que se contrataran a durante los procesos de seleccion propuestos por la Agencia
+ */
 public class Empleado extends Usuario implements Runnable {
 	private String nya; //Nombre y Apellido
 	private String dni;
@@ -185,8 +188,7 @@ public class Empleado extends Usuario implements Runnable {
 		
 	}
 	
-	
-	
+
 	public void crearTicket(String locacion, int pesoLocacion, double remuneracion, int pesoRemuneracion, String cargaHoraria, int pesoCargaHoraria,
 							String tipoPuestoLaboral, int pesoTipoPuestoLaboral, int edad, int pesoEdad, String experienciaPrevia, int pesoExperienciaPrevia,
 							String estudiosCursados, int pesoEstudiosCursados){
@@ -217,6 +219,9 @@ public class Empleado extends Usuario implements Runnable {
 		}
 		
 	}
+	
+	
+	
 	
 	public void eleccionTicketSimp() { // esto es lo que va en BolsaTrabajo para ver si me quedo el ticket que esta en la lista o lo devuelvo
 		double respuesta;
