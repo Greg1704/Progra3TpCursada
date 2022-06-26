@@ -2181,9 +2181,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	}
 	
 	public void ActualizarTextAreaBolsaSimulacion(String mensaje) {  
-		textAreaContrataciones.append(mensaje); 
+		textAreaSimulacionThreads.append(mensaje); 
 	}
 	
+	public void cambiaTabPanel(int i) {
+		this.tabbedPane.setSelectedIndex(i);
+	}
 	
 	//pensamiento propio: desde ventana mandamos el empleador que seleccionamos al controlador, y este "une" al empleado con su empleador
 	//En este caso el getter de la lista estaria al pedo capaz, salvo que se use para otra cosa

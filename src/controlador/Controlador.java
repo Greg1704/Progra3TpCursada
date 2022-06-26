@@ -13,6 +13,7 @@ import excepciones.AtributoInvalidoException;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.ListaVaciaException;
 import excepciones.NingunActivoException;
+import excepciones.UsuarioDuplicadoException;
 import excepciones.UsuarioIncorrectoException;
 import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.BolsaTrabajo;
@@ -83,6 +84,7 @@ public class Controlador implements ActionListener {
 		}else
 			if(e.getActionCommand().equals(IVista.arrancaBolsaDeTrabajo)){ 
 					v.ActualizarBolsaTicketsSimp();
+					v.cambiaTabPanel(3);
 					for(int i=0;i<sistema.getEmpleadosPretensos().size();i++) {
 						new Thread(sistema.getEmpleadosPretensos().get(i)).start();
 					}
@@ -114,7 +116,11 @@ public class Controlador implements ActionListener {
 						
 						empleado1.setTipoTrabajoSimp(v.getComboBoxBolsaTipoTrabajo());
 						empleado1.setLocacionSimp(v.getComboBoxBolsaLocacion());
-						sistema.agregaEmpleado(empleado1);
+						try {
+							sistema.agregaEmpleado(empleado1);
+						} catch (UsuarioDuplicadoException e1) {
+							JOptionPane.showMessageDialog(null,e1);
+						}
 						v.ActualizarListaEmpleados();
 					 
 						
@@ -171,7 +177,11 @@ public class Controlador implements ActionListener {
 							}else {
 								empleador1 = new EmpleadorJuridico(v.getTextFieldCreacionUsuarioEmpleador(),v.getTextFieldCreacionContraseniaEmpleador(),v.getTextFieldCreacionNombreEmpleador(),v.getComboBoxRubroEmpleador());
 							} 
-							sistema.agregaEmpleador(empleador1);
+							try {
+								sistema.agregaEmpleador(empleador1);
+							} catch (UsuarioDuplicadoException e1) {
+								JOptionPane.showMessageDialog(null, e1);
+							}
 							v.ActualizarListaEmpleadores();
 					}else
 						if(e.getActionCommand().equals(IVista.confirmacionCreacionTicketEmpleador)) {

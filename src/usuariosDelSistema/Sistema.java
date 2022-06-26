@@ -59,7 +59,7 @@ public class Sistema{
 		
 		j = this.empleadosPretensos.size();
 		
-		while(i < j && !(this.empleadosPretensos.get(i).getNya().equalsIgnoreCase(e.getNya()))) {
+		while(i < j && !(this.empleadosPretensos.get(i).getUsuario().equalsIgnoreCase(e.getUsuario()))) {
 			i++;
 		}
 		
@@ -102,7 +102,7 @@ public class Sistema{
 		
 		j = this.empleadores.size();
 		
-		while(i < j && !(this.empleadores.get(i).getNombre().equalsIgnoreCase(e.getNombre()))) {
+		while(i < j && !(this.empleadores.get(i).getUsuario().equalsIgnoreCase(e.getUsuario()))) {
 			i++;
 		}
 		

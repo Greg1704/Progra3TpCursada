@@ -199,7 +199,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 
 	@Override
 	public String toString() {
-		return "Empleador [nombre=" + nombre + ", rubro=" + rubro + "]";
+		return "Empleador ["+ "Usuario: " + this.getUsuario() +", nombre=" + nombre + ", rubro=" + rubro + "]";
 	}
 
 
