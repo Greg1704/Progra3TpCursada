@@ -221,15 +221,15 @@ public class Empleado extends Usuario implements Runnable {
 			if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
 				this.ticketSimpElegido = t;
 				t.setEmpleadoContratado(this);
-				//System.out.println(this.getNya()+" se queda con ticket AAAAAAAAAAAAAAAAAAAA");	
+				System.out.println(this.getNya()+" se queda con ticket AAAAAAAAAAAAAAAAAAAA");	
 				
 			}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
-				//System.out.println(this.getNya()+" no encontro ticketBBBBBBBBBBBBBBBB");
+				System.out.println(this.getNya()+" no encontro ticketBBBBBBBBBBBBBBBB");
 				BolsaTrabajo.getInstancia().devolverTicket(this,t);	
 			}
 		}
 		else {
-			//System.out.println(this.nya +" no encontro tickets en la bolsa");
+			System.out.println(this.nya +" no encontro tickets en la bolsa");
 		}
 
 	} //podemos hacerlo string y que despues de la llamada retorne el string que corresponda a la situacion

@@ -89,13 +89,13 @@ public class Testeo {
 		em1.crearTicketSimplificado("Presencial", "ComercioLocal");
 		em2.crearTicketSimplificado("Presencial", "Salud");
 		em3.crearTicketSimplificado("Presencial", "ComercioLocal");	
-		em2.crearTicketSimplificado("HomeOffice", "Salud");	
-		em1.crearTicketSimplificado("Presencial", "ComercioLocal");	
+		em3.crearTicketSimplificado("HomeOffice", "Salud");	
+		em2.crearTicketSimplificado("Presencial", "ComercioLocal");	
 		
-		//new Thread(e1).start();
+		new Thread(e1).start();
 		new Thread(e2).start();
 		new Thread(e3).start();
-		//new Thread(e4).start();
+		new Thread(e4).start();
 		new Thread(e5).start();
 		new Thread(e6).start();
 		new Thread(e7).start();

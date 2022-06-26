@@ -19,6 +19,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	private String rubro;
 	private transient ArrayList<TicketSimplificado> observables=new ArrayList<TicketSimplificado>();
 	private int cantObservados;
+	private int contador = 0;
 
 	public Empleador(String usuario, String contrasenia, String nombre,String rubro) {
 		super(usuario, contrasenia);
@@ -157,7 +158,8 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 			TicketSimplificado ticketSimplificado= new TicketSimplificado(locacion,tipoTrabajo,this);
 			agregaObservable(ticketSimplificado);
 			ticketSimplificado.addObserver(this);
-			if (this.observables.size() <= 2) {
+			contador++;
+			if (contador <= 2) { //PROBABLEMENTE ACA ESTA EL ERROR (this.observables.size()) ESTA ERA LA SENTENCIA QUE IBA EN EL IF
 				BolsaTrabajo.getInstancia().agregaTicket(ticketSimplificado);// agrego ticket a la lista de bolsa de trabajo
 				this.observables.add(ticketSimplificado); //agrego ticket a lista de tickets simp del empleador
 			}			
