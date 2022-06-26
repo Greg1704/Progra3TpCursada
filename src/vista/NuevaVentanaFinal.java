@@ -1560,7 +1560,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	}
 
 	public Empleador getListRondaEleccionesEmpleado() { 
-		return (Empleador)listRondaEleccionesEmpleado.getSelectedValue();
+		//return (Empleador)listRondaEleccionesEmpleado.getSelectedValue();
+		return (Empleador) this.modelListRondaEleccionesEmpleado.get(this.listRondaEleccionesEmpleado.getSelectedIndex()).getUsuario();
 	}
 	
 	public void setListEmpleados(JList listEmpleados) {
@@ -1698,7 +1699,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	*/
 
 	public ArrayList<Empleado> getListRondaEleccionesEmpleador() {
-		return (ArrayList<Empleado>) listRondaEleccionesEmpleador.getSelectedValuesList(); 
+		return (ArrayList<Empleado>) this.modelListRondaEleccionesEmpleador.get(this.listRondaEleccionesEmpleador.getSelectedIndex()).getUsuario();
 	}
 
 	public String getComboBoxBolsaTipoTrabajoEmpleador() {
