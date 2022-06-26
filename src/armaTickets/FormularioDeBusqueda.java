@@ -65,6 +65,13 @@ public class FormularioDeBusqueda implements Serializable{
 	public EstudiosCursados getEstudiosCursados() {
 		return estudiosCursados;
 	}
+
+	@Override
+	public String toString() {
+		return "[locacion=" + locacion + ", remuneracion=" + remuneracion + ", cargaHoraria="
+				+ cargaHoraria + ", tipoPuestoLaboral=" + tipoPuestoLaboral + ", edad=" + edad + ", experienciaPrevia="
+				+ experienciaPrevia + ", estudiosCursados=" + estudiosCursados + "]";
+	}
 	
 	
 	

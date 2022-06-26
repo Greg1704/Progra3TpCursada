@@ -1267,9 +1267,15 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				this.textFieldCrearAgencia.addKeyListener(this);
 
 				this.btnConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
+				this.btnRondaEncuentro.setActionCommand(arrrancaRondaDeEncuentro);
+				this.btnRondaContraciones.setActionCommand(arrrancaRondaDeContrataciones);
 
 				this.btnConfirmarNombreAgencia.addActionListener(c);
+				this.btnRondaEncuentro.addActionListener(c);
+				this.btnRondaContraciones.addActionListener(c);
 				this.btnConfirmarNombreAgencia.addMouseListener(this);
+				this.btnRondaEncuentro.addMouseListener(this);
+				this.btnRondaContraciones.addMouseListener(this);
 				setBtnBolsaDeTrabajo(false);
 				setBtnRondaContraciones(false);
 				setBtnRondaEncuentro(false);
@@ -1989,7 +1995,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			textAreaContrataciones.setEnabled(hab);
 			textAreaComisiones.setEnabled(hab);
 			setBtnBolsaDeTrabajo(true);
-			setBtnRondaContraciones(true);
 			setBtnRondaEncuentro(true);
 	}
 
@@ -2122,6 +2127,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		for(int i=0;i<it.size();i++) {
 			this.modelListBolsaTicketsSimp.addElement(it.get(i));
 		}
+	}
+	
+	public void habilitaRondaDeContrataciones() {
+		setBtnRondaContraciones(true);
 	}
 	
 	
@@ -2282,7 +2291,17 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 									if (e.getSource()==btnCrearTicketSimplificado) {
 										setComboBoxBolsaTipoTrabajoEmpleador();
 										setComboBoxBolsaLocacionEmpleador();
-									}
+									} else
+										if (e.getSource() == btnRondaEncuentro) {
+											setBtnRondaEncuentro(false);
+											setBtnRondaContraciones(true);
+										} else
+											if (e.getSource() == btnRondaContraciones) {
+												setBtnRondaContraciones(false);
+											} else
+												if (e.getSource() == btnBolsaDeTrabajo) {
+													setBtnBolsaDeTrabajo(false);
+												}
 					
 	}
 
