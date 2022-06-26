@@ -18,7 +18,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	private int cantidadEmpleadosSeleccionados;
 	private String rubro;
 	private transient ArrayList<TicketSimplificado> observables=new ArrayList<TicketSimplificado>();
-	private int cantObservados;
+	private transient int cantObservados;
 	private boolean yaEligioEmpleados;
 
 	public Empleador(String usuario, String contrasenia, String nombre,String rubro) {
