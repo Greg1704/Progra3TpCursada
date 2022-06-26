@@ -2023,9 +2023,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			listTicketSimpObtenido.setEnabled(hab);
 			
 			//Funcion de controlador que me traiga Ticket Actual, Lista Ronda Encuentros, Ticket simp obtenido
-			ActualizarListaTicketActualEmpleado();
-			ActualizarListaRondaEleccionesEmpleado();
-			//ActualizarTicketSimplEmpleado
+			if (hab) {
+				ActualizarListaTicketActualEmpleado();
+				ActualizarListaRondaEleccionesEmpleado();
+			}
 	}
 	
 	public void EmpleadorLogeado(boolean hab) { // si es true, va a prender o apagar todo
@@ -2060,9 +2061,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			
 			listTicketActualEmpleador.setEnabled(hab);
 			listTicketSimplificadosEmpleador.setEnabled(hab);
-			ActualizarListaRondaEleccionesEmpleador();
-			ActualizarListaTicketActualEmpleador();
-			ActualizarListaTicketSimpEmpleadores();
+			
+			if (hab) {
+				ActualizarListaRondaEleccionesEmpleador();
+				ActualizarListaTicketActualEmpleador();
+				ActualizarListaTicketSimpEmpleadores();
+			}
 		}
 	
 	public void ActualizarListaEmpleados() {
@@ -2224,16 +2228,16 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		if (e.getSource()==btnConfirmarNombreAgencia) {
+		if (e.getSource()==btnConfirmarNombreAgencia && btnConfirmarNombreAgencia.isEnabled()) {
 			setTextFieldCrearAgencia("");
 			setBtnConfirmarNombreAgencia(false);
 		} else
-			if (e.getSource()==btnConfirmarLogin) {
+			if (e.getSource()==btnConfirmarLogin && btnConfirmarLogin.isEnabled()) {
 				setTextFieldUsuario("");
 				setTextFieldContrasenia("");
 				setBtnConfirmarLogin(false);
 			} else
-				if (e.getSource()==btnConfirmacionCreacionUsuario) {
+				if (e.getSource()==btnConfirmacionCreacionUsuario && btnConfirmacionCreacionUsuario.isEnabled()) {
 					setTextFieldCreacionUsuario("");
 					setTextFieldCreacionContrasenia("");
 					setTextFieldCreacionNyA("");
@@ -2243,7 +2247,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 					setTextFieldCreacionCiudad("");
 					setBtnConfirmacionCreacionUsuario(false); 
 				} else
-					if (e.getSource()==btnConfirmacionCreacionTicket) {
+					if (e.getSource()==btnConfirmacionCreacionTicket && btnConfirmacionCreacionTicket.isEnabled()) {
 						setTextFieldPesoCargaHoraria("");
 						setTextFieldPesoLocacion("");
 						setTextFieldPesoRemuneracion("");
@@ -2256,12 +2260,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 						setComboBoxTipoDePuesto();
 						setBtnConfirmarCreacionTicket(false);
 					} else
-						if (e.getSource()==btnConfirmarLoginEmpleador) {
+						if (e.getSource()==btnConfirmarLoginEmpleador && btnConfirmarLoginEmpleador.isEnabled()) {
 							setTextFieldUsuarioEmpleador("");
 							setTextFieldContraseniaEmpleador("");
 							setBtnConfirmarLoginEmpleador(false);
 						} else
-							if (e.getSource()==btnConfirmacionCreacionUsuarioEmpleador) {
+							if (e.getSource()==btnConfirmacionCreacionUsuarioEmpleador && btnConfirmacionCreacionUsuarioEmpleador.isEnabled()) {
 								setTextFieldCreacionUsuarioEmpleador("");
 								setTextFieldCreacionContraseniaEmpleador("");
 								setTextFieldCreacionNombreEmpleador("");
@@ -2269,7 +2273,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 								setComboBoxRubroEmpleador();
 								setBtnConfirmacionCreacionUsuarioEmpleador(false);
 							} else
-								if (e.getSource()==btnConfirmacionCreacionTicketEmpleador) {
+								if (e.getSource()==btnConfirmacionCreacionTicketEmpleador && btnConfirmacionCreacionTicketEmpleador.isEnabled()) {
 									setTextFieldPesoCargaHorariaEmpleador("");
 									setTextFieldPesoEstudiosCursadosEmpleador("");
 									setTextFieldPesoExpPreviaEmpleador("");
@@ -2287,21 +2291,18 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 									setComboBoxRangoEtarioEmpleador();
 									setBtnConfirmarCreacionTicketEmpleador(false);
 								} else
-									if (e.getSource()==btnCrearTicketSimplificado) {
+									if (e.getSource()==btnCrearTicketSimplificado && btnCrearTicketSimplificado.isEnabled()) {
 										setComboBoxBolsaTipoTrabajoEmpleador();
 										setComboBoxBolsaLocacionEmpleador();
 									} else
-										if (e.getSource() == btnRondaEncuentro) {
+										if (e.getSource() == btnRondaEncuentro && btnRondaEncuentro.isEnabled()) {
 											setBtnRondaEncuentro(false);
 											setBtnRondaContraciones(true);
 										} else
-											if (e.getSource() == btnRondaContraciones) {
+											if (e.getSource() == btnRondaContraciones && btnRondaContraciones.isEnabled()) {
 												setBtnRondaContraciones(false);
-											} else
-												if (e.getSource() == btnBolsaDeTrabajo) {
-													setBtnBolsaDeTrabajo(false);
-												}
-					
+												setBtnRondaEncuentro(true);				
+											}
 	}
 
 	@Override
