@@ -1270,6 +1270,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 
 				this.btnConfirmarNombreAgencia.addActionListener(c);
 				this.btnConfirmarNombreAgencia.addMouseListener(this);
+				setBtnBolsaDeTrabajo(false);
+				setBtnRondaContraciones(false);
+				setBtnRondaEncuentro(false);
 
 				// ventana Empleado
 
@@ -1279,6 +1282,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				this.btnConfirmacionCreacionUsuario.setEnabled(false);
 				this.btnConfirmacionCreacionTicket.setEnabled(false);
 				this.btnConfirmacionEleccionEmpleado.setEnabled(false);
+				setCambiarEstadoTicketEmpleado(false); // los setters se hicieron desp
 				
 				// Seteo comboBox
 				
@@ -1364,6 +1368,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				this.btnConfirmacionCreacionTicketEmpleador.setEnabled(false);
 				this.btnConfirmacionEleccionEmpleador.setEnabled(false);
 				this.btnCrearTicketSimplificado.setEnabled(true);
+				setCambiarEstadoTicketEmpleador(false); // setters se hicieron despues
 				
 				// Seteo ComboBox
 				
@@ -1459,14 +1464,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	public void setControlador(Controlador c) {
 		this.c = c;
 		seteoTodoPorDefault();
-	}
-	
-	public void setBtnRondaEncuentro(boolean hab) {
-		this.btnRondaEncuentro.setEnabled(hab);
-	}
-
-	public void setBtnRondaContraciones(boolean hab){
-		this.btnRondaContraciones.setEnabled(hab);
 	}
 
 	public void setBtnBolsaDeTrabajo(boolean hab) {
@@ -1738,6 +1735,15 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return Integer.parseInt((String) textFieldCantEmpleadosBuscados.getText());
 	}
 
+	
+	public void setBtnRondaEncuentro(boolean hab) {
+		this.btnRondaEncuentro.setEnabled(hab);
+	}
+
+	public void setBtnRondaContraciones(boolean hab) {
+		this.btnRondaContraciones.setEnabled(hab);
+	}
+
 	public void setBtnConfirmarNombreAgencia(boolean hab) {
 		this.btnConfirmarNombreAgencia.setEnabled(hab);
 	}
@@ -1981,6 +1987,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			listEmpleados.setEnabled(hab);
 			textAreaContrataciones.setEnabled(hab);
 			textAreaComisiones.setEnabled(hab);
+			setBtnBolsaDeTrabajo(true);
+			setBtnRondaContraciones(true);
+			setBtnRondaEncuentro(true);
 	}
 
 	public void EmpleadoLogeado(boolean hab) { // // si es true, va a prender o apagar todo. 
@@ -1996,10 +2005,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			comboBoxExperienciaPrevia.setEnabled(hab);
 			comboBoxBolsaLocacion.setEnabled(hab);
 			comboBoxBolsaTipoTrabajo.setEnabled(hab);
-			setCambiarEstadoTicketEmpleado(hab);
 			setBtnConfirmarRequisitosBolsa(hab);
 			listRondaEleccionesEmpleado.setEnabled(hab);
-			setBtnConfirmarCreacionTicket(hab);
 			setTextFieldPesoCargaHoraria("");
 			setTextFieldPesoLocacion("");
 			setTextFieldPesoRemuneracion("");
@@ -2031,7 +2038,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			comboBoxExperienciaPreviaEmpleador.setEnabled(hab);
 			comboBoxBolsaLocacionEmpleador.setEnabled(hab);
 			comboBoxBolsaTipoTrabajoEmpleador.setEnabled(hab);
-			setCambiarEstadoTicketEmpleador(hab);
 			setBtnCrearTicketSimplificado(hab);
 			listRondaEleccionesEmpleador.setEnabled(hab);
 			setTextFieldPesoCargaHorariaEmpleador("");
@@ -2067,11 +2073,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	public void ActualizarListaTicketActualEmpleado() {
 		this.modelTicketActualEmpleado.clear();
 		this.modelTicketActualEmpleado.addElement(c.RecuperaTicketEmpleado());
+		setCambiarEstadoTicketEmpleado(true);
 	}
 	
 	public void ActualizarListaTicketActualEmpleador() {
 		this.modelTicketActualEmpleador.clear();
 		this.modelTicketActualEmpleador.addElement(c.RecuperaTicketEmpleador());
+		setCambiarEstadoTicketEmpleador(true);
 	}
 	
 	
@@ -2150,10 +2158,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 						setBtnConfirmacionCreacionUsuario(hab2);
 			
 					} else 
-						if (e.getSource() == textFieldPesoCargaHoraria || e.getSource() == textFieldPesoLocacion || e.getSource() == textFieldPesoRemuneracion || e.getSource() == textFieldPesoTipoDePuesto) {
+						if (e.getSource() == textFieldPesoCargaHoraria || e.getSource() == textFieldPesoLocacion || e.getSource() == textFieldPesoRemuneracion || e.getSource() == textFieldPesoTipoDePuesto || 
+						e.getSource() == textFieldRemuneracion) {
 
 							boolean hab3 = !(textFieldPesoCargaHoraria.getText().isEmpty() || textFieldPesoLocacion.getText().isEmpty()
-								|| textFieldPesoRemuneracion.getText().isEmpty() || textFieldPesoTipoDePuesto.getText().isEmpty());
+								|| textFieldPesoRemuneracion.getText().isEmpty() || textFieldPesoTipoDePuesto.getText().isEmpty() || textFieldRemuneracion.getText().isEmpty());
+							setBtnConfirmarCreacionTicket(hab3);
 						} else 
 							if (e.getSource() == textFieldUsuarioEmpleador || e.getSource() == textFieldContraseniaEmpleador) {
 					
