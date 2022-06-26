@@ -144,7 +144,7 @@ public class Empleado extends Usuario implements Runnable {
 		
 		this.empleadorSeleccionado = elegido;
 		this.empleadorSeleccionado.setPuntaje(getPuntaje() + 10); //Suma 10 puntos por estar primero en la lista
-		
+		this.setYaEligioEmpleador(true);
 	}
 
 	@Override

@@ -147,7 +147,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		}
 		
 		this.cantidadEmpleadosSeleccionados = i;
-
+		this.setYaEligioEmpleados(true);
 	}
 
 	public void crearTicket(String locacion, int pesoLocacion, double remuneracion, int pesoRemuneracion, String cargaHoraria, int pesoCargaHoraria,
