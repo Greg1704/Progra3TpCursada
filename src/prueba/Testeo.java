@@ -71,19 +71,19 @@ public class Testeo {
 		e1.setLocacionSimp("Presencial");
 		e2.setLocacionSimp("Presencial");
 		e3.setLocacionSimp("Presencial");
-		e4.setLocacionSimp("HomeOffice");
+		e4.setLocacionSimp("Presencial");
 		e5.setLocacionSimp("Presencial");
 		e6.setLocacionSimp("Presencial");
 		e7.setLocacionSimp("HomeOffice");
-		e8.setLocacionSimp("Indistinto");
+		e8.setLocacionSimp("Presencial");
 		e1.setTipoTrabajoSimp("Salud");
 		e2.setTipoTrabajoSimp("ComercioLocal");
-		e3.setTipoTrabajoSimp("ComercioInternacional");
+		e3.setTipoTrabajoSimp("ComercioLocal");
 		e4.setTipoTrabajoSimp("Salud");
 		e5.setTipoTrabajoSimp("ComercioLocal");
 		e6.setTipoTrabajoSimp("ComercioInternacional");
-		e7.setTipoTrabajoSimp("ComercioLocal");
-		e8.setTipoTrabajoSimp("Salud");
+		e7.setTipoTrabajoSimp("Salud");
+		e8.setTipoTrabajoSimp("ComercioLocal");
 		
 
 		em1.crearTicketSimplificado("Presencial", "ComercioLocal");
@@ -92,10 +92,10 @@ public class Testeo {
 		em2.crearTicketSimplificado("HomeOffice", "Salud");	
 		em1.crearTicketSimplificado("Presencial", "ComercioLocal");	
 		
-		new Thread(e1).start();
-		//new Thread(e2).start();
+		//new Thread(e1).start();
+		new Thread(e2).start();
 		new Thread(e3).start();
-		new Thread(e4).start();
+		//new Thread(e4).start();
 		new Thread(e5).start();
 		new Thread(e6).start();
 		new Thread(e7).start();

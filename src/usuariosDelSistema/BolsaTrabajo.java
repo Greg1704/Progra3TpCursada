@@ -21,12 +21,24 @@ public class BolsaTrabajo {
 	
 	
 	public void agregaTicket(TicketSimplificado t) {
-		this.tickets.add(t);
+		int j;
+		
+		j = this.tickets.size();
+		if(j == 0) {
+			this.tickets.add(0,t);
+		}else {
+			this.tickets.add(j-1,t);
+		}
+		
+		
 	}
 	
 	
 	public TicketSimplificado tomaTicket(int i) {
-		return this.tickets.remove(i);	
+		TicketSimplificado tomado;
+		tomado = this.tickets.get(i);
+		this.tickets.remove(i);
+		return tomado;	
 	}
 
 	public void setUsaLista(boolean usaLista) {
@@ -43,6 +55,7 @@ public class BolsaTrabajo {
         }
         
         this.usaLista = true;
+        System.out.println(this.tickets.size());
         
         if (this.tickets.size() != 0) {
 	        
@@ -53,8 +66,8 @@ public class BolsaTrabajo {
         
         	if (i < tickets.size()) {
         		this.usaLista = false;
-        		notifyAll();
-        		return tickets.get(i);
+        		notifyAll();		
+        		return this.tomaTicket(i);
         	}
         	else {
         		this.usaLista = false;
@@ -88,8 +101,5 @@ public class BolsaTrabajo {
 	public ArrayList<TicketSimplificado> getTickets() {
 		return tickets;
 	}
-	
-	
-	
-	
+
 }

@@ -193,8 +193,8 @@ public class Empleado extends Usuario implements Runnable {
 
 	@Override
 	public String toString() {
-		return "Empleado [nya=" + nya + ", dni=" + dni + ", telefono=" + telefono + ", edad=" + edad + ", ciudad="
-				+ ciudad + "]";
+		return "Nombre y apellido: " + nya + ", DNI: " + dni + ", telefono: " + telefono + ", edad: " + edad + ", ciudad: "
+				+ ciudad;
 	}
 
 	@Override
@@ -224,9 +224,12 @@ public class Empleado extends Usuario implements Runnable {
 				//System.out.println(this.getNya()+" se queda con ticket AAAAAAAAAAAAAAAAAAAA");	
 				
 			}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
-				System.out.println(this.getNya()+" no encontro ticket");
+				//System.out.println(this.getNya()+" no encontro ticketBBBBBBBBBBBBBBBB");
 				BolsaTrabajo.getInstancia().devolverTicket(this,t);	
 			}
+		}
+		else {
+			//System.out.println(this.nya +" no encontro tickets en la bolsa");
 		}
 
 	} //podemos hacerlo string y que despues de la llamada retorne el string que corresponda a la situacion
