@@ -184,6 +184,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		//Consultar con Grego o Manu
 		
 		this.quitaObservable((TicketSimplificado) o);
+		
 	}
 	
 	
