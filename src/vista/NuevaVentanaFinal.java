@@ -1267,8 +1267,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				this.textFieldCrearAgencia.addKeyListener(this);
 
 				this.btnConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
-				this.btnRondaEncuentro.setActionCommand(arrrancaRondaDeEncuentro);
-				this.btnRondaContraciones.setActionCommand(arrrancaRondaDeContrataciones);
+				this.btnRondaEncuentro.setActionCommand(arrancaRondaDeEncuentro);
+				this.btnRondaContraciones.setActionCommand(arrancaRondaDeContrataciones);
+				this.btnBolsaDeTrabajo.setActionCommand(arrancaRondaDeContrataciones);
 
 				this.btnConfirmarNombreAgencia.addActionListener(c);
 				this.btnRondaEncuentro.addActionListener(c);
@@ -2037,6 +2038,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				ActualizarListaTicketActualEmpleado();
 				if(c.checkRondaEncuentroHecha())
 					ActualizarListaRondaEleccionesEmpleado();
+				if (c.empleadoYaEligio)) { // el else viene por defecto
+					setBtnConfirmacionEleccionEmpleado(false);
+					listRondaEleccionesEmpleado.setEnabled(false);
+				}
 			}
 	}
 	
@@ -2076,6 +2081,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			if (hab) {
 				if(c.checkRondaEncuentroHecha())
 					ActualizarListaRondaEleccionesEmpleador();
+				if (c.empleadorYaEligio()) {
+					setBtnConfirmacionEleccionEmpleador(false);
+					listRondaEleccionesEmpleador.setEnabled(false);
+				}
 				ActualizarListaTicketActualEmpleador();
 				ActualizarListaTicketSimpEmpleadores();
 			}

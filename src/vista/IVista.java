@@ -7,8 +7,9 @@ public interface IVista {
 	// botones de ventana agencia
 	
 	static final String confirmaCreacionAgencia = "Confirmar creacion de agencia";
-	static final String arrrancaRondaDeEncuentro= "Arranca ronda de encuentro";
-	static final String arrrancaRondaDeContrataciones= "Arranca ronda de contrataciones";
+	static final String arrancaRondaDeEncuentro = "Arranca ronda de encuentro";
+	static final String arrancaRondaDeContrataciones= "Arranca ronda de contrataciones";
+	static final String arrancaBolsaDeTrabajo = "Arranca bolsa de trabajo";
 	
 	// botones de ventana empleado
 	

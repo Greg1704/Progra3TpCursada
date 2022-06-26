@@ -69,8 +69,8 @@ public class Controlador implements ActionListener {
 				sistema.rondaDeContrataciones();
 				
 		}else
-			if(e.getActionCommand().equals(IVista.arrrancaRondaDeContrataciones)){  //ESTO TIENE QUE SER CAMBIADO POR BOLSA DU TRBAJO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-					v.ActualizarBolsaTicketsSimp();
+			if(e.getActionCommand().equals(IVista.arrancaBolsaDeTrabajo)){  //ESTO TIENE QUE SER CAMBIADO POR BOLSA DU TRBAJO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+					//v.ActualizarBolsaTicketsSimp();
 					for(int i=0;i<sistema.getEmpleadosPretensos().size();i++) {
 						new Thread(sistema.getEmpleadosPretensos().get(i)).start();
 					}

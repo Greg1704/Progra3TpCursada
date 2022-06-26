@@ -20,6 +20,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	private transient ArrayList<TicketSimplificado> observables=new ArrayList<TicketSimplificado>();
 	private int cantObservados;
 	private int contador = 0;
+	private boolean yaEligioEmpleados;
 
 	public Empleador(String usuario, String contrasenia, String nombre,String rubro) {
 		super(usuario, contrasenia);
