@@ -20,6 +20,9 @@ public class Testeo {
 		Empleado e3;
 		Empleado e4;
 		Empleado e5;
+		Empleado e6;
+		Empleado e7;
+		Empleado e8;
 
 		EmpleadorJuridico em1;
 		EmpleadorFisico em2;
@@ -43,6 +46,10 @@ public class Testeo {
 		e5 = new Empleado("DarthVader78","YoSoyTuPadre","Cacho Enriquez","32456765",482565,42,"Mar Del Plata");
 		e5.crearTicket("Indistinto",1,45000,1,"Media",1,"Junior",1,25,1,"Media",1,"Secundario",1);
 
+		e6 = new Empleado("DarthVader78","YoSoyTuPadre","tuvieja","32456765",482565,42,"Mar Del Plata");
+		e7 = new Empleado("DarthVader78","YoSoyTuPadre","ernesto","32456765",482565,42,"Mar Del Plata");
+		e8 = new Empleado("DarthVader78","YoSoyTuPadre","pepe","32456765",482565,42,"Mar Del Plata");
+		
 		em1 = new EmpleadorJuridico("CocaCola Inc","PepsiNoExistis","Coca Cola Incorporation","ComercioInternacional");
 		em1.crearTicket("Presencial",10,125000,1,"Extendida",5,"Managment",5,30,1,"Mucha",10,"Terciario",10,3);
 
@@ -66,24 +73,33 @@ public class Testeo {
 		e3.setLocacionSimp("Presencial");
 		e4.setLocacionSimp("HomeOffice");
 		e5.setLocacionSimp("Presencial");
+		e6.setLocacionSimp("Presencial");
+		e7.setLocacionSimp("HomeOffice");
+		e8.setLocacionSimp("Indistinto");
 		e1.setTipoTrabajoSimp("Salud");
 		e2.setTipoTrabajoSimp("ComercioLocal");
 		e3.setTipoTrabajoSimp("ComercioInternacional");
 		e4.setTipoTrabajoSimp("Salud");
 		e5.setTipoTrabajoSimp("ComercioLocal");
+		e6.setTipoTrabajoSimp("ComercioInternacional");
+		e7.setTipoTrabajoSimp("ComercioLocal");
+		e8.setTipoTrabajoSimp("Salud");
 		
 
 		em1.crearTicketSimplificado("Presencial", "ComercioLocal");
-		em2.crearTicketSimplificado("HomeOffice", "Salud");
-		em3.crearTicketSimplificado("Presencial", "ComercioInternacional");	
-		//em2.crearTicketSimplificado("HomeOffice", "Salud");	
-		//em1.crearTicketSimplificado("Presencial", "ComercioLocal");	
+		em2.crearTicketSimplificado("Presencial", "Salud");
+		em3.crearTicketSimplificado("Presencial", "ComercioLocal");	
+		em2.crearTicketSimplificado("HomeOffice", "Salud");	
+		em1.crearTicketSimplificado("Presencial", "ComercioLocal");	
 		
 		new Thread(e1).start();
-		new Thread(e2).start();
+		//new Thread(e2).start();
 		new Thread(e3).start();
 		new Thread(e4).start();
 		new Thread(e5).start();
+		new Thread(e6).start();
+		new Thread(e7).start();
+		new Thread(e8).start();
 		
 		
 		/*agencia.busquedaLaboral();

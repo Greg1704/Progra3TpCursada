@@ -34,37 +34,55 @@ public class BolsaTrabajo {
 	}
 
 	
-	public synchronized void sacarTicket(Empleado empleado) {
+	public synchronized TicketSimplificado sacarTicket(Empleado empleado) {
 		
         while (this.usaLista == true) {
             try {
-                System.out.println(empleado.getNya()+"espera");
                 wait();
             }catch(InterruptedException e) {}
         }
         
         this.usaLista = true;
-		
-		empleado.eleccionTicketSimp(this.tickets);
-		
-		this.usaLista = false;
-		notifyAll();
+        
+        if (this.tickets.size() != 0) {
+	        
+        	i = 0;		
+        	while (i < tickets.size() &&  this.tickets.get(i).getTipoDeTrabajo().equalsIgnoreCase(empleado.getTipoTrabajoSimp())){
+        		i++;
+        	} 
+        
+        	if (i < tickets.size()) {
+        		this.usaLista = false;
+        		notifyAll();
+        		return tickets.get(i);
+        	}
+        	else {
+        		this.usaLista = false;
+        		notifyAll();
+        		return null;
+        	}
+        }
+        else {
+        	this.usaLista = false;
+    		notifyAll();
+    		return null;
+        }
+
     }	
 	
 	
 	public synchronized void devolverTicket(Empleado empleado,TicketSimplificado t) {
 		while (this.usaLista == true) {
 			try {	
-				System.out.println(empleado.getNya()+" espera2");
 				wait();
-			}catch(InterruptedException e) {}
-			
+			}catch(InterruptedException e) {}	
 		}
 		
 		this.usaLista = true;
 		this.agregaTicket(t);
 		this.usaLista = false;
 		notifyAll();
+		
 	}
 
 	public ArrayList<TicketSimplificado> getTickets() {
