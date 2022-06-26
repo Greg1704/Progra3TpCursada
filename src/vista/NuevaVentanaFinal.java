@@ -1269,11 +1269,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				this.btnConfirmarNombreAgencia.setActionCommand(confirmaCreacionAgencia);
 				this.btnRondaEncuentro.setActionCommand(arrancaRondaDeEncuentro);
 				this.btnRondaContraciones.setActionCommand(arrancaRondaDeContrataciones);
-				this.btnBolsaDeTrabajo.setActionCommand(arrancaRondaDeContrataciones);
+				this.btnBolsaDeTrabajo.setActionCommand(arrancaBolsaDeTrabajo);
 
 				this.btnConfirmarNombreAgencia.addActionListener(c);
 				this.btnRondaEncuentro.addActionListener(c);
 				this.btnRondaContraciones.addActionListener(c);
+				this.btnBolsaDeTrabajo.addActionListener(c);
+				
 				this.btnConfirmarNombreAgencia.addMouseListener(this);
 				this.btnRondaEncuentro.addMouseListener(this);
 				this.btnRondaContraciones.addMouseListener(this);
@@ -1468,6 +1470,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				
 				EmpleadoLogeado(false);
 				EmpleadorLogeado(false);
+				
 			}
 	
 	public void setControlador(Controlador c) {
