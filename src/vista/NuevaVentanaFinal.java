@@ -1330,11 +1330,13 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				this.btnConfirmacionCreacionUsuario.setActionCommand(confirmaCreacionUsuario);
 				this.btnConfirmacionCreacionTicket.setActionCommand(confirmaCreacionTicket);
 				this.btnConfirmacionEleccionEmpleado.setActionCommand(confirmaEleccionEmpleado);
+				this.btnCambiarEstado.setActionCommand(confirmaEstadoTicket);
 
 				this.btnConfirmarLogin.addActionListener(c);
 				this.btnConfirmacionCreacionUsuario.addActionListener(c);
 				this.btnConfirmacionCreacionTicket.addActionListener(c);
 				this.btnConfirmacionEleccionEmpleado.addActionListener(c);
+				this.btnCambiarEstado.addActionListener(c);
 				
 				this.btnConfirmarLogin.addMouseListener(this);
 				this.btnConfirmacionCreacionUsuario.addMouseListener(this);
@@ -2280,48 +2282,56 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 						setComboBoxTipoDePuesto();
 						setBtnConfirmarCreacionTicket(false);
 					} else
-						if (e.getSource()==btnConfirmarLoginEmpleador && btnConfirmarLoginEmpleador.isEnabled()) {
-							setTextFieldUsuarioEmpleador("");
-							setTextFieldContraseniaEmpleador("");
-							setBtnConfirmarLoginEmpleador(false);
+						if (e.getSource() == btnConfirmacionEleccionEmpleado && btnConfirmacionEleccionEmpleado.isEnabled()) {
+							setBtnConfirmacionEleccionEmpleado(false);
+							listRondaEleccionesEmpleado.setEnabled(false);
 						} else
-							if (e.getSource()==btnConfirmacionCreacionUsuarioEmpleador && btnConfirmacionCreacionUsuarioEmpleador.isEnabled()) {
-								setTextFieldCreacionUsuarioEmpleador("");
-								setTextFieldCreacionContraseniaEmpleador("");
-								setTextFieldCreacionNombreEmpleador("");
-								setComboBoxTipoPersonaEmpleador();
-								setComboBoxRubroEmpleador();
-								setBtnConfirmacionCreacionUsuarioEmpleador(false);
+							if (e.getSource()==btnConfirmarLoginEmpleador && btnConfirmarLoginEmpleador.isEnabled()) {
+								setTextFieldUsuarioEmpleador("");
+								setTextFieldContraseniaEmpleador("");
+								setBtnConfirmarLoginEmpleador(false);
 							} else
-								if (e.getSource()==btnConfirmacionCreacionTicketEmpleador && btnConfirmacionCreacionTicketEmpleador.isEnabled()) {
-									setTextFieldPesoCargaHorariaEmpleador("");
-									setTextFieldPesoEstudiosCursadosEmpleador("");
-									setTextFieldPesoExpPreviaEmpleador("");
-									setTextFieldPesoLocacionEmpleador("");
-									setTextFieldPesoRangoEtarioEmpleador("");
-									setTextFieldPesoRemuneracionEmpleador("");
-									setTextFieldPesoTipoDePuestoEmpleador("");
-									setTextFieldRemuneracionEmpleador("");
-									setTextFieldCantEmpleadosBuscados("");
-									setComboBoxLocacionEmpleador();
-									setComboBoxCargaHorariaEmpleador();
-									setComboBoxTipoDePuestoEmpleador();
-									setComboBoxEstudiosCursadosEmpleador();
-									setComboBoxExperienciaPreviaEmpleador();
-									setComboBoxRangoEtarioEmpleador();
-									setBtnConfirmarCreacionTicketEmpleador(false);
+								if (e.getSource()==btnConfirmacionCreacionUsuarioEmpleador && btnConfirmacionCreacionUsuarioEmpleador.isEnabled()) {
+									setTextFieldCreacionUsuarioEmpleador("");
+									setTextFieldCreacionContraseniaEmpleador("");
+									setTextFieldCreacionNombreEmpleador("");
+									setComboBoxTipoPersonaEmpleador();
+									setComboBoxRubroEmpleador();
+									setBtnConfirmacionCreacionUsuarioEmpleador(false);
 								} else
-									if (e.getSource()==btnCrearTicketSimplificado && btnCrearTicketSimplificado.isEnabled()) {
-										setComboBoxBolsaTipoTrabajoEmpleador();
-										setComboBoxBolsaLocacionEmpleador();
+									if (e.getSource()==btnConfirmacionCreacionTicketEmpleador && btnConfirmacionCreacionTicketEmpleador.isEnabled()) {
+										setTextFieldPesoCargaHorariaEmpleador("");
+										setTextFieldPesoEstudiosCursadosEmpleador("");
+										setTextFieldPesoExpPreviaEmpleador("");
+										setTextFieldPesoLocacionEmpleador("");
+										setTextFieldPesoRangoEtarioEmpleador("");
+										setTextFieldPesoRemuneracionEmpleador("");
+										setTextFieldPesoTipoDePuestoEmpleador("");
+										setTextFieldRemuneracionEmpleador("");
+										setTextFieldCantEmpleadosBuscados("");
+										setComboBoxLocacionEmpleador();
+										setComboBoxCargaHorariaEmpleador();
+										setComboBoxTipoDePuestoEmpleador();
+										setComboBoxEstudiosCursadosEmpleador();
+										setComboBoxExperienciaPreviaEmpleador();
+										setComboBoxRangoEtarioEmpleador();
+										setBtnConfirmarCreacionTicketEmpleador(false);
 									} else
-										if (e.getSource() == btnRondaEncuentro && btnRondaEncuentro.isEnabled()) {
-											setBtnRondaEncuentro(false);
-											setBtnRondaContraciones(true);
+										if (e.getSource()==btnCrearTicketSimplificado && btnCrearTicketSimplificado.isEnabled()) {
+											setComboBoxBolsaTipoTrabajoEmpleador();
+											setComboBoxBolsaLocacionEmpleador();
 										} else
-											if (e.getSource() == btnRondaContraciones && btnRondaContraciones.isEnabled()) {
-												setBtnRondaContraciones(false);
-												setBtnRondaEncuentro(true);				
+											if (e.getSource() == btnConfirmacionEleccionEmpleador && btnConfirmacionEleccionEmpleador.isEnabled()) {
+												setBtnConfirmacionEleccionEmpleador(false);
+												listRondaEleccionesEmpleador.setEnabled(false);
+											}
+											if (e.getSource() == btnRondaEncuentro && btnRondaEncuentro.isEnabled()) {
+												setBtnRondaEncuentro(false);
+												setBtnRondaContraciones(true);
+											} else
+												if (e.getSource() == btnRondaContraciones && btnRondaContraciones.isEnabled()) {
+													setBtnRondaContraciones(false);
+													setBtnRondaEncuentro(true);				
 											}
 	}
 

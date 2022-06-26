@@ -115,12 +115,19 @@ public class Controlador implements ActionListener {
 						v.ActualizarListaTicketActualEmpleado();
 				}else
 					if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
-						if(v.getRdbtnActivo()) 
+						System.out.println("entra aca");
+						if(v.getRdbtnActivo()) {
 							JOptionPane.showMessageDialog(null,empleado.getTicket().activa());
-						else if(v.getRdbtnSuspendido())
+							v.ActualizarListaTicketActualEmpleado();
+						}
+						else if(v.getRdbtnSuspendido()) {
 							JOptionPane.showMessageDialog(null,empleado.getTicket().suspende());
-						else if(v.getRdbtnCancelar()) 
+							v.ActualizarListaTicketActualEmpleado();
+						}
+						else if(v.getRdbtnCancelar())  {
 							JOptionPane.showMessageDialog(null,empleado.getTicket().cancela());
+							v.ActualizarListaTicketActualEmpleado();
+						}
 							
 						//Creo que nada mas
 				}else
@@ -169,12 +176,18 @@ public class Controlador implements ActionListener {
 							v.ActualizarListaTicketActualEmpleador();
 					}else
 						if(e.getActionCommand().equals(IVista.confirmaCambioEstadoEmpleador)) {
-							if(v.getRdbtnActivo()) 
+							if(v.getRdbtnActivo()) {
 								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().activa());
-							else if(v.getRdbtnSuspendido())
+								v.ActualizarListaTicketActualEmpleador();
+							}
+							else if(v.getRdbtnSuspendido()) {
 								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().suspende());
-							else if(v.getRdbtnCancelar()) 
+								v.ActualizarListaTicketActualEmpleador();
+							}
+							else if(v.getRdbtnCancelar()) {
 								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().cancela());
+								v.ActualizarListaTicketActualEmpleador();
+							}
 					}else
 						if(e.getActionCommand().equals(IVista.confirmacionEleccionEmpleador)) {
 							empleador.rondaElecciones(v.getListRondaEleccionesEmpleador());
