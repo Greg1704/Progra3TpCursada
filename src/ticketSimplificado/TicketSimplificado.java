@@ -33,7 +33,7 @@ public class TicketSimplificado extends Observable{
       this.empleadoContratado = empleadoContratado;
       this.contratado = true;
       setChanged();
-      notifyObservers();
+      notifyObservers(empleadoContratado);
    }
 
    @SuppressWarnings("deprecation")

@@ -310,6 +310,10 @@ public class Controlador implements ActionListener {
     public void agregarTextoBolsaSimulacion(String mensaje) {
     	v.ActualizarTextAreaBolsaSimulacion(mensaje);
     }
+    
+    public void agregarTextoBolsaContratacion(String mensaje) {
+    	v.ActualizarTextAreaBolsaContratacion(mensaje);
+    }
 
     public void setearNombreAgencia(String nombre) {
     	v.setLbLAgenciaCreadaNombre(nombre);

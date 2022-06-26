@@ -2215,6 +2215,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		textAreaSimulacionThreads.append(mensaje); 
 	}
 	
+	public void ActualizarTextAreaBolsaContratacion(String mensaje) {  
+		this.textAreaContratacionesBolsaTrabajo.append(mensaje); 
+	}
+	
 	public void cambiaTabPanel(int i) {
 		this.tabbedPane.setSelectedIndex(i);
 	}

@@ -8,6 +8,7 @@ import java.util.Observer;
 import javax.swing.JOptionPane;
 
 import armaTickets.TicketEmpleador;
+import controlador.Controlador;
 import excepciones.*;
 import ticketSimplificado.TicketSimplificado;
 
@@ -172,17 +173,20 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	}
 
 	@Override
-	public void update(Observable o, Object arg) { // aca va a entrar si se eligio un ticket
-		//Se deberia ejecutar cuando el empleado se apropia del ticket
-		//El Object seria el empleado, se usaria este update para hacer los cambios en el empleado y el empleador
-		//Consultar con Grego o Manu
-		
+	public void update(Observable o, Object arg) { // aca va a entrar si un empleado eligio un ticket simplificado
+		TicketSimplificado ticket= (TicketSimplificado) o;
+		Empleado empleado = (Empleado) arg;
+		mensajeContratacionBolsa(empleado.getNya() + " fue contratado por " + this.getNombre() + "\n");
 		this.quitaObservable((TicketSimplificado) o);
 		
 	}
 
 	public ArrayList<TicketSimplificado> getObservables() {
 		return observables;
+	}
+	
+	public void mensajeContratacionBolsa(String mensaje) {
+		Controlador.getInstancia().agregarTextoBolsaContratacion(mensaje);
 	}
 
 	@Override
