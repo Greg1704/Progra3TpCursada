@@ -175,15 +175,15 @@ public class Controlador implements ActionListener {
 							v.ActualizarListaTicketActualEmpleador();
 					}else
 						if(e.getActionCommand().equals(IVista.confirmaCambioEstadoEmpleador)) {
-							if(v.getRdbtnActivo()) {
+							if(v.getRdbtnActivoEmpleador()) {
 								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().activa());
 								v.ActualizarListaTicketActualEmpleador();
 							}
-							else if(v.getRdbtnSuspendido()) {
+							else if(v.getRdbtnSuspendidoEmpleador()) {
 								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().suspende());
 								v.ActualizarListaTicketActualEmpleador();
 							}
-							else if(v.getRdbtnCancelar()) {
+							else if(v.getRdbtnCancelarEmpleador()) {
 								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().cancela());
 								v.ActualizarListaTicketActualEmpleador();
 							}
