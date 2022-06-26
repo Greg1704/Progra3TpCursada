@@ -11,6 +11,8 @@ import armaTickets.TicketEmpleador;
 import encuentro.ListaAsignaciones;
 import excepciones.AtributoInvalidoException;
 import excepciones.ContraseniaIncorrectaException;
+import excepciones.ListaVaciaException;
+import excepciones.NingunActivoException;
 import excepciones.UsuarioIncorrectoException;
 import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.BolsaTrabajo;
@@ -58,11 +60,17 @@ public class Controlador implements ActionListener {
 			v.setBtnConfirmarNombreAgencia(false);
 		} else
 			if (e.getActionCommand().equals(IVista.arrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
-				sistema.busquedaLaboral();
-				if(empleado != null)
-					v.ActualizarListaRondaEleccionesEmpleado();
-				if(empleador != null)
-					v.ActualizarListaRondaEleccionesEmpleador();
+				try {
+					sistema.busquedaLaboral();
+					if(empleado != null)
+						v.ActualizarListaRondaEleccionesEmpleado();
+					if(empleador != null)
+						v.ActualizarListaRondaEleccionesEmpleador();
+				} catch (NingunActivoException e1) {
+					JOptionPane.showMessageDialog(v, e1);
+				} catch (ListaVaciaException e1) {
+					JOptionPane.showMessageDialog(v, e1);
+				}
 				
 		}else
 			if(e.getActionCommand().equals(IVista.arrancaRondaDeContrataciones)) { //HACER PARTE VENTANA

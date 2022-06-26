@@ -2,6 +2,8 @@ package usuariosDelSistema;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import controlador.Controlador;
 import encuentro.RondaEncuentros;
 import excepciones.ContraseniaIncorrectaException;
@@ -290,17 +292,11 @@ public class Sistema{
 	 * 
 	 */
 
-	public void busquedaLaboral() {
-		try {
+	public void busquedaLaboral() throws NingunActivoException,ListaVaciaException {
 			verificaActivos();
 			this.llamaRondaEncuentros();
 			this.encuentroHecho=true;
-		} catch (NingunActivoException e) {
-			System.out.println(e.getMessage());
-		} catch (ListaVaciaException e) {
-			System.out.println(e.getMessage());
-		} //tienen que retornar algo, esta funcion puede ser string, por el hecho de que no puede haber syso en modelo
-
+		 
 	}
 
 	/**

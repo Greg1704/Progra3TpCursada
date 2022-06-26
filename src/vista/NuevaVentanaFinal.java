@@ -2032,8 +2032,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			setTextFieldPesoLocacion("");
 			setTextFieldPesoRemuneracion("");
 			setTextFieldPesoTipoDePuesto("");
-			setTextFieldRemuneracion("");
-			
+			setTextFieldRemuneracion("");//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 			listTicketActual.setEnabled(hab);
 			listTicketSimpObtenido.setEnabled(hab);
 			
@@ -2112,6 +2111,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	}
 	
 	public void ActualizarListaTicketActualEmpleado() {
+		this.listTicketActual.setEnabled(true);
 		this.modelTicketActualEmpleado.clear();
 		this.modelTicketActualEmpleado.addElement(c.RecuperaTicketEmpleado());
 		setCambiarEstadoTicketEmpleado(true);
