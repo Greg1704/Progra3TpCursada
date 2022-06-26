@@ -111,8 +111,9 @@ public class Controlador implements ActionListener {
 						
 						Empleado empleado1 = new Empleado(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionContrasenia(), v.getTextFieldCreacionNyA(), v.getTextFieldCreacionDNI(), 
 								  v.getTextFieldCreacionTelefono(), v.getTextFieldCreacionEdad(), v.getTextFieldCreacionCiudad());
-						//Cambiar getTextFieldCreacionTelefono() a Integer
 						
+						empleado1.setTipoTrabajoSimp(v.getComboBoxBolsaTipoTrabajo());
+						empleado1.setLocacionSimp(v.getComboBoxBolsaLocacion());
 						sistema.agregaEmpleado(empleado1);
 						v.ActualizarListaEmpleados();
 					 
@@ -123,22 +124,25 @@ public class Controlador implements ActionListener {
 						empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPesoRemuneracion(), 
 							v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , empleado.getEdad(), 1, 
 							v.getComboBoxExperienciaPrevia(), 1, v.getComboBoxEstudiosCursados(), 1);
+						
 							
 						v.ActualizarListaTicketActualEmpleado();
 				}else
 					if(e.getActionCommand().equals(IVista.confirmaEstadoTicket)) {
-						if(v.getRdbtnActivo()) {
-							JOptionPane.showMessageDialog(null,empleado.getTicket().activa());
-							v.ActualizarListaTicketActualEmpleado();
-						}
-						else if(v.getRdbtnSuspendido()) {
-							JOptionPane.showMessageDialog(null,empleado.getTicket().suspende());
-							v.ActualizarListaTicketActualEmpleado();
-						}
-						else if(v.getRdbtnCancelar())  {
-							JOptionPane.showMessageDialog(null,empleado.getTicket().cancela());
-							v.ActualizarListaTicketActualEmpleado();
-						}
+						
+						if(this.RecuperaTicketEmpleado() != null)
+							if(v.getRdbtnActivo()) {
+								JOptionPane.showMessageDialog(null,empleado.getTicket().activa());
+								v.ActualizarListaTicketActualEmpleado();
+							}
+							else if(v.getRdbtnSuspendido()) {
+								JOptionPane.showMessageDialog(null,empleado.getTicket().suspende());
+								v.ActualizarListaTicketActualEmpleado();
+							}
+							else if(v.getRdbtnCancelar())  {
+								JOptionPane.showMessageDialog(null,empleado.getTicket().cancela());
+								v.ActualizarListaTicketActualEmpleado();
+							}
 							
 						//Creo que nada mas
 				}else
@@ -187,18 +191,19 @@ public class Controlador implements ActionListener {
 							v.ActualizarListaTicketActualEmpleador();
 					}else
 						if(e.getActionCommand().equals(IVista.confirmaCambioEstadoEmpleador)) {
-							if(v.getRdbtnActivoEmpleador()) {
-								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().activa());
-								v.ActualizarListaTicketActualEmpleador();
-							}
-							else if(v.getRdbtnSuspendidoEmpleador()) {
-								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().suspende());
-								v.ActualizarListaTicketActualEmpleador();
-							}
-							else if(v.getRdbtnCancelarEmpleador()) {
-								JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().cancela());
-								v.ActualizarListaTicketActualEmpleador();
-							}
+							if(RecuperaTicketEmpleador() != null)
+								if(v.getRdbtnActivoEmpleador()) {
+									JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().activa());
+									v.ActualizarListaTicketActualEmpleador();
+								}
+								else if(v.getRdbtnSuspendidoEmpleador()) {
+									JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().suspende());
+									v.ActualizarListaTicketActualEmpleador();
+								}
+								else if(v.getRdbtnCancelarEmpleador()) {
+									JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().cancela());
+									v.ActualizarListaTicketActualEmpleador();
+								}
 					}else
 						if(e.getActionCommand().equals(IVista.confirmacionEleccionEmpleador)) {
 							empleador.rondaElecciones(v.getListRondaEleccionesEmpleador());
@@ -271,6 +276,10 @@ public class Controlador implements ActionListener {
     
     public void agregarTextoContrataciones(String mensaje) {
     	v.ActualizarTextAreaContrataciones(mensaje);
+    }
+    
+    public void agregarTextoBolsaSimulacion(String mensaje) {
+    	v.ActualizarTextAreaBolsaSimulacion(mensaje);
     }
 
 }

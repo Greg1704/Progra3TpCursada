@@ -3,6 +3,7 @@ package usuariosDelSistema;
 import armaTickets.TicketEmpleado;
 import calculosAspectosLaborales.I_Locacion;
 import calculosAspectosLaborales.LocacionFactory;
+import controlador.Controlador;
 import excepciones.AtributoInvalidoException;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.FormularioInvalidoException;
@@ -229,18 +230,23 @@ public class Empleado extends Usuario implements Runnable {
 			if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
 				this.ticketSimpElegido = t;
 				t.setEmpleadoContratado(this);
-				System.out.println(this.getNya()+" se queda con ticket AAAAAAAAAAAAAAAAAAAA");	
+				//System.out.println(this.getNya()+" se queda con ticket AAAAAAAAAAAAAAAAAAAA");	
+				mandaStringBolsa(this.getNya()+" se queda con el ticket \n");
 				
 			}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
-				System.out.println(this.getNya()+" no encontro ticketBBBBBBBBBBBBBBBB");
+				//System.out.println(this.getNya()+" no encontro ticketBBBBBBBBBBBBBBBB");
+				mandaStringBolsa(this.getNya()+" devuelve ticket ya que no coincide la locacion\n");
 				BolsaTrabajo.getInstancia().devolverTicket(this,t);	
 			}
 		}
 		else {
-			System.out.println(this.nya +" no encontro tickets en la bolsa");
+			//System.out.println(this.nya +" no encontro tickets en la bolsa");
+			mandaStringBolsa(this.nya +" no encontro tickets en la bolsa\n");
 		}
 
 	} //podemos hacerlo string y que despues de la llamada retorne el string que corresponda a la situacion
 
-
+	public void mandaStringBolsa(String mensaje) {
+		Controlador.getInstancia().agregarTextoBolsaSimulacion(mensaje);
+	}
 }

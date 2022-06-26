@@ -2117,13 +2117,17 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	public void ActualizarListaTicketActualEmpleado() {
 		this.listTicketActual.setEnabled(true);
 		this.modelTicketActualEmpleado.clear();
-		this.modelTicketActualEmpleado.addElement(c.RecuperaTicketEmpleado());
+		TicketEmpleado it =  c.RecuperaTicketEmpleado();
+		if(it != null)
+			this.modelTicketActualEmpleado.addElement(c.RecuperaTicketEmpleado());
 		setCambiarEstadoTicketEmpleado(true);
 	}
 	
 	public void ActualizarListaTicketActualEmpleador() {
 		this.modelTicketActualEmpleador.clear();
-		this.modelTicketActualEmpleador.addElement(c.RecuperaTicketEmpleador());
+		TicketEmpleador it =  c.RecuperaTicketEmpleador();
+		if(it != null)
+			this.modelTicketActualEmpleador.addElement(c.RecuperaTicketEmpleador());
 		setCambiarEstadoTicketEmpleador(true);
 	}
 	
@@ -2176,6 +2180,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		textAreaContrataciones.append(mensaje); 
 	}
 	
+	public void ActualizarTextAreaBolsaSimulacion(String mensaje) {  
+		textAreaContrataciones.append(mensaje); 
+	}
 	
 	
 	//pensamiento propio: desde ventana mandamos el empleador que seleccionamos al controlador, y este "une" al empleado con su empleador
