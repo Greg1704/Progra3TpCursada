@@ -131,6 +131,7 @@ public class Controlador implements ActionListener {
 						empleado1.setLocacionSimp(v.getComboBoxBolsaLocacion());
 						try {
 							sistema.agregaEmpleado(empleado1);
+							JOptionPane.showMessageDialog(null, "Se ha creado el empleado");
 						} catch (UsuarioDuplicadoException e1) {
 							JOptionPane.showMessageDialog(null,e1);
 						}
@@ -196,6 +197,7 @@ public class Controlador implements ActionListener {
 							} 
 							try {
 								sistema.agregaEmpleador(empleador1);
+								JOptionPane.showMessageDialog(null, "Se ha creado el empleador");
 							} catch (UsuarioDuplicadoException e1) {
 								JOptionPane.showMessageDialog(null, e1);
 							}
