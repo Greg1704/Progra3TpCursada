@@ -96,6 +96,9 @@ public class Controlador implements ActionListener {
 				
 		}else if(e.getActionCommand().equals(IVista.recuperaInformacionAgencia)) {
 					PersistirSistema.LecturaSistema();
+					v.setLbLAgenciaCreadaNombre(sistema.getNombre());
+					v.ActualizarListaEmpleados();
+					v.ActualizarListaEmpleadores();
 					JOptionPane.showMessageDialog(null, "Agencia recuperada en Sistema");
 				
 			}else { // VENTANA EMPLEADO
