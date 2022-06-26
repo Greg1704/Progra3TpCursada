@@ -2023,9 +2023,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			listTicketSimpObtenido.setEnabled(hab);
 			
 			//Funcion de controlador que me traiga Ticket Actual, Lista Ronda Encuentros, Ticket simp obtenido
-		//	this.setListTicketActual(c.RecuperaTicketEmpleado());
-			//this.setListRondaEleccionesEmpleado(c.RecuperaListaAsignacionEmpleado());
-			//this.setListTicketSimpObtenido(c.Recupera); // falta ver lo de la bolsa
+			ActualizarListaTicketActualEmpleado();
+			ActualizarListaRondaEleccionesEmpleado();
+			//ActualizarTicketSimplEmpleado
 	}
 	
 	public void EmpleadorLogeado(boolean hab) { // si es true, va a prender o apagar todo
@@ -2060,10 +2060,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			
 			listTicketActualEmpleador.setEnabled(hab);
 			listTicketSimplificadosEmpleador.setEnabled(hab);
-			/*this.setListTicketActualEmpleador(c.RecuperaTicketEmpleador());
-			this.setListRondaEleccionesEmpleador(c.RecuperaListaAsignacionEmpleador());
-			this.setListTicketSimplificadosEmpleador(c.RecuperaListaTicketSimplificadosEmpleadores());
-			*/
+			ActualizarListaRondaEleccionesEmpleador();
+			ActualizarListaTicketActualEmpleador();
+			ActualizarListaTicketSimpEmpleadores();
 		}
 	
 	public void ActualizarListaEmpleados() {
