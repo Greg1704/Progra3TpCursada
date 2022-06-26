@@ -43,4 +43,14 @@ public class TicketEmpleador extends TicketDeBusqueda{
 		this.estado.esActivo();
 	}
 
+
+	@Override
+	public String toString() {
+		return "TicketEmpleador [cantEmpleadosBuscados=" + cantEmpleados + ", empleadosObtenidos=" + empleadosObtenidos
+				+ ", fecha de alta()=" + getFechaAlta() + ", getFormularioDeBusqueda()=" + getFormularioDeBusqueda()
+				+ ", getEstado()=" + getEstado() + "]";
+	}
+
+	
+	
 }
