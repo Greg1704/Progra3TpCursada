@@ -36,6 +36,8 @@ import javax.swing.event.ListSelectionListener;
 import armaTickets.TicketEmpleado;
 import armaTickets.TicketEmpleador;
 import controlador.Controlador;
+import encuentro.ListaAsignaciones;
+import encuentro.UsuarioyPuntaje;
 import ticketSimplificado.TicketSimplificado;
 import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
@@ -266,6 +268,9 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private DefaultListModel<TicketEmpleado> modelTicketActualEmpleado;
 	private DefaultListModel<TicketEmpleador> modelTicketActualEmpleador;
 	private DefaultListModel<TicketSimplificado> modelListTicketsSimpEmpleador;
+	private DefaultListModel<UsuarioyPuntaje> modelListRondaEleccionesEmpleado;
+	private DefaultListModel<UsuarioyPuntaje> modelListRondaEleccionesEmpleador;
+	private DefaultListModel<TicketSimplificado> modelListBolsaTicketsSimp;
 
 	/**
 	 * Launch the application.
@@ -769,6 +774,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.listRondaEleccionesEmpleado
 				.setBorder(new TitledBorder(null, "Empleadores", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
+		this.modelListRondaEleccionesEmpleado=new DefaultListModel<UsuarioyPuntaje>();
+		this.listRondaEleccionesEmpleado.setModel(modelListRondaEleccionesEmpleado);
 		this.btnConfirmacionEleccionEmpleado = new JButton("Confirmar");
 		this.btnConfirmacionEleccionEmpleado.setBounds(162, 360, 89, 23);
 		this.panelRondaElecciones.add(this.btnConfirmacionEleccionEmpleado);
@@ -1157,7 +1164,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.listRondaEleccionesEmpleador.setBorder(new TitledBorder(
 				new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "Empleados",
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-
+		this.modelListRondaEleccionesEmpleador=new DefaultListModel<UsuarioyPuntaje>();
+		this.listRondaEleccionesEmpleador.setModel(modelListRondaEleccionesEmpleador);
 		this.btnConfirmacionEleccionEmpleador = new JButton("Confirmar");
 		this.btnConfirmacionEleccionEmpleador.setBounds(162, 277, 89, 23);
 		this.panelRondaEleccionesEmpleador.add(this.btnConfirmacionEleccionEmpleador);
@@ -1233,6 +1241,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		
 		this.listTicketsSimplificados = new JList();
 		this.scrollPaneTicketsSimplificados.setViewportView(this.listTicketsSimplificados);
+		this.modelListBolsaTicketsSimp=new DefaultListModel<TicketSimplificado>();
+		this.listTicketsSimplificados.setModel(modelListBolsaTicketsSimp);
 		
 		this.scrollPaneSimulacionThreads = new JScrollPane();
 		this.scrollPaneSimulacionThreads.setViewportBorder(new TitledBorder(null, "Simulaci\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -2070,6 +2080,30 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		ArrayList<TicketSimplificado> it=c.RecuperaListaTicketSimplificadosEmpleadores();
 		for(int i=0;i<it.size();i++) {
 			this.modelListTicketsSimpEmpleador.addElement(it.get(i));
+		}
+	}
+	
+	public void ActualizarListaRondaEleccionesEmpleado() {  //FALTA APLICAR AL CONTROLADOR Y ESOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOooooooooooooooooooooooooooooooooooooooooooooo
+		this.modelListRondaEleccionesEmpleado.clear();
+		ListaAsignaciones it=c.RecuperaListaAsignacionEmpleado();
+		for(int i=0;i<it.getOrdenados().size();i++) {
+			this.modelListRondaEleccionesEmpleado.addElement(it.getOrdenados().get(i));
+		}
+	}
+	
+	public void ActualizarListaRondaEleccionesEmpleador() {  //FALTA APLICAR AL CONTROLADOR Y ESOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOooooooooooooooooooooooooooooooooooooooooooooo
+		this.modelListRondaEleccionesEmpleador.clear();
+		ListaAsignaciones it=c.RecuperaListaAsignacionEmpleador();
+		for(int i=0;i<it.getOrdenados().size();i++) {
+			this.modelListRondaEleccionesEmpleador.addElement(it.getOrdenados().get(i));
+		}
+	}
+	
+	public void ActualizarBolsaTicketsSimp() {  //NO MUESTRA EN PANTALLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+		this.modelListBolsaTicketsSimp.clear();
+		ArrayList<TicketSimplificado> it=c.RecuperaListaBolsaTicketSimp();
+		for(int i=0;i<it.size();i++) {
+			this.modelListBolsaTicketsSimp.addElement(it.get(i));
 		}
 	}
 	

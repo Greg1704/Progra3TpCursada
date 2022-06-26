@@ -13,6 +13,7 @@ import excepciones.AtributoInvalidoException;
 import excepciones.ContraseniaIncorrectaException;
 import excepciones.UsuarioIncorrectoException;
 import ticketSimplificado.TicketSimplificado;
+import usuariosDelSistema.BolsaTrabajo;
 import usuariosDelSistema.Empleado;
 import usuariosDelSistema.Empleador;
 import usuariosDelSistema.EmpleadorFisico;
@@ -26,6 +27,7 @@ public class Controlador implements ActionListener {
 		Empleado empleado;
 		Empleador empleador;
 		Sistema sistema=null;
+		BolsaTrabajo bolsa=BolsaTrabajo.getInstancia();
 	
 	public Controlador() {
 		this.v = new NuevaVentanaFinal();
@@ -176,6 +178,7 @@ public class Controlador implements ActionListener {
 							try {
 								empleador.agregaObservable(new TicketSimplificado(v.getComboBoxBolsaLocacionEmpleador(),v.getComboBoxBolsaTipoTrabajoEmpleador(),empleador));
 								v.ActualizarListaTicketSimpEmpleadores();
+								v.ActualizarBolsaTicketsSimp();
 								//No se si deberiamos hacer algo para que se muestre en la ventana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 							} catch (AtributoInvalidoException e1) {
 								//No va a pasar nada, ya que no puede tirar error realmente si lo creamos desde aca xd AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -203,7 +206,20 @@ public class Controlador implements ActionListener {
     public ArrayList<TicketSimplificado> RecuperaListaTicketSimplificadosEmpleadores(){
     	return empleador.getObservables();
     }
+    
+    public ListaAsignaciones RecuperaListaAsignacionEmpleado(){
+    	return empleado.getLista();
+    }
+    
+    public ListaAsignaciones RecuperaListaAsignacionEmpleador(){
+    	return empleador.getLista();
+    }
+    
+    public ArrayList<TicketSimplificado> RecuperaListaBolsaTicketSimp(){
+    	return bolsa.getTickets();
+    }
 
+    
 
 }
     			

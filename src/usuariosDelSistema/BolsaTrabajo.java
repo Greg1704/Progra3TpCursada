@@ -69,6 +69,12 @@ public class BolsaTrabajo {
 		this.usaLista = false;
 		notifyAll();
 	}
+
+	public ArrayList<TicketSimplificado> getTickets() {
+		return tickets;
+	}
+	
+	
 	
 	
 }
