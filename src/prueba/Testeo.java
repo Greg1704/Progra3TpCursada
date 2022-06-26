@@ -45,10 +45,6 @@ public class Testeo {
 
 		e5 = new Empleado("DarthVader78","YoSoyTuPadre","Cacho Enriquez","32456765",482565,42,"Mar Del Plata");
 		e5.crearTicket("Indistinto",1,45000,1,"Media",1,"Junior",1,25,1,"Media",1,"Secundario",1);
-
-		e6 = new Empleado("DarthVader78","YoSoyTuPadre","tuvieja","32456765",482565,42,"Mar Del Plata");
-		e7 = new Empleado("DarthVader78","YoSoyTuPadre","ernesto","32456765",482565,42,"Mar Del Plata");
-		e8 = new Empleado("DarthVader78","YoSoyTuPadre","pepe","32456765",482565,42,"Mar Del Plata");
 		
 		em1 = new EmpleadorJuridico("CocaCola Inc","PepsiNoExistis","Coca Cola Incorporation","ComercioInternacional");
 		em1.crearTicket("Presencial",10,125000,1,"Extendida",5,"Managment",5,30,1,"Mucha",10,"Terciario",10,3);
@@ -59,31 +55,25 @@ public class Testeo {
 		em3 = new EmpleadorFisico("Puma","MateoVendeZapas","Puma Arg","ComercioLocal");
 		em3.crearTicket("Presencial",8,70000,10,"Extendida",8,"Senior",10,43,3,"Media",5,"Primario",1,2);
 		
-		agencia.agregaEmpleado(e1);
-		agencia.agregaEmpleado(e2);
-		agencia.agregaEmpleado(e3);
-		agencia.agregaEmpleado(e4);
-		agencia.agregaEmpleado(e5);
-		agencia.agregaEmpleador(em1);
-		agencia.agregaEmpleador(em2);
-		agencia.agregaEmpleador(em3);
+		//agencia.agregaEmpleado(e1);
+		//agencia.agregaEmpleado(e2);
+		//agencia.agregaEmpleado(e3);
+		//agencia.agregaEmpleado(e4);
+		//agencia.agregaEmpleado(e5);
+		//agencia.agregaEmpleador(em1);
+		//agencia.agregaEmpleador(em2);
+		//agencia.agregaEmpleador(em3);
 		
 		e1.setLocacionSimp("Presencial");
 		e2.setLocacionSimp("Presencial");
 		e3.setLocacionSimp("Presencial");
 		e4.setLocacionSimp("Presencial");
 		e5.setLocacionSimp("Presencial");
-		e6.setLocacionSimp("Presencial");
-		e7.setLocacionSimp("HomeOffice");
-		e8.setLocacionSimp("Presencial");
 		e1.setTipoTrabajoSimp("Salud");
 		e2.setTipoTrabajoSimp("ComercioLocal");
 		e3.setTipoTrabajoSimp("ComercioLocal");
 		e4.setTipoTrabajoSimp("Salud");
 		e5.setTipoTrabajoSimp("ComercioLocal");
-		e6.setTipoTrabajoSimp("ComercioInternacional");
-		e7.setTipoTrabajoSimp("Salud");
-		e8.setTipoTrabajoSimp("ComercioLocal");
 		
 
 		em1.crearTicketSimplificado("Presencial", "ComercioLocal");
@@ -97,9 +87,6 @@ public class Testeo {
 		new Thread(e3).start();
 		new Thread(e4).start();
 		new Thread(e5).start();
-		new Thread(e6).start();
-		new Thread(e7).start();
-		new Thread(e8).start();
 		
 		
 		/*agencia.busquedaLaboral();

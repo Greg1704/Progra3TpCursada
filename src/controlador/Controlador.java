@@ -282,6 +282,9 @@ public class Controlador implements ActionListener {
     	v.ActualizarTextAreaBolsaSimulacion(mensaje);
     }
 
+    
+    
+    
 }
     			
 

@@ -10,6 +10,7 @@ import excepciones.ContraseniaIncorrectaException;
 import excepciones.ListaVaciaException;
 import excepciones.NingunActivoException;
 import excepciones.NoActivoException;
+import excepciones.UsuarioDuplicadoException;
 import excepciones.UsuarioIncorrectoException;
 import ticketSimplificado.TicketSimplificado;
 
@@ -49,18 +50,31 @@ public class Sistema{
 	 *           <br>
 	 *           PreCond: Empleado debe ser distinto de null <br>
 	 *           PostCond: Se agrega empleado a la lista
+	 * @throws UsuarioDuplicadoException 
 	 *
 	 */
 
-	public void agregaEmpleado(Empleado e) {
-		this.empleadosPretensos.add(e);
+	public void agregaEmpleado(Empleado e) throws UsuarioDuplicadoException {
+		int j,i=0;
+		
+		j = this.empleadosPretensos.size();
+		
+		while(i < j && !(this.empleadosPretensos.get(i).getNya().equalsIgnoreCase(e.getNya()))) {
+			i++;
+		}
+		
+		if (i < j) {
+			throw new UsuarioDuplicadoException("Error: el empleado ya existe en el sistema");
+		}else {
+			this.empleadosPretensos.add(e);
+		}
 	}
 
 	/**
-	 * el m�todo <b> sacaEmpleado </b> saca un empleado a la lista de empleados
+	 * el metodo <b> sacaEmpleado </b> saca un empleado a la lista de empleados
 	 * del <b> Sistema </b> <br>
 	 * 
-	 * @param e: Empleado que ser� removido de la lista de empleados del sistema
+	 * @param e: Empleado que sera removido de la lista de empleados del sistema
 	 *           <br>
 	 *           PostCond: Se remueve empleado de la lista si el dato es v�lido
 	 *
@@ -71,27 +85,11 @@ public class Sistema{
 		this.empleadosPretensos.remove(e);
 	}
 
-	public void agregaTicketSimplificado(TicketSimplificado t){
-		this.bolsaDeTrabajo.add(t);
-	}
-
-	public void sacaTicketSimplificado(TicketSimplificado t){
-		this.bolsaDeTrabajo.remove(t);
-	}
-
-	public ArrayList<TicketSimplificado> getBolsaDeTrabajo() {
-		return bolsaDeTrabajo;
-	}
-
-	public void setBolsaDeTrabajo(ArrayList<TicketSimplificado> bolsaDeTrabajo) {
-		this.bolsaDeTrabajo = bolsaDeTrabajo;
-	}
-
 	/**
-	 * el m�todo <b> agregaEmpleador </b> agrega un empleador a la lista de
+	 * el metodo <b> agregaEmpleador </b> agrega un empleador a la lista de
 	 * empleadores del <b> Sistema </b> <br>
 	 * 
-	 * @param e: Empleador que ser� agregado a la lista de empleadores del sistema
+	 * @param e: Empleador que sera agregado a la lista de empleadores del sistema
 	 *           <br>
 	 *           PreCond: Empleador debe ser distinto de null <br>
 	 *           PostCond: Se agrega
@@ -99,17 +97,30 @@ public class Sistema{
 	 *
 	 */
 
-	public void agregaEmpleador(Empleador e) {
-		this.empleadores.add(e);
+	public void agregaEmpleador(Empleador e) throws UsuarioDuplicadoException{
+		int j,i=0;
+		
+		j = this.empleadores.size();
+		
+		while(i < j && !(this.empleadores.get(i).getNombre().equalsIgnoreCase(e.getNombre()))) {
+			i++;
+		}
+		
+		if (i < j) {
+			throw new UsuarioDuplicadoException("Error: el empleador ya existe en el sistema");
+		}else {
+			this.empleadores.add(e);
+		}
+		
 	}
 
 	/**
-	 * el m�todo <b> sacaEmpleador </b> saca un empleado a la lista de empleados
+	 * el metodo <b> sacaEmpleador </b> saca un empleado a la lista de empleados
 	 * del <b> Sistema </b> <br>
 	 * 
-	 * @param e: Empleador que ser� removido de la lista de empleadores del
+	 * @param e: Empleador que sera removido de la lista de empleadores del
 	 *           sistema <br>
-	 *           PostCond: Se remueve empleador de la lista si el dato es v�lido
+	 *           PostCond: Se remueve empleador de la lista si el dato es valido
 	 *
 	 */
 
@@ -156,12 +167,12 @@ public class Sistema{
 
 
 	/**
-	 * el m�todo <b> comisionEmpleadoPretenso </b> calcula la comisi�n del
-	 * empleado dependiendo del cargo que �ste posee <br>
+	 * el metodo <b> comisionEmpleadoPretenso </b> calcula la comision del
+	 * empleado dependiendo del cargo que este posee <br>
 	 * 
-	 * @param empleado: Empleado al que le ser� calculada la comisi�n <br>
-	 *                  PreCond: Empleado debe ser distinto de null y v�lido <br>
-	 *                  PostCond: Se retornar� la comisi�n como un "double"
+	 * @param empleado: Empleado al que le ser� calculada la comision <br>
+	 *                  PreCond: Empleado debe ser distinto de null y valido <br>
+	 *                  PostCond: Se retornara la comision como un "double"
 	 *
 	 */
 
@@ -294,12 +305,6 @@ public class Sistema{
 		}
 	}
 
-	/**
-	 * En este m�todo se aplica el patr�n Template para invocar los m�todos
-	 * que corresponden a las interacciones entre empleados y empleadores, <br>
-	 * desde la ronda de encuentros hasta la ronda de contrataciones.
-	 * 
-	 */
 
 	public void busquedaLaboral() throws NingunActivoException,ListaVaciaException {
 			verificaActivos();
