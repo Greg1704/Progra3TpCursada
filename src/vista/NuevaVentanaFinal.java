@@ -1303,6 +1303,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				this.btnConfirmarNombreAgencia.addMouseListener(this);
 				this.btnRondaEncuentro.addMouseListener(this);
 				this.btnRondaContraciones.addMouseListener(this);
+				this.btnRecuperarAgencia.addMouseListener(this);
 				setBtnBolsaDeTrabajo(false);
 				setBtnRondaContraciones(false);
 				setBtnRondaEncuentro(false);
@@ -2392,7 +2393,26 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 												if (e.getSource() == btnRondaContraciones && btnRondaContraciones.isEnabled()) {
 													setBtnRondaContraciones(false);
 													setBtnRondaEncuentro(true);				
-											}
+											}else
+												if(e.getSource() == this.btnRecuperarAgencia) {
+													listEmpleados.setEnabled(true);
+													listEmpleados.setEnabled(true);
+													textAreaContrataciones.setEnabled(true);
+													textAreaComisiones.setEnabled(true);
+													setBtnBolsaDeTrabajo(true);
+													textFieldCrearAgencia.setEnabled(false);
+													
+												}
+	}
+	
+	public void EncuentroOContratacion(boolean encuentro) {
+		if(encuentro) {
+			this.setBtnRondaEncuentro(false);
+			this.setBtnRondaContraciones(true);
+		}else {
+			this.setBtnRondaEncuentro(true);
+			this.setBtnRondaContraciones(false);
+		}
 	}
 
 	@Override
