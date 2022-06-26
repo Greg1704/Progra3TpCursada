@@ -76,8 +76,8 @@ public class Testeo {
 		em1.crearTicketSimplificado("Presencial", "ComercioLocal");
 		em2.crearTicketSimplificado("HomeOffice", "Salud");
 		em3.crearTicketSimplificado("Presencial", "ComercioInternacional");	
-		em2.crearTicketSimplificado("HomeOffice", "Salud");	
-		em1.crearTicketSimplificado("Presencial", "ComercioLocal");	
+		//em2.crearTicketSimplificado("HomeOffice", "Salud");	
+		//em1.crearTicketSimplificado("Presencial", "ComercioLocal");	
 		
 		new Thread(e1).start();
 		new Thread(e2).start();

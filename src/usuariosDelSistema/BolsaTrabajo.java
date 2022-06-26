@@ -44,12 +44,10 @@ public class BolsaTrabajo {
         }
         
         this.usaLista = true;
-              
-        this.usaLista = false;
-		notifyAll();
-        empleado.eleccionTicketSimp(this.tickets);
-      		
 		
+		empleado.eleccionTicketSimp(this.tickets);
+		this.usaLista = false;
+		notifyAll();
     }	
 	
 	
