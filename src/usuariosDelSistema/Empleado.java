@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.JOptionPane;
 
 /**
  *Es la clase de empleados, que seran los objetos que se contrataran a durante los procesos de seleccion propuestos por la Agencia
@@ -200,7 +199,7 @@ public class Empleado extends Usuario implements Runnable {
 					tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
 					estudiosCursados, pesoEstudiosCursados);
 		} catch (FormularioInvalidoException e) {
-			JOptionPane.showMessageDialog(null,e);
+			devolverError(e.getMessage());
 		}
 	}
 

@@ -3,8 +3,7 @@ package persistencia;
 import java.io.IOException;
 import java.io.Serializable;
 
-import javax.swing.JOptionPane;
-
+import controlador.Controlador;
 import usuariosDelSistema.Sistema;
 
 public class PersistirSistema {
@@ -17,9 +16,8 @@ public class PersistirSistema {
 			SistemaDTO sistema = UtilSistema.sistemaDTOfromSistema();			
 			persistencia.escribir(sistema);
 			persistencia.cerrarOutput();
-			JOptionPane.showMessageDialog(null, "Agencia guardada en Sistema");
 		}catch(IOException e) {
-			JOptionPane.showMessageDialog(null, "Se guardo mal");
+			devolverError("Se guardo mal\n");
 		}
 		
 	}
@@ -34,13 +32,17 @@ public class PersistirSistema {
 			UtilSistema.sistemafromSistemaDTO(sistdto);			
 			persistencia.cerrarInput();
 			
-			JOptionPane.showMessageDialog(null, "Agencia recuperada en Sistema");
+			devolverError("Agencia recuperada en Sistema\n");
 		}catch (IOException e){
-			JOptionPane.showMessageDialog(null, "Esta pasando algo");
+			devolverError("Esta pasando algo\n");
         } catch (ClassNotFoundException e){
-        	JOptionPane.showMessageDialog(null, "Esta pasando algo parte 2");
+        	devolverError("Esta pasando algo parte 2\n");
         }
 		
+	}
+	
+	public static void devolverError(String mensaje) {
+		Controlador.getInstancia().mensajeErrores(mensaje);
 	}
 	
 }

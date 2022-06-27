@@ -2,8 +2,6 @@ package usuariosDelSistema;
 
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 import controlador.Controlador;
 import encuentro.RondaEncuentros;
 import excepciones.ContraseniaIncorrectaException;
@@ -267,7 +265,7 @@ public class Sistema{
 					
 				
 				}catch(NoActivoException e) {
-					JOptionPane.showMessageDialog(null, "Hubo problemas en la ronda de contratacion");
+					devolverError("Hubo problemas en la ronda de contratacion");
 				}
 					
 			}
@@ -392,6 +390,10 @@ public class Sistema{
 	
 	public void mandarTextoComisiones(String mensaje) {
 		Controlador.getInstancia().agregarTextoComisiones(mensaje);
+	}
+	
+	public void devolverError(String mensaje) {
+		Controlador.getInstancia().mensajeErrores(mensaje);
 	}
 	
 }
