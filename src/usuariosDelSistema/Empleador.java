@@ -147,6 +147,11 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		}
 	}
 
+	/**
+	 * Crea ticket simplificado y lo ingresa en Observados si no supera el maximo permitido, ingresandolo en la bolsa si esto sucede.<br>
+	 * @param locacion: Es la locacion que ofrece el empleador.
+	 * @param tipoTrabajo: El tipo de trabajo ofrecido por el empleador.
+	 */
 	public void crearTicketSimplificado(String locacion,String tipoTrabajo){
 		try {
 			if(this.observables==null) 
