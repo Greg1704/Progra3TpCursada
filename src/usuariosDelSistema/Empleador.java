@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.JOptionPane;
 
 import armaTickets.TicketEmpleador;
 import controlador.Controlador;
@@ -102,7 +101,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		try {
 			muestraEmpleados();
 		}catch (ListaVaciaException e){
-			System.out.println(e.getMessage());
+			devolverError(e.getMessage());
 		}
 		
 	}
@@ -112,7 +111,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 			throw new ListaVaciaException("Lista vacia, no hay empleados seleccionados");
 		else {
 			for (int i = 0; i < this.lista.getOrdenados().size() ; i++)
-				System.out.println(this.lista.getOrdenados().get(i).getUsuario().getUsuario());
+				devolverError(this.lista.getOrdenados().get(i).getUsuario().getUsuario());
 		}
 		
 	}
@@ -144,7 +143,7 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 					tipoPuestoLaboral, pesoTipoPuestoLaboral,  edad, pesoEdad,  experienciaPrevia, pesoExperienciaPrevia,
 					estudiosCursados, pesoEstudiosCursados,cantEmpleados);
 		} catch (FormularioInvalidoException e) {
-			System.out.println(e.getMessage() + " del Empleador " + this.nombre);
+			devolverError(e.getMessage() + " del Empleador " + this.nombre + "\n");
 		}
 	}
 
@@ -159,9 +158,9 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 				this.cantObservados++;
 				BolsaTrabajo.getInstancia().agregaTicket(ticketSimplificado);// agrego ticket a la lista de bolsa de trabajo
 			}else
-				JOptionPane.showMessageDialog(null, "Ya hay 3 tickets simplificados creados, hasta que un empleado no se lleve alguno no puede crear nuevos");			
+				devolverError( "Ya hay 3 tickets simplificados creados, hasta que un empleado no se lleve alguno no puede crear nuevos\n");			
 		} catch (AtributoInvalidoException e) {
-			System.out.println(e.getMessage()); //PODRIA COMENTARSE ESTO DICIENDO QUE NO SE PUEDEN CREAR MAS TICKETS SIMPLIFICADOS
+			devolverError(e.getMessage()); //PODRIA COMENTARSE ESTO DICIENDO QUE NO SE PUEDEN CREAR MAS TICKETS SIMPLIFICADOS
 		}
 
 	}
@@ -187,6 +186,10 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 	
 	public void mensajeContratacionBolsa(String mensaje) {
 		Controlador.getInstancia().agregarTextoBolsaContratacion(mensaje);
+	}
+	
+	public void devolverError(String mensaje) {
+		Controlador.getInstancia().mensajeErrores(mensaje);
 	}
 
 	@Override
