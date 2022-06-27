@@ -21,9 +21,6 @@ public class Testeo {
 		Empleado e3;
 		Empleado e4;
 		Empleado e5;
-		Empleado e6;
-		Empleado e7;
-		Empleado e8;
 
 		EmpleadorJuridico em1;
 		EmpleadorFisico em2;

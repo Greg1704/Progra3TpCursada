@@ -55,10 +55,6 @@ public class TicketSimplificado extends Observable{
 	   return "TicketSimplificado: Locacion: " + locacion.toString() + ", Tipo de trabajo: " + tipoTrabajo;
 }
    
-   
-   
-   //Revisar si hay que agregar algun error a tipoTrabajoFactory
-   //Revisar como relacionar las clases Salud, ComercioLocal, y ComercioInternacional con los empleados
 }
 
 

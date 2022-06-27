@@ -55,7 +55,6 @@ public class BolsaTrabajo {
         }
         
         this.usaLista = true;
-        //System.out.println(this.tickets.size()); ESTO ES PARA VER CUANTOS TICKETS HABIA EN LA BOLSA
         
         if (this.tickets.size() != 0) {
 	        

@@ -158,14 +158,14 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 				this.observables=new ArrayList<TicketSimplificado>();
 			TicketSimplificado ticketSimplificado= new TicketSimplificado(locacion,tipoTrabajo,this);
 			ticketSimplificado.addObserver(this);
-			if (this.cantObservados < 3) { //PROBABLEMENTE ACA ESTA EL ERROR 
+			if (this.cantObservados < 3) { 
 				this.observables.add(ticketSimplificado);
 				this.cantObservados++;
 				BolsaTrabajo.getInstancia().agregaTicket(ticketSimplificado);// agrego ticket a la lista de bolsa de trabajo
 			}else
 				devolverError( "Ya hay 3 tickets simplificados creados, hasta que un empleado no se lleve alguno no puede crear nuevos\n");			
 		} catch (AtributoInvalidoException e) {
-			devolverError(e.getMessage()); //PODRIA COMENTARSE ESTO DICIENDO QUE NO SE PUEDEN CREAR MAS TICKETS SIMPLIFICADOS
+			devolverError(e.getMessage()); 
 		}
 
 	}

@@ -128,7 +128,7 @@ public class Empleado extends Usuario implements Runnable {
 		} catch (AtributoInvalidoException e) {
 			e.printStackTrace();
 		}
-	}//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	}
 
 	public String getTipoTrabajoSimp() {
 		return tipoTrabajoSimp;
@@ -225,7 +225,7 @@ public class Empleado extends Usuario implements Runnable {
 	
 	
 	
-	public void eleccionTicketSimp() { // esto es lo que va en BolsaTrabajo para ver si me quedo el ticket que esta en la lista o lo devuelvo
+	public void eleccionTicketSimp() { 
 		double respuesta;
 		TicketSimplificado t;
 	
@@ -236,22 +236,19 @@ public class Empleado extends Usuario implements Runnable {
 			
 			if (respuesta == 1) { // coinciden las locaciones tambien, procedemos a quedarnos con el ticket
 				this.ticketSimpElegido = t;
-				t.setEmpleadoContratado(this);
-				//System.out.println(this.getNya()+" se queda con ticket AAAAAAAAAAAAAAAAAAAA");	
+				t.setEmpleadoContratado(this);	
 				mandaStringBolsa(this.getNya()+" se queda con el ticket \n");
 				
 			}else { //no coinciden las locaciones, debemos llamar al metodo devuelve ticket y continuar buscando
-				//System.out.println(this.getNya()+" no encontro ticketBBBBBBBBBBBBBBBB");
 				mandaStringBolsa(this.getNya()+" devuelve ticket ya que no coincide la locacion\n");
 				BolsaTrabajo.getInstancia().devolverTicket(this,t);	
 			}
 		}
 		else {
-			//System.out.println(this.nya +" no encontro tickets en la bolsa");
 			mandaStringBolsa(this.nya +" no encontro tickets en la bolsa\n");
 		}
 
-	} //podemos hacerlo string y que despues de la llamada retorne el string que corresponda a la situacion
+	}
 
 	public void mandaStringBolsa(String mensaje) {
 		Controlador.getInstancia().agregarTextoBolsaSimulacion(mensaje);
