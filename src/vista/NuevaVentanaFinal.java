@@ -2059,6 +2059,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			comboBoxBolsaLocacion.setEnabled(hab);
 			comboBoxBolsaTipoTrabajo.setEnabled(hab);
 			setBtnConfirmarRequisitosBolsa(hab);
+			setCambiarEstadoTicketEmpleado(hab);
 			listRondaEleccionesEmpleado.setEnabled(hab);
 			setTextFieldPesoCargaHoraria("");
 			setTextFieldPesoLocacion("");
@@ -2101,6 +2102,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			comboBoxBolsaLocacionEmpleador.setEnabled(hab);
 			comboBoxBolsaTipoTrabajoEmpleador.setEnabled(hab);
 			setBtnCrearTicketSimplificado(hab);
+			setCambiarEstadoTicketEmpleado(hab);
 			listRondaEleccionesEmpleador.setEnabled(hab);
 			setTextFieldPesoCargaHorariaEmpleador("");
 			setTextFieldPesoEstudiosCursadosEmpleador("");
