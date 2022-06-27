@@ -88,6 +88,9 @@ public class Controlador implements ActionListener {
 					for(int i=0;i<sistema.getEmpleadosPretensos().size();i++) {
 						new Thread(sistema.getEmpleadosPretensos().get(i)).start();
 					}
+					v.ActualizarBolsaTicketsSimp();
+					v.ActualizarListaTicketSimpObtenidoEmpleado();
+					v.ActualizarListaTicketSimpEmpleadores();
 		}else if(e.getActionCommand().equals(IVista.guardaInformacionAgencia)) {
 					PersistirSistema.EscrituraSistema();
 				
@@ -260,6 +263,10 @@ public class Controlador implements ActionListener {
 	public boolean ExisteAgencia() {
 		return (sistema != null); 
 	}
+	
+	public TicketSimplificado RecuperaTicketSimpObtenidoEmpleado() {
+		return empleado.getTicketSimpElegido();
+	}	
 	
 	public ArrayList<Empleado> RecuperaListaEmpleados() {
 		return sistema.getEmpleadosPretensos();

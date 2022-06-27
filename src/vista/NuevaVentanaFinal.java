@@ -27,6 +27,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.MutableComboBoxModel;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
@@ -271,7 +272,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private DefaultListModel<TicketSimplificado> modelListTicketsSimpEmpleador;
 	private DefaultListModel<UsuarioyPuntaje> modelListRondaEleccionesEmpleado;
 	private DefaultListModel<UsuarioyPuntaje> modelListRondaEleccionesEmpleador;
-	private DefaultListModel<TicketSimplificado> modelListBolsaTicketsSimp;
+	private DefaultListModel<TicketSimplificado> modelListBolsaTicketsSimp,modelListTicketSimpElegidoEmpleado;
 	private JPanel panelPersistencia;
 	private JButton btnGuardarAgencia;
 	private JButton btnRecuperarAgencia;
@@ -1244,6 +1245,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.listTicketSimpObtenido = new JList();
 		this.scrollPaneTicketSimpObtenido.setViewportView(this.listTicketSimpObtenido);
 		this.listTicketSimpObtenido.setBorder(new TitledBorder(null, "Ticket Simplificado Obtenido", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.modelListTicketSimpElegidoEmpleado=new DefaultListModel<TicketSimplificado>();
+		this.listTicketSimpObtenido.setModel(modelListTicketSimpElegidoEmpleado);
 		
 		this.btnConfirmarRequisitosBolsa = new JButton("Confirmar");
 		this.btnConfirmarRequisitosBolsa.setBounds(162, 85, 89, 23);
@@ -2167,6 +2170,14 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		setCambiarEstadoTicketEmpleador(true);
 	}
 	
+	public void ActualizarListaTicketSimpObtenidoEmpleado() {
+		this.listTicketSimpObtenido.setEnabled(true);
+		this.modelListTicketSimpElegidoEmpleado.clear();
+		TicketSimplificado it =  c.RecuperaTicketSimpObtenidoEmpleado();
+		if(it != null)
+			this.modelListTicketSimpElegidoEmpleado.addElement(it);
+		setCambiarEstadoTicketEmpleado(true);
+	}
 	
 	public void ActualizarListaTicketSimpEmpleadores() {
 		this.modelListTicketsSimpEmpleador.clear();
