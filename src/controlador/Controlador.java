@@ -59,8 +59,6 @@ public class Controlador implements ActionListener {
 				setearNombreAgencia(sistema.getNombre());
 				v.AdminLogueado(true);
 			}
-			v.setTextFieldCrearAgencia("");
-			v.setBtnConfirmarNombreAgencia(false);
 		} else
 			if (e.getActionCommand().equals(IVista.arrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
 				try {

@@ -2037,6 +2037,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			listEmpleados.setEnabled(hab);
 			textAreaContrataciones.setEnabled(hab);
 			textAreaComisiones.setEnabled(hab);
+			setTextFieldCrearAgencia("");
+			setBtnConfirmarNombreAgencia(false);
 			setBtnBolsaDeTrabajo(true);
 			setBtnRondaEncuentro(true);
 			if (hab) {
@@ -2321,10 +2323,11 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			setBtnConfirmarNombreAgencia(false);
 			//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 		} else
-			if (e.getSource()==btnConfirmarLogin && btnConfirmarLogin.isEnabled()) {
+			if (e.getSource()==btnConfirmarLogin) {
 				setTextFieldUsuario("");
 				setTextFieldContrasenia("");
 				setBtnConfirmarLogin(false);
+				System.out.println("se mete aca xd xd");
 			} else
 				if (e.getSource()==btnConfirmacionCreacionUsuario && btnConfirmacionCreacionUsuario.isEnabled()) {
 					setTextFieldCreacionUsuario("");
@@ -2334,6 +2337,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 					setTextFieldCreacionTelefono("");
 					setTextFieldCreacionEdad("");
 					setTextFieldCreacionCiudad("");
+					System.out.println("se mete aca");
 					setBtnConfirmacionCreacionUsuario(false); 
 				} else
 					if (e.getSource()==btnConfirmacionCreacionTicket && btnConfirmacionCreacionTicket.isEnabled()) {
