@@ -51,7 +51,7 @@ public class Controlador implements ActionListener {
 		
 		if (e.getActionCommand().equals(IVista.confirmaCreacionAgencia)) { // ventana Agencia
 			if (sistema!=null) {
-				JOptionPane.showMessageDialog(null, "La agencia ya existe");
+				v.creaVentanaEmergente("La agencia ya existe");
 			} else  {
 				// crear la agencia	
 				sistema = Sistema.getInstancia();
@@ -68,9 +68,9 @@ public class Controlador implements ActionListener {
 					if(empleador != null)
 						v.ActualizarListaRondaEleccionesEmpleador();
 				} catch (NingunActivoException e1) {
-					JOptionPane.showMessageDialog(v, e1);
+					v.creaVentanaEmergente(e1.getMessage());
 				} catch (ListaVaciaException e1) {
-					JOptionPane.showMessageDialog(v, e1);
+					v.creaVentanaEmergente(e1.getMessage());
 				}
 				
 		}else
@@ -106,14 +106,14 @@ public class Controlador implements ActionListener {
 					try {
 						
 						empleado=sistema.LoginEmpleado(v.getTextFieldUsuario(), v.getTextFieldContrasenia());  //Falta alguna referencia a la que apunte la variable empleado
-						JOptionPane.showMessageDialog(null, "Login Correcto");
+						v.creaVentanaEmergente("Login Correcto");
 						v.EmpleadoLogeado(true);
 					}catch (ContraseniaIncorrectaException ex) {
-						JOptionPane.showMessageDialog(null, ex.getMessage());
+						v.creaVentanaEmergente(ex.getMessage());
 						v.EmpleadoLogeado(false);
 					}
 					catch(UsuarioIncorrectoException ex) {
-						JOptionPane.showMessageDialog(null, ex.getMessage());
+						v.creaVentanaEmergente(ex.getMessage());
 						v.EmpleadoLogeado(false);
 					}
 
@@ -129,9 +129,9 @@ public class Controlador implements ActionListener {
 						empleado1.setLocacionSimp(v.getComboBoxBolsaLocacion());
 						try {
 							sistema.agregaEmpleado(empleado1);
-							JOptionPane.showMessageDialog(null, "Se ha creado el empleado");
+							v.creaVentanaEmergente("Se ha creado el empleado");
 						} catch (UsuarioDuplicadoException e1) {
-							JOptionPane.showMessageDialog(null,e1);
+							v.creaVentanaEmergente(e1.getMessage());
 						}
 						v.ActualizarListaEmpleados();
 					 
@@ -150,15 +150,15 @@ public class Controlador implements ActionListener {
 						
 						if(this.RecuperaTicketEmpleado() != null)
 							if(v.getRdbtnActivo()) {
-								JOptionPane.showMessageDialog(null,empleado.getTicket().activa());
+								v.creaVentanaEmergente(empleado.getTicket().activa());
 								v.ActualizarListaTicketActualEmpleado();
 							}
 							else if(v.getRdbtnSuspendido()) {
-								JOptionPane.showMessageDialog(null,empleado.getTicket().suspende());
+								v.creaVentanaEmergente(empleado.getTicket().suspende());
 								v.ActualizarListaTicketActualEmpleado();
 							}
 							else if(v.getRdbtnCancelar())  {
-								JOptionPane.showMessageDialog(null,empleado.getTicket().cancela());
+								v.creaVentanaEmergente(empleado.getTicket().cancela());
 								v.ActualizarListaTicketActualEmpleado();
 							}
 							
@@ -174,15 +174,15 @@ public class Controlador implements ActionListener {
 						if(e.getActionCommand().equals(IVista.confirmarLoginEmpleador)) {
 							try {
 								empleador=sistema.LoginEmpleador(v.getTextFieldUsuarioEmpleador(), v.getTextFieldContraseniaEmpleador()); //Falta alguna referencia a la que apunte la variable empleado
-								JOptionPane.showMessageDialog(null, "Login Correcto");
+								v.creaVentanaEmergente("Login Correcto");
 								v.EmpleadorLogeado(true);
 							}
 							catch (ContraseniaIncorrectaException ex) {
-								JOptionPane.showMessageDialog(null, ex.getMessage());
+								v.creaVentanaEmergente(ex.getMessage());
 								v.EmpleadorLogeado(false);
 							}
 							catch(UsuarioIncorrectoException ex) {
-								JOptionPane.showMessageDialog(null, ex.getMessage());
+								v.creaVentanaEmergente(ex.getMessage());
 								v.EmpleadorLogeado(false);
 							}
 					}else
@@ -195,9 +195,9 @@ public class Controlador implements ActionListener {
 							} 
 							try {
 								sistema.agregaEmpleador(empleador1);
-								JOptionPane.showMessageDialog(null, "Se ha creado el empleador");
+								v.creaVentanaEmergente("Se ha creado el empleador");
 							} catch (UsuarioDuplicadoException e1) {
-								JOptionPane.showMessageDialog(null, e1);
+								v.creaVentanaEmergente(e1.getMessage());
 							}
 							v.ActualizarListaEmpleadores();
 					}else
@@ -220,15 +220,15 @@ public class Controlador implements ActionListener {
 						if(e.getActionCommand().equals(IVista.confirmaCambioEstadoEmpleador)) {
 							if(RecuperaTicketEmpleador() != null)
 								if(v.getRdbtnActivoEmpleador()) {
-									JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().activa());
+									v.creaVentanaEmergente(empleador.getTicketEmpleador().activa());
 									v.ActualizarListaTicketActualEmpleador();
 								}
 								else if(v.getRdbtnSuspendidoEmpleador()) {
-									JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().suspende());
+									v.creaVentanaEmergente(empleador.getTicketEmpleador().suspende());
 									v.ActualizarListaTicketActualEmpleador();
 								}
 								else if(v.getRdbtnCancelarEmpleador()) {
-									JOptionPane.showMessageDialog(null,empleador.getTicketEmpleador().cancela());
+									v.creaVentanaEmergente(empleador.getTicketEmpleador().cancela());
 									v.ActualizarListaTicketActualEmpleador();
 								}
 					}else
@@ -317,8 +317,8 @@ public class Controlador implements ActionListener {
     	v.setLbLAgenciaCreadaNombre(nombre);
     }
     
-    public void mensajeErrores(String menesaje) {
-    	
+    public void mensajeErrores(String mensaje) {
+    	v.creaVentanaEmergente(mensaje);
     }
     
 }

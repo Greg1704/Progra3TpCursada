@@ -21,6 +21,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
@@ -2327,7 +2328,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 				setTextFieldUsuario("");
 				setTextFieldContrasenia("");
 				setBtnConfirmarLogin(false);
-				System.out.println("se mete aca xd xd");
 			} else
 				if (e.getSource()==btnConfirmacionCreacionUsuario && btnConfirmacionCreacionUsuario.isEnabled()) {
 					setTextFieldCreacionUsuario("");
@@ -2337,7 +2337,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 					setTextFieldCreacionTelefono("");
 					setTextFieldCreacionEdad("");
 					setTextFieldCreacionCiudad("");
-					System.out.println("se mete aca");
 					setBtnConfirmacionCreacionUsuario(false); 
 				} else
 					if (e.getSource()==btnConfirmacionCreacionTicket && btnConfirmacionCreacionTicket.isEnabled()) {
@@ -2448,6 +2447,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public void creaVentanaEmergente(String mensaje) {
+		JOptionPane.showMessageDialog(null, mensaje);
 	}
 
 	@Override
