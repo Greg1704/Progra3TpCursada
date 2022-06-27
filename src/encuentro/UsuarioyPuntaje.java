@@ -14,7 +14,7 @@ public class UsuarioyPuntaje implements Comparable<UsuarioyPuntaje>,Serializable
 	
 	/**
 	 * @author Grupo4 <br>
-	 * PreCond: <b> usuario </b> debe ser un usuario válido <br>
+	 * PreCond: <b> usuario </b> debe ser un usuario valido <br>
 	 */
 	
 	public UsuarioyPuntaje(Usuario usuario) {

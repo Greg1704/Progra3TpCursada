@@ -7,7 +7,7 @@ import calculosAspectosLaborales.RemuneracionFactory;
 import excepciones.AtributoInvalidoException;
 
 public class Remuneracion implements Serializable{
-	private double monto; // cambio de nombre para cambiar el nombre del get asi no se superpone con el get de la clase
+	private double monto; 
 	private int peso;
 	private I_Remuneracion instanciaRemuneracion;
 	

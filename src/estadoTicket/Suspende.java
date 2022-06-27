@@ -28,7 +28,7 @@ public class Suspende implements I_EstadoTicket {
 	}
 
 	@Override
-	public String finaliza() {//no podria llegar nunca a esta instancia de todas formas
+	public String finaliza() {
 		return "No es posible, el ticket se encuentra finalizado";
 	}
 

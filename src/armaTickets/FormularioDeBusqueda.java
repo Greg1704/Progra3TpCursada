@@ -38,7 +38,7 @@ public class FormularioDeBusqueda implements Serializable{
 		}
 	}
 	
-	public TipoPuestoLaboral getPuestoLaboral(){ //Esto se cambia para evitar confusiones 
+	public TipoPuestoLaboral getPuestoLaboral(){
 		return this.tipoPuestoLaboral;
 	}
 	

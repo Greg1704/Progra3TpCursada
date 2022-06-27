@@ -34,10 +34,10 @@ public class RondaEncuentros{
 
 	/**
 	 * @author Grupo4 <br>
-	 *         El m�todo calcula el puntaje de todos los empleadores en cuesti�n
+	 *         El metodo calcula el puntaje de todos los empleadores en cuestion
 	 *         de cada empleado <br>
 	 *         PostCond: debe devolver una lista ordenada de empleadores para cada
-	 *         empleado � una vac�a.
+	 *         empleado o una vacia.
 	 */
 
 	public void enfrentamientoEmpleados() {
