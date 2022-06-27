@@ -176,7 +176,7 @@ public class Empleado extends Usuario implements Runnable {
 		try {
 			muestraEmpleadores();
 		}catch (ListaVaciaException e){
-			System.out.println(e.getMessage());
+			devolverError(e.getMessage());
 		}
 		
 	}
@@ -186,7 +186,7 @@ public class Empleado extends Usuario implements Runnable {
 			throw new ListaVaciaException("Lista vacia, no hay empleadores seleccionados");
 		else {
 			for (int i = 0; i < this.lista.getOrdenados().size() ; i++)
-				System.out.println(this.lista.getOrdenados().get(i).getUsuario().getUsuario());
+				devolverError(this.lista.getOrdenados().get(i).getUsuario().getUsuario() + "\n");
 		}
 		
 	}
@@ -256,5 +256,9 @@ public class Empleado extends Usuario implements Runnable {
 
 	public void mandaStringBolsa(String mensaje) {
 		Controlador.getInstancia().agregarTextoBolsaSimulacion(mensaje);
+	}
+	
+	public void devolverError(String mensaje) {
+		Controlador.getInstancia().mensajeErrores(mensaje);
 	}
 }
