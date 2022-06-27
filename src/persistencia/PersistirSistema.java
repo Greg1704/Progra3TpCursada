@@ -16,6 +16,7 @@ public class PersistirSistema {
 			SistemaDTO sistema = UtilSistema.sistemaDTOfromSistema();			
 			persistencia.escribir(sistema);
 			persistencia.cerrarOutput();
+			devolverError("Agencia guardada en Sistema\n");
 		}catch(IOException e) {
 			devolverError("Se guardo mal\n");
 		}
@@ -34,9 +35,9 @@ public class PersistirSistema {
 			
 			devolverError("Agencia recuperada en Sistema\n");
 		}catch (IOException e){
-			devolverError("Esta pasando algo\n");
+			devolverError("No se pudo recuperar la ventana\n");
         } catch (ClassNotFoundException e){
-        	devolverError("Esta pasando algo parte 2\n");
+        	devolverError("No se pudo recuperar la ventana\n");
         }
 		
 	}
