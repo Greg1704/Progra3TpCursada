@@ -119,6 +119,7 @@ public class Controlador implements ActionListener {
 						v.creaVentanaEmergente(ex.getMessage());
 						v.EmpleadoLogeado(false);
 					}
+					v.ActualizarListaTicketSimpObtenidoEmpleado();
 				} else
 					if (e.getActionCommand().equals(IVista.confirmaCreacionUsuario)) {//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 						
@@ -187,6 +188,7 @@ public class Controlador implements ActionListener {
 								v.creaVentanaEmergente(ex.getMessage());
 								v.EmpleadorLogeado(false);
 							}
+							v.ActualizarListaTicketSimpEmpleadores();
 					}else
 						if(e.getActionCommand().equals(IVista.confirmacionCreacionUsuarioEmpleador)) {
 							Empleador empleador1;
