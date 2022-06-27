@@ -47,7 +47,7 @@ public class Controlador implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// aca se cruzan los datos con los datos del sistema para ver si el logeo esta bien o no, e iria con un if
+		// aca se cruzan los datos con los datos del sistema
 		
 		if (e.getActionCommand().equals(IVista.confirmaCreacionAgencia)) { // ventana Agencia
 			if (sistema!=null) {
@@ -60,7 +60,7 @@ public class Controlador implements ActionListener {
 				v.AdminLogueado(true);
 			}
 		} else
-			if (e.getActionCommand().equals(IVista.arrancaRondaDeEncuentro)) { //HACER PARTE VENTANA
+			if (e.getActionCommand().equals(IVista.arrancaRondaDeEncuentro)) {
 				try {
 					sistema.busquedaLaboral();
 					if(empleado != null)
@@ -74,7 +74,7 @@ public class Controlador implements ActionListener {
 				}
 				
 		}else
-			if(e.getActionCommand().equals(IVista.arrancaRondaDeContrataciones)) { //HACER PARTE VENTANA
+			if(e.getActionCommand().equals(IVista.arrancaRondaDeContrataciones)) {
 				sistema.rondaDeContrataciones();
 				if(empleado != null)
 					v.ActualizarListaRondaEleccionesEmpleado();
@@ -108,7 +108,7 @@ public class Controlador implements ActionListener {
 				if (e.getActionCommand().equals(IVista.confirmaLoginUsuario)) {
 					try {
 						
-						empleado=sistema.LoginEmpleado(v.getTextFieldUsuario(), v.getTextFieldContrasenia());  //Falta alguna referencia a la que apunte la variable empleado
+						empleado=sistema.LoginEmpleado(v.getTextFieldUsuario(), v.getTextFieldContrasenia()); 
 						v.creaVentanaEmergente("Login Correcto");
 						v.EmpleadoLogeado(true);
 					}catch (ContraseniaIncorrectaException ex) {
@@ -121,9 +121,8 @@ public class Controlador implements ActionListener {
 					}
 					v.ActualizarListaTicketSimpObtenidoEmpleado();
 				} else
-					if (e.getActionCommand().equals(IVista.confirmaCreacionUsuario)) {//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+					if (e.getActionCommand().equals(IVista.confirmaCreacionUsuario)) {
 						
-						// cuando se cree usuario, buscar en la lista si el usuario ya existe (s�lo buscar por campo de usuario estar�a bien). si no existe, hacer un new empleado
 						
 						Empleado empleado1 = new Empleado(v.getTextFieldCreacionUsuario(), v.getTextFieldCreacionContrasenia(), v.getTextFieldCreacionNyA(), v.getTextFieldCreacionDNI(), 
 								  v.getTextFieldCreacionTelefono(), v.getTextFieldCreacionEdad(), v.getTextFieldCreacionCiudad());
@@ -140,7 +139,7 @@ public class Controlador implements ActionListener {
 					 
 						
 				} else
-					if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) { //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+					if (e.getActionCommand().equals(IVista.confirmaCreacionTicket)) { 
 							
 						empleado.crearTicket( v.getComboBoxLocacion(), v.getTextFieldPesoLocacion(), v.getTextFieldRemuneracion(), v.getTextFieldPesoRemuneracion(), 
 							v.getComboBoxCargaHoraria(), v.getTextFieldPesoCargaHoraria(), v.getComboBoxTipoDePuesto(),v.getTextFieldPesoTipoDePuesto() , empleado.getEdad(), 1, 
@@ -176,7 +175,7 @@ public class Controlador implements ActionListener {
 					}else    // VENTANA EMPLEADOR
 						if(e.getActionCommand().equals(IVista.confirmarLoginEmpleador)) {
 							try {
-								empleador=sistema.LoginEmpleador(v.getTextFieldUsuarioEmpleador(), v.getTextFieldContraseniaEmpleador()); //Falta alguna referencia a la que apunte la variable empleado
+								empleador=sistema.LoginEmpleador(v.getTextFieldUsuarioEmpleador(), v.getTextFieldContraseniaEmpleador()); 
 								v.creaVentanaEmergente("Login Correcto");
 								v.EmpleadorLogeado(true);
 							}
@@ -209,7 +208,7 @@ public class Controlador implements ActionListener {
 						if(e.getActionCommand().equals(IVista.confirmacionCreacionTicketEmpleador)) {
 							String aux = v.getComboBoxRangoEtarioEmpleador();
 							int auxNumerico=0;
-							switch(aux) {  						//Switch hecho para adaptar la decisión del empleador sobre el Rango etario a un valor numerico para que luego se cree la instancia correctamente
+							switch(aux) {  						
 								case "Menos de 40": auxNumerico=39;
 								case "Entre 40 y 50": auxNumerico=45;
 								case "Mas de 50": auxNumerico= 51;
@@ -244,7 +243,7 @@ public class Controlador implements ActionListener {
 								empleador.crearTicketSimplificado(v.getComboBoxBolsaLocacionEmpleador(),v.getComboBoxBolsaTipoTrabajoEmpleador());
 								v.ActualizarListaTicketSimpEmpleadores();
 								v.ActualizarBolsaTicketsSimp();
-								//No se si deberiamos hacer algo para que se muestre en la ventana AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+								
 							
 						}
 			} 

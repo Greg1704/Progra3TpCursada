@@ -278,25 +278,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	private JButton btnRecuperarAgencia;
 	private JLabel lbLAgenciaCreadaNombre;
 
-	/**
-	 * Launch the application.
-	 */
-/*	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					NuevaVentanaFinal frame = new NuevaVentanaFinal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
 
-	/**
-	 * Create the frame.
-	 */
 	public NuevaVentanaFinal() {
 		
 		this.setVisible(true);
@@ -1610,10 +1592,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.listEmpleadores = listEmpleadores;
 	}
 
-/*	public void setListTicketActual(TicketEmpleado ticket) {
-		this.listTicketActual.add(ticket); //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-	}
-	*/
 
 	public void setListRondaEleccionesEmpleado(JList listRondaEleccionesEmpleado) {
 		this.listRondaEleccionesEmpleado = listRondaEleccionesEmpleado;
@@ -1731,10 +1709,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return Integer.parseInt((String) textFieldPesoEstudiosCursadosEmpleador.getText());
 	}
 
-	/*public String getListTicketActualEmpleador() {
-		return listTicketActualEmpleador;
-	}
-	*/
 
 	public ArrayList<Empleado> getListRondaEleccionesEmpleador() {
 		int[] aux = this.listRondaEleccionesEmpleador.getSelectedIndices();
@@ -2071,13 +2045,12 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 			setTextFieldPesoLocacion("");
 			setTextFieldPesoRemuneracion("");
 			setTextFieldPesoTipoDePuesto("");
-			setTextFieldRemuneracion("");//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			setTextFieldRemuneracion("");
 			setTextFieldUsuario("");
 			setTextFieldContrasenia("");
 			listTicketActual.setEnabled(hab);
 			listTicketSimpObtenido.setEnabled(hab);
 			
-			//Funcion de controlador que me traiga Ticket Actual, Lista Ronda Encuentros, Ticket simp obtenido
 			if (hab) {
 				ActualizarListaTicketActualEmpleado();
 				if(c.checkRondaEncuentroHecha())
@@ -2182,9 +2155,10 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 	public void ActualizarListaTicketSimpEmpleadores() {
 		this.modelListTicketsSimpEmpleador.clear();
 		ArrayList<TicketSimplificado> it=c.RecuperaListaTicketSimplificadosEmpleadores();
-		for(int i=0;i<it.size();i++) {
-			this.modelListTicketsSimpEmpleador.addElement(it.get(i));
-		}
+		if(it!=null)
+			for(int i=0;i<it.size();i++) {
+				this.modelListTicketsSimpEmpleador.addElement(it.get(i));
+			}
 	}
 	
 	public void ActualizarListaRondaEleccionesEmpleado() {  
@@ -2206,7 +2180,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		setBtnConfirmacionEleccionEmpleador(true);
 	}
 	
-	public void ActualizarBolsaTicketsSimp() {  //NO MUESTRA EN PANTALLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	public void ActualizarBolsaTicketsSimp() {  
 		this.modelListBolsaTicketsSimp.clear();
 		ArrayList<TicketSimplificado> it=c.RecuperaListaBolsaTicketSimp();
 		for(int i=0;i<it.size();i++) {
@@ -2239,8 +2213,6 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		this.tabbedPane.setSelectedIndex(i);
 	}
 	
-	//pensamiento propio: desde ventana mandamos el empleador que seleccionamos al controlador, y este "une" al empleado con su empleador
-	//En este caso el getter de la lista estaria al pedo capaz, salvo que se use para otra cosa
 	
 	
 	@Override
@@ -2333,7 +2305,7 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		if (e.getSource()==btnConfirmarNombreAgencia && btnConfirmarNombreAgencia.isEnabled()) {
 			setTextFieldCrearAgencia("");
 			setBtnConfirmarNombreAgencia(false);
-			//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			
 		} else
 			if (e.getSource()==btnConfirmarLogin) {
 				setTextFieldUsuario("");
