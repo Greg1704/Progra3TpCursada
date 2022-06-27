@@ -11,6 +11,10 @@ import controlador.Controlador;
 import excepciones.*;
 import ticketSimplificado.TicketSimplificado;
 
+/**
+ * Es una clase abstracta que representa al empleador, luego se extendera a juridico o fisico
+ *
+ */
 public abstract class Empleador extends Usuario implements EmpleadorComision, Observer {
 	private String nombre;
 	private TicketEmpleador ticketEmpleador;
@@ -134,6 +138,12 @@ public abstract class Empleador extends Usuario implements EmpleadorComision, Ob
 		this.setYaEligioEmpleados(true);
 	}
 
+
+	/**
+	 * Es el constructor de ticket del empleador.<br>
+	 * PreCond: no debe mandarse ningun valor negativo y en el caso de las ponderaciones, ademas deben ser numeros enteros. <br>
+	 * 
+	 */
 	
 	public void crearTicket(String locacion, int pesoLocacion, double remuneracion, int pesoRemuneracion, String cargaHoraria, int pesoCargaHoraria,
 							String tipoPuestoLaboral, int pesoTipoPuestoLaboral, int edad, int pesoEdad, String experienciaPrevia, int pesoExperienciaPrevia,
