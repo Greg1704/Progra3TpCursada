@@ -1539,8 +1539,8 @@ public class NuevaVentanaFinal extends JFrame implements KeyListener, MouseListe
 		return textFieldCreacionDNI.getText();
 	}
 
-	public int getTextFieldCreacionTelefono() {
-		return Integer.parseInt((String)textFieldCreacionTelefono.getText());
+	public String getTextFieldCreacionTelefono() {
+		return (String)textFieldCreacionTelefono.getText();
 	}
 
 	public int getTextFieldCreacionEdad() {

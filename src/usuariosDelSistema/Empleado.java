@@ -25,7 +25,7 @@ import java.util.Observer;
 public class Empleado extends Usuario implements Runnable {
 	private String nya; //Nombre y Apellido
 	private String dni;
-	private int telefono;
+	private String telefono;
 	private int edad;
 	private String ciudad;
 	private I_Locacion locacionSimp;
@@ -36,7 +36,7 @@ public class Empleado extends Usuario implements Runnable {
 	private int pasadas=10;
 	private boolean yaEligioEmpleador;
 
-	public Empleado(String usuario, String contrasenia, String nya, String dni, int telefono, int edad, String ciudad) {
+	public Empleado(String usuario, String contrasenia, String nya, String dni, String telefono, int edad, String ciudad) {
 		super(usuario, contrasenia);
 		this.nya = nya;
 		this.dni = dni;
@@ -69,11 +69,11 @@ public class Empleado extends Usuario implements Runnable {
 		this.dni = dni;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
