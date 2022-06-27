@@ -190,6 +190,11 @@ public class Empleado extends Usuario implements Runnable {
 		
 	}
 	
+	/**
+	 * Es el constructor de ticket del empleado.<br>
+	 * PreCond: no debe mandarse ningun valor negativo y en el caso de las ponderaciones, ademas deben ser numeros enteros. <br>
+	 * 
+	 */
 
 	public void crearTicket(String locacion, int pesoLocacion, double remuneracion, int pesoRemuneracion, String cargaHoraria, int pesoCargaHoraria,
 							String tipoPuestoLaboral, int pesoTipoPuestoLaboral, int edad, int pesoEdad, String experienciaPrevia, int pesoExperienciaPrevia,
@@ -223,7 +228,10 @@ public class Empleado extends Usuario implements Runnable {
 	}
 	
 	
-	
+	/**
+	 * Metodo que hace el llamado con los thread a la bolsa de trabajo.
+	 * 
+	 */
 	
 	public void eleccionTicketSimp() { 
 		double respuesta;
