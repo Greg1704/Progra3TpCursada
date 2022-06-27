@@ -319,6 +319,10 @@ public class Controlador implements ActionListener {
     	v.setLbLAgenciaCreadaNombre(nombre);
     }
     
+    public void mensajeErrores(String menesaje) {
+    	
+    }
+    
 }
     			
 
