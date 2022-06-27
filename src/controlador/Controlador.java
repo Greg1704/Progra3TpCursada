@@ -116,7 +116,6 @@ public class Controlador implements ActionListener {
 						v.creaVentanaEmergente(ex.getMessage());
 						v.EmpleadoLogeado(false);
 					}
-
 				} else
 					if (e.getActionCommand().equals(IVista.confirmaCreacionUsuario)) {//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 						
@@ -200,6 +199,7 @@ public class Controlador implements ActionListener {
 								v.creaVentanaEmergente(e1.getMessage());
 							}
 							v.ActualizarListaEmpleadores();
+							v.ActualizarListaTicketSimpEmpleadores();
 					}else
 						if(e.getActionCommand().equals(IVista.confirmacionCreacionTicketEmpleador)) {
 							String aux = v.getComboBoxRangoEtarioEmpleador();
