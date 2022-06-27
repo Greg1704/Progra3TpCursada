@@ -1,7 +1,12 @@
 armaTickets
 atributosFormularios
 calculosAspectosLaborales
+controlador
 encuentro
+estadoTicket
 excepciones
+persistencia
 prueba
+ticketSimplificado
 usuariosDelSistema
+vista
